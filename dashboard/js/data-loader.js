@@ -15,8 +15,8 @@ const DataLoader = {
     console.log('[DataLoader] pathname:', window.location.pathname);
     console.log('[DataLoader] pathSegments:', pathSegments);
     console.log('[DataLoader] repoName:', repoName);
-    console.log('[DataLoader] base path:', `${base}/data`);
-    return `${base}/data`;
+    console.log('[DataLoader] base path:', `${base}/ionwave/data`);
+    return `${base}/ionwave/data`;
   },
   get _basePath() {
     return this._getBasePath();
