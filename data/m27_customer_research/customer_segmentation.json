@@ -1,0 +1,123 @@
+{
+  "_meta": {
+    "sheet_name": "Customer Segmentation",
+    "parent_file": "03a_customer_research_icp",
+    "version": "1.0.0",
+    "last_updated": "2026-02-04",
+    "updated_by": "claude-opus-4.5",
+    "status": "draft",
+    "quality_score": "6/10",
+    "data_type": "structured_table",
+    "note": "Lifecycle-based segmentation model. Percentages are projected estimates based on DTC supplement benchmarks. Actual distribution will be measured post-launch."
+  },
+  "data": {
+    "segmentation_model": "Lifecycle Stage",
+    "segments": [
+      {
+        "segment": "Prospects",
+        "percentage_of_list": "30-40%",
+        "list_type": "active",
+        "goal": "Nurture to first purchase",
+        "primary_strategy": "Welcome Series",
+        "key_actions": [
+          "Educational email sequence about marine plasma",
+          "Social proof and testimonial exposure",
+          "First-purchase incentive (discount or free shipping)",
+          "Retargeting with problem-aware content"
+        ]
+      },
+      {
+        "segment": "One-Timers",
+        "percentage_of_list": "25-35%",
+        "list_type": "active",
+        "goal": "Convert to repeat buyer",
+        "primary_strategy": "Replenishment + Subscription Offer",
+        "key_actions": [
+          "Post-purchase education sequence",
+          "Replenishment reminder at projected depletion date",
+          "Subscription offer with savings incentive",
+          "Product usage tips to ensure good experience"
+        ]
+      },
+      {
+        "segment": "Repeat Buyers",
+        "percentage_of_list": "15-25%",
+        "list_type": "active",
+        "goal": "Convert to subscriber",
+        "primary_strategy": "Subscription pitch + VIP path",
+        "key_actions": [
+          "Highlight subscription savings and convenience",
+          "Preview VIP benefits available to subscribers",
+          "Bundle offers for multi-product adoption",
+          "Request reviews and referrals"
+        ]
+      },
+      {
+        "segment": "Subscribers",
+        "percentage_of_list": "10-20%",
+        "list_type": "active",
+        "goal": "Retain, upsell, and convert to advocate",
+        "primary_strategy": "VIP Recognition + Referral Program",
+        "key_actions": [
+          "VIP recognition and exclusive content",
+          "Referral program activation",
+          "Cross-sell and upsell new products",
+          "Quarterly NPS surveys and feedback collection"
+        ]
+      },
+      {
+        "segment": "VIPs",
+        "percentage_of_list": "5-10%",
+        "list_type": "active",
+        "goal": "White-glove treatment and ambassador conversion",
+        "primary_strategy": "Exclusive offers + early access",
+        "key_actions": [
+          "Early access to new products and flavors",
+          "Exclusive discounts and bundles",
+          "Ambassador program invitation",
+          "Direct line to founder/team for feedback",
+          "Surprise and delight moments"
+        ]
+      },
+      {
+        "segment": "At-Risk",
+        "percentage_of_list": "10-15%",
+        "list_type": "active",
+        "goal": "Intervention before lapse",
+        "primary_strategy": "Churn Intervention",
+        "key_actions": [
+          "Win-back email with incentive",
+          "Survey to understand disengagement reason",
+          "Personalized re-engagement based on past behavior",
+          "Subscription pause option (vs cancel)"
+        ]
+      },
+      {
+        "segment": "Lapsed",
+        "percentage_of_list": "10-20%",
+        "list_type": "historical",
+        "goal": "Win back or sunset gracefully",
+        "primary_strategy": "Winback sequence",
+        "key_actions": [
+          "3-touch winback email sequence",
+          "Strong incentive offer (30%+ discount)",
+          "New product announcement as re-engagement hook",
+          "Final 'We miss you' with sunset warning"
+        ]
+      },
+      {
+        "segment": "Churned",
+        "percentage_of_list": "20-30%",
+        "list_type": "historical",
+        "goal": "Clean from list or suppress",
+        "primary_strategy": "Sunset + Suppression",
+        "key_actions": [
+          "Final opt-in confirmation email",
+          "Move to suppression list if no engagement",
+          "Remove from active campaigns to protect deliverability",
+          "Retain data for cohort analysis"
+        ]
+      }
+    ]
+  }
+}

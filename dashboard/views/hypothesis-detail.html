@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hypothesis Detail - IonWave</title>
+  <link rel="stylesheet" href="../css/styles.css">
+  <style>
+    .detail-section {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: var(--gap-lg);
+      margin-bottom: var(--gap-lg);
+    }
+
+    .section-title {
+      font-size: var(--font-size-lg);
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: var(--gap-md);
+      padding-bottom: var(--gap-sm);
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .hyp-title {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: var(--gap-sm);
+    }
+
+    .hyp-id {
+      font-family: var(--font-mono);
+      font-size: var(--font-size-sm);
+      color: var(--text-dim);
+      font-weight: 600;
+    }
+
+    .grade-badge-large {
+      font-size: 3rem;
+      font-weight: 700;
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: var(--gap-lg) 0;
+    }
+
+    .grade-a { background: var(--color-success-bg); color: var(--color-success); border: 2px solid var(--color-success); }
+    .grade-b { background: var(--color-info-bg); color: var(--color-info); border: 2px solid var(--color-info); }
+    .grade-c { background: var(--color-warning-bg); color: var(--color-warning); border: 2px solid var(--color-warning); }
+    .grade-d { background: var(--color-critical-bg); color: var(--color-critical); border: 2px solid var(--color-critical); }
+
+    .revision-card {
+      background: var(--bg-tertiary);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-sm);
+      padding: var(--gap-md);
+      margin-bottom: var(--gap-md);
+    }
+
+    .revision-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: var(--gap-sm);
+    }
+
+    .revision-version {
+      font-weight: 600;
+      color: var(--text-primary);
+      font-family: var(--font-mono);
+    }
+
+    .revision-date {
+      font-size: var(--font-size-xs);
+      color: var(--text-dim);
+    }
+
+    .revision-content {
+      color: var(--text-secondary);
+      line-height: 1.6;
+      font-size: var(--font-size-sm);
+    }
+
+    .doc-link {
+      display: block;
+      padding: var(--gap-sm) var(--gap-md);
+      background: var(--bg-tertiary);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-sm);
+      color: var(--color-info);
+      text-decoration: none;
+      margin-bottom: var(--gap-sm);
+      font-size: var(--font-size-sm);
+      transition: all var(--transition-fast);
+    }
+
+    .doc-link:hover {
+      background: var(--bg-primary);
+      border-color: var(--color-info);
+    }
+
+    .doc-relevance {
+      display: inline-block;
+      padding: 2px 6px;
+      background: var(--color-info-bg);
+      color: var(--color-info);
+      border-radius: 3px;
+      font-size: var(--font-size-xs);
+      font-weight: 600;
+      margin-left: 8px;
+    }
+
+    .meta-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--gap-md);
+    }
+
+    .meta-item {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .meta-label {
+      font-size: var(--font-size-xs);
+      color: var(--text-dim);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .meta-value {
+      font-size: var(--font-size-base);
+      color: var(--text-primary);
+      font-weight: 500;
+    }
+
+    .risk-box {
+      background: rgba(239, 68, 68, 0.1);
+      border-left: 3px solid var(--color-critical);
+      border-radius: var(--radius-sm);
+      padding: var(--gap-md);
+      margin-top: var(--gap-md);
+    }
+
+    .risk-title {
+      color: var(--color-critical);
+      font-weight: 600;
+      font-size: var(--font-size-sm);
+      margin-bottom: 8px;
+    }
+
+    .risk-text {
+      color: var(--text-secondary);
+      font-size: var(--font-size-sm);
+      line-height: 1.6;
+    }
+
+    .validation-box {
+      background: var(--bg-tertiary);
+      border-left: 3px solid var(--color-info);
+      border-radius: var(--radius-sm);
+      padding: var(--gap-md);
+    }
+
+    .validation-title {
+      color: var(--color-info);
+      font-weight: 600;
+      margin-bottom: var(--gap-sm);
+    }
+  </style>
+</head>
+<body>
+
+  <header class="header">
+    <div class="header-left">
+      <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+        <path d="M2 18 Q7 10 14 14 Q21 18 26 10" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+        <path d="M2 14 Q7 6 14 10 Q21 14 26 6" stroke="#22c55e" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.5"/>
+      </svg>
+      <h1 class="header-title">HYPOTHESIS DETAIL</h1>
+    </div>
+    <div class="header-right">
+      <div class="header-meta">
+        <span class="header-meta-label">System:</span>
+        <span>v1.0.0</span>
+      </div>
+    </div>
+  </header>
+
+  <nav class="nav-bar">
+    <a href="../index.html">Mission Control</a>
+    <a href="tup-navigator.html">🗺️ TUP Navigator</a>
+    <a href="hypotheses-tracker.html">🧪 Hypotheses Tracker</a>
+    <a href="financial-forecast.html">📊 Financial Forecast</a>
+    <a href="m0-trade-thesis.html">M0 Trade Thesis</a>
+    <a href="m26-competitive-intel.html">M26 Competitive Intel</a>
+    <a href="m27-customer-research.html">M27 Customer Research</a>
+  </nav>
+
+  <div class="page-content">
+    <div id="hypothesis-content">
+      <div class="loading-state" style="padding: var(--gap-xl); text-align: center; color: var(--text-dim);">
+        Loading hypothesis details...
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <a href="hypotheses-tracker.html">← Back to Hypotheses Tracker</a>
+  </footer>
+
+  <script>
+    // Get hypothesis ID from URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const hypId = urlParams.get('id');
+
+    function getBasePath() {
+      const pathSegments = window.location.pathname.split('/').filter(s => s);
+      const repoName = pathSegments.length > 0 && pathSegments[0] !== 'dashboard' && !pathSegments[0].endsWith('.html') ? pathSegments[0] : '';
+      const base = repoName ? `/${repoName}` : '';
+      return `${base}/data`;
+    }
+
+    async function loadHypothesisDetail() {
+      if (!hypId) {
+        document.getElementById('hypothesis-content').innerHTML = '<div class="error-state" style="padding: var(--gap-xl); text-align: center; color: var(--color-critical);">No hypothesis ID provided</div>';
+        return;
+      }
+
+      try {
+        const basePath = getBasePath();
+        console.log('Loading hypothesis from:', basePath);
+
+        const [registryResponse, indexResponse] = await Promise.all([
+          fetch(`${basePath}/hypotheses/registry.json`),
+          fetch(`${basePath}/hypotheses/index.json`)
+        ]);
+
+        if (!registryResponse.ok || !indexResponse.ok) {
+          throw new Error('Failed to load hypothesis data');
+        }
+
+        const registry = await registryResponse.json();
+        const index = await indexResponse.json();
+
+        const hypothesis = registry.hypotheses.find(h => h.id === hypId);
+        if (!hypothesis) {
+          throw new Error(`Hypothesis ${hypId} not found`);
+        }
+
+        const documents = index.hypothesis_to_documents[hypId]?.referenced_in || [];
+
+        renderHypothesisDetail(hypothesis, documents);
+      } catch (error) {
+        console.error('Error loading hypothesis:', error);
+        document.getElementById('hypothesis-content').innerHTML = `
+          <div class="error-state" style="padding: var(--gap-xl); text-align: center; color: var(--color-critical);">
+            <p><strong>Failed to load hypothesis</strong></p>
+            <p>${error.message}</p>
+          </div>
+        `;
+      }
+    }
+
+    function renderHypothesisDetail(hyp, documents) {
+      const latestRevision = hyp.revisions[hyp.revisions.length - 1];
+      const gradeClass = `grade-${hyp.current_grade.toLowerCase()}`;
+
+      // Handle risk_if_wrong
+      let riskHtml = '';
+      if (hyp.risk_if_wrong) {
+        if (typeof hyp.risk_if_wrong === 'object') {
+          riskHtml = `
+            <div class="detail-section">
+              <div class="section-title">⚠️ Risk if Wrong</div>
+              <div class="risk-box">
+                ${hyp.risk_if_wrong.severity ? `<div class="risk-title">Severity: ${hyp.risk_if_wrong.severity}</div>` : ''}
+                <div class="risk-text">${hyp.risk_if_wrong.description || ''}</div>
+                ${hyp.risk_if_wrong.financial_impact ? `
+                  <div class="risk-text" style="margin-top: var(--gap-md);">
+                    <strong>Financial Impact:</strong> ${hyp.risk_if_wrong.financial_impact}
+                  </div>
+                ` : ''}
+                ${hyp.risk_if_wrong.mitigation ? `
+                  <div class="risk-text" style="margin-top: var(--gap-md);">
+                    <strong>Mitigation:</strong> ${hyp.risk_if_wrong.mitigation}
+                  </div>
+                ` : ''}
+              </div>
+            </div>
+          `;
+        } else {
+          riskHtml = `
+            <div class="detail-section">
+              <div class="section-title">⚠️ Risk if Wrong</div>
+              <div class="risk-box">
+                <div class="risk-text">${hyp.risk_if_wrong}</div>
+              </div>
+            </div>
+          `;
+        }
+      }
+
+      // Validation plan
+      let validationHtml = '';
+      if (hyp.validation_plan) {
+        validationHtml = `
+          <div class="detail-section">
+            <div class="section-title">🔬 Validation Plan</div>
+            <div class="validation-box">
+              <div class="validation-title">Method</div>
+              <p style="color: var(--text-secondary); margin-bottom: var(--gap-md); font-size: var(--font-size-sm);">${hyp.validation_plan.method}</p>
+
+              <div class="meta-grid">
+                <div class="meta-item">
+                  <span class="meta-label">Estimated Cost</span>
+                  <span class="meta-value">${hyp.validation_plan.cost}</span>
+                </div>
+                <div class="meta-item">
+                  <span class="meta-label">Timeline</span>
+                  <span class="meta-value">${hyp.validation_plan.timeline}</span>
+                </div>
+              </div>
+
+              <div style="margin-top: var(--gap-md);">
+                <div class="validation-title">Success Criteria</div>
+                <p style="color: var(--text-secondary); font-size: var(--font-size-sm);">${hyp.validation_plan.success_criteria}</p>
+              </div>
+            </div>
+          </div>
+        `;
+      }
+
+      // Dependencies
+      let depsHtml = '';
+      if ((hyp.feeds_into && hyp.feeds_into.length > 0) || (hyp.depends_on && hyp.depends_on.length > 0)) {
+        depsHtml = `
+          <div class="detail-section">
+            <div class="section-title">🔗 Dependencies</div>
+            ${hyp.depends_on && hyp.depends_on.length > 0 ? `
+              <div style="margin-bottom: var(--gap-md);">
+                <div class="meta-label">⬅️ Depends On</div>
+                <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-top: 8px;">
+                  ${hyp.depends_on.map(id => `<a href="hypothesis-detail.html?id=${id}" class="badge badge-info">${id}</a>`).join('')}
+                </div>
+              </div>
+            ` : ''}
+            ${hyp.feeds_into && hyp.feeds_into.length > 0 ? `
+              <div>
+                <div class="meta-label">➡️ Feeds Into</div>
+                <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-top: 8px;">
+                  ${hyp.feeds_into.map(id => `<a href="hypothesis-detail.html?id=${id}" class="badge badge-warning">${id}</a>`).join('')}
+                </div>
+              </div>
+            ` : ''}
+          </div>
+        `;
+      }
+
+      document.getElementById('hypothesis-content').innerHTML = `
+        <div class="detail-section">
+          <div class="hyp-id">${hyp.id}</div>
+          <h1 class="hyp-title">${hyp.name}</h1>
+          <div style="display: flex; gap: 8px; margin-bottom: var(--gap-md);">
+            <span class="badge badge-${hyp.current_state === 'ASSUMED' ? 'neutral' : hyp.current_state === 'VALIDATED' ? 'success' : 'warning'}">${hyp.current_state}</span>
+            <span class="badge badge-${hyp.impact_severity === 'CRITICAL' ? 'critical' : hyp.impact_severity === 'HIGH' ? 'warning' : 'neutral'}">${hyp.impact_severity}</span>
+            <span class="badge badge-neutral">${hyp.category}</span>
+          </div>
+
+          <div style="display: flex; gap: var(--gap-lg); align-items: start;">
+            <div style="flex: 1;">
+              <p style="color: var(--text-secondary); line-height: 1.6; margin-bottom: var(--gap-md);">${hyp.description}</p>
+
+              <div class="meta-grid">
+                <div class="meta-item">
+                  <span class="meta-label">Current Value</span>
+                  <span class="meta-value">${latestRevision.value}</span>
+                </div>
+                <div class="meta-item">
+                  <span class="meta-label">Total Revisions</span>
+                  <span class="meta-value">${hyp.revisions.length}</span>
+                </div>
+                <div class="meta-item">
+                  <span class="meta-label">Last Updated</span>
+                  <span class="meta-value">${new Date(latestRevision.date).toLocaleDateString()}</span>
+                </div>
+                <div class="meta-item">
+                  <span class="meta-label">Documents</span>
+                  <span class="meta-value">${documents.length} references</span>
+                </div>
+              </div>
+            </div>
+            <div class="grade-badge-large ${gradeClass}">${hyp.current_grade}</div>
+          </div>
+        </div>
+
+        <div class="detail-section">
+          <div class="section-title">📝 Revision History (${hyp.revisions.length} versions)</div>
+          ${hyp.revisions.slice().reverse().map((rev, idx) => `
+            <div class="revision-card">
+              <div class="revision-header">
+                <span class="revision-version">v${hyp.revisions.length - idx} - Grade ${rev.confidence_grade || rev.grade}</span>
+                <span class="revision-date">${new Date(rev.date).toLocaleDateString()}</span>
+              </div>
+              <div class="revision-content">
+                <div style="margin-bottom: 8px;"><strong>Value:</strong> ${rev.value}</div>
+                <div><strong>Reasoning:</strong> ${rev.reasoning}</div>
+                ${rev.evidence ? `<div style="margin-top: 8px;"><strong>Evidence:</strong> ${Array.isArray(rev.evidence) ? rev.evidence.join('; ') : rev.evidence}</div>` : ''}
+              </div>
+            </div>
+          `).join('')}
+        </div>
+
+        <div class="detail-section">
+          <div class="section-title">📚 Supporting Documents (${documents.length})</div>
+          ${documents.length > 0 ? documents.map(doc => `
+            <a href="https://github.com/caio-camargo/ionwave-dashboard/blob/main/${doc.document}" target="_blank" class="doc-link">
+              📄 ${doc.document}
+              <span class="doc-relevance">${doc.relevance}</span>
+              ${doc.section ? `<div style="font-size: var(--font-size-xs); color: var(--text-dim); margin-top: 4px;">Section: ${doc.section}</div>` : ''}
+              ${doc.context ? `<div style="font-size: var(--font-size-xs); color: var(--text-dim); margin-top: 4px;">${doc.context}</div>` : ''}
+            </a>
+          `).join('') : '<p style="color: var(--text-dim); font-size: var(--font-size-sm);">No supporting documents found.</p>'}
+        </div>
+
+        ${validationHtml}
+        ${riskHtml}
+        ${depsHtml}
+      `;
+    }
+
+    // Load on page load
+    loadHypothesisDetail();
+  </script>
+
+</body>
+</html>

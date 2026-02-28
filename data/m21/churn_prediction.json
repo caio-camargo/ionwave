@@ -1,0 +1,209 @@
+{
+  "tup_id": "M21",
+  "sheet_name": "churn_prediction",
+  "version": "1.0.0",
+  "last_updated": "2026-02-06",
+  "description": "Churn prediction model for DTC supplement subscriptions, applied to IonWave",
+
+  "industry_benchmarks": {
+    "avg_monthly_churn_supplements": {
+      "value": "10-15%",
+      "confidence": "B",
+      "source": "Recharge benchmark reports 2022-2024, ProfitWell, IonWave benchmark_data.json"
+    },
+    "best_in_class_monthly_churn": {
+      "value": "4-6%",
+      "confidence": "C",
+      "source": "ProfitWell top-decile consumer subscription data"
+    },
+    "voluntary_pct_of_total": {
+      "value": "55-70%",
+      "confidence": "B",
+      "source": "ProfitWell, Recharge, Recurly benchmark data"
+    },
+    "involuntary_pct_of_total": {
+      "value": "30-45%",
+      "confidence": "B",
+      "source": "Same sources"
+    }
+  },
+
+  "retention_curve": {
+    "description": "Typical DTC supplement subscription cohort retention",
+    "confidence": "C",
+    "source": "Recharge cohort data, ProfitWell, industry analyses",
+    "curve": [
+      {"month": 1, "pct_remaining": "82-88%", "monthly_churn_that_month": "12-18%", "note": "Steepest single-month drop"},
+      {"month": 2, "pct_remaining": "70-78%", "monthly_churn_that_month": "10-14%"},
+      {"month": 3, "pct_remaining": "60-70%", "monthly_churn_that_month": "8-12%", "note": "Cliff completes. Survivors 2x more likely to stay long-term."},
+      {"month": 6, "pct_remaining": "45-55%", "monthly_churn_that_month": "5-8%", "note": "Habitual users"},
+      {"month": 12, "pct_remaining": "30-40%", "monthly_churn_that_month": "3-5%", "note": "Flat tail begins"},
+      {"month": 24, "pct_remaining": "20-30%", "monthly_churn_that_month": "2-4%", "note": "Lifers"}
+    ],
+    "key_insight": "The battle is won or lost in Months 1-3. A customer who survives Month 3 is significantly more likely to stay long-term. This is where onboarding, expectation-setting, and habit formation have maximum leverage."
+  },
+
+  "churn_signals": {
+    "description": "Behavioral signals that predict churn, ranked by predictive strength",
+    "signals": [
+      {
+        "signal": "Skipped a shipment",
+        "predictive_strength": "VERY HIGH (3-5x churn risk)",
+        "lead_time": "30-60 days",
+        "intervention": "Personal outreach within 48 hours. Ask why. Offer frequency adjustment.",
+        "confidence": "B",
+        "source": "Recharge merchant data",
+        "in_danilo_model": true
+      },
+      {
+        "signal": "Payment failure (even if recovered)",
+        "predictive_strength": "HIGH (2x churn risk within 90 days)",
+        "lead_time": "Immediate to 90 days",
+        "intervention": "Full dunning stack (smart retries + card updater + email/SMS). Even after recovery, flag for engagement sequence.",
+        "confidence": "B",
+        "source": "ProfitWell data",
+        "in_danilo_model": true,
+        "note": "Recovery does not eliminate risk — recovered customers still churn at 2x rate"
+      },
+      {
+        "signal": "Support complaint filed",
+        "predictive_strength": "HIGH (2-3x churn risk)",
+        "lead_time": "14-30 days",
+        "intervention": "Immediate resolution. Follow up 48 hours later. Flag in churn scoring.",
+        "confidence": "B",
+        "source": "ProfitWell data",
+        "in_danilo_model": true
+      },
+      {
+        "signal": "Reduced order frequency (e.g., monthly → every 6 weeks)",
+        "predictive_strength": "HIGH (2-3x churn risk)",
+        "lead_time": "30-90 days",
+        "intervention": "Re-engagement content sequence. Check if product satisfaction issue.",
+        "confidence": "B",
+        "source": "Recharge, Stay AI data",
+        "in_danilo_model": false,
+        "note": "MISSING from Danilo's model — should add"
+      },
+      {
+        "signal": "Downgraded subscription quantity",
+        "predictive_strength": "HIGH (2-3x churn risk)",
+        "lead_time": "30-60 days",
+        "intervention": "Thank for staying. Offer value-add content instead of discount.",
+        "confidence": "C",
+        "source": "Recharge data",
+        "in_danilo_model": false,
+        "note": "MISSING from Danilo's model — should add"
+      },
+      {
+        "signal": "Email engagement dropped (>50% open rate decline from baseline)",
+        "predictive_strength": "MEDIUM-HIGH (1.5-2x churn risk)",
+        "lead_time": "30-60 days",
+        "intervention": "Switch to SMS channel. Send high-value content (not promotional).",
+        "confidence": "B",
+        "source": "Klaviyo + Recharge integration data",
+        "in_danilo_model": true
+      },
+      {
+        "signal": "No website visits between orders",
+        "predictive_strength": "MEDIUM (1.5x churn risk)",
+        "lead_time": "30-60 days",
+        "intervention": "Content that drives to site (new article, results calculator, community).",
+        "confidence": "C",
+        "source": "Stay AI data",
+        "in_danilo_model": false
+      },
+      {
+        "signal": "Acquired via deep discount / promo code",
+        "predictive_strength": "MEDIUM (1.3-1.5x churn risk)",
+        "lead_time": "At acquisition",
+        "intervention": "Fast-track onboarding. Emphasize value over savings from Day 1.",
+        "confidence": "B",
+        "source": "ProfitWell: discount-acquired customers churn 20-40% faster",
+        "in_danilo_model": false,
+        "note": "CRITICAL addition — this is a signal at acquisition time, not during subscription"
+      },
+      {
+        "signal": "Previously canceled and resubscribed",
+        "predictive_strength": "MEDIUM (1.5x churn risk)",
+        "lead_time": "Ongoing",
+        "intervention": "Extra engagement. Do not offer discounts (reinforces cancel-for-discount pattern).",
+        "confidence": "C",
+        "source": "Behavioral pattern analysis",
+        "in_danilo_model": false
+      }
+    ]
+  },
+
+  "composite_risk_scoring": {
+    "description": "Recommended tiered intervention based on combined signals",
+    "confidence": "C",
+    "tiers": [
+      {
+        "risk_level": "CRITICAL",
+        "churn_probability": ">70%",
+        "trigger": "Skipped shipment + support complaint, OR skipped + payment failure",
+        "intervention": "Immediate personal outreach (email + SMS from founder) within 48 hours",
+        "channel": "SMS + personal email"
+      },
+      {
+        "risk_level": "HIGH",
+        "churn_probability": "40-70%",
+        "trigger": "Any 2 of: skip, frequency reduction, email disengagement, downgrade",
+        "intervention": "Automated retention offer (pause option, free gift, science content)",
+        "channel": "Email + SMS"
+      },
+      {
+        "risk_level": "MEDIUM",
+        "churn_probability": "20-40%",
+        "trigger": "Any 1 of: skip, frequency reduction, email disengagement",
+        "intervention": "Re-engagement content (why you subscribed, results stories, usage tips)",
+        "channel": "Email"
+      },
+      {
+        "risk_level": "LOW",
+        "churn_probability": "<20%",
+        "trigger": "Strong email engagement, no skips, regular portal visits",
+        "intervention": "Standard engagement (loyalty program, early access, community)",
+        "channel": "Email"
+      }
+    ]
+  },
+
+  "dunning_model": {
+    "description": "Involuntary churn recovery — highest ROI retention activity",
+    "confidence": "B",
+    "source": "Recurly, ProfitWell/Paddle, Recharge published data",
+    "stack": [
+      {"component": "Smart retry timing (1, 3, 5, 7 days post-failure, varying time of day)", "recovery_rate": "35-45% of failures", "cost": "Zero (processor feature)"},
+      {"component": "Card updater services (Visa Account Updater, Mastercard ABU via Stripe)", "recovery_rate": "+10-15% additional", "cost": "Zero (Shopify Payments/Stripe built-in)"},
+      {"component": "Dunning email sequence (4 emails over 14 days)", "recovery_rate": "+10-15% additional", "cost": "Klaviyo automation"},
+      {"component": "SMS dunning", "recovery_rate": "+5-10% additional", "cost": "Postscript automation"},
+      {"component": "Grace period (10 days before hard cancellation)", "recovery_rate": "Prevents premature loss", "cost": "Platform setting"}
+    ],
+    "total_expected_recovery": "55-70% of failed payments",
+    "churn_impact": "Reduces total monthly churn by 1.5-3 percentage points",
+    "ltv_impact": "At 12% base churn, reducing to 10% extends avg lifetime from 8.3 to 10 months = 20% LTV increase",
+    "ionwave_note": "This is the single highest-ROI retention activity. Requires zero customer psychology change — purely payment mechanics. Implement from Day 1."
+  },
+
+  "intelligence_gaps": [
+    {
+      "gap": "No IonWave-specific churn data exists (pre-launch)",
+      "impact": "All predictions based on industry benchmarks",
+      "upgrade_path": "Collect 90 days of actual churn data post-launch. Recalibrate model at Day 90.",
+      "priority": "EXPECTED — not actionable until post-launch"
+    },
+    {
+      "gap": "Marine plasma time-to-value unknown",
+      "impact": "If onset >60 days, Month 1-3 cliff will be worse than industry benchmark",
+      "upgrade_path": "Mine Seaonic reviews for time-to-value language (CSP-002 priority #1)",
+      "priority": "CRITICAL"
+    },
+    {
+      "gap": "Stay AI's churn prediction claims not independently verified",
+      "impact": "Cannot confirm if AI platform justifies 2x cost premium",
+      "upgrade_path": "Request case study data from Stay AI. Compare with manual Klaviyo flows.",
+      "priority": "LOW (not relevant until 500+ subscribers)"
+    }
+  ]
+}

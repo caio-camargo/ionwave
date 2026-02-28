@@ -1,0 +1,103 @@
+{
+  "tup_id": "m19",
+  "tup_name": "Customer Lifecycle & CRM",
+  "cluster": "BCL-4",
+  "cluster_name": "Retention & Lifecycle",
+  "status": "migrated",
+  "current_version": "1.0.0",
+  "current_quality": 8.4,
+  "sheet_count": 13,
+  "sheets": [
+    { "index": 451, "name": "CRM Architecture", "rows": 24 },
+    { "index": 452, "name": "Customer Data Model", "rows": 18 },
+    { "index": 453, "name": "CRM Metrics Dashboard", "rows": 19 },
+    { "index": 454, "name": "Customer Segmentation", "rows": 10 },
+    { "index": 455, "name": "CRM Tab Map", "rows": 10 },
+    { "index": 456, "name": "Customer Lifecycle Map", "rows": 8 },
+    { "index": 457, "name": "Customer Lifecycle", "rows": 21 },
+    { "index": 458, "name": "Customer Segmentation Matrix", "rows": 20 },
+    { "index": 459, "name": "LTV by Acquisition Source", "rows": 22 },
+    { "index": 460, "name": "Cohort Analysis", "rows": 5 },
+    { "index": 461, "name": "Cohort Analysis Tracker", "rows": 35 },
+    { "index": 462, "name": "Cohort Analysis Template", "rows": 15 },
+    { "index": 463, "name": "LTV Calculation Models", "rows": 35 }
+  ],
+  "files": [
+    "data/m19/crm_architecture.md",
+    "data/m19/lifecycle_and_segmentation.md",
+    "data/m19/ltv_and_cohort_analysis.md",
+    "data/m19/crm_metrics_and_dashboards.md",
+    "data/m19/dialogue_summary.md",
+    "data/m19/opkit_customer_lifecycle.md",
+    "data/m19/_meta.json"
+  ],
+  "opkits": ["OK-M19-001"],
+  "feeds_into": ["m17", "m20", "m21", "m25", "m27"],
+  "requires": [],
+  "key_blockers": [],
+  "next_action": "Populate cohort data after first 100 customers; calibrate RFM thresholds after 500 customers; validate lifecycle stage transition rates from real data",
+  "revisions": [
+    {
+      "version": "1.0.0",
+      "date": "2026-02-07",
+      "actor": "Claude (TWP-001)",
+      "change_type": "initial_workshop",
+      "protocol_used": "TWP-001 v2.0.0",
+      "what_changed": "Initial workshop: 13 Danilo content tabs consolidated into 4 content files (crm_architecture.md, lifecycle_and_segmentation.md, ltv_and_cohort_analysis.md, crm_metrics_and_dashboards.md). OpKit OK-M19-001 created. Key additions: non-linear lifecycle paths (U3), Minimum Viable CRM with 3 Day-1 flows (U2), at-risk sub-segmentation (U5), churn risk score formula (U7), confidence intervals for cohort analysis (U1), founder daily CRM check-in (U8), customer-count tool triggers (U4), seasonality in metrics (U6).",
+      "quality_score": 8.4,
+      "quality_rationale": "Strong CRM architecture (model-as-CRM concept). A-grade segmentation with dual-layer approach. B-grade LTV/cohort framework (rigorous but all data is empty). B+ metrics with founder-appropriate workflow. D-grade on all actual numbers (pre-revenue estimates). 8 upgrades applied from dialogue.",
+      "dialogue_ref": {
+        "file": "dialogue_summary.md",
+        "tup_version": "1.0.0",
+        "personas": ["Data Scientist", "DTC Growth Operator", "Behavioral Economist"],
+        "rounds": 5,
+        "saturated": true,
+        "upgrades": 8,
+        "unresolved": 0
+      },
+      "hypotheses_affected": ["HYP-001", "HYP-002", "HYP-003", "HYP-005", "HYP-006"]
+    }
+  ],
+  "intelligence_gaps": [
+    {
+      "gap": "Actual cohort retention curves for marine plasma",
+      "priority": "CRITICAL",
+      "validation_path": "Track from first 100 customers; compare to supplement benchmarks"
+    },
+    {
+      "gap": "Real LTV by acquisition source",
+      "priority": "CRITICAL",
+      "validation_path": "Requires 6 months of data per source with 50+ customers each"
+    },
+    {
+      "gap": "Supplement consumption cycle timing (30 days assumed, may be 35-45)",
+      "priority": "HIGH",
+      "validation_path": "Track reorder timing for first 200 customers"
+    },
+    {
+      "gap": "Churn rate baseline (5% target vs. reality)",
+      "priority": "HIGH",
+      "validation_path": "Measure from Month 3 when subscription base forms"
+    },
+    {
+      "gap": "At-risk sub-segment distribution (Product vs Budget vs Attention)",
+      "priority": "HIGH",
+      "validation_path": "Analyze churn reasons from exit surveys after 100 churned customers"
+    },
+    {
+      "gap": "Lifecycle stage transition rates",
+      "priority": "HIGH",
+      "validation_path": "Track from Day 1, publish after 100 customers"
+    },
+    {
+      "gap": "RFM threshold accuracy for supplements",
+      "priority": "MEDIUM",
+      "validation_path": "Calibrate after 6 months of cohort data with 500+ customers"
+    },
+    {
+      "gap": "Optimal lifecycle stage count (8 operational vs simpler 6-stage)",
+      "priority": "MEDIUM",
+      "validation_path": "Simplify if data shows some stages are not actionable"
+    }
+  ]
+}

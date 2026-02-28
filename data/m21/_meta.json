@@ -1,0 +1,59 @@
+{
+  "tup_id": "M21",
+  "tup_name": "Subscription & Retention",
+  "cluster": "BCL-4",
+  "cluster_name": "Retention & Lifecycle",
+  "status": "migrated",
+  "revisions": [
+    {
+      "version": "1.0.0",
+      "date": "2026-02-06",
+      "actor": "Caio + Claude (claude-opus-4-6)",
+      "change_type": "initial_workshop",
+      "protocol_used": "TWP-001 v2.0.0",
+      "what_changed": "Initial workshop. 5 content files produced from Danilo's void spaces + web research. OpKit created. Education-first win-back strategy replaces Danilo's discount ladder. Loop Subscriptions recommended over Danilo's Skio (6x price increase invalidated).",
+      "quality_score": 8.0,
+      "quality_rationale": "Strong industry evidence (B-grade), honest confidence grading, actionable playbook with implementation timeline. Weakness: no IonWave-specific data (pre-launch), depletion messaging at D-grade.",
+      "dialogue_ref": {
+        "file": "dialogue_summary.md",
+        "tup_version": "1.0.0",
+        "personas": ["Skeptical Investor", "Growth Engineer", "Category Expert (DTC Subscription)"],
+        "rounds": 6,
+        "saturated": true,
+        "upgrades": 3,
+        "unresolved": 0
+      },
+      "hypotheses_affected": ["HYP-002", "HYP-003", "HYP-003.1", "HYP-003.2", "HYP-003.3", "HYP-003.4", "HYP-005"]
+    }
+  ],
+  "current_version": "1.0.0",
+  "current_quality": 8.0,
+  "sheet_count": 5,
+  "sheets": [
+    "subscription_platform",
+    "subscription_psychology",
+    "churn_prediction",
+    "win_back_offer_ladder",
+    "retention_playbook"
+  ],
+  "files": {
+    "subscription_platform.json": "Platform comparison (Recharge, Skio, Stay AI, Loop). Recommendation: Loop for pre-launch.",
+    "subscription_psychology.md": "Why people subscribe/cancel supplements. Psychological retention levers.",
+    "churn_prediction.json": "Churn signals, composite risk scoring, dunning model, retention curve.",
+    "win_back_offer_ladder.md": "Education-first win-back strategy replacing Danilo's discount ladder.",
+    "retention_playbook.md": "Prioritized retention tactics (3 tiers), scenario modeling, implementation timeline.",
+    "opkit_subscription_retention.md": "OpKit: reusable Subscription & Retention Design Kit for any DTC consumable Trade.",
+    "dialogue_summary.md": "Persona dialogue transcript: 6 rounds, 3 personas (Skeptical Investor, Growth Engineer, Category Expert), 3 upgrades, saturated. Key insight: churn tactic stacking is non-linear."
+  },
+  "opkits": ["OK-M21-001"],
+  "feeds_into": ["M3 (Financial Model — churn rate affects LTV:CAC)", "M19 (Customer Lifecycle — retention curve)"],
+  "requires": ["M0 (Trade Thesis — DONE)"],
+  "key_blockers": [],
+  "next_action": "Collect actual IonWave churn data post-launch. Mine Seaonic reviews for time-to-value (upgrades HYP-003.1).",
+  "intelligence_gaps": [
+    "Marine plasma time-to-value unknown (CRITICAL)",
+    "Loop Subscriptions pricing/integration not independently verified",
+    "Depletion messaging needs legal/regulatory review",
+    "No IonWave-specific churn data (expected pre-launch)"
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "tup_id": "m16",
+  "tup_name": "Content & SEO",
+  "cluster": "BCL-5",
+  "cluster_name": "Growth & Market",
+  "status": "workshopped",
+  "current_version": "1.0.0",
+  "current_quality": 8.4,
+  "revisions": [
+    {
+      "version": "1.0.0",
+      "date": "2026-02-06",
+      "actor": "claude-opus-4-6",
+      "change_type": "initial_workshop",
+      "protocol_used": "TWP-001 v2.0.0",
+      "what_changed": "Full M16 workshop: 8 Danilo content tabs + 1 bonus (507) consolidated into 7 production files. Content strategy, SEO strategy, keyword research, pillar/cluster content model, link building + native ads, technical SEO checklist, content repurposing system. HARO replaced with current alternatives (Qwoted, Featured.com). YMYL/E-E-A-T infrastructure added. Publishing cadence calibrated with Founder Mode tier. Google Merchant Center gap closed. Native ads phase-gated as optional.",
+      "quality_score": 8.4,
+      "quality_rationale": "Strong: research-grounded, realistic timelines, actionable content, 8-round persona dialogue with 5 material upgrades. Limited by: unverified keyword volumes, no competitor backlink data, no CWV data for Shopify theme. Pre-launch planning — execution will determine final quality.",
+      "dialogue_ref": {
+        "file": "dialogue_summary.md",
+        "tup_version": "1.0.0",
+        "personas": ["Growth Engineer", "Skeptical Investor", "Category Expert (SEO/Content)"],
+        "rounds": 8,
+        "saturated": true,
+        "upgrades": 5,
+        "unresolved": 4
+      },
+      "hypotheses_affected": ["HYP-006", "HYP-001"]
+    }
+  ],
+  "sheet_count": 9,
+  "sheets": [
+    {"danilo_id": "408", "title": "Content & GTM Strategy", "rows": 5, "disposition": "merged into content_strategy.md (only 5 generic rows)"},
+    {"danilo_id": "409", "title": "Content Calendar", "rows": 8, "disposition": "merged into content_strategy.md (generic day-of-week template)"},
+    {"danilo_id": "410", "title": "SEO Strategy Overview", "rows": 27, "disposition": "expanded into seo_strategy.md"},
+    {"danilo_id": "411", "title": "SEO Keyword Research", "rows": 27, "disposition": "expanded into seo_keyword_research.json"},
+    {"danilo_id": "412", "title": "Technical SEO Checklist", "rows": 34, "disposition": "expanded into technical_seo_checklist.md"},
+    {"danilo_id": "413", "title": "SEO Content Strategy", "rows": 21, "disposition": "expanded into seo_content_strategy.md"},
+    {"danilo_id": "414", "title": "SEO Link Building", "rows": 20, "disposition": "merged into seo_link_building.md"},
+    {"danilo_id": "415", "title": "Native Ads Playbook", "rows": 38, "disposition": "merged into seo_link_building.md (phase-gated as optional)"},
+    {"danilo_id": "507", "title": "Content Repurposing System", "rows": 45, "disposition": "expanded into content_repurposing.md"}
+  ],
+  "files": [
+    "data/m16/content_strategy.md",
+    "data/m16/seo_strategy.md",
+    "data/m16/seo_keyword_research.json",
+    "data/m16/seo_content_strategy.md",
+    "data/m16/seo_link_building.md",
+    "data/m16/technical_seo_checklist.md",
+    "data/m16/content_repurposing.md",
+    "data/m16/dialogue_summary.md",
+    "data/m16/opkit_content_seo.md",
+    "data/m16/_meta.json"
+  ],
+  "opkits": ["OK-M16-001"],
+  "feeds_into": ["m12", "m13", "m14", "m17", "m22", "m23"],
+  "requires": ["m8", "m9"],
+  "key_blockers": [],
+  "next_action": "Verify keyword volumes with Google Keyword Planner / Ubersuggest post-launch. Run PageSpeed Insights after Shopify theme selection. Publish first blog post (Complete Guide to Electrolytes).",
+  "intelligence_gaps": [
+    {"gap": "Marine plasma keyword volumes unverified", "priority": "P1", "closure": "GSC impression data after 1-2 months live"},
+    {"gap": "No competitor backlink analysis", "priority": "P2", "closure": "Ahrefs free check on LMNT, AG1, Nuun at Month 3"},
+    {"gap": "Shopify Core Web Vitals unverified", "priority": "P0", "closure": "PageSpeed Insights after theme selection"},
+    {"gap": "Organic CVR assumptions untested", "priority": "P2", "closure": "GA4 data after 3+ months organic traffic"}
+  ],
+  "danilo_source_note": "9 content tabs (408-415 + 507) totaling ~225 rows. 408 (GTM) and 409 (Calendar) were thin (5 and 8 rows respectively) — merged into content_strategy.md. 414 (Link Building) and 415 (Native Ads) merged into seo_link_building.md with native ads phase-gated as optional. 507 (Content Repurposing) is from a different numbering range but topically belongs to M16."
+}

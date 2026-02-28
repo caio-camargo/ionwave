@@ -1,0 +1,68 @@
+{
+  "_meta": {
+    "sheet_name": "Competitor Swipe Catalog",
+    "parent_file": "02_market_intelligence",
+    "version": "1.0.0",
+    "last_updated": "2026-02-04",
+    "updated_by": "claude-opus-4.5",
+    "status": "draft",
+    "quality_score": "3/10",
+    "data_type": "template",
+    "note": "Template with example entries. Drive links are placeholders - need actual screenshots/files saved to Google Drive."
+  },
+  "data": {
+    "folder_structure": [
+      "/Swipe/LMNT/Ads",
+      "/Swipe/LMNT/Landing_Pages",
+      "/Swipe/LMNT/Emails",
+      "/Swipe/LMNT/Packaging",
+      "/Swipe/Seaonic/Ads",
+      "/Swipe/Seaonic/Landing_Pages",
+      "/Swipe/Seed/Landing_Pages",
+      "/Swipe/AG1/Emails",
+      "/Swipe/Ritual/Packaging"
+    ],
+    "catalog": [
+      {
+        "competitor": "LMNT",
+        "category": "Ads",
+        "asset_type": "Static Hook",
+        "drive_link": "[link]",
+        "why_it_works": "Bold contrast, clear value prop in 3 words, strong CTA",
+        "how_well_use": "Adapt bold visual style for our 78 minerals vs 3 messaging"
+      },
+      {
+        "competitor": "LMNT",
+        "category": "Ads",
+        "asset_type": "Video VSL",
+        "drive_link": "[link]",
+        "why_it_works": "Problem-agitation-solution structure, testimonial-heavy, strong hook in first 3 seconds",
+        "how_well_use": "Model our VSL structure but lead with ocean-sourced story"
+      },
+      {
+        "competitor": "Seed",
+        "category": "Landing Pages",
+        "asset_type": "Hero Section",
+        "drive_link": "[link]",
+        "why_it_works": "Science-forward positioning, clinical study references, premium feel without being inaccessible",
+        "how_well_use": "Emulate science credibility approach for our marine plasma story"
+      },
+      {
+        "competitor": "AG1",
+        "category": "Emails",
+        "asset_type": "Welcome Sequence",
+        "drive_link": "[link]",
+        "why_it_works": "5-email onboarding, education-first, builds trust before upsell",
+        "how_well_use": "Model our welcome flow structure - educate on marine plasma before pushing subscription"
+      },
+      {
+        "competitor": "Ritual",
+        "category": "Packaging",
+        "asset_type": "Unboxing Experience",
+        "drive_link": "[link]",
+        "why_it_works": "Premium unboxing, clear ingredient transparency on box, Instagram-worthy",
+        "how_well_use": "Design packaging that encourages unboxing content and shows COA/purity info"
+      }
+    ]
+  }
+}

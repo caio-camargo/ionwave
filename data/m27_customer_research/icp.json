@@ -1,0 +1,106 @@
+{
+  "_meta": {
+    "sheet_name": "Ideal Customer Profile",
+    "parent_file": "03a_customer_research_icp",
+    "version": "1.0.0",
+    "last_updated": "2026-02-04",
+    "updated_by": "claude-opus-4.5",
+    "status": "draft",
+    "quality_score": "7/10",
+    "data_type": "hybrid",
+    "note": "Primary ICP is the strongest defined profile with highest confidence. Secondary ICPs represent expansion segments. Negative personas help with ad exclusion and messaging focus."
+  },
+  "data": {
+    "primary_icp": {
+      "label": "The Optimized Health-Seeker",
+      "confidence": "B",
+      "attributes": [
+        {
+          "dimension": "Demographics",
+          "definition": "Male, 28-45 years old, household income $100K+",
+          "confidence": "B",
+          "source": "VOC analysis, LMNT customer proxy, Reddit/podcast audience demographics"
+        },
+        {
+          "dimension": "Psychographics",
+          "definition": "Self-identifies as a biohacker or health optimizer. Listens to Huberman Lab, Attia (The Drive), Rhonda Patrick. Values data, science, and evidence over marketing.",
+          "confidence": "B",
+          "source": "Podcast audience overlap analysis, Reddit behavior patterns"
+        },
+        {
+          "dimension": "Behaviors",
+          "definition": "Already takes 3+ supplements daily. Has tried LMNT, Liquid IV, or similar electrolyte products. Spends $100+/month on health and wellness products. Reads labels obsessively.",
+          "confidence": "B",
+          "source": "LMNT review analysis, competitor customer profiles"
+        },
+        {
+          "dimension": "Pain Point",
+          "definition": "Knows that most electrolyte powders are synthetic, processed, and incomplete. Wants a whole-food source with full mineral spectrum but can't find one that meets his standards.",
+          "confidence": "B",
+          "source": "VOC quotes LMNT-031, LMNT-009, Reddit threads"
+        },
+        {
+          "dimension": "Primary Objection",
+          "definition": "Is this actually better? Show me the data. How is this different from the $10 stuff at CVS or the $45 LMNT box?",
+          "confidence": "B",
+          "source": "VOC quote LMNT-003, support email patterns"
+        },
+        {
+          "dimension": "Where They Are",
+          "definition": "YouTube (health/science channels), Podcasts (health/biohacking), Reddit (r/Supplements, r/Biohackers, r/keto), Twitter/X (health optimization accounts)",
+          "confidence": "B",
+          "source": "Channel analysis, audience overlap research"
+        },
+        {
+          "dimension": "Buying Trigger",
+          "definition": "Combination of: (1) science-backed claims with published research, (2) clean label with full transparency, (3) social proof from people he considers credible (not influencers, but scientists/MDs/peers)",
+          "confidence": "B",
+          "source": "Purchase behavior analysis from LMNT reviews, competitor conversion studies"
+        }
+      ]
+    },
+    "secondary_icps": [
+      {
+        "segment": "Keto/Carnivore Dieters",
+        "description": "Strict keto or carnivore adherents (2+ years) who experience electrolyte depletion as a side effect of their diet. Already aware of the electrolyte need. Currently buying LMNT, snake juice, or DIY electrolyte mixes.",
+        "why_target": "Highest urgency pain point. Most validated by VOC (7+ direct quotes from LMNT reviews). Established buying behavior for electrolyte products. Strong community word-of-mouth potential.",
+        "confidence": "A"
+      },
+      {
+        "segment": "Female Wellness / Fasting",
+        "description": "Women 35-55 practicing intermittent or extended fasting for health, weight management, or longevity. Concerned about electrolyte depletion during fasting windows. Sensitive to anything that might break a fast.",
+        "why_target": "Large and growing segment (IF popularity increasing). Underserved by current electrolyte brands that include sweeteners/calories. High potential for community-driven growth through fasting Facebook groups.",
+        "confidence": "C"
+      },
+      {
+        "segment": "Endurance Athletes",
+        "description": "Runners, cyclists, triathletes, and CrossFitters who train 5+ times per week. Experience cramping, fatigue, and performance decline from electrolyte imbalance. Value performance optimization.",
+        "why_target": "Clear performance use case with measurable results. Habitual supplement buyers. Willing to pay premium for proven products. Strong social proof dynamics in athletic communities.",
+        "confidence": "B"
+      },
+      {
+        "segment": "Chronic Fatigue / Autoimmune",
+        "description": "People dealing with chronic fatigue, brain fog, fibromyalgia, or autoimmune conditions. Exploring mineral supplementation as part of broader health protocol. Often recommended marine minerals by functional medicine practitioners.",
+        "why_target": "Extremely high lifetime value (daily use, indefinite). Strong emotional connection to solutions that work. Active in support communities with high word-of-mouth. Functional medicine practitioner channel opportunity.",
+        "confidence": "C"
+      }
+    ],
+    "negative_personas": [
+      {
+        "label": "General Fitness Casuals",
+        "description": "People who work out 1-2x per week and just want a sports drink. Not interested in ingredient quality, sourcing, or science. Would never pay premium for electrolytes.",
+        "why_exclude": "Low willingness-to-pay. High CAC to educate. Will churn after one order. Dilutes brand positioning if targeted. Gatorade and Liquid IV serve this market."
+      },
+      {
+        "label": "Price Shoppers",
+        "description": "People whose primary decision driver is lowest price per serving. Compare everything on Amazon by price. Will switch for a $2 savings.",
+        "why_exclude": "Impossible to retain profitably. Zero brand loyalty. Will leave negative reviews comparing price to bulk electrolyte powder. Destroys unit economics."
+      },
+      {
+        "label": "People Who Need Basic Education",
+        "description": "People who don't yet understand what electrolytes are, why they matter, or why tap water might not be sufficient. Need to be educated from zero.",
+        "why_exclude": "Extremely high CAC to educate. Long sales cycle. Low conversion rate. IonWave should target people who already understand the need and are looking for a better solution, not people who need to be convinced the problem exists."
+      }
+    ]
+  }
+}

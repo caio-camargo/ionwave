@@ -1,0 +1,36 @@
+{
+  "_meta": {
+    "sheet_name": "Competitor Brand Audit",
+    "parent_file": "02_market_intelligence",
+    "version": "1.0.0",
+    "last_updated": "2026-02-04",
+    "updated_by": "claude-opus-4.5",
+    "status": "draft",
+    "quality_score": "5/10",
+    "data_type": "structured_table",
+    "note": "High-level brand positioning analysis. Needs deeper visual audit with actual creative samples."
+  },
+  "data": {
+    "competitor_brands": [
+      {
+        "brand": "LMNT",
+        "visual_style": "Bold colorful",
+        "brand_voice": "Confident bro-y",
+        "key_vulnerability": "Only 3 minerals"
+      },
+      {
+        "brand": "Seaonic",
+        "visual_style": "Premium minimal",
+        "brand_voice": "Sophisticated",
+        "key_vulnerability": "Expensive"
+      },
+      {
+        "brand": "Liquid IV",
+        "visual_style": "Bright young",
+        "brand_voice": "Fun casual",
+        "key_vulnerability": "Sugary"
+      }
+    ],
+    "our_brand_lane": "Premium-accessible, science-backed, complete"
+  }
+}

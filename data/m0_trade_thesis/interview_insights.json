@@ -1,0 +1,164 @@
+{
+  "_meta": {
+    "sheet_name": "Interview Insights Synthesis",
+    "parent_file": "01_strategic_foundation",
+    "version": "1.1.0",
+    "last_updated": "2026-02-04",
+    "updated_by": "claude-opus-4.5",
+    "status": "proxy_filled",
+    "quality_score": "4/10",
+    "data_type": "structured_table",
+    "note": "Backfilled with LMNT proxy data from 03B VOC (31 quotes at saturation). ALL DATA IS LMNT PROXY — not IonWave customer data. Must be validated/replaced with IonWave-specific interviews post-launch.",
+    "data_source": "03B_Customer_Research_VOC_v1.0.1 (LMNT customer voice)",
+    "upgrade_path": "Conduct 5-10 IonWave-specific customer interviews to replace proxy data"
+  },
+  "data": {
+    "pain_points": [
+      {
+        "rank": 1,
+        "pain_point": "Overwhelming saltiness / taste",
+        "frequency": "6 quotes (19.4%)",
+        "sample_quote": "jarringly salty (LMNT-001)",
+        "implication": "Product opportunity: marine plasma natural mineral balance; position as 'all the electrolytes, none of the salt bomb'",
+        "confidence": "A",
+        "source": "03B VOC — 6 directly verified quotes"
+      },
+      {
+        "rank": 2,
+        "pain_point": "High price ($500+/yr daily)",
+        "frequency": "3 quotes (9.7%)",
+        "sample_quote": "over $500 a year just for an electrolyte drink (LMNT-013)",
+        "implication": "Price positioning: 10-15% below Seaonic per thesis; ensure beats LMNT $/serving for daily users",
+        "confidence": "A",
+        "source": "03B VOC — 3 directly verified quotes"
+      },
+      {
+        "rank": 3,
+        "pain_point": "Fasted nausea / stomach issues",
+        "frequency": "3 quotes (9.7%)",
+        "sample_quote": "Mild nausea and stomach gurgling (LMNT-030)",
+        "implication": "Test marine plasma tolerance on empty stomach; if better, this is a differentiator",
+        "confidence": "A",
+        "source": "03B VOC — 3 directly verified quotes"
+      },
+      {
+        "rank": 4,
+        "pain_point": "Delivery/fulfillment failures",
+        "frequency": "2 quotes (6.5%)",
+        "sample_quote": "35 days later and still nothing (LMNT-023)",
+        "implication": "Ensure fulfillment reliable from Day 1; table stakes",
+        "confidence": "A",
+        "source": "03B VOC — 2 directly verified quotes"
+      }
+    ],
+    "jobs_to_be_done": [
+      {
+        "rank": 1,
+        "job": "Sustained daily energy without caffeine dependency",
+        "when": "Morning routine, afternoon slump",
+        "current_solution": "LMNT (positioned sport/fasting, not daily wellness)",
+        "our_opportunity": "HIGHEST — LMNT weakest here; marine plasma wellness story fits",
+        "confidence": "B",
+        "source": "ICP JTBD analysis + LMNT-029, LMNT-011"
+      },
+      {
+        "rank": 2,
+        "job": "Prevent keto flu / maintain electrolyte balance on restricted diet",
+        "when": "Starting keto, ongoing maintenance",
+        "current_solution": "LMNT, DIY salt water, magnesium supplements",
+        "our_opportunity": "HIGH — strong VOC validation; keto community is accessible",
+        "confidence": "A",
+        "source": "ICP JTBD analysis + LMNT-007, LMNT-010, LMNT-013"
+      },
+      {
+        "rank": 3,
+        "job": "Peak cognitive + physical performance throughout day",
+        "when": "All day, especially during work",
+        "current_solution": "LMNT, various supplement stacks",
+        "our_opportunity": "MODERATE — competes with broad supplement market, not just electrolytes",
+        "confidence": "B",
+        "source": "ICP Optimizer/Biohacker profile"
+      },
+      {
+        "rank": 4,
+        "job": "Identity expression — 'I optimize, therefore I am'",
+        "when": "Social media, community, purchasing decisions",
+        "current_solution": "LMNT brand, Seaonic for marine purists",
+        "our_opportunity": "MODERATE — requires brand equity IonWave doesn't yet have",
+        "confidence": "C",
+        "source": "ICP analysis + LMNT-031"
+      }
+    ],
+    "segment_insights": [
+      {
+        "segment": "Keto/Carnivore",
+        "interviewed": "7+ LMNT quotes (proxy)",
+        "key_insight": "Strongest validated segment; keto flu relief is acute, recurring pain point; community-driven discovery",
+        "willingness_to_pay": "HIGH ($1.50-2.00/serving)",
+        "priority": "1 - Primary"
+      },
+      {
+        "segment": "Biohackers",
+        "interviewed": "3-4 LMNT quotes (proxy)",
+        "key_insight": "Demands evidence and 'best-in-class' positioning; will research before buying",
+        "willingness_to_pay": "HIGH ($2.00+/serving)",
+        "priority": "2 - Primary"
+      },
+      {
+        "segment": "Endurance Athletes",
+        "interviewed": "2-3 LMNT quotes (proxy)",
+        "key_insight": "Performance improvement validated; high volume subscription-friendly; competes in LMNT territory",
+        "willingness_to_pay": "MOD-HIGH ($1.50/serving)",
+        "priority": "3 - Secondary"
+      },
+      {
+        "segment": "Exhausted Professionals",
+        "interviewed": "2-3 LMNT quotes (proxy)",
+        "key_insight": "Energy/wellness job validated; highest strategic opportunity per JTBD; least 'electrolyte-aware'",
+        "willingness_to_pay": "MOD ($1.00-1.50/serving)",
+        "priority": "2 - Primary (highest strategic opportunity)"
+      },
+      {
+        "segment": "General Health",
+        "interviewed": "0 specific",
+        "key_insight": "No validated evidence; highest price sensitivity; highest DIY substitute risk",
+        "willingness_to_pay": "LOW (<$1.00/serving)",
+        "priority": "5 - Deprioritize"
+      }
+    ],
+    "surprising_findings": [
+      "LMNT's dominant pain is TASTE (19.4%), not price. Customers tolerate price but actively work around saltiness.",
+      "Customers self-dose at 50% — half-packets, 2x dilution. Market says: 'too much sodium.'",
+      "Daily wellness job is underserved by everyone. LMNT=sport, Seaonic=purity, Quinton=pharma. Nobody owns daily wellness.",
+      "LMNT customer service is genuinely excellent — raises the bar for IonWave.",
+      "Biohackers treat electrolytes as IDENTITY products, not commodity supplements."
+    ],
+    "marketing_quotes": [
+      {
+        "theme": "Keto flu relief",
+        "source_expression": "Killed my keto flu symptoms in one day (LMNT-007)",
+        "ionwave_angle": "78 ocean minerals, zero compromises"
+      },
+      {
+        "theme": "Morning energy",
+        "source_expression": "Morning grogginess lifted faster (LMNT-029)",
+        "ionwave_angle": "What if your morning water actually woke you up?"
+      },
+      {
+        "theme": "Taste frustration",
+        "source_expression": "jarringly salty / super salty sewage (LMNT-001, LMNT-004)",
+        "ionwave_angle": "All the minerals. None of the salt bomb."
+      },
+      {
+        "theme": "Value justification",
+        "source_expression": "health benefits make it worth every penny (LMNT-014)",
+        "ionwave_angle": "78 minerals from the ocean. Worth it."
+      },
+      {
+        "theme": "Self-dosing",
+        "source_expression": "I typically use half packet (LMNT-018)",
+        "ionwave_angle": "Balanced by nature. No half-measures."
+      }
+    ]
+  }
+}

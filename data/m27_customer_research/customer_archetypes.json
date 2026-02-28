@@ -1,0 +1,207 @@
+{
+  "_meta": {
+    "sheet_name": "Customer Archetypes",
+    "parent_file": "03a_customer_research_icp",
+    "version": "1.0.0",
+    "last_updated": "2026-02-04",
+    "updated_by": "claude-opus-4.5",
+    "status": "draft",
+    "quality_score": "6/10",
+    "data_type": "narrative",
+    "note": "5 detailed customer personas. Keto Kevin and Biohacker Ben have strongest VOC validation. Fasting Fiona and Weekend Warrior Will need further research."
+  },
+  "data": {
+    "archetypes": [
+      {
+        "name": "Keto Kevin",
+        "demographics": {
+          "gender": "Male",
+          "age_range": "35-45",
+          "income": "$100K+",
+          "location": "Suburban",
+          "education": null,
+          "family_status": null
+        },
+        "diet": "Strict keto, 2+ years adherent",
+        "lifestyle": "Optimized daily routine. Tracks macros religiously. Listens to health podcasts. Active in keto communities online. Buys premium products when convinced of efficacy.",
+        "pain_points": [
+          "Keto flu symptoms persist despite experience",
+          "LMNT is expensive for daily use",
+          "Wants a cleaner, less processed option",
+          "Wife thinks he spends too much on supplements"
+        ],
+        "triggers": [
+          "Sees a trusted keto influencer recommend a new electrolyte",
+          "Experiences renewed keto flu symptoms after a cheat day",
+          "LMNT raises prices or changes formula",
+          "Discovers marine plasma concept through podcast or Reddit"
+        ],
+        "objections": [
+          "Is this actually better than LMNT?",
+          "I already have a system that works",
+          "Another supplement brand making big claims",
+          "How do I know the sourcing is legit?"
+        ],
+        "decision_drivers": [
+          "Published research or third-party testing",
+          "Clean ingredient list (no fillers, no artificial)",
+          "Price-per-serving math vs current solution",
+          "Social proof from keto community members he trusts"
+        ],
+        "quote": "I've optimized everything else in my diet - my electrolytes shouldn't be the weak link."
+      },
+      {
+        "name": "CrossFit Claire",
+        "demographics": {
+          "gender": "Female",
+          "age_range": "28-38",
+          "income": null,
+          "location": null,
+          "education": null,
+          "family_status": null
+        },
+        "diet": "Paleo-ish. Not strict but avoids processed food. Prioritizes protein.",
+        "lifestyle": "Trains 4-6x/week. CrossFit box is her social life. Posts workouts on Instagram. Competitive but fun. Values performance and aesthetics equally.",
+        "pain_points": [
+          "Gets cramps during WODs, especially in heat",
+          "Hates sugary sports drinks and their ingredients",
+          "Needs something gym-portable that fits in her bag",
+          "Wants a product that looks good on Instagram (aesthetic packaging)"
+        ],
+        "triggers": [
+          "Cramping during a competitive event or PR attempt",
+          "Seeing a fellow athlete post about an electrolyte product",
+          "Coach recommends electrolyte supplementation",
+          "Summer training intensifies dehydration symptoms"
+        ],
+        "objections": [
+          "I drink enough water already",
+          "Is this just another overpriced supplement?",
+          "I don't want to take something with weird ingredients",
+          "Does it actually taste good?"
+        ],
+        "decision_drivers": [
+          "Taste and mixability (non-negotiable)",
+          "Clean label she can feel good about",
+          "Endorsement from athletes or coaches she follows",
+          "Portable, gym-friendly packaging"
+        ],
+        "quote": "I put so much effort into my workout - I'm not going to ruin it with some garbage electrolyte drink."
+      },
+      {
+        "name": "Biohacker Ben",
+        "demographics": {
+          "gender": "Male",
+          "age_range": "30-50",
+          "income": "High ($150K+)",
+          "location": null,
+          "education": null,
+          "family_status": null
+        },
+        "diet": "Experimental. Has tried keto, carnivore, paleo, now focuses on bioavailability and micronutrients.",
+        "lifestyle": "Tech or finance professional. Listens to Huberman, Attia, Rhonda Patrick. Wears Oura Ring or Whoop. Tracks HRV, sleep, glucose. Spends $200+/mo on supplements without blinking. Researches everything obsessively before buying.",
+        "pain_points": [
+          "Wants THE BEST mineral source, not just adequate",
+          "Frustrated by incomplete synthetic mineral blends",
+          "Researches obsessively and can't find data on most brands",
+          "Skeptical of marketing claims without published evidence"
+        ],
+        "triggers": [
+          "Hears about marine plasma on a science-focused podcast",
+          "Reads a study on mineral bioavailability",
+          "Discovers his current electrolyte has undisclosed ingredients",
+          "Sees blood work showing mineral deficiencies"
+        ],
+        "objections": [
+          "Where's the research?",
+          "How is this different from Quinton?",
+          "Is the sourcing transparent and verified?",
+          "I need to see the full mineral profile and COA"
+        ],
+        "decision_drivers": [
+          "Published research or peer-reviewed data",
+          "Full transparency: COA, mineral profile, sourcing details",
+          "Bioavailability evidence (not just content claims)",
+          "Endorsement from scientists or MDs he respects"
+        ],
+        "quote": "If it doesn't have published research behind it, I'm not putting it in my body."
+      },
+      {
+        "name": "Fasting Fiona",
+        "demographics": {
+          "gender": "Female",
+          "age_range": "35-55",
+          "income": null,
+          "location": null,
+          "education": null,
+          "family_status": null
+        },
+        "diet": "Intermittent fasting, 16:8 or longer. May combine with low-carb or Mediterranean approach.",
+        "lifestyle": "Health-conscious professional or mother. Fasts for weight management, mental clarity, and longevity. Follows Dr. Mindy Pelz, Dr. Jason Fung. Active in fasting Facebook groups and subreddits.",
+        "pain_points": [
+          "Feels terrible during fasting windows (headaches, dizziness, brain fog)",
+          "Worried that electrolytes will break her fast",
+          "Doesn't want sugar, sweeteners, or calories during fasting",
+          "Confused about what's actually safe to consume while fasting"
+        ],
+        "triggers": [
+          "Hits a wall during a longer fast (24h+) and feels awful",
+          "Reads that electrolyte depletion is the cause of fasting side effects",
+          "Sees a fasting influencer recommend a specific electrolyte",
+          "Starts extended fasting and needs a protocol"
+        ],
+        "objections": [
+          "Will this break my fast?",
+          "Why can't I just use salt?",
+          "I don't trust supplement companies",
+          "How is this different from the cheap stuff?"
+        ],
+        "decision_drivers": [
+          "Zero calories, zero sweeteners, zero insulin response",
+          "Endorsed by fasting community leaders",
+          "Clean, minimal ingredient list",
+          "Clear explanation of why it won't break a fast"
+        ],
+        "quote": "I just want to feel good during my fast without worrying that I'm ruining it."
+      },
+      {
+        "name": "Weekend Warrior Will",
+        "demographics": {
+          "gender": "Male",
+          "age_range": "30-45",
+          "income": "Moderate ($60-90K)",
+          "location": "Suburban",
+          "education": null,
+          "family_status": null
+        },
+        "diet": "No specific diet. Tries to eat healthy but not obsessive. Drinks beer on weekends.",
+        "lifestyle": "Active but not obsessed. Plays weekend soccer, basketball, or does long hikes. Works a desk job. Not into the supplement scene. Values practicality over optimization. Shops at Costco.",
+        "pain_points": [
+          "Gets cramps after weekend sports, especially as he ages",
+          "Doesn't want Gatorade (knows it's sugar water)",
+          "Not a supplement guy and doesn't want to become one",
+          "Wants something simple without a complicated protocol"
+        ],
+        "triggers": [
+          "Bad cramping episode after a weekend game",
+          "Buddy recommends something that's 'not like a supplement'",
+          "Sees a simple, no-BS ad that doesn't look like bro-science",
+          "Wife buys it for him after hearing about it"
+        ],
+        "objections": [
+          "I'm not a supplement bro",
+          "This is probably overpriced salt",
+          "I can just drink more water",
+          "I don't want to think about this stuff"
+        ],
+        "decision_drivers": [
+          "Simple: one product, easy to use, no protocol",
+          "Affordable (price-conscious, not premium-seeking)",
+          "Normal branding (not aggressive/masculine supplement aesthetic)",
+          "Recommendation from someone he trusts (not an influencer)"
+        ],
+        "quote": "I don't want to become a supplement bro - I just want to stop cramping after basketball."
+      }
+    ]
+  }
+}

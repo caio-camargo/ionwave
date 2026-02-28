@@ -1,0 +1,362 @@
+{
+  "_meta": {
+    "description": "Crosswalk mapping Bootstrap file numbers to Danilo's TUP/Cluster hierarchy (Business Level only)",
+    "created": "2026-02-05",
+    "version": "1.0.0",
+    "authority": "Reconciliation Decision Log (tracking/Reconciliation_Decision_Log.md)",
+    "decisions": "REC-011 (Hybrid taxonomy), REC-002 through REC-008",
+    "notes": [
+      "Mapping is many-to-many: one Bootstrap file can map to multiple TUPs, and one TUP can draw from multiple files",
+      "Bootstrap file numbering (01-38) remains the primary key in the data layer",
+      "Danilo's TUP codes (M0-M40) are secondary identifiers for cluster navigation",
+      "All content is Imagination Passet scope",
+      "Studio Level (S0-S40) and Funnel Level (F0-F20) are out of scope — see REC-009, REC-010"
+    ]
+  },
+  "clusters": {
+    "BCL-0": {
+      "name": "Thesis & Meta",
+      "owner": "Nilo",
+      "decision": "REC-002 — MERGE (9 sub-decisions)",
+      "tups": ["M0", "M34", "M38", "M39", "M40"]
+    },
+    "BCL-1": {
+      "name": "Product & Science",
+      "owner": "PM (Product/Science)",
+      "decision": "REC-005 — DANILO CANON",
+      "tups": ["M5", "M6", "M7", "M8"]
+    },
+    "BCL-2": {
+      "name": "Money & Legal",
+      "owner": "PM (Finance/Legal)",
+      "decision": "REC-001 — PENDING",
+      "tups": ["M2", "M3", "M4", "M25"]
+    },
+    "BCL-3": {
+      "name": "DR & Creative",
+      "owner": "PM (DR/Creative)",
+      "decision": "REC-003 — DANILO CANON",
+      "tups": ["M11", "M12", "M13", "M14", "M15"]
+    },
+    "BCL-4": {
+      "name": "Retention & Lifecycle",
+      "owner": "PM (Lifecycle/CRM)",
+      "decision": "REC-006 — DANILO CANON",
+      "tups": ["M17", "M18", "M19", "M20", "M21", "M22"]
+    },
+    "BCL-5": {
+      "name": "Growth & Market",
+      "owner": "PM (Growth/Strategy)",
+      "decision": "REC-007 — DANILO CANON",
+      "tups": ["M10", "M16", "M23", "M26", "M27", "M28", "M29"]
+    },
+    "BCL-6": {
+      "name": "Operations & Infra",
+      "owner": "PM (Operations)",
+      "decision": "REC-004 — DANILO CANON",
+      "tups": ["M1", "M9", "M24", "M30", "M31", "M35", "M36", "M37"]
+    },
+    "BCL-7": {
+      "name": "Governance & School",
+      "owner": "PM (Systems/Gov)",
+      "decision": "REC-008 — DEFER",
+      "tups": ["M32", "M33"]
+    }
+  },
+  "file_to_tup": {
+    "01_strategic_foundation": {
+      "primary_tup": "M0",
+      "secondary_tups": ["M38", "M39"],
+      "cluster": "BCL-0",
+      "notes": "Thesis, assumptions, narratives. Bootstrap canon for analytical layer (REC-002i)."
+    },
+    "02_market_intelligence": {
+      "primary_tup": "M26",
+      "secondary_tups": ["M27"],
+      "cluster": "BCL-5",
+      "notes": "Competitive intel, market data. Migrated to JSON. Analytical outputs (Porter's, Market Sizing) are Bootstrap canon."
+    },
+    "03a_customer_research_icp": {
+      "primary_tup": "M27",
+      "secondary_tups": [],
+      "cluster": "BCL-5",
+      "notes": "ICP profiles, segmentation. Migrated to JSON. ICP Analysis is Bootstrap canon."
+    },
+    "03b_customer_research_voc": {
+      "primary_tup": "M27",
+      "secondary_tups": [],
+      "cluster": "BCL-5",
+      "notes": "VOC data, interview methodology. Migrated to JSON."
+    },
+    "04_planning_roadmaps": {
+      "primary_tup": "M35",
+      "secondary_tups": [],
+      "cluster": "BCL-6",
+      "notes": "30/90/365-day plans, roadmaps, Gantt charts."
+    },
+    "05a_product_strategy": {
+      "primary_tup": "M5",
+      "secondary_tups": ["M8"],
+      "cluster": "BCL-1",
+      "notes": "Product strategy, packaging. M8 (Brand Identity) overlaps."
+    },
+    "05b_formulation_supply": {
+      "primary_tup": "M5",
+      "secondary_tups": ["M6"],
+      "cluster": "BCL-1",
+      "notes": "Formulation specs, supplier evaluation. Spans M5 (Formulation) and M6 (Supply Chain)."
+    },
+    "06_unit_economics": {
+      "primary_tup": "M3",
+      "secondary_tups": [],
+      "cluster": "BCL-2",
+      "notes": "Unit economics, LTV models, break-even. Part of BCL-2 (Money & Legal) — PENDING."
+    },
+    "07_offer_strategy": {
+      "primary_tup": "M10",
+      "secondary_tups": ["M21"],
+      "cluster": "BCL-5",
+      "notes": "Offer strategy, subscription model. M10 (Pricing & Offer) + M21 (Subscriptions, BCL-4)."
+    },
+    "08_financial_model": {
+      "primary_tup": "M3",
+      "secondary_tups": ["M4"],
+      "cluster": "BCL-2",
+      "notes": "Cash flow, budget, financial reporting. Part of BCL-2 — PENDING."
+    },
+    "09_brand_messaging": {
+      "primary_tup": "M8",
+      "secondary_tups": ["M11"],
+      "cluster": "BCL-1",
+      "notes": "Brand guidelines, naming, story, ad copy bank. M8 (Brand Identity) primary, overlaps M11 (VSL, BCL-3)."
+    },
+    "10a_creative_strategy": {
+      "primary_tup": "M12",
+      "secondary_tups": [],
+      "cluster": "BCL-3",
+      "notes": "Ad psychology. Thin file (2 sheets) — may merge into M12."
+    },
+    "10b_creative_production": {
+      "primary_tup": "M12",
+      "secondary_tups": ["M14"],
+      "cluster": "BCL-3",
+      "notes": "Ad production, swipe files, account structure. M12 (Ad Creative) + M14 (Testing)."
+    },
+    "11a_funnel_strategy": {
+      "primary_tup": "M15",
+      "secondary_tups": [],
+      "cluster": "BCL-3",
+      "notes": "Funnel architecture, checkout optimization, landing pages."
+    },
+    "11b_pages_email": {
+      "primary_tup": "M17",
+      "secondary_tups": ["M15"],
+      "cluster": "BCL-4",
+      "notes": "Email flows, landing page copy. Spans BCL-3 (M15 Landing Pages) and BCL-4 (M17 Email)."
+    },
+    "12_media_acquisition": {
+      "primary_tup": "M13",
+      "secondary_tups": [],
+      "cluster": "BCL-3",
+      "notes": "Channel landscape, media buying, acquisition sources."
+    },
+    "13_content_seo": {
+      "primary_tup": "M16",
+      "secondary_tups": ["M29"],
+      "cluster": "BCL-5",
+      "notes": "SEO, content strategy, PR. M16 (Content & SEO) + M29 (PR & Communications)."
+    },
+    "14_community_engagement": {
+      "primary_tup": "M22",
+      "secondary_tups": [],
+      "cluster": "BCL-4",
+      "notes": "Community building, retention playbook. Maps to M22 (Referral)."
+    },
+    "15_operations_fulfillment": {
+      "primary_tup": "M24",
+      "secondary_tups": [],
+      "cluster": "BCL-6",
+      "notes": "3PL, shipping, returns."
+    },
+    "16_team_organization": {
+      "primary_tup": "M1",
+      "secondary_tups": ["M31"],
+      "cluster": "BCL-6",
+      "notes": "Team structure, hiring, job specs. M1 (Labor Deployment) + M31 (Hiring)."
+    },
+    "17_legal_compliance": {
+      "primary_tup": "M7",
+      "secondary_tups": ["M2"],
+      "cluster": "BCL-1",
+      "notes": "FDA compliance, claims, labels. M7 (Regulatory, BCL-1) + M2 (Entity & Legal, BCL-2)."
+    },
+    "18_analytics_reporting": {
+      "primary_tup": "M30",
+      "secondary_tups": [],
+      "cluster": "BCL-6",
+      "notes": "KPI dashboards, attribution, metrics."
+    },
+    "19_systems_automation": {
+      "primary_tup": "M37",
+      "secondary_tups": ["M36"],
+      "cluster": "BCL-6",
+      "notes": "AI agents, automation, integrations. M37 (AI & Automation) + M36 (Operational Infra)."
+    },
+    "20_fundraising": {
+      "primary_tup": "M4",
+      "secondary_tups": [],
+      "cluster": "BCL-2",
+      "notes": "Cap table, pitch deck, investor pipeline. Part of BCL-2 — PENDING."
+    },
+    "21_expansion_growth": {
+      "primary_tup": "M28",
+      "secondary_tups": [],
+      "cluster": "BCL-5",
+      "notes": "Amazon, B2B, retail expansion paths."
+    },
+    "22_research_development": {
+      "primary_tup": "M27",
+      "secondary_tups": [],
+      "cluster": "BCL-5",
+      "notes": "Bioavailability research, research methodology. Customer research adjacent."
+    },
+    "23_decision_support": {
+      "primary_tup": "M33",
+      "secondary_tups": ["M0"],
+      "cluster": "BCL-7",
+      "notes": "Decision frameworks, scorecards, graduation criteria. Spans BCL-7 (Governance) and BCL-0 (Thesis)."
+    },
+    "24_command_navigation": {
+      "primary_tup": "M40",
+      "secondary_tups": [],
+      "cluster": "BCL-0",
+      "notes": "Command center, navigation, term index. Deferred (REC-002g)."
+    },
+    "25_partnerships_influencers": {
+      "primary_tup": "M23",
+      "secondary_tups": [],
+      "cluster": "BCL-5",
+      "notes": "Creator pipeline, influencer strategy, advisory board."
+    },
+    "27_customer_experience_journey": {
+      "primary_tup": "M19",
+      "secondary_tups": ["M17", "M20"],
+      "cluster": "BCL-4",
+      "notes": "Customer lifecycle, journey maps, post-purchase flows. Spans M19 (Customer Lifecycle), M17 (Email), M20 (Support)."
+    },
+    "28_process_workflows": {
+      "primary_tup": "M36",
+      "secondary_tups": ["M35"],
+      "cluster": "BCL-6",
+      "notes": "Operating rhythms, Gantt charts, choreography."
+    },
+    "29_data_information_mgmt": {
+      "primary_tup": "M34",
+      "secondary_tups": [],
+      "cluster": "BCL-0",
+      "notes": "Data dictionary, information architecture, tab maps. Part of Trade Architecture."
+    },
+    "30_risk_crisis_management": {
+      "primary_tup": "M33",
+      "secondary_tups": [],
+      "cluster": "BCL-7",
+      "notes": "Risk register, crisis playbooks, failure modes. Deferred with BCL-7."
+    },
+    "31_implementation_execution": {
+      "primary_tup": "M35",
+      "secondary_tups": ["M9"],
+      "cluster": "BCL-6",
+      "notes": "Launch playbooks, scaling. M35 (Execution Plans) + M9 (Ecommerce Infra)."
+    },
+    "32_quality_standards": {
+      "primary_tup": "M33",
+      "secondary_tups": [],
+      "cluster": "BCL-7",
+      "notes": "QA, review gates, sign-off standards. Deferred with BCL-7."
+    },
+    "33_governance_structure": {
+      "primary_tup": "M33",
+      "secondary_tups": ["M2", "M25"],
+      "cluster": "BCL-7",
+      "notes": "RACI, entity structure, bookkeeping. Spans BCL-7 and BCL-2 (M2 Entity, M25 Bookkeeping)."
+    },
+    "34_performance_optimization": {
+      "primary_tup": "M39",
+      "secondary_tups": ["M30"],
+      "cluster": "BCL-0",
+      "notes": "ROAS models, sensitivity analysis, regret minimization. M39 (Conceptual) + M30 (Analytics, BCL-6)."
+    },
+    "35_training_enablement": {
+      "primary_tup": "M1",
+      "secondary_tups": ["M32"],
+      "cluster": "BCL-6",
+      "notes": "Operator onboarding, screening, handoffs. M1 (Labor Deployment) + M32 (School Model, BCL-7)."
+    },
+    "36_reference_specifications": {
+      "primary_tup": "M5",
+      "secondary_tups": [],
+      "cluster": "BCL-1",
+      "notes": "Formulation specs, mineral profiles, taste engineering. Reference library for Product & Science."
+    },
+    "37_strategic_initiatives": {
+      "primary_tup": "M38",
+      "secondary_tups": ["M0"],
+      "cluster": "BCL-0",
+      "notes": "Anti-goals, bifurcation points, capabilities. Adopted items (REC-002a, REC-002d) live here."
+    },
+    "38_cross_functional_support": {
+      "primary_tup": null,
+      "secondary_tups": [],
+      "cluster": null,
+      "notes": "151 sheets — catch-all file. Needs decomposition into parent TUPs during migration."
+    }
+  },
+  "tup_to_files": {
+    "M0":  {"name": "Trade Thesis",         "cluster": "BCL-0", "files": ["01_strategic_foundation", "37_strategic_initiatives", "23_decision_support"]},
+    "M1":  {"name": "Labor Deployment",      "cluster": "BCL-6", "files": ["16_team_organization", "35_training_enablement"]},
+    "M2":  {"name": "Entity & Legal",        "cluster": "BCL-2", "files": ["17_legal_compliance", "33_governance_structure"]},
+    "M3":  {"name": "Financial Model",       "cluster": "BCL-2", "files": ["06_unit_economics", "08_financial_model"]},
+    "M4":  {"name": "Fundraising",           "cluster": "BCL-2", "files": ["20_fundraising"]},
+    "M5":  {"name": "Formulation",           "cluster": "BCL-1", "files": ["05a_product_strategy", "05b_formulation_supply", "36_reference_specifications"]},
+    "M6":  {"name": "Supply Chain",          "cluster": "BCL-1", "files": ["05b_formulation_supply"]},
+    "M7":  {"name": "Regulatory",            "cluster": "BCL-1", "files": ["17_legal_compliance"]},
+    "M8":  {"name": "Brand Identity",        "cluster": "BCL-1", "files": ["09_brand_messaging", "05a_product_strategy"]},
+    "M9":  {"name": "Ecommerce Infra",       "cluster": "BCL-6", "files": ["31_implementation_execution"]},
+    "M10": {"name": "Pricing & Offer",       "cluster": "BCL-5", "files": ["07_offer_strategy"]},
+    "M11": {"name": "VSL Production",        "cluster": "BCL-3", "files": ["09_brand_messaging"]},
+    "M12": {"name": "Ad Creative",           "cluster": "BCL-3", "files": ["10a_creative_strategy", "10b_creative_production"]},
+    "M13": {"name": "Media Buying",          "cluster": "BCL-3", "files": ["12_media_acquisition"]},
+    "M14": {"name": "Testing",               "cluster": "BCL-3", "files": ["10b_creative_production"]},
+    "M15": {"name": "Landing Pages",         "cluster": "BCL-3", "files": ["11a_funnel_strategy", "11b_pages_email"]},
+    "M16": {"name": "Content & SEO",         "cluster": "BCL-5", "files": ["13_content_seo"]},
+    "M17": {"name": "Email",                 "cluster": "BCL-4", "files": ["11b_pages_email", "27_customer_experience_journey"]},
+    "M18": {"name": "SMS",                   "cluster": "BCL-4", "files": []},
+    "M19": {"name": "Customer Lifecycle",    "cluster": "BCL-4", "files": ["27_customer_experience_journey"]},
+    "M20": {"name": "Support",               "cluster": "BCL-4", "files": ["27_customer_experience_journey"]},
+    "M21": {"name": "Subscriptions",         "cluster": "BCL-4", "files": ["07_offer_strategy"]},
+    "M22": {"name": "Referral",              "cluster": "BCL-4", "files": ["14_community_engagement"]},
+    "M23": {"name": "Influencer & Creator",  "cluster": "BCL-5", "files": ["25_partnerships_influencers"]},
+    "M24": {"name": "Fulfillment",           "cluster": "BCL-6", "files": ["15_operations_fulfillment"]},
+    "M25": {"name": "Bookkeeping",           "cluster": "BCL-2", "files": ["33_governance_structure"]},
+    "M26": {"name": "Competitive Intel",     "cluster": "BCL-5", "files": ["02_market_intelligence"]},
+    "M27": {"name": "Customer Research",     "cluster": "BCL-5", "files": ["03a_customer_research_icp", "03b_customer_research_voc", "22_research_development"]},
+    "M28": {"name": "Market Expansion",      "cluster": "BCL-5", "files": ["21_expansion_growth"]},
+    "M29": {"name": "PR & Communications",   "cluster": "BCL-5", "files": ["13_content_seo"]},
+    "M30": {"name": "Analytics",             "cluster": "BCL-6", "files": ["18_analytics_reporting", "34_performance_optimization"]},
+    "M31": {"name": "Hiring",                "cluster": "BCL-6", "files": ["16_team_organization"]},
+    "M32": {"name": "School Model",          "cluster": "BCL-7", "files": ["35_training_enablement"]},
+    "M33": {"name": "Governance & CM",       "cluster": "BCL-7", "files": ["23_decision_support", "30_risk_crisis_management", "32_quality_standards", "33_governance_structure"]},
+    "M34": {"name": "Trade Architecture",    "cluster": "BCL-0", "files": ["29_data_information_mgmt"]},
+    "M35": {"name": "Execution Plans",       "cluster": "BCL-6", "files": ["04_planning_roadmaps", "28_process_workflows", "31_implementation_execution"]},
+    "M36": {"name": "Operational Infra",     "cluster": "BCL-6", "files": ["19_systems_automation", "28_process_workflows"]},
+    "M37": {"name": "AI & Automation",       "cluster": "BCL-6", "files": ["19_systems_automation"]},
+    "M38": {"name": "Strategic Frameworks",  "cluster": "BCL-0", "files": ["37_strategic_initiatives", "01_strategic_foundation"]},
+    "M39": {"name": "Conceptual",            "cluster": "BCL-0", "files": ["34_performance_optimization"]},
+    "M40": {"name": "Navigation & Command",  "cluster": "BCL-0", "files": ["24_command_navigation"]}
+  },
+  "unmapped": {
+    "bootstrap_files_without_tup": [],
+    "tups_without_bootstrap_file": ["M18"],
+    "notes": "M18 (SMS) is net-new from Danilo with no Bootstrap equivalent. File 38 (151 sheets) needs decomposition before mapping."
+  }
+}

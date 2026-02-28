@@ -1,0 +1,2719 @@
+{
+  "project": "IonWave Trade #84",
+  "system": "Studio 3 Imagination Generation System",
+  "organization": "tup_based",
+  "total_tups": 41,
+  "migrated_tups": 29,
+  "migration_status": "in_progress",
+  "last_updated": "2026-02-27",
+  "rollout_package": {
+    "version": "1.0.0",
+    "description": "Recruiting cascade artifacts — VA → MBA intern → VP → Operator",
+    "location": "data/rollout/",
+    "meta_file": "data/rollout/_meta.json",
+    "file_count": 22,
+    "status": "draft",
+    "date_created": "2026-02-27",
+    "related_narrative": "IonWave/IonWave_Rollout_Narrative.md",
+    "open_decisions": 7,
+    "related_tups": ["m0", "m1", "m4", "m30", "m31", "m35", "m36"]
+  },
+  "hypotheses_system": {
+    "version": "1.0.0",
+    "description": "Central registry for all business hypotheses with validation tracking",
+    "registry_file": "data/hypotheses/registry.json",
+    "index_file": "data/hypotheses/index.json",
+    "validation_log": "data/hypotheses/validation_log.json",
+    "dashboard_view": "dashboard/views/hypotheses-tracker.html",
+    "total_hypotheses": 8,
+    "architecture_note": "Hypotheses are ontological primitives tracking assumption evolution, validation status, confidence grades, and dependencies"
+  },
+  "tups": {
+    "m0": {
+      "tup_id": "m0",
+      "tup_name": "Trade Thesis",
+      "title": "Strategic Foundation",
+      "cluster": "BCL-0",
+      "tier": 1,
+      "version": "1.4.0",
+      "quality_score": "6.5/10",
+      "status": "migrated",
+      "audited": true,
+      "audited_session": "Session #5",
+      "last_updated": "2026-02-06",
+      "updated_by": "claude-sonnet-4.5",
+      "sheet_count": 5,
+      "sheets": [
+        {
+          "id": "assumptions_register",
+          "title": "Assumptions Register",
+          "data_type": "structured_table",
+          "row_count": 6,
+          "note": "5 original + 1 new demand assumption; capital tension flagged"
+        },
+        {
+          "id": "interview_insights",
+          "title": "Interview Insights Synthesis",
+          "data_type": "structured_table",
+          "row_count": 20,
+          "note": "Backfilled with LMNT proxy data (03B VOC). All data explicitly labeled as proxy."
+        },
+        {
+          "id": "narrative_hypotheses",
+          "title": "Narrative Hypothesis Table",
+          "data_type": "hybrid",
+          "row_count": 6,
+          "note": "Evidence For/Against filled from Porter's, ICP, VOC. All at C- to C+ confidence."
+        },
+        {
+          "id": "odd1_thesis",
+          "title": "ODD-1 Complete Thesis",
+          "data_type": "narrative",
+          "row_count": 79,
+          "note": "v0 — SUPERSEDED by thesis.json. Retained for TAM/SAM/SOM and capital plan."
+        },
+        {
+          "id": "thesis",
+          "title": "Strategic Thesis",
+          "data_type": "hybrid",
+          "row_count": 30,
+          "note": "CANONICAL thesis. Narrow marine plasma positioning validated by Porter's + ICP."
+        }
+      ],
+      "analysis_deliverable": {
+        "file": "IonWave/Strategic_Foundation_Analysis.md",
+        "version": "1.2.0",
+        "grade": "B",
+        "market_sizing": "IonWave/Marine_Plasma_Market_Sizing.md",
+        "persona_dialogue": {
+          "run_id": "SF-2026-02-04-001",
+          "rounds": 8,
+          "saturation": true,
+          "upgrades": 5,
+          "resolved": 3,
+          "summary_file": "IonWave/Strategic_Foundation_Dialogue_Summary.md"
+        }
+      },
+      "feeds_into": [
+        "m26",
+        "m27",
+        "m5",
+        "m3",
+        "m35"
+      ],
+      "requires": [],
+      "source_files": [
+        "01_strategic_foundation",
+        "37_strategic_initiatives",
+        "23_decision_support"
+      ],
+      "key_blockers": "No financial model linked to thesis; Right to Win reframed (singular: marine plasma positioning); sub-segment sized at $300K-$1.5M (thesis reframed — marine plasma = differentiation tool, not market definition)",
+      "next_action": "Build/audit 08_Financial_Model; validate $30K MRR Year 1 target; research Female Wellness ICP; collect fasting-specific VOC",
+      "passet": "imagination"
+    },
+    "m1": {
+      "tup_id": "m1",
+      "tup_name": "Labor Chain & Deployment",
+      "cluster": "BCL-6",
+      "status": "migrated",
+      "quality": "8.6/10",
+      "sheets": 16,
+      "consolidation": "16 tabs → 5 files: role_engineering_and_coordination.md, labor_chain_and_sequencing.md, operator_system.md, hiring_and_onboarding.md, relationships_and_compensation.md",
+      "opkits": [
+        "OK-M1-001"
+      ],
+      "feeds_into": [
+        "M0",
+        "M9",
+        "M15",
+        "M24",
+        "M25",
+        "M30",
+        "M31",
+        "M35",
+        "M36"
+      ],
+      "hypothesis_links": [
+        "HYP-001"
+      ],
+      "correction_note": "7-week sprint → 12-week (industry standard). Single-trigger → double-trigger equity acceleration. Contractor misclassification risk flagged. CM reporting line fixed (not through CoS). IP assignment language fixed.",
+      "source_files": [
+        "16_team_organization",
+        "35_training_enablement"
+      ],
+      "passet": "imagination"
+    },
+    "m2": {
+      "tup_id": "m2",
+      "tup_name": "Entity & Legal",
+      "cluster": "BCL-2",
+      "status": "migrated",
+      "quality": "8.2/10",
+      "sheets": 15,
+      "consolidation": "15 Danilo tabs → 15 content files + IP + OpKit. Green-field build. 6-round dialogue, 8 upgrades.",
+      "opkits": [
+        "OK-M2-001"
+      ],
+      "feeds_into": [
+        "M0",
+        "M3",
+        "M4",
+        "M7",
+        "M9",
+        "M25"
+      ],
+      "hypothesis_links": [
+        "HYP-004"
+      ],
+      "correction_note": "Phase-gated entity architecture (C-Corp → Holding Co → DAO). SAFE stacking dilution warning. Health data DPIA requirement. Section 351/368 restructuring tax risk flagged. CRITICAL: equity split + holding co structure must precede first SAFE.",
+      "source_files": [
+        "17_legal_compliance",
+        "33_governance_structure"
+      ],
+      "passet": "imagination"
+    },
+    "m3": {
+      "tup_id": "m3",
+      "tup_name": "Financial Model",
+      "cluster": "BCL-2",
+      "status": "migrated",
+      "quality": "8.2/10",
+      "sheets": 15,
+      "consolidation": "15 Danilo tabs → 15 content files + IP + OpKit + dialogue + quality assessment. REC-001 margin dispute handled with dual-scenario modeling. 8-round dialogue (Startup CFO, Financial Modeler, D2C Operator) with 7 upgrades.",
+      "opkits": [
+        "OK-M3-001"
+      ],
+      "feeds_into": [
+        "M0",
+        "M4",
+        "M25",
+        "M30"
+      ],
+      "requires": [
+        "M2",
+        "M4",
+        "M5",
+        "M6",
+        "M10",
+        "M13",
+        "M19",
+        "M21",
+        "M24",
+        "M25",
+        "M30"
+      ],
+      "hypothesis_links": [
+        "HYP-001",
+        "HYP-002",
+        "HYP-003",
+        "HYP-004",
+        "HYP-005",
+        "HYP-008"
+      ],
+      "correction_note": "REC-001 BLOCKER: 40% vs 67% gross margin dispute. Root cause: definitional (product GM vs fully-loaded GM). Working baseline: 60%. All margin-dependent outputs show 3 scenarios. Novel contributions: bifurcation-linked scenario planning, kill criteria integrated sensitivity analysis, phase-gated financial reporting cadence.",
+      "source_files": [
+        "06_unit_economics",
+        "08_financial_model"
+      ],
+      "passet": "imagination"
+    },
+    "m4": {
+      "tup_id": "m4",
+      "tup_name": "Fundraising & Investors",
+      "cluster": "BCL-2",
+      "status": "migrated",
+      "version": "1.0.0",
+      "quality_score": "8.3/10",
+      "workshopped_date": "2026-02-11",
+      "protocol": "TWP-001 v2.0.0",
+      "source_files": [
+        "20_fundraising"
+      ],
+      "passet": "imagination",
+      "sheet_count": 9,
+      "consolidation": "9 Danilo tabs (201-209) → 5 content files + dialogue summary + self-grade + OpKit. All tabs were high quality with directly usable content.",
+      "opkits": [
+        "OK-M4-001"
+      ],
+      "feeds_into": [
+        "m2",
+        "m3",
+        "m5"
+      ],
+      "requires": [
+        "m0",
+        "m3",
+        "m2"
+      ],
+      "hypothesis_links": [
+        "HYP-003",
+        "HYP-006"
+      ],
+      "key_blockers": [
+        "Pre-revenue status (HIGH) — mitigated by 7-week validation sprint with clear metrics",
+        "Investor interest unknown (HIGH) — blocking until Week 3-4 investor meetings begin",
+        "Solo founder risk (MEDIUM) — acknowledged in pitch, mitigated by advisors and operator buy-in option",
+        "M3 margin dispute REC-001 (MEDIUM) — pitch deck uses conservative 65-75% margin pending resolution"
+      ],
+      "intelligence_gaps": [
+        "Investor response data (VOID — requires real investor conversations)",
+        "2026 D2C micro-raise comparables (C — limited data for <$100K raises)",
+        "Trade-as-pitch validation (D — experimental concept, untested)",
+        "TAM/SAM/SOM market sizing (C — placeholder, requires IBISWorld/Statista research)",
+        "Bootstrap-to-forever SAFE liquidity (C — needs upfront investor discussion)",
+        "Brazil-US cross-border legal structure (C — may require attorney consultation $500-1,500)"
+      ],
+      "next_action": "M4 complete. Next: Begin 7-week fundraising sprint (Week 1-2: warm intro outreach, Week 3-4: pitch meetings, Week 5-6: due diligence, Week 7: close). Test Trade-as-pitch concept with 3-5 friendly investors. BCL-2 fundraising cluster now 2/4 complete (50%: M4 + M2 done, M3 blocked by REC-001, M39 pending)."
+    },
+    "m5": {
+      "tup_id": "m5",
+      "tup_name": "Formulation",
+      "cluster": "BCL-1",
+      "status": "migrated",
+      "version": "1.0.0",
+      "quality_score": "8.5/10",
+      "workshopped_date": "2026-02-10",
+      "protocol": "TWP-001 v2.0.0",
+      "source_files": [
+        "05a_product_strategy",
+        "05b_formulation_supply",
+        "36_reference_specifications"
+      ],
+      "passet": "imagination",
+      "sheet_count": 15,
+      "consolidation": "15 Danilo tabs (5 with partial content, 9 void/minimal) → 5 content files + dialogue summary + OpKit",
+      "opkits": [
+        "OK-M5-001"
+      ],
+      "feeds_into": [
+        "m7",
+        "m6",
+        "m3",
+        "m8"
+      ],
+      "requires": [
+        "m0",
+        "m26"
+      ],
+      "key_blockers": [
+        "All trace mineral amounts are [VOID — requires supplier CoA in Week 1-2]",
+        "Taste profile untested (requires beta testing Week 3-4 with 50-100 users)",
+        "Bioavailability advantage unproven (ocean minerals vs synthetic — requires RCT Q3 2026, $50K-$150K)",
+        "Stability data incomplete (requires Month 3-6 accelerated testing)",
+        "Premium pricing justification depends on unproven hypothesis (78 minerals > synthetic 3-4)"
+      ],
+      "next_action": "Execute M6 supplier outreach (Week 1-2) to obtain CoAs with exact trace mineral amounts. Simultaneously prepare taste testing protocol (recruit 50-100 keto/fasting users). Apply for NSF Certified for Sport (Month 3) to allow 12-16 week buffer before Month 6 launch. Update formulation_specification.md with supplier data once received."
+    },
+    "m6": {
+      "tup_id": "m6",
+      "tup_name": "Supply Chain",
+      "cluster": "BCL-1",
+      "status": "migrated",
+      "version": "1.0.0",
+      "quality_score": "8.4/10",
+      "workshopped_date": "2026-02-10",
+      "protocol": "TWP-001 v2.0.0",
+      "source_files": [
+        "05b_formulation_supply"
+      ],
+      "passet": "imagination",
+      "sheet_count": 13,
+      "sheets": [
+        {
+          "danilo_id": "233",
+          "title": "Supplier Research",
+          "rows": 29
+        },
+        {
+          "danilo_id": "234",
+          "title": "Supplier Evaluation",
+          "rows": null
+        },
+        {
+          "danilo_id": "235",
+          "title": "Supplier Quotes",
+          "rows": null
+        },
+        {
+          "danilo_id": "236",
+          "title": "Supplier Outreach Tracker",
+          "rows": null
+        },
+        {
+          "danilo_id": "237",
+          "title": "Supplier Backup Plan",
+          "rows": null
+        },
+        {
+          "danilo_id": "238",
+          "title": "Supplier Qualification",
+          "rows": null
+        },
+        {
+          "danilo_id": "239",
+          "title": "Supplier Audit Checklist",
+          "rows": null
+        },
+        {
+          "danilo_id": "240",
+          "title": "Ocean Sourcing Deep Dive",
+          "rows": 35
+        },
+        {
+          "danilo_id": "241",
+          "title": "COA Tracker",
+          "rows": null
+        },
+        {
+          "danilo_id": "242",
+          "title": "CoA Template",
+          "rows": null
+        },
+        {
+          "danilo_id": "243",
+          "title": "Contaminant Limits",
+          "rows": null
+        },
+        {
+          "danilo_id": "244",
+          "title": "Batch Lot Tracking",
+          "rows": null
+        },
+        {
+          "danilo_id": "245",
+          "title": "Restock Decision Framework",
+          "rows": 17
+        }
+      ],
+      "consolidation": "13 tabs → 4 content files + dialogue summary + OpKit",
+      "opkits": [
+        "OK-M6-001"
+      ],
+      "feeds_into": [
+        "m24",
+        "m3",
+        "m5",
+        "m7"
+      ],
+      "requires": [
+        "m0"
+      ],
+      "hypothesis_links": [],
+      "key_blockers": [
+        "All marine plasma supplier data is [VOID — requires human outreach in Week 1-2]",
+        "COGS validation blocked until supplier quotes received",
+        "MOQ and lead time assumptions unconfirmed",
+        "Exclusivity risk unknown"
+      ],
+      "intelligence_gaps": [
+        "Supplier availability (resolved via outreach Week 1-2)",
+        "COGS per 10ml sachet (target <$0.55, kill criteria >$0.60)",
+        "Actual lead time (assumed 50 days, validate in first PO)",
+        "Reorder MOQ flexibility",
+        "Microplastics testing availability"
+      ],
+      "next_action": "Execute supplier outreach campaign (Biocean, Actimar, Quinton) within Week 1-2 of Trade #84 kickoff. Apply Supplier Evaluation Scorecard. Select primary + backup supplier by Week 3.",
+      "danilo_source_note": "13 tabs (233-245). Tab 233 (Supplier Research) had strongest content with real IonWave supplier targets (Biocean, Actimar, Quinton) plus outreach questions and COGS template. Tabs 240 (Ocean Sourcing, 35 rows) and 245 (Restock Framework, 17 rows) had structure. Other tabs were void/minimal — green-field build with industry research (MOQs 2,500-10,000 units, lead times 45-60 days, COA requirements from FDA/Prop 65)."
+    },
+    "m7": {
+      "tup_id": "m7",
+      "tup_name": "Regulatory & FDA",
+      "cluster": "BCL-1",
+      "status": "migrated",
+      "version": "1.0.0",
+      "quality_score": "8.7/10",
+      "workshopped_date": "2026-02-10",
+      "protocol": "TWP-001 v2.0.0",
+      "source_files": [
+        "17_legal_compliance"
+      ],
+      "passet": "imagination",
+      "sheet_count": 0,
+      "danilo_content_tabs": 11,
+      "consolidation": "11 Danilo concept tabs consolidated into 2 comprehensive markdown files (FDA/FTC framework + claims guidance/IonWave audit) + dialogue summary + self-grade + OpKit",
+      "opkits": [
+        "OK-M7-001"
+      ],
+      "feeds_into": [
+        "m11",
+        "m15",
+        "m14",
+        "m22",
+        "m8"
+      ],
+      "requires": [
+        "m6"
+      ],
+      "key_blockers": "None — M7 is launch-ready. P0 corrections required for M11/M15 before production (4 hours, $0 cost). Attorney review strongly recommended ($5K-$10K).",
+      "next_action": "1. FLAG M11 VSL as non-compliant (7 violations). 2. FLAG M15 landing page templates as placeholders. 3. Execute P0 edits (4 hours). 4. Attorney review pre-launch. 5. File FDA notification within 30 days of first sale. 6. Month 3: Begin real customer testimonial collection."
+    },
+    "m8": {
+      "tup_id": "m8",
+      "tup_name": "Brand Identity",
+      "cluster": "BCL-1",
+      "status": "migrated",
+      "version": "1.0.0",
+      "quality_score": "7.8/10",
+      "workshopped_date": "2026-02-10",
+      "protocol": "TWP-001 v2.0.0",
+      "source_files": [
+        "09_brand_messaging",
+        "05a_product_strategy"
+      ],
+      "passet": "imagination",
+      "sheet_count": 16,
+      "sheets": [
+        "Brand Guidelines",
+        "Tone of Voice Guide",
+        "Visual Identity System",
+        "Brand Story",
+        "Competitor Brand Audit",
+        "Packaging Design System",
+        "Packaging Brief",
+        "Packaging Analysis",
+        "Brand Naming",
+        "Domain Selection",
+        "Brand Tracking Metrics",
+        "Form Factor Analysis",
+        "Serving Size Engineering",
+        "Unboxing Experience",
+        "Photo Brief",
+        "Social Media Guidelines"
+      ],
+      "consolidation": "16 tabs → 7 content files + dialogue summary + workshop summary + OpKit",
+      "opkits": [
+        "OK-M8-001"
+      ],
+      "feeds_into": [
+        "m11",
+        "m12",
+        "m15",
+        "m23",
+        "m29"
+      ],
+      "requires": [
+        "m0",
+        "m27"
+      ],
+      "hypothesis_links": [],
+      "key_blockers": [
+        "Logo design (CRITICAL)",
+        "Photography (CRITICAL)",
+        "Lab-verified Supplement Facts Panel (CRITICAL)",
+        "Prop 65 testing (CRITICAL)",
+        "Trademark clearance (CRITICAL)",
+        "Domain acquisition (CRITICAL)"
+      ],
+      "next_action": "Execute 6 CRITICAL blockers Week 1-2: domain check, USPTO trademark search, commission logo, book photoshoot, legal review, lab testing",
+      "danilo_source_note": "16 content tabs covering brand guidelines, voice, visual identity, packaging, naming, unboxing, social media. Bootstrap sources 09 (Brand Messaging) and 05A (Product Strategy) provided foundational positioning."
+    },
+    "m9": {
+      "tup_id": "m9",
+      "tup_name": "Ecommerce Infra",
+      "cluster": "BCL-6",
+      "status": "migrated",
+      "version": "1.0.0",
+      "quality_score": "8.5/10",
+      "workshopped_date": "2026-02-09",
+      "protocol": "TWP-001 v2.0.0",
+      "source_files": [
+        "31_implementation_execution"
+      ],
+      "passet": "imagination",
+      "sheet_count": 10,
+      "sheets": [
+        {
+          "danilo_id": "285",
+          "title": "Tech Stack",
+          "rows": 23
+        },
+        {
+          "danilo_id": "286",
+          "title": "Store Setup Checklist",
+          "rows": 65
+        },
+        {
+          "danilo_id": "287",
+          "title": "Tracking Setup",
+          "rows": 51
+        },
+        {
+          "danilo_id": "288",
+          "title": "Tool Stack Architecture",
+          "rows": 7
+        },
+        {
+          "danilo_id": "289",
+          "title": "Page Speed Checklist",
+          "rows": 35
+        },
+        {
+          "danilo_id": "290",
+          "title": "Page Speed Checklist1",
+          "rows": 29
+        },
+        {
+          "danilo_id": "291",
+          "title": "Security Checklist",
+          "rows": 31
+        },
+        {
+          "danilo_id": "292",
+          "title": "Tool Login Credentials",
+          "rows": 12
+        },
+        {
+          "danilo_id": "293",
+          "title": "Folder Structure Map",
+          "rows": 2
+        },
+        {
+          "danilo_id": "294",
+          "title": "Asset Naming Convention",
+          "rows": 19
+        }
+      ],
+      "consolidation": "10 tabs → 4 content files + dialogue summary + OpKit",
+      "opkits": [
+        "OK-M9-001"
+      ],
+      "feeds_into": [
+        "m30",
+        "m14",
+        "m17",
+        "m24",
+        "m25"
+      ],
+      "requires": [
+        "m0"
+      ],
+      "hypothesis_links": {
+        "primary": [
+          "HYP-001",
+          "HYP-003"
+        ],
+        "secondary": [
+          "HYP-008"
+        ]
+      },
+      "key_blockers": [],
+      "next_action": "Implement Week 1 Setup Sequence. Verify Shopify + Recharge/Skio integration.",
+      "danilo_source_note": "10 tabs (285-294), 274 rows. Tabs 285/288 merged (duplicate tool stacks). Tabs 289/290 merged (duplicate page speed). Key innovations: theme performance budget, Week 1 Setup Sequence, MER>ROAS alignment with M30, subscription-first UX, ad account hijacking prevention, Consent Mode v2, Do Not Install app list, phase-gated governance."
+    },
+    "m10": {
+      "tup_id": "m10",
+      "tup_name": "Pricing & Offer",
+      "cluster": "BCL-5",
+      "status": "workshopped",
+      "version": "1.0.0",
+      "quality_score": "7.4/10",
+      "last_updated": "2026-02-06",
+      "updated_by": "claude-opus-4-6",
+      "sheet_count": 6,
+      "sheets": [
+        {
+          "id": "offer_strategy",
+          "title": "Offer Strategy"
+        },
+        {
+          "id": "price_testing_framework",
+          "title": "Price Testing Framework"
+        },
+        {
+          "id": "product_customization",
+          "title": "Product Customization"
+        },
+        {
+          "id": "sku_architecture",
+          "title": "SKU Architecture"
+        },
+        {
+          "id": "product_roadmap",
+          "title": "Product Roadmap"
+        },
+        {
+          "id": "upsell_page_copy",
+          "title": "Upsell Page Copy"
+        }
+      ],
+      "source_files": [
+        "07_offer_strategy"
+      ],
+      "passet": "imagination",
+      "feeds_into": [
+        "m3",
+        "m15",
+        "m12",
+        "m21"
+      ],
+      "requires": [
+        "m0",
+        "m26",
+        "m27"
+      ],
+      "hypothesis_links": {
+        "primary": [
+          "HYP-002",
+          "HYP-004",
+          "HYP-005"
+        ],
+        "secondary": [
+          "HYP-003.4"
+        ],
+        "note": "M10 is the pricing nerve center."
+      },
+      "key_blockers": "PT-001 ($49 vs $59) still running",
+      "next_action": "Await PT-001 completion",
+      "opkit": "OK-M10-001"
+    },
+    "m11": {
+      "tup_id": "m11",
+      "tup_name": "VSL Production",
+      "cluster": "BCL-3",
+      "status": "migrated",
+      "quality": "9.2/10",
+      "version": "1.0.0",
+      "last_updated": "2026-02-09",
+      "sheets": 14,
+      "consolidation": "14 tabs → 8 files: vsl_as_trade_framework.md, script_architecture.md, hook_library.md, testing_protocol.md, production_spec.md, financial_model.md, iteration_system.md, ionwave_vsl_script_graded.md + dialogue_summary.md + opkit",
+      "opkits": [
+        "OK-M11-001"
+      ],
+      "feeds_into": [
+        "m12",
+        "m13",
+        "m15",
+        "m23"
+      ],
+      "requires": [
+        "m0",
+        "m27",
+        "m3"
+      ],
+      "key_blockers": "REC-001 unresolved (margin affects break-even CPA); bioavailability substantiation gap (98% claim needs RCT OR structure/function pivot); pre-launch testimonials unavailable",
+      "source_files": [
+        "09_brand_messaging"
+      ],
+      "passet": "imagination"
+    },
+    "m12": {
+      "tup_id": "m12",
+      "tup_name": "Ad Creative",
+      "cluster": "BCL-3",
+      "status": "not_migrated",
+      "source_files": [
+        "10a_creative_strategy",
+        "10b_creative_production"
+      ],
+      "passet": "imagination"
+    },
+    "m13": {
+      "tup_id": "m13",
+      "tup_name": "Media Buying",
+      "cluster": "BCL-3",
+      "status": "migrated",
+      "quality": "10.0/10",
+      "version": "1.0.0",
+      "last_updated": "2026-02-10",
+      "sheets": 14,
+      "consolidation": "14 tabs + Bootstrap File 12 (5 sheets) → 14 production files: account_structure.md, scaling_framework.md, scaling_playbook.md, daily_checklist.md, attribution_model.md, hook_testing_matrix.md, roas_decay_model.md, first_100_ads.md, winning_ad_iterations.md, ad_swipe_file.md, acquisition_source_deep_dive.md, ad_system_engineering.md, channel_diversification.md, channel_profitability_matrix.md + dialogue_summary.md + opkit",
+      "opkits": [
+        "OK-M13-001"
+      ],
+      "feeds_into": [
+        "m12",
+        "m14",
+        "m15",
+        "m23",
+        "m28"
+      ],
+      "requires": [
+        "m0",
+        "m11",
+        "m14",
+        "m30"
+      ],
+      "key_blockers": "REC-001 unresolved (margin affects contribution margin modeling); IonWave-specific ROAS decay timeline unknowable pre-launch; attribution gap normal range for supplements = generic 20-60%",
+      "source_files": [
+        "12_media_acquisition"
+      ],
+      "passet": "imagination"
+    },
+    "m14": {
+      "tup_id": "m14",
+      "tup_name": "Testing & Optimization",
+      "cluster": "BCL-3",
+      "status": "migrated",
+      "version": "1.0.0",
+      "quality_score": "7.5/10",
+      "workshopped_date": "2026-02-06",
+      "protocol": "TWP-001",
+      "source_files": [
+        "10b_creative_production"
+      ],
+      "passet": "imagination",
+      "sheet_count": 6,
+      "sheets": [
+        "creative_testing_protocol",
+        "audience_testing_strategy",
+        "experimentation_framework",
+        "ab_testing_framework",
+        "test_log",
+        "testing_infrastructure"
+      ],
+      "opkits": [
+        "OK-M14-001"
+      ],
+      "feeds_into": [
+        "m12",
+        "m13",
+        "m15"
+      ],
+      "requires": [
+        "m0",
+        "m10"
+      ],
+      "hypothesis_links": {
+        "primary": [
+          "HYP-001"
+        ],
+        "secondary": [
+          "HYP-002",
+          "HYP-004"
+        ]
+      },
+      "key_blockers": [],
+      "next_action": "Run CT-001 (problem vs ingredient hooks). Await PT-001 completion before LP-001.",
+      "danilo_source_note": "7 tabs, 3 near-duplicates (379/380/381) consolidated. ~50 unique rows — near green-field build. Google Optimize replaced with current Shopify-native tools."
+    },
+    "m15": {
+      "tup_id": "m15",
+      "tup_name": "Landing Pages & Conversion",
+      "cluster": "BCL-3",
+      "status": "migrated",
+      "version": "1.0.0",
+      "quality_score": "8.2/10",
+      "workshopped_date": "2026-02-09",
+      "protocol": "TWP-001 v2.0.0",
+      "source_files": [
+        "11a_funnel_strategy",
+        "11b_pages_email"
+      ],
+      "passet": "imagination",
+      "sheet_count": 18,
+      "sheets": [
+        {
+          "danilo_id": "386",
+          "title": "Landing Page Copy",
+          "rows": 167
+        },
+        {
+          "danilo_id": "387",
+          "title": "Landing Page Psychology",
+          "rows": 48
+        },
+        {
+          "danilo_id": "388",
+          "title": "Landing Page Psychology1",
+          "rows": 42
+        },
+        {
+          "danilo_id": "389",
+          "title": "Landing Page Psychology2",
+          "rows": 28
+        },
+        {
+          "danilo_id": "390",
+          "title": "Headline Formulas",
+          "rows": 31
+        },
+        {
+          "danilo_id": "391",
+          "title": "Headline Formulas1",
+          "rows": 30
+        },
+        {
+          "danilo_id": "392",
+          "title": "Headline Formulas2",
+          "rows": 32
+        },
+        {
+          "danilo_id": "393",
+          "title": "Page Section Templates",
+          "rows": 66
+        },
+        {
+          "danilo_id": "394",
+          "title": "Page Section Templates1",
+          "rows": 61
+        },
+        {
+          "danilo_id": "395",
+          "title": "Page Section Templates2",
+          "rows": 40
+        },
+        {
+          "danilo_id": "396",
+          "title": "Checkout Optimization",
+          "rows": 37
+        },
+        {
+          "danilo_id": "397",
+          "title": "Checkout Optimization1",
+          "rows": 45
+        },
+        {
+          "danilo_id": "398",
+          "title": "Checkout Optimization2",
+          "rows": 25
+        },
+        {
+          "danilo_id": "399",
+          "title": "Product Page Copy",
+          "rows": 86
+        },
+        {
+          "danilo_id": "400",
+          "title": "All Pages & Funnels",
+          "rows": 19
+        },
+        {
+          "danilo_id": "401",
+          "title": "Funnel",
+          "rows": 10
+        },
+        {
+          "danilo_id": "402",
+          "title": "Funnel Architecture",
+          "rows": 54
+        },
+        {
+          "danilo_id": "403",
+          "title": "Ref Funnel Anatomy",
+          "rows": 10
+        }
+      ],
+      "opkits": [
+        "OK-M15-001"
+      ],
+      "output_files": [
+        "data/m15/landing_page_psychology.md",
+        "data/m15/copy_and_headlines.md",
+        "data/m15/checkout_optimization.md",
+        "data/m15/funnel_architecture.md",
+        "data/m15/cro_testing_framework.md"
+      ],
+      "feeds_into": [
+        "M9",
+        "M10",
+        "M14",
+        "M17",
+        "M19",
+        "M22",
+        "M23",
+        "M24",
+        "M25",
+        "M28",
+        "M30"
+      ],
+      "hypothesis_links": {
+        "primary": [
+          "HYP-002",
+          "HYP-004"
+        ],
+        "secondary": [
+          "HYP-001",
+          "HYP-003"
+        ]
+      },
+      "key_blockers": [],
+      "next_action": "Build actual landing page using funnel_architecture.md (Architecture A: Direct PDP for warm traffic). Attorney review for FTC/DSHEA compliance before launch.",
+      "danilo_source_note": "18 tabs with heavy duplication (Psychology ×3, Headlines ×3, Templates ×3, Checkout ×3) consolidated to 5 production files. Strong LP copy and funnel architecture source material. 7 corrections applied (fictional testimonials, unsubstantiated claims, guarantee language)."
+    },
+    "m16": {
+      "tup_id": "m16",
+      "tup_name": "Content & SEO",
+      "cluster": "BCL-5",
+      "status": "migrated",
+      "version": "1.0.0",
+      "quality_score": "8.4/10",
+      "workshopped_date": "2026-02-06",
+      "protocol": "TWP-001 v2.0.0",
+      "source_files": [
+        "13_content_seo"
+      ],
+      "passet": "imagination",
+      "sheet_count": 9,
+      "sheets": [
+        {
+          "danilo_id": "408",
+          "title": "Content & GTM Strategy",
+          "rows": 5
+        },
+        {
+          "danilo_id": "409",
+          "title": "Content Calendar",
+          "rows": 8
+        },
+        {
+          "danilo_id": "410",
+          "title": "SEO Strategy Overview",
+          "rows": 27
+        },
+        {
+          "danilo_id": "411",
+          "title": "SEO Keyword Research",
+          "rows": 27
+        },
+        {
+          "danilo_id": "412",
+          "title": "Technical SEO Checklist",
+          "rows": 34
+        },
+        {
+          "danilo_id": "413",
+          "title": "SEO Content Strategy",
+          "rows": 21
+        },
+        {
+          "danilo_id": "414",
+          "title": "SEO Link Building",
+          "rows": 20
+        },
+        {
+          "danilo_id": "415",
+          "title": "Native Ads Playbook",
+          "rows": 38
+        },
+        {
+          "danilo_id": "507",
+          "title": "Content Repurposing System",
+          "rows": 45
+        }
+      ],
+      "opkits": [
+        "OK-M16-001"
+      ],
+      "feeds_into": [
+        "m12",
+        "m13",
+        "m14",
+        "m17",
+        "m22",
+        "m23"
+      ],
+      "requires": [
+        "m8",
+        "m9"
+      ],
+      "hypothesis_links": {
+        "primary": [
+          "HYP-006"
+        ],
+        "secondary": [
+          "HYP-001"
+        ]
+      },
+      "key_blockers": [],
+      "next_action": "Verify keyword volumes post-launch. Run PageSpeed Insights after theme selection. Publish first blog post.",
+      "danilo_source_note": "9 tabs (408-415 + 507), ~225 rows. 408/409 thin — merged into content_strategy.md. 414/415 merged into seo_link_building.md. 507 different numbering range but topically M16.",
+      "merge_note": "Two sessions independently workshopped M16. Session B (canonical) merged with unique content from Session A: Content Conversion Funnel (U5), MVC section (U3), content_calendar.md, content_measurement.md, organic target revisions (U4/U6). Session A dialogue (3 personas, 6 upgrades) complements Session B dialogue (3 personas, 5 upgrades)."
+    },
+    "m17": {
+      "tup_id": "m17",
+      "tup_name": "Email & SMS",
+      "cluster": "BCL-4",
+      "status": "migrated",
+      "quality_score": "8.4/10",
+      "version": "1.0.0",
+      "source_files": [
+        "11b_pages_email",
+        "27_customer_experience_journey"
+      ],
+      "danilo_source_note": "27 source files across 11 content tab groups (~600+ rows). Exceptionally rich — 4 major email sequences with production-quality copy. Major consolidation: 27 input files → 9 output files.",
+      "output_files": [
+        "data/m17/email_flow_architecture.md",
+        "data/m17/email_segmentation.md",
+        "data/m17/email_welcome_series.md",
+        "data/m17/email_abandoned_cart.md",
+        "data/m17/email_post_purchase.md",
+        "data/m17/email_winback.md",
+        "data/m17/email_subject_lines.md",
+        "data/m17/sms_strategy.md",
+        "data/m17/physical_touchpoints.md"
+      ],
+      "feeds_into": [
+        "m18",
+        "m19",
+        "m20",
+        "m24"
+      ],
+      "requires": [
+        "m0"
+      ],
+      "hypothesis_links": {
+        "primary": [
+          "HYP-004",
+          "HYP-005"
+        ],
+        "secondary": [
+          "HYP-001",
+          "HYP-003"
+        ]
+      },
+      "key_blockers": [],
+      "next_action": "Build 3 priority Klaviyo flows before launch (Abandoned Cart, Welcome, Post-Purchase Basic). Legal review health claims in post-purchase emails.",
+      "passet": "imagination"
+    },
+    "m18": {
+      "tup_id": "m18",
+      "tup_name": "Email Lifecycle Flows",
+      "cluster": "BCL-4",
+      "status": "migrated",
+      "version": "1.0.0",
+      "quality_score": "8.7/10",
+      "workshopped_date": "2026-02-09",
+      "protocol": "TWP-001 v2.0.0",
+      "source_files": [],
+      "passet": "imagination",
+      "sheet_count": 12,
+      "sheets": [
+        {
+          "danilo_id": "435",
+          "title": "Email Welcome",
+          "rows": 104
+        },
+        {
+          "danilo_id": "436",
+          "title": "Email Cart Abandoned",
+          "rows": 53
+        },
+        {
+          "danilo_id": "437",
+          "title": "Email Post-Purchase",
+          "rows": 130
+        },
+        {
+          "danilo_id": "438",
+          "title": "Welcome Series",
+          "rows": 38
+        },
+        {
+          "danilo_id": "439",
+          "title": "Welcome Series Flow",
+          "rows": 25
+        },
+        {
+          "danilo_id": "440",
+          "title": "Abandoned Cart Sequence",
+          "rows": 41
+        },
+        {
+          "danilo_id": "441",
+          "title": "Abandoned Cart Flow",
+          "rows": 29
+        },
+        {
+          "danilo_id": "442",
+          "title": "Post-Purchase Sequence",
+          "rows": 39
+        },
+        {
+          "danilo_id": "443",
+          "title": "Post-Purchase Flow",
+          "rows": 24
+        },
+        {
+          "danilo_id": "444",
+          "title": "Win-Back Sequence",
+          "rows": 30
+        },
+        {
+          "danilo_id": "445",
+          "title": "Win-Back Flow",
+          "rows": 22
+        },
+        {
+          "danilo_id": "446",
+          "title": "Lifecycle Automations",
+          "rows": 14
+        }
+      ],
+      "consolidation": "12 tabs → 4 content files (welcome_and_nurture, cart_recovery, post_purchase_and_retention, winback_and_lifecycle)",
+      "opkits": [
+        "OK-M18-001"
+      ],
+      "feeds_into": [
+        "m17",
+        "m19",
+        "m30"
+      ],
+      "hypothesis_links": [
+        "HYP-002",
+        "HYP-006"
+      ],
+      "note": "Originally labeled 'SMS' in tracker/registry — corrected to 'Email Lifecycle Flows' per P-tab. SMS strategy remains in M17."
+    },
+    "m19": {
+      "tup_id": "m19",
+      "tup_name": "Customer Lifecycle & CRM",
+      "cluster": "BCL-4",
+      "status": "migrated",
+      "version": "1.0.0",
+      "quality_score": "8.4/10",
+      "workshopped_date": "2026-02-07",
+      "protocol": "TWP-001 v2.0.0",
+      "source_files": [
+        "27_customer_experience_journey"
+      ],
+      "passet": "imagination",
+      "sheet_count": 13,
+      "sheets": [
+        {
+          "danilo_id": "451",
+          "title": "CRM Architecture",
+          "rows": 24
+        },
+        {
+          "danilo_id": "452",
+          "title": "Customer Data Model",
+          "rows": 18
+        },
+        {
+          "danilo_id": "453",
+          "title": "CRM Metrics Dashboard",
+          "rows": 19
+        },
+        {
+          "danilo_id": "454",
+          "title": "Customer Segmentation",
+          "rows": 10
+        },
+        {
+          "danilo_id": "455",
+          "title": "CRM Tab Map",
+          "rows": 10
+        },
+        {
+          "danilo_id": "456",
+          "title": "Customer Lifecycle Map",
+          "rows": 8
+        },
+        {
+          "danilo_id": "457",
+          "title": "Customer Lifecycle",
+          "rows": 21
+        },
+        {
+          "danilo_id": "458",
+          "title": "Customer Segmentation Matrix",
+          "rows": 20
+        },
+        {
+          "danilo_id": "459",
+          "title": "LTV by Acquisition Source",
+          "rows": 22
+        },
+        {
+          "danilo_id": "460",
+          "title": "Cohort Analysis",
+          "rows": 5
+        },
+        {
+          "danilo_id": "461",
+          "title": "Cohort Analysis Tracker",
+          "rows": 35
+        },
+        {
+          "danilo_id": "462",
+          "title": "Cohort Analysis Template",
+          "rows": 15
+        },
+        {
+          "danilo_id": "463",
+          "title": "LTV Calculation Models",
+          "rows": 35
+        }
+      ],
+      "opkits": [
+        "OK-M19-001"
+      ],
+      "hypothesis_links": [
+        "HYP-001",
+        "HYP-002",
+        "HYP-003",
+        "HYP-005",
+        "HYP-006"
+      ],
+      "danilo_source_note": "13 content tabs consolidated into 4 content files. Key additions: non-linear lifecycle paths, Minimum Viable CRM, at-risk sub-segmentation, churn risk formula, confidence intervals, founder daily check-in, customer-count tool triggers, seasonality metrics."
+    },
+    "m20": {
+      "tup_id": "m20",
+      "tup_name": "Support",
+      "cluster": "BCL-4",
+      "status": "migrated",
+      "version": "1.0.0",
+      "quality_score": "8.6/10",
+      "workshopped_date": "2026-02-07",
+      "protocol": "TWP-001 v2.0.0",
+      "source_files": [
+        "27_customer_experience_journey"
+      ],
+      "passet": "imagination",
+      "sheet_count": 9,
+      "sheets": [
+        {
+          "danilo_id": "468",
+          "title": "Customer Success Playbook",
+          "rows": 37
+        },
+        {
+          "danilo_id": "469",
+          "title": "Complaint Escalation",
+          "rows": 27
+        },
+        {
+          "danilo_id": "470",
+          "title": "Customer Issue Log",
+          "rows": 18
+        },
+        {
+          "danilo_id": "471",
+          "title": "Refund Return Tracker",
+          "rows": 16
+        },
+        {
+          "danilo_id": "472",
+          "title": "Returns & Exchanges",
+          "rows": 10
+        },
+        {
+          "danilo_id": "473",
+          "title": "NPS Tracking",
+          "rows": 24
+        },
+        {
+          "danilo_id": "474",
+          "title": "NPS CSAT Implementation",
+          "rows": 3
+        },
+        {
+          "danilo_id": "475",
+          "title": "Win Loss Analysis",
+          "rows": 17
+        },
+        {
+          "danilo_id": "476",
+          "title": "11-Star Experience",
+          "rows": 52
+        }
+      ],
+      "opkits": [
+        "OK-M20-001"
+      ],
+      "feeds_into": [
+        "m19",
+        "m27",
+        "m21"
+      ],
+      "requires": [],
+      "hypothesis_links": {
+        "primary": [
+          "HYP-003",
+          "HYP-005"
+        ],
+        "secondary": [
+          "HYP-002",
+          "HYP-006"
+        ]
+      },
+      "key_blockers": [],
+      "next_action": "Legal review of adverse event protocol pre-launch. Populate win/loss data after 100 orders. Validate activation rate targets after 100 customers.",
+      "danilo_source_note": "9 tabs (468-476), 204 rows. Consolidated into 3 content files. Key innovations: Founder Mode vs Team Mode escalation, chargeback monitoring, behavioral activation criteria, minimum viable support stack ($60/mo), FDA adverse event protocol, open-ended-first survey methodology."
+    },
+    "m21": {
+      "tup_id": "m21",
+      "tup_name": "Subscription & Retention",
+      "cluster": "BCL-4",
+      "status": "migrated",
+      "version": "1.0.0",
+      "quality_score": "8.0/10",
+      "workshopped_date": "2026-02-06",
+      "protocol": "TWP-001",
+      "source_files": [
+        "07_offer_strategy"
+      ],
+      "passet": "imagination",
+      "sheet_count": 5,
+      "sheets": [
+        "subscription_platform",
+        "subscription_psychology",
+        "churn_prediction",
+        "win_back_offer_ladder",
+        "retention_playbook"
+      ],
+      "opkits": [
+        "OK-M21-001"
+      ],
+      "feeds_into": [
+        "m3",
+        "m19"
+      ],
+      "requires": [
+        "m0"
+      ],
+      "key_blockers": [],
+      "next_action": "Collect actual churn data post-launch. Mine Seaonic reviews for time-to-value."
+    },
+    "m22": {
+      "tup_id": "m22",
+      "tup_name": "Referral & Community",
+      "cluster": "BCL-4",
+      "status": "migrated",
+      "version": "1.0.0",
+      "quality_score": "7.0/10",
+      "workshopped_date": "2026-02-06",
+      "protocol": "TWP-001",
+      "source_files": [
+        "14_community_engagement"
+      ],
+      "passet": "imagination",
+      "sheet_count": 6,
+      "sheets": [
+        "referral_program",
+        "community_strategy",
+        "ugc_brand_brief",
+        "ugc_library",
+        "ugc_brief_template",
+        "ugc_creator_program"
+      ],
+      "opkits": [
+        "OK-M22-001"
+      ],
+      "feeds_into": [
+        "m14",
+        "m23"
+      ],
+      "requires": [
+        "m0",
+        "m21"
+      ],
+      "hypothesis_links": {
+        "primary": [
+          "HYP-006",
+          "HYP-006.1",
+          "HYP-006.5"
+        ],
+        "secondary": [
+          "HYP-002",
+          "HYP-003"
+        ]
+      },
+      "key_blockers": [
+        "Loop/Smile.io integration unverified (CRITICAL)"
+      ],
+      "next_action": "Verify Loop Subscriptions + Smile.io/ReferralCandy integration. Launch referral at Month 2-3 with PMF signals."
+    },
+    "m23": {
+      "tup_id": "m23",
+      "tup_name": "Influencer & Creator",
+      "cluster": "BCL-5",
+      "status": "migrated",
+      "version": "1.0.0",
+      "quality_score": "8.0/10",
+      "workshopped_date": "2026-02-08",
+      "protocol": "TWP-001 v2.0.0",
+      "source_files": [
+        "25_partnerships_influencers"
+      ],
+      "passet": "imagination",
+      "sheet_count": 15,
+      "sheets": [
+        {
+          "danilo_id": "500",
+          "title": "Influencer vs Creator Overview",
+          "rows": 33
+        },
+        {
+          "danilo_id": "501",
+          "title": "Influencer Strategy",
+          "rows": 40
+        },
+        {
+          "danilo_id": "502",
+          "title": "Creator UGC Strategy",
+          "rows": 43
+        },
+        {
+          "danilo_id": "503",
+          "title": "Influencer Contract Template",
+          "rows": 47
+        },
+        {
+          "danilo_id": "504",
+          "title": "Creator Contract Template",
+          "rows": 43
+        },
+        {
+          "danilo_id": "505",
+          "title": "Influencer Pipeline Tracker",
+          "rows": 20
+        },
+        {
+          "danilo_id": "506",
+          "title": "Creator Pipeline Tracker",
+          "rows": 15
+        },
+        {
+          "danilo_id": "507",
+          "title": "Content Repurposing System",
+          "rows": 45
+        },
+        {
+          "danilo_id": "508",
+          "title": "Creator vs Influencer Strategy",
+          "rows": 38
+        },
+        {
+          "danilo_id": "509",
+          "title": "Influencer Tiers Pricing",
+          "rows": 29
+        },
+        {
+          "danilo_id": "510",
+          "title": "Influencer Vetting Scorecard",
+          "rows": 24
+        },
+        {
+          "danilo_id": "511",
+          "title": "Influencer Agreement",
+          "rows": 38
+        },
+        {
+          "danilo_id": "512",
+          "title": "Influencer Database",
+          "rows": 4
+        },
+        {
+          "danilo_id": "513",
+          "title": "Influencer Map",
+          "rows": 22
+        },
+        {
+          "danilo_id": "514",
+          "title": "Creator Pipeline",
+          "rows": 11
+        }
+      ],
+      "output_files": [
+        "influencer_creator_strategy.md",
+        "creator_ugc_playbook.md",
+        "vetting_scorecard.md",
+        "influencer_map.md",
+        "contract_templates.md",
+        "pipeline_operations.md",
+        "influencer_database_scaffold.md",
+        "dialogue_summary.md",
+        "opkit_influencer_creator.md"
+      ],
+      "opkits": [
+        "OK-M23-001"
+      ],
+      "feeds_into": [
+        "m12",
+        "m14"
+      ],
+      "requires": [
+        "m0",
+        "m8",
+        "m22"
+      ],
+      "hypothesis_links": {
+        "primary": [
+          "HYP-006"
+        ],
+        "secondary": [
+          "HYP-001",
+          "HYP-003"
+        ]
+      },
+      "key_blockers": [
+        "M7 Regulatory: compliance package needs approved claim language",
+        "M2 Legal: contract templates need legal review"
+      ],
+      "next_action": "Complete M7 Regulatory for compliance package. Verify creator platforms (Billo, Insense). Begin product seeding Phase 0.",
+      "danilo_source_note": "15 tabs (500-514), ~377 rows. Heavy duplication: 500/508, 501/509, 503/511, 505/506/514 were near-duplicates. Consolidated 15→7 output files. Tab 513 (Influencer Map) was the strongest content — specific named targets with approach notes. 6 dialogue upgrades: attribution framework, FTC compliance package, phase distinction, content retirement, competitive screening, repurposing multiplier revision."
+    },
+    "m24": {
+      "tup_id": "m24",
+      "tup_name": "Fulfillment & Inventory",
+      "cluster": "BCL-6",
+      "status": "migrated",
+      "quality_score": "8.4/10",
+      "last_updated": "2026-02-09",
+      "sheet_count": 10,
+      "sheets": [
+        {
+          "danilo_id": "519",
+          "title": "3PL Selection",
+          "rows": 56
+        },
+        {
+          "danilo_id": "520",
+          "title": "3PL SLA Scorecard",
+          "rows": 5
+        },
+        {
+          "danilo_id": "521",
+          "title": "Damaged Lost Protocol",
+          "rows": 9
+        },
+        {
+          "danilo_id": "522",
+          "title": "International Shipping",
+          "rows": 7
+        },
+        {
+          "danilo_id": "523",
+          "title": "Launch Day War Room",
+          "rows": 24
+        },
+        {
+          "danilo_id": "524",
+          "title": "Post-Launch 72hr Protocol",
+          "rows": 24
+        },
+        {
+          "danilo_id": "525",
+          "title": "First 10 Orders Playbook",
+          "rows": 30
+        },
+        {
+          "danilo_id": "526",
+          "title": "Inventory Forecast",
+          "rows": 20
+        },
+        {
+          "danilo_id": "527",
+          "title": "Reorder Point Calculator",
+          "rows": 5
+        },
+        {
+          "danilo_id": "528",
+          "title": "Seasonal Planning Calendar",
+          "rows": 24
+        }
+      ],
+      "consolidation": "10 tabs → 4 content files + dialogue summary + OpKit",
+      "opkits": [
+        "OK-M24-001"
+      ],
+      "feeds_into": [
+        "m9",
+        "m28",
+        "m30"
+      ],
+      "requires": [
+        "m0",
+        "m9"
+      ],
+      "hypothesis_links": {
+        "primary": [
+          "HYP-004"
+        ],
+        "secondary": [
+          "HYP-002"
+        ]
+      },
+      "source_files": [
+        "15_operations_fulfillment"
+      ],
+      "passet": "imagination",
+      "correction_note": "No Bootstrap source 15 available — green-field build. Deliverr/Flexport merged. Amazon FBA clarified as Amazon-channel only per M28."
+    },
+    "m25": {
+      "tup_id": "m25",
+      "tup_name": "Financial Operations",
+      "title": "Financial Operations (Bookkeeping)",
+      "cluster": "BCL-2",
+      "status": "migrated",
+      "version": "1.0.0",
+      "quality_score": "8.8/10",
+      "workshopped_date": "2026-02-06",
+      "protocol": "TWP-001 v2.0.0",
+      "source_files": [
+        "33_governance_structure"
+      ],
+      "passet": "imagination",
+      "sheet_count": 6,
+      "sheets": [
+        {
+          "danilo_id": "533",
+          "title": "Bookkeeping Accounting Setup",
+          "rows": 28
+        },
+        {
+          "danilo_id": "534",
+          "title": "Unit Economics by Channel",
+          "rows": 7
+        },
+        {
+          "danilo_id": "535",
+          "title": "Payback Period Analysis",
+          "rows": 8
+        },
+        {
+          "danilo_id": "536",
+          "title": "Monthly Business Review",
+          "rows": 2
+        },
+        {
+          "danilo_id": "537",
+          "title": "Quarterly Planning",
+          "rows": 31
+        },
+        {
+          "danilo_id": "538",
+          "title": "Annual Planning Process",
+          "rows": 29
+        }
+      ],
+      "opkits": [
+        "OK-M25-001"
+      ],
+      "feeds_into": [
+        "m3",
+        "m30",
+        "m35"
+      ],
+      "requires": [
+        "m0"
+      ],
+      "hypothesis_links": {
+        "primary": [
+          "HYP-004",
+          "HYP-005",
+          "HYP-007"
+        ],
+        "secondary": [
+          "HYP-001",
+          "HYP-002",
+          "HYP-003",
+          "HYP-008"
+        ]
+      },
+      "key_blockers": [
+        "REC-001 margin dispute (45% vs 67%) — treated as dual scenario"
+      ],
+      "next_action": "Pre-launch: test Synder vs A2X with ReCharge. Get 3PL cost quotes. Set up QBO with Day 1 Essentials.",
+      "danilo_source_note": "6 tabs (533-538), 105 rows total. Green-field build (no Bootstrap sources). Tabs 534+535 merged into unit_economics_tracking.md. Tabs 536+537+538 merged into business_review_cadence.md. Key innovations: dual-margin REC-001 treatment, Day 1 Essentials chart of accounts, Survival Five MBR scorecard."
+    },
+    "m26": {
+      "tup_id": "m26",
+      "tup_name": "Competitive Intel",
+      "title": "Market Intelligence",
+      "cluster": "BCL-5",
+      "tier": 1,
+      "version": "1.1.0",
+      "quality_score": "5.5/10",
+      "status": "migrated",
+      "audited": true,
+      "audited_session": "Session #5",
+      "last_updated": "2026-02-06",
+      "updated_by": "claude-sonnet-4.5",
+      "sheet_count": 10,
+      "sheets": [
+        {
+          "id": "competitive_intel",
+          "title": "Competitive Intelligence",
+          "data_type": "structured_table"
+        },
+        {
+          "id": "competitor_brand_audit",
+          "title": "Competitor Brand Audit",
+          "data_type": "structured_table"
+        },
+        {
+          "id": "competitor_claims_audit",
+          "title": "Competitor Claims Audit",
+          "data_type": "hybrid"
+        },
+        {
+          "id": "competitor_monitoring",
+          "title": "Competitor Monitoring",
+          "data_type": "template"
+        },
+        {
+          "id": "competitor_swipe_catalog",
+          "title": "Competitor Swipe Catalog",
+          "data_type": "template"
+        },
+        {
+          "id": "contaminant_limits",
+          "title": "Contaminant Limits",
+          "data_type": "structured_table"
+        },
+        {
+          "id": "market_data",
+          "title": "Market Data",
+          "data_type": "template",
+          "note": "Mostly empty - needs real market research data"
+        },
+        {
+          "id": "market_landscape_map",
+          "title": "Market Landscape Map",
+          "data_type": "narrative",
+          "note": "Methodology document, not actual data"
+        },
+        {
+          "id": "ref_competitive_intel",
+          "title": "Reference: Competitive Intel (Konscious)",
+          "data_type": "structured_table"
+        },
+        {
+          "id": "porters_five_forces",
+          "title": "Porter's Five Forces Analysis",
+          "data_type": "hybrid"
+        }
+      ],
+      "feeds_into": [
+        "m27",
+        "m5",
+        "m3"
+      ],
+      "requires": [
+        "m0"
+      ],
+      "source_files": [
+        "02_market_intelligence"
+      ],
+      "key_blockers": "Market Data sheet mostly empty; supplier data at D-grade; need SEMrush data for LMNT",
+      "next_action": "Fill Market Data with research; execute supplier contact (human); get SEMrush access",
+      "passet": "imagination"
+    },
+    "m27": {
+      "tup_id": "m27",
+      "tup_name": "Customer Research",
+      "title": "Customer Research (ICP + VOC)",
+      "cluster": "BCL-5",
+      "tier": 1,
+      "version": "2.0.0",
+      "quality_score": "6.5/10",
+      "status": "migrated",
+      "audited": true,
+      "audited_session": "Session #5",
+      "last_updated": "2026-02-06",
+      "updated_by": "claude-sonnet-4.5",
+      "sheet_count": 12,
+      "sheets": [
+        {
+          "id": "customer_archetypes",
+          "title": "Customer Archetypes",
+          "data_type": "structured_table",
+          "source": "03A",
+          "note": "Core personas and archetypes"
+        },
+        {
+          "id": "customer_segmentation",
+          "title": "Customer Segmentation",
+          "data_type": "structured_table",
+          "source": "03A"
+        },
+        {
+          "id": "segmentation_matrix",
+          "title": "Segmentation Matrix",
+          "data_type": "structured_table",
+          "source": "03A"
+        },
+        {
+          "id": "icp",
+          "title": "Ideal Customer Profile",
+          "data_type": "hybrid",
+          "source": "03A"
+        },
+        {
+          "id": "psychographic_profiles",
+          "title": "Psychographic Profiles",
+          "data_type": "structured_table",
+          "source": "03A",
+          "note": "Deep psychographic profiles merged from 1&2"
+        },
+        {
+          "id": "customer_data_model",
+          "title": "Customer Data Model",
+          "data_type": "structured_table",
+          "row_count": 15,
+          "source": "03B"
+        },
+        {
+          "id": "customer_feedback_loop",
+          "title": "Customer Feedback Loop",
+          "data_type": "hybrid",
+          "row_count": 8,
+          "source": "03B"
+        },
+        {
+          "id": "interview_playbook",
+          "title": "Customer Interview Playbook",
+          "data_type": "narrative",
+          "source": "03B",
+          "note": "Consolidated from 'Customer Interview Playbook' and 'Customer Interview Playbook 2'"
+        },
+        {
+          "id": "interview_questions",
+          "title": "Customer Interview Questions",
+          "data_type": "narrative",
+          "row_count": 28,
+          "source": "03B"
+        },
+        {
+          "id": "interview_script",
+          "title": "Customer Interview Script",
+          "data_type": "narrative",
+          "source": "03B",
+          "note": "Mom Test-based script for customer discovery interviews"
+        },
+        {
+          "id": "voc_collection",
+          "title": "Voice of Customer Collection",
+          "data_type": "hybrid",
+          "source": "03B",
+          "note": "Consolidated from 'Voice of Customer' and partial 'Voice of Customer Database' templates"
+        },
+        {
+          "id": "voc_database",
+          "title": "VOC Database",
+          "data_type": "structured_table",
+          "row_count": 12,
+          "source": "03B",
+          "note": "Consolidated from 'Voice of Customer Database' and 'Voice of Customer Database 2'"
+        }
+      ],
+      "consolidation_notes": {
+        "03a_original_sheet_count": 6,
+        "03a_migrated_sheet_count": 5,
+        "03a_changes": [
+          "Merged deep_psychographic_profiles 1&2",
+          "ICP Analysis merged into _meta.json analysis_summary"
+        ],
+        "03b_original_sheet_count": 9,
+        "03b_migrated_sheet_count": 7,
+        "03b_changes": [
+          "Merged 'Customer Interview Playbook' and 'Customer Interview Playbook 2' into single 'interview_playbook' file",
+          "Merged 'Voice of Customer' collection templates with 'Voice of Customer Database' structure into 'voc_collection'",
+          "Merged 'Voice of Customer Database' and 'Voice of Customer Database 2' quote records into single 'voc_database'"
+        ],
+        "total_sheet_count": 12
+      },
+      "analysis_deliverable": {
+        "file": "IonWave/ICP_Analysis.md",
+        "version": "1.0.0",
+        "persona_dialogue": {
+          "run_id": "ICP-2026-02-04-001",
+          "source": "03A"
+        }
+      },
+      "feeds_into": [
+        "m5",
+        "m6",
+        "m8",
+        "m12",
+        "m10",
+        "m15"
+      ],
+      "requires": [
+        "m0",
+        "m26"
+      ],
+      "source_files": [
+        "03a_customer_research_icp",
+        "03b_customer_research_voc",
+        "22_research_development"
+      ],
+      "key_blockers": "LMNT customer voice at saturation (31 quotes) connected downstream via proxy data; no IonWave-specific interviews yet; Female Wellness ICP needs deeper research",
+      "next_action": "Begin IonWave customer interviews post-launch; validate Female Wellness ICP assumptions; collect fasting-specific VOC",
+      "passet": "imagination"
+    },
+    "m28": {
+      "tup_id": "m28",
+      "tup_name": "Market Expansion",
+      "cluster": "BCL-5",
+      "status": "migrated",
+      "version": "1.0.0",
+      "quality_score": "8.3/10",
+      "workshopped_date": "2026-02-08",
+      "protocol": "TWP-001 v2.0.0",
+      "source_files": [
+        "21_expansion_growth"
+      ],
+      "passet": "imagination",
+      "sheet_count": 20,
+      "sheets": [
+        {
+          "danilo_id": "592",
+          "title": "Strengths & Threats",
+          "rows": 10
+        },
+        {
+          "danilo_id": "593",
+          "title": "Vulnerability Inventory",
+          "rows": 5
+        },
+        {
+          "danilo_id": "594",
+          "title": "Science Library",
+          "rows": 5
+        },
+        {
+          "danilo_id": "595",
+          "title": "Channel Landscape",
+          "rows": 23
+        },
+        {
+          "danilo_id": "596",
+          "title": "Expansion Paths",
+          "rows": 26
+        },
+        {
+          "danilo_id": "597",
+          "title": "New Product Launch",
+          "rows": 50
+        },
+        {
+          "danilo_id": "598",
+          "title": "Constraint Scenarios",
+          "rows": 64
+        },
+        {
+          "danilo_id": "599",
+          "title": "Portfolio Reality Check",
+          "rows": 21
+        },
+        {
+          "danilo_id": "600",
+          "title": "Taste Profile",
+          "rows": 32
+        },
+        {
+          "danilo_id": "601",
+          "title": "Mixability & Texture",
+          "rows": 19
+        },
+        {
+          "danilo_id": "602",
+          "title": "Feature Request Log",
+          "rows": 16
+        },
+        {
+          "danilo_id": "603",
+          "title": "Moonshot Ideas Lab",
+          "rows": 55
+        },
+        {
+          "danilo_id": "604",
+          "title": "B2B & Wholesale Strategy",
+          "rows": 26
+        },
+        {
+          "danilo_id": "605",
+          "title": "Partnership Framework",
+          "rows": 24
+        },
+        {
+          "danilo_id": "606",
+          "title": "Amazon Expansion Playbook",
+          "rows": 47
+        },
+        {
+          "danilo_id": "607",
+          "title": "Amazon Playbook",
+          "rows": 39
+        },
+        {
+          "danilo_id": "608",
+          "title": "Listing Optimization Playbook",
+          "rows": 16
+        },
+        {
+          "danilo_id": "609",
+          "title": "Review Generation Protocol",
+          "rows": 19
+        },
+        {
+          "danilo_id": "610",
+          "title": "PPC Campaign Structure",
+          "rows": 15
+        },
+        {
+          "danilo_id": "611",
+          "title": "Retail Readiness",
+          "rows": 33
+        }
+      ],
+      "output_files": 11,
+      "consolidation": "20 tabs → 9 content files + dialogue summary + OpKit",
+      "opkits": [
+        "OK-M28-001"
+      ],
+      "feeds_into": [
+        "m0",
+        "m14",
+        "m23",
+        "m25",
+        "m26"
+      ],
+      "requires": [
+        "m0",
+        "m7",
+        "m8",
+        "m25"
+      ],
+      "hypothesis_links": {
+        "primary": [
+          "HYP-002",
+          "HYP-006"
+        ],
+        "secondary": [
+          "HYP-004"
+        ]
+      },
+      "key_blockers": [
+        "COGS validation for pricing models",
+        "Science library needs primary citations"
+      ],
+      "intelligence_gaps": [
+        "Actual COGS",
+        "Amazon competition data",
+        "B2B retention benchmarks",
+        "Subscription conversion rate",
+        "International regulatory requirements"
+      ],
+      "next_action": "Validate COGS with supplier for Amazon/B2B/retail margin models. Build pre-launch list per constraint scenario action items.",
+      "danilo_source_note": "20 tabs (592-611), ~464 rows. Tabs 606/607 were near-duplicates (merged). Tabs 608/609/610 absorbed into Amazon and channel playbooks. Strongest content: Constraint Scenarios (598, 64 rows), New Product Launch (597, 50 rows), Moonshot Lab (603, 55 rows). 14 dialogue upgrades applied."
+    },
+    "m29": {
+      "tup_id": "m29",
+      "tup_name": "PR & Communications",
+      "cluster": "BCL-5",
+      "status": "migrated",
+      "version": "1.0.0",
+      "quality_score": "7.6/10",
+      "workshopped_date": "2026-02-07",
+      "protocol": "TWP-001 v2.0.0",
+      "source_files": [
+        "13_content_seo"
+      ],
+      "passet": "imagination",
+      "sheet_count": 7,
+      "sheets": [
+        {
+          "danilo_id": "616",
+          "title": "Future Press Release",
+          "rows": 30
+        },
+        {
+          "danilo_id": "617",
+          "title": "Milestone Press Releases",
+          "rows": 25
+        },
+        {
+          "danilo_id": "618",
+          "title": "PR & Media Tracker",
+          "rows": 22
+        },
+        {
+          "danilo_id": "619",
+          "title": "YouTube & Video Strategy",
+          "rows": 38
+        },
+        {
+          "danilo_id": "620",
+          "title": "Owned Podcast Planning",
+          "rows": 44
+        },
+        {
+          "danilo_id": "621",
+          "title": "Crisis Playbook",
+          "rows": 10
+        },
+        {
+          "danilo_id": "622",
+          "title": "What If Viral Negative PR",
+          "rows": 39
+        }
+      ],
+      "opkits": [
+        "OK-M29-001"
+      ],
+      "feeds_into": [
+        "m16",
+        "m23",
+        "m22"
+      ],
+      "requires": [
+        "m0",
+        "m8"
+      ],
+      "hypothesis_links": {
+        "primary": [
+          "HYP-006"
+        ],
+        "secondary": [
+          "HYP-001",
+          "HYP-003"
+        ]
+      },
+      "key_blockers": [],
+      "next_action": "Pre-launch: Set up Google Alerts, Qwoted, Featured.com. Complete crisis playbook pre-crisis checklist.",
+      "danilo_source_note": "7 tabs (616-622), 208 rows. Tabs 621+622 merged into crisis_playbook.md. Tab 616 (Future Press Release) was the strongest Danilo content tab seen in an S-effort TUP. Heavy Founder Mode scoping applied to video/podcast cadence."
+    },
+    "m30": {
+      "tup_id": "m30",
+      "tup_name": "Analytics & Dashboards",
+      "cluster": "BCL-6",
+      "status": "migrated",
+      "version": "1.0.0",
+      "quality_score": 8.2,
+      "workshopped_date": "2026-02-08",
+      "protocol": "TWP-001 v2.0.0",
+      "source_files": [
+        "18_analytics_reporting",
+        "34_performance_optimization"
+      ],
+      "danilo_sheets": [
+        627,
+        628,
+        629,
+        630,
+        631,
+        632,
+        633,
+        634,
+        635
+      ],
+      "output_files": [
+        "data_dictionary.md",
+        "dashboards_and_reporting.md",
+        "red_flags_and_validation.md",
+        "data_governance.md",
+        "dialogue_summary.md",
+        "opkit_analytics_measurement.md"
+      ],
+      "consolidation": "9 tabs -> 4 content files + dialogue summary + OpKit",
+      "opkits": [
+        "OK-M30-001"
+      ],
+      "hypothesis_links": {
+        "primary": [
+          "HYP-001",
+          "HYP-003"
+        ],
+        "secondary": [
+          "HYP-004",
+          "HYP-008"
+        ]
+      },
+      "key_concepts": [
+        "Minimum Viable Dashboard (7 metrics)",
+        "Existential vs Monitoring kill criteria",
+        "MER over ROAS",
+        "Awareness vs Conversion attribution",
+        "Phase-gated analytics",
+        "Graceful degradation"
+      ],
+      "intelligence_gaps": [
+        "All metrics are targets (pre-launch)",
+        "Attribution needs implementation",
+        "Kill thresholds need calibration at Month 3"
+      ],
+      "passet": "imagination",
+      "danilo_source_note": "9 content tabs, ~161 rows. Significant duplication across dashboard tabs (629/630/631). Red Flag Dashboard and Cross-Tab Validation were strongest source tabs."
+    },
+    "m31": {
+      "tup_id": "m31",
+      "tup_name": "Hiring",
+      "cluster": "BCL-6",
+      "status": "migrated",
+      "migration_date": "2026-02-16",
+      "source_files": [
+        "ops_model_v10_dump/640-670_m31_content_tabs",
+        "16_team_organization (archived, not used)"
+      ],
+      "output_files": [
+        "data/m31/hiring_strategy.md",
+        "data/m31/hiring_processes.md",
+        "data/m31/job_specifications.md",
+        "data/m31/compensation_framework.md",
+        "data/m31/industry_perspectives.md",
+        "data/m31/dialogue_summary.md",
+        "data/m31/quality_assessment.md",
+        "data/opkits/OK-M31-001_Hiring_Framework.md"
+      ],
+      "passet": "imagination",
+      "quality": "8.0/10",
+      "opkits": [
+        "OK-M31-001"
+      ],
+      "protocol": "TWP-001 v2.0.0",
+      "notes": "31 Danilo tabs (617 rows) → 5 content files. Green-field build. 6 dialogue rounds, 6 upgrades. PM Competence Framework (18-question scorecard, >60 before ad spend), operator equity 10-25%, 3-4 PM maximum constraint.",
+      "danilo_source_tabs": [
+        {
+          "danilo_id": "640",
+          "title": "Team",
+          "rows": 12
+        },
+        {
+          "danilo_id": "641",
+          "title": "Team1",
+          "rows": 7
+        },
+        {
+          "danilo_id": "642",
+          "title": "Internal Team",
+          "rows": 8
+        },
+        {
+          "danilo_id": "643",
+          "title": "Labor Strategy",
+          "rows": 6
+        },
+        {
+          "danilo_id": "644",
+          "title": "Head of Ops",
+          "rows": 5
+        },
+        {
+          "danilo_id": "645",
+          "title": "Compensation Philosophy",
+          "rows": 21
+        },
+        {
+          "danilo_id": "646",
+          "title": "Firing Offboarding Guide",
+          "rows": 33
+        },
+        {
+          "danilo_id": "647",
+          "title": "Onboarding Checklist",
+          "rows": 25
+        },
+        {
+          "danilo_id": "648",
+          "title": "Offboarding Checklist",
+          "rows": 12
+        },
+        {
+          "danilo_id": "649-650",
+          "title": "Operator Search Dashboard/Tracker",
+          "rows": 8
+        },
+        {
+          "danilo_id": "651",
+          "title": "Operator Scorecard",
+          "rows": 6
+        },
+        {
+          "danilo_id": "652-655",
+          "title": "Interview protocols (Screening/Focused/Reference/Evaluation)",
+          "rows": 30
+        },
+        {
+          "danilo_id": "656-657",
+          "title": "Operator Sourcing/Outreach",
+          "rows": 7
+        },
+        {
+          "danilo_id": "658-661",
+          "title": "CEO Job Spec (4 tabs)",
+          "rows": 112
+        },
+        {
+          "danilo_id": "662",
+          "title": "CFO Job Spec",
+          "rows": 32
+        },
+        {
+          "danilo_id": "663",
+          "title": "PM Job Spec",
+          "rows": 28
+        },
+        {
+          "danilo_id": "664-665",
+          "title": "CM Job Spec (2 tabs)",
+          "rows": 68
+        },
+        {
+          "danilo_id": "666-668",
+          "title": "Venture Partner Job Spec (3 tabs)",
+          "rows": 99
+        },
+        {
+          "danilo_id": "669",
+          "title": "PM Competence Framework",
+          "rows": 59
+        },
+        {
+          "danilo_id": "670",
+          "title": "V-M31",
+          "rows": 39
+        }
+      ]
+    },
+    "m32": {
+      "tup_id": "m32",
+      "tup_name": "School Model",
+      "cluster": "BCL-7",
+      "status": "not_migrated",
+      "source_files": [
+        "35_training_enablement"
+      ],
+      "passet": "imagination"
+    },
+    "m33": {
+      "tup_id": "m33",
+      "tup_name": "Governance & CM",
+      "cluster": "BCL-7",
+      "status": "not_migrated",
+      "source_files": [
+        "23_decision_support",
+        "30_risk_crisis_management",
+        "32_quality_standards",
+        "33_governance_structure"
+      ],
+      "passet": "imagination"
+    },
+    "m34": {
+      "tup_id": "m34",
+      "tup_name": "Trade Architecture",
+      "cluster": "BCL-0",
+      "status": "not_migrated",
+      "source_files": [
+        "29_data_information_mgmt"
+      ],
+      "passet": "imagination"
+    },
+    "m35": {
+      "tup_id": "m35",
+      "tup_name": "Execution Plans & Rhythms",
+      "cluster": "BCL-6",
+      "status": "migrated",
+      "version": "1.0.0",
+      "quality_score": 8.2,
+      "workshopped_date": "2026-02-15",
+      "protocol": "TWP-001 v2.0.0",
+      "source_files": [
+        "04_planning_roadmaps",
+        "28_process_workflows",
+        "31_implementation_execution"
+      ],
+      "danilo_sheets": [
+        773,
+        774,
+        776,
+        777,
+        778,
+        779,
+        780,
+        781,
+        782,
+        783,
+        784,
+        785,
+        786,
+        787,
+        788,
+        789,
+        790,
+        791,
+        792,
+        793,
+        794,
+        795,
+        796,
+        797,
+        801
+      ],
+      "sheet_count": 25,
+      "output_files": [
+        "30_90_365_day_plans.md",
+        "operating_rhythms_and_loops.md",
+        "meeting_templates_and_communication.md",
+        "phase_checklists_and_sops.md",
+        "detailed_execution_timelines.md",
+        "industry_perspectives.md",
+        "dialogue_summary.md",
+        "quality_assessment.md",
+        "opkit_execution_planning.md"
+      ],
+      "consolidation": "25 tabs (773-797, 801) → 5 core content files + industry perspectives + dialogue + quality assessment + OpKit. Green-field build (no Bootstrap sources — files 04/28/31 archived).",
+      "opkits": [
+        "OK-M35-001"
+      ],
+      "hypothesis_links": {
+        "primary": [
+          "HYP-001"
+        ],
+        "secondary": [
+          "HYP-003",
+          "HYP-004",
+          "HYP-006"
+        ]
+      },
+      "feeds_into": [
+        "M40 Navigation & Command",
+        "All operational TUPs (M1-M30) — execution plans reference every domain"
+      ],
+      "requires": [
+        "M0 Trade Thesis — strategic direction, kill criteria",
+        "M3 Financial Model — revenue targets, unit economics",
+        "M5-M30 operational TUPs — Day 1 readiness gates"
+      ],
+      "key_concepts": [
+        "30/60/90 framework",
+        "Amazon WBR-inspired rhythms",
+        "Choreography (feed-forward loops)",
+        "Phase-gated strictness (LAUNCH → PMF → SCALE)",
+        "Crisis mode protocol",
+        "Hour-by-hour Week 1",
+        "Kill discipline",
+        "Dual LTV gate"
+      ],
+      "intelligence_gaps": [
+        "Solo founder capacity (D-grade)",
+        "Supplier CoA lead time (C-grade)",
+        "CAC for IonWave (C-grade)",
+        "3PL breakpoint (C-grade)",
+        "PMF 40% NPS threshold (C-grade)",
+        "LTV:CAC >3.0 sustainability (B-grade)",
+        "Meeting time budget (C-grade)",
+        "WBR efficacy solo founder (D-grade)",
+        "Choreography ROI (D-grade)",
+        "Crisis mode necessity (D-grade)",
+        "Phase gate strictness (C-grade)",
+        "Market saturation (C-grade — HYP-006 dependency)",
+        "Solo founder burnout (D-grade — unresolvable)"
+      ],
+      "key_blockers": "NONE. All critical path items have fallback plans. Pre-launch status means all IonWave-specific content is C/D-grade (validated by Week 1-4 actuals). Upgrade path documented for every gap.",
+      "next_action": "Execute Day 1-7 (Week 1 Day-by-Day plan). Validate time estimates, supplier CoA timing, founder capacity. Update 30-day plan weekly (roll forward precision). First WBR at Day 7 (or Friday Week 1). First MBR at Day 30. Day 90 LAUNCH → PMF gate decision (pass/fail/iterate).",
+      "passet": "imagination",
+      "danilo_source_note": "25 tabs (773-797, 801) covering 30/90/365-day plans, operating rhythms, meeting cadences, SOPs, phase checklists. All A-grade industry research (Amazon WBR, First Round PMF, D2C 2026 trends). IonWave adaptation C/D-grade (pre-launch). 6 dialogue rounds, 7 upgrades (CAC phasing, supplier pre-work, MBR scaling, dual LTV gate, 3PL timing, kill discipline, crisis mode). 2 unresolved gaps (burnout, market saturation). Novel contributions: choreography framework, crisis mode circuit breaker, hour-by-hour Week 1, objective phase gates."
+    },
+    "m36": {
+      "id": "M36",
+      "name": "Operational Infrastructure",
+      "cluster": "BCL-6",
+      "status": "migrated",
+      "quality_score": 8.1,
+      "workshop_date": "2026-02-17",
+      "output_path": "data/m36/",
+      "opkit_id": "OK-M36-001",
+      "source_tab_count": 43
+    },
+    "m37": {
+      "tup_id": "m37",
+      "tup_name": "AI & Automation",
+      "cluster": "BCL-6",
+      "status": "not_migrated",
+      "source_files": [
+        "19_systems_automation"
+      ],
+      "passet": "imagination"
+    },
+    "m38": {
+      "tup_id": "m38",
+      "tup_name": "Strategic Frameworks",
+      "cluster": "BCL-0",
+      "status": "not_migrated",
+      "source_files": [
+        "37_strategic_initiatives",
+        "01_strategic_foundation"
+      ],
+      "passet": "imagination"
+    },
+    "m39": {
+      "tup_id": "m39",
+      "tup_name": "Conceptual & Philosophical Foundations",
+      "cluster": "BCL-0",
+      "status": "migrated",
+      "version": "1.0.0",
+      "quality_score": "7.5/10",
+      "workshopped_date": "2026-02-11",
+      "protocol": "TWP-001 v2.0.0",
+      "source_files": [
+        "ops_model_v10_dump (14 content tabs, 908-919)"
+      ],
+      "passet": "imagination",
+      "sheet_count": 14,
+      "consolidation": "14 content tabs + Danilo vision → 6 content files + dialogue summary + OpKit",
+      "opkits": [
+        "OK-M39-001"
+      ],
+      "feeds_into": [
+        "m0",
+        "m38",
+        "m40",
+        "all TUPs (patterns like 5-6 bullets, VOID protocol, evidence grading apply across all 41 TUPs)"
+      ],
+      "requires": [],
+      "hypothesis_links": [],
+      "key_blockers": [
+        "Protocols untested (all experimental, need deployment to validate)",
+        "Virtual Twin requires full TUP context (need to load M5-M37)",
+        "Advisor procurement requires network mapping (need Danilo/Nilo to document connections)",
+        "Cross-Trade validation blocked (only 1 Trade in IonWave portfolio currently)",
+        "Risk of over-theory, under-execution (M39 could become distraction from operational grind)"
+      ],
+      "intelligence_gaps": [
+        "Optimal TUP count unknown (41 is educated guess, not derived from market complexity analysis)",
+        "Mutual information not practically measurable (proxy metrics invented, not validated)",
+        "Alexander's 15 properties not validated as Trade success predictors (hypothesis only)",
+        "Protocol reusability unknown (need cross-Trade testing)",
+        "[VOID — requires Trade execution: must build Trade to validate theory-practice translations]",
+        "[VOID — requires advisor network: need actual procurement outcomes to validate strategy]",
+        "[VOID — requires empirical testing: implement proxy metrics, track for 12 months, measure correlation with outcomes]"
+      ],
+      "next_action": "Deploy protocols systematically (VOID → Bullets → 3-Gate → 75Q → Twin → Verification → Patterns), measure outcomes, iterate based on evidence",
+      "novel_concepts": [
+        "Theory → practice translation (deep theory directly generates operational protocols)",
+        "Requisite variety via TUP decomposition (41 TUPs match 41 market complexity dimensions)",
+        "Love as mutual information (high-performing teams have high I(Team Members))",
+        "Aliveness scoring (Trade quality measurable via Alexander's 15 properties)",
+        "Implicate/explicate ratio (Track unfoldment: 31/41 TUPs = 76% documented)"
+      ],
+      "theoretical_foundations": [
+        "Christopher Alexander: 15 Properties of Life (strong centers, boundaries, levels of scale, void, not-separateness)",
+        "David Bohm: Implicate/Explicate Order (hidden structure → documented TUPs)",
+        "Giulio Tononi: Integrated Information Theory (Φ, mutual information, consciousness as integrated information)",
+        "W. Ross Ashby: Law of Requisite Variety (41 TUPs match market complexity, variety enables control)"
+      ],
+      "operational_protocols": [
+        "75 Questions Protocol (context transfer via structured interrogation)",
+        "5-6 Bullets Protocol (compress complexity without loss)",
+        "3-Gate Review Model (Feasibility/Viability/Desirability tested in parallel)",
+        "Virtual Twin Specification (Claude agent with maximal mutual information)",
+        "Verification Strategy (four trust dimensions: Strategic/Domain/Execution/Vibes)",
+        "Pattern Language Application (Alexander methodology → OpKit extraction)"
+      ]
+    },
+    "m40": {
+      "tup_id": "m40",
+      "tup_name": "Navigation & Command",
+      "cluster": "BCL-0",
+      "status": "not_migrated",
+      "source_files": [
+        "24_command_navigation"
+      ],
+      "passet": "imagination"
+    }
+  },
+  "clusters": {
+    "BCL-0": {
+      "name": "Thesis & Meta",
+      "owner": "Nilo",
+      "decision": "REC-002 — MERGE (9 sub-decisions)",
+      "tups": [
+        "m0",
+        "m34",
+        "m38",
+        "m39",
+        "m40"
+      ]
+    },
+    "BCL-1": {
+      "name": "Product & Science",
+      "owner": "PM (Product/Science)",
+      "decision": "REC-005 — DANILO CANON",
+      "tups": [
+        "m5",
+        "m6",
+        "m7",
+        "m8"
+      ]
+    },
+    "BCL-2": {
+      "name": "Money & Legal",
+      "owner": "PM (Finance/Legal)",
+      "decision": "REC-001 — PENDING",
+      "tups": [
+        "m2",
+        "m3",
+        "m4",
+        "m25"
+      ]
+    },
+    "BCL-3": {
+      "name": "DR & Creative",
+      "owner": "PM (DR/Creative)",
+      "decision": "REC-003 — DANILO CANON",
+      "tups": [
+        "m11",
+        "m12",
+        "m13",
+        "m14",
+        "m15"
+      ]
+    },
+    "BCL-4": {
+      "name": "Retention & Lifecycle",
+      "owner": "PM (Lifecycle/CRM)",
+      "decision": "REC-006 — DANILO CANON",
+      "tups": [
+        "m17",
+        "m18",
+        "m19",
+        "m20",
+        "m21",
+        "m22"
+      ]
+    },
+    "BCL-5": {
+      "name": "Growth & Market",
+      "owner": "PM (Growth/Strategy)",
+      "decision": "REC-007 — DANILO CANON",
+      "tups": [
+        "m10",
+        "m16",
+        "m23",
+        "m26",
+        "m27",
+        "m28",
+        "m29"
+      ]
+    },
+    "BCL-6": {
+      "name": "Operations & Infra",
+      "owner": "PM (Operations)",
+      "decision": "REC-004 — DANILO CANON",
+      "tups": [
+        "m1",
+        "m9",
+        "m24",
+        "m30",
+        "m31",
+        "m35",
+        "m36",
+        "m37"
+      ]
+    },
+    "BCL-7": {
+      "name": "Governance & School",
+      "owner": "PM (Systems/Gov)",
+      "decision": "REC-008 — DEFER",
+      "tups": [
+        "m32",
+        "m33"
+      ]
+    }
+  },
+  "migration_metadata": {
+    "migration_started": "2026-02-04",
+    "last_migration_event": "2026-02-08",
+    "bootstrap_file_count": 38,
+    "bootstrap_sheet_count": 437,
+    "tup_count": 41,
+    "migrated_tup_count": 13,
+    "pending_tup_count": 25,
+    "organization_changed": "2026-02-06",
+    "organization_change_description": "Manifest reorganized from Bootstrap file numbers (01-38) to TUP codes (M0-M40) as primary keys"
+  }
+}

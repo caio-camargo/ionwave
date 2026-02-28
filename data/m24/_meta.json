@@ -1,0 +1,54 @@
+{
+  "tup_id": "m24",
+  "tup_name": "Fulfillment & Inventory",
+  "cluster": "BCL-6",
+  "version": "1.0.0",
+  "workshopped_date": "2026-02-09",
+  "protocol": "TWP-001 v2.0.0",
+  "quality_score": 8.4,
+  "danilo_tabs": [
+    { "index": 516, "name": "P-M24", "type": "structural" },
+    { "index": 517, "name": "C-M24", "type": "structural" },
+    { "index": 518, "name": "IP-M24", "type": "structural" },
+    { "index": 519, "name": "3PL Selection", "type": "content", "quality": "GOOD", "rows": 56 },
+    { "index": 520, "name": "3PL SLA Scorecard", "type": "content", "quality": "THIN", "rows": 5 },
+    { "index": 521, "name": "Damaged Lost Protocol", "type": "content", "quality": "THIN", "rows": 9 },
+    { "index": 522, "name": "International Shipping", "type": "content", "quality": "THIN", "rows": 7 },
+    { "index": 523, "name": "Launch Day War Room", "type": "content", "quality": "GOOD", "rows": 24 },
+    { "index": 524, "name": "Post-Launch 72hr Protocol", "type": "content", "quality": "GOOD", "rows": 24 },
+    { "index": 525, "name": "First 10 Orders Playbook", "type": "content", "quality": "GOOD", "rows": 30 },
+    { "index": 526, "name": "Inventory Forecast", "type": "content", "quality": "TEMPLATE", "rows": 20 },
+    { "index": 527, "name": "Reorder Point Calculator", "type": "content", "quality": "TEMPLATE", "rows": 5 },
+    { "index": 528, "name": "Seasonal Planning Calendar", "type": "content", "quality": "GOOD", "rows": 24 },
+    { "index": 529, "name": "V-M24", "type": "structural" }
+  ],
+  "output_files": [
+    "3pl_and_fulfillment.md",
+    "launch_operations.md",
+    "inventory_management.md",
+    "international_and_scaling.md"
+  ],
+  "opkits": ["OK-M24-001"],
+  "dialogue": {
+    "rounds": 6,
+    "personas": 3,
+    "upgrades": 27,
+    "unresolved": 0
+  },
+  "corrections": [
+    "Deliverr acquired by Flexport (2022) — merged into single entry",
+    "Amazon FBA is NOT a 3PL option for D2C; only for Amazon channel (per M28)",
+    "72hr scorecard changed from ROAS to MER (per M30 alignment)",
+    "Added subscription inventory forecasting (absent from Danilo)",
+    "Added supplement-specific storage requirements (FDA, temperature, lot tracking)"
+  ],
+  "hypothesis_links": ["HYP-002", "HYP-004"],
+  "cross_tup": ["m9", "m25", "m28", "m18", "m20", "m30", "m10", "m21", "m22", "m19"],
+  "intelligence_gaps": [
+    { "gap": "IonWave CM exact MOQ", "grade": "D", "upgrade_path": "Confirm with Biocean/CM during contract negotiation" },
+    { "gap": "IonWave product temperature stability profile", "grade": "D", "upgrade_path": "Request stability testing data from manufacturer" },
+    { "gap": "ShipBob 2026 actual contract terms", "grade": "C", "upgrade_path": "Verify during 3PL sales process" },
+    { "gap": "Canada NPN processing time (6-12 months estimate)", "grade": "C", "upgrade_path": "Confirm with Health Canada or regulatory consultant" },
+    { "gap": "Recharge/Skio billing date spreading feature", "grade": "C", "upgrade_path": "Verify during subscription platform setup (M21)" }
+  ]
+}

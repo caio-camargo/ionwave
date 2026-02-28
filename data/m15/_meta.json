@@ -1,0 +1,66 @@
+{
+  "tup_id": "M15",
+  "tup_name": "Landing Pages & Conversion",
+  "cluster": "BCL-3",
+  "status": "migrated",
+  "quality_grade": "8.2/10",
+  "danilo_tabs": {
+    "structural": ["383_p_m15", "384_c_m15", "385_ip_m15", "404_v_m15"],
+    "content": [
+      "386_landing_page_copy",
+      "387_landing_page_psychology",
+      "388_landing_page_psychology1",
+      "389_landing_page_psychology2",
+      "390_headline_formulas",
+      "391_headline_formulas1",
+      "392_headline_formulas2",
+      "393_page_section_templates",
+      "394_page_section_templates1",
+      "395_page_section_templates2",
+      "396_checkout_optimization",
+      "397_checkout_optimization1",
+      "398_checkout_optimization2",
+      "399_product_page_copy",
+      "400_all_pages_funnels",
+      "401_funnel",
+      "402_funnel_architecture",
+      "403_ref_funnel_anatomy"
+    ],
+    "total": 22
+  },
+  "output_files": [
+    "landing_page_psychology.md",
+    "copy_and_headlines.md",
+    "checkout_optimization.md",
+    "funnel_architecture.md",
+    "cro_testing_framework.md"
+  ],
+  "opkits": ["OK-M15-001"],
+  "dialogue": {
+    "personas": 3,
+    "rounds": 6,
+    "upgrades": 25,
+    "applied": 23,
+    "critical_upgrades": 3,
+    "saturation": true
+  },
+  "corrections": [
+    "Fictional testimonials flagged (Marcus T., Jennifer R., David K.) — CANNOT go live",
+    "98% bioavailable claim needs citation or removal",
+    "10,000+ optimizers is fictional pre-launch number",
+    "127 reviews / 4.8 stars is placeholder — FTC violation risk",
+    "René Quinton blood plasma claim oversimplified — reworded",
+    "Guarantee language changed from 'Feel-the-Difference' to 'Money-Back'",
+    "Heavy deduplication (Psychology ×3, Headlines ×3, Templates ×3, Checkout ×3) consolidated"
+  ],
+  "hypothesis_links": ["HYP-002", "HYP-004"],
+  "cross_tup": ["M9", "M10", "M14", "M17", "M19", "M22", "M23", "M24", "M25", "M28", "M30"],
+  "intelligence_gaps": [
+    "Attorney review of all page copy for FTC/DSHEA compliance",
+    "Prop 65 CoA testing for marine plasma (arsenic, cadmium, lead, mercury)",
+    "VSL script writing and authority figure identification",
+    "Real customer testimonials (replace all fictional ones)",
+    "Actual conversion benchmarks post-launch (replace industry averages)",
+    "Creative fatigue cycle length for IonWave specifically"
+  ]
+}

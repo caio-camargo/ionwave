@@ -1,0 +1,79 @@
+{
+  "tup_id": "m25",
+  "tup_name": "Financial Operations",
+  "cluster": "BCL-2",
+  "cluster_name": "Money & Legal",
+  "status": "migrated",
+  "current_version": "1.0.0",
+  "current_quality": "8.8/10",
+  "sheet_count": 6,
+  "sheets": [
+    {"danilo_id": "533", "title": "Bookkeeping Accounting Setup", "rows": 28, "mapped_to": "bookkeeping_setup.md"},
+    {"danilo_id": "534", "title": "Unit Economics by Channel", "rows": 7, "mapped_to": "unit_economics_tracking.md"},
+    {"danilo_id": "535", "title": "Payback Period Analysis", "rows": 8, "mapped_to": "unit_economics_tracking.md"},
+    {"danilo_id": "536", "title": "Monthly Business Review", "rows": 2, "mapped_to": "business_review_cadence.md"},
+    {"danilo_id": "537", "title": "Quarterly Planning", "rows": 31, "mapped_to": "business_review_cadence.md"},
+    {"danilo_id": "538", "title": "Annual Planning Process", "rows": 29, "mapped_to": "business_review_cadence.md"}
+  ],
+  "files": [
+    "bookkeeping_setup.md",
+    "unit_economics_tracking.md",
+    "business_review_cadence.md",
+    "dialogue_summary.md",
+    "opkit_financial_ops.md",
+    "_meta.json"
+  ],
+  "opkits": ["OK-M25-001"],
+  "feeds_into": ["m3", "m30", "m35"],
+  "requires": ["m0"],
+  "key_blockers": ["REC-001 margin dispute (45% vs 67%) — treated as dual scenario, not resolved"],
+  "next_action": "Pre-launch: test Synder vs A2X with ReCharge sample transactions. Get 3PL cost quotes. Set up QBO with Day 1 Essentials chart of accounts.",
+  "intelligence_gaps": [
+    {
+      "gap": "Synder vs A2X real-world performance with ReCharge subscriptions",
+      "priority": "CRITICAL",
+      "validation_path": "Pre-launch: test both with 10 sample transactions",
+      "current_grade": "C"
+    },
+    {
+      "gap": "REC-001 margin dispute origin (is Danilo's 45% contribution margin?)",
+      "priority": "HIGH",
+      "validation_path": "Ask Danilo for calculation behind 45%",
+      "current_grade": "D"
+    },
+    {
+      "gap": "Actual 3PL fulfillment cost per order",
+      "priority": "HIGH",
+      "validation_path": "Get quotes from ShipBob, Fulfil, or other 3PLs",
+      "current_grade": "D"
+    },
+    {
+      "gap": "Multi-touch attribution tool selection",
+      "priority": "LOW",
+      "validation_path": "Evaluate at $10K+/mo ad spend",
+      "current_grade": "D"
+    }
+  ],
+  "revisions": [
+    {
+      "version": "1.0.0",
+      "date": "2026-02-06",
+      "actor": "claude-opus-4-6",
+      "change_type": "initial_workshop",
+      "protocol_used": "TWP-001 v2.0.0",
+      "what_changed": "Initial workshop: 6 Danilo tabs consolidated into 3 content files + dialogue + OpKit. Green-field build (no Bootstrap sources). Web research on Shopify+QBO integration, sales tax automation, ASC 606, inventory accounting, DTC chart of accounts, common financial mistakes.",
+      "quality_score": 8.8,
+      "quality_rationale": "High actionability (Day 1 Essentials, checklists, Survival Five scorecard). Excellent confidence honesty (dual-margin REC-001 treatment). Strong research grounding. Deductions for pre-launch D-grade assumptions and untested connector recommendation.",
+      "dialogue_ref": {
+        "file": "dialogue_summary.md",
+        "tup_version": "1.0.0",
+        "personas": ["Skeptical Investor", "Operations Expert", "Growth Engineer"],
+        "rounds": 8,
+        "saturated": true,
+        "upgrades": 6,
+        "unresolved": 0
+      },
+      "hypotheses_affected": ["HYP-001", "HYP-002", "HYP-003", "HYP-004", "HYP-005", "HYP-007", "HYP-008"]
+    }
+  ]
+}

@@ -1,0 +1,551 @@
+{
+  "schema_version": "1.0.0",
+  "description": "Chronological log of all hypothesis validation events, tests, and state changes",
+  "log_entries": [
+    {
+      "entry_id": "LOG-001",
+      "timestamp": "2026-02-04T10:00:00Z",
+      "event_type": "HYPOTHESIS_CREATED",
+      "hypothesis_id": "HYP-001",
+      "actor": "Claude (Session 2026-02-04 #3)",
+      "description": "Initial CAC hypothesis established from marine plasma market research",
+      "state_change": {
+        "from": null,
+        "to": "ASSUMED"
+      },
+      "confidence_grade": "C",
+      "supporting_evidence": [
+        "Industry benchmarks from marine plasma market sizing",
+        "SaaS freemium CAC ranges $30-50"
+      ],
+      "document_refs": ["IonWave/Market_Sizing_Marine_Plasma.md"]
+    },
+
+    {
+      "entry_id": "LOG-002",
+      "timestamp": "2026-02-04T10:00:00Z",
+      "event_type": "HYPOTHESIS_CREATED",
+      "hypothesis_id": "HYP-002",
+      "actor": "Claude (Session 2026-02-04 #3)",
+      "description": "Initial subscription conversion rate hypothesis",
+      "state_change": {
+        "from": null,
+        "to": "ASSUMED"
+      },
+      "confidence_grade": "C",
+      "supporting_evidence": [
+        "Freemium SaaS benchmark: 2-5% convert",
+        "Targeting 50% of acquired users (optimistic)"
+      ],
+      "document_refs": ["IonWave/Market_Sizing_Marine_Plasma.md"]
+    },
+
+    {
+      "entry_id": "LOG-003",
+      "timestamp": "2026-02-05T08:00:00Z",
+      "event_type": "HYPOTHESIS_REVISED",
+      "hypothesis_id": "HYP-001",
+      "actor": "Claude (Session 2026-02-05 #1)",
+      "description": "CAC hypothesis revised through financial model sensitivity analysis",
+      "state_change": {
+        "from": "ASSUMED",
+        "to": "ASSUMED"
+      },
+      "confidence_grade": "C",
+      "revision_details": {
+        "what_changed": "Elevated to CRITICAL severity; expanded range to $30-45",
+        "why_changed": "Sensitivity analysis shows CAC is highest-impact variable on timeline and capital",
+        "impact": "10% CAC increase = +3 months to goal OR +$15K capital needed"
+      },
+      "supporting_evidence": [
+        "Financial model sensitivity table",
+        "Scenario modeling across 3 cases"
+      ],
+      "document_refs": ["IonWave/Financial_Model_Revenue_Validation.md"]
+    },
+
+    {
+      "entry_id": "LOG-004",
+      "timestamp": "2026-02-05T08:00:00Z",
+      "event_type": "HYPOTHESIS_REVISED",
+      "hypothesis_id": "HYP-002",
+      "actor": "Claude (Session 2026-02-05 #1)",
+      "description": "Subscription rate revised with recognition of uncertainty",
+      "state_change": {
+        "from": "ASSUMED",
+        "to": "ASSUMED"
+      },
+      "confidence_grade": "C",
+      "revision_details": {
+        "what_changed": "Added target 60% aspirational rate vs base 50%",
+        "why_changed": "Financial model shows 50% may be conservative; 60% achievable with product excellence",
+        "impact": "+10% conversion = -2 months to goal"
+      },
+      "supporting_evidence": [
+        "Optimistic scenario modeling",
+        "Best-in-class freemium conversion analysis"
+      ],
+      "document_refs": ["IonWave/Financial_Model_Revenue_Validation.md"]
+    },
+
+    {
+      "entry_id": "LOG-005",
+      "timestamp": "2026-02-05T08:00:00Z",
+      "event_type": "HYPOTHESIS_CREATED",
+      "hypothesis_id": "HYP-003",
+      "actor": "Claude (Session 2026-02-05 #1)",
+      "description": "Monthly churn hypothesis established from financial modeling",
+      "state_change": {
+        "from": null,
+        "to": "ASSUMED"
+      },
+      "confidence_grade": "D",
+      "supporting_evidence": [
+        "SaaS SMB churn benchmarks: 5-10% monthly",
+        "Assuming 12% (conservative) due to novelty market"
+      ],
+      "document_refs": ["IonWave/Financial_Model_Revenue_Validation.md"],
+      "notes": "HIGH risk: D-grade with wide range. Churn directly impacts LTV and MRR stability."
+    },
+
+    {
+      "entry_id": "LOG-006",
+      "timestamp": "2026-02-05T08:00:00Z",
+      "event_type": "HYPOTHESIS_CREATED",
+      "hypothesis_id": "HYP-004",
+      "actor": "Claude (Session 2026-02-05 #1)",
+      "description": "Gross margin hypothesis for SaaS model",
+      "state_change": {
+        "from": null,
+        "to": "ASSUMED"
+      },
+      "confidence_grade": "B",
+      "supporting_evidence": [
+        "SaaS products typically 70-90% gross margin",
+        "Accounting for hosting, support, payment processing"
+      ],
+      "document_refs": ["IonWave/Financial_Model_Revenue_Validation.md"]
+    },
+
+    {
+      "entry_id": "LOG-007",
+      "timestamp": "2026-02-05T08:00:00Z",
+      "event_type": "HYPOTHESIS_CREATED",
+      "hypothesis_id": "HYP-005",
+      "actor": "Claude (Session 2026-02-05 #1)",
+      "description": "Blended LTV hypothesis across subscription tiers",
+      "state_change": {
+        "from": null,
+        "to": "ASSUMED"
+      },
+      "confidence_grade": "D",
+      "supporting_evidence": [
+        "Calculated from churn, ARPU, and gross margin",
+        "Wide range $64-159 reflects uncertainty in inputs"
+      ],
+      "document_refs": ["IonWave/Financial_Model_Revenue_Validation.md"],
+      "notes": "CRITICAL: Composite hypothesis depending on HYP-003 (churn) and HYP-004 (margin). Chain of weak links."
+    },
+
+    {
+      "entry_id": "LOG-008",
+      "timestamp": "2026-02-05T08:00:00Z",
+      "event_type": "HYPOTHESIS_CREATED",
+      "hypothesis_id": "HYP-006",
+      "actor": "Claude (Session 2026-02-05 #1)",
+      "description": "Organic growth lift from virality/word-of-mouth",
+      "state_change": {
+        "from": null,
+        "to": "ASSUMED"
+      },
+      "confidence_grade": "D",
+      "supporting_evidence": [
+        "Assuming 10% of users acquired organically",
+        "Wide range 5-20% due to market novelty"
+      ],
+      "document_refs": ["IonWave/Financial_Model_Revenue_Validation.md"],
+      "notes": "MEDIUM severity but D-grade confidence. Conservative modeling assumes 10%."
+    },
+
+    {
+      "entry_id": "LOG-009",
+      "timestamp": "2026-02-05T08:00:00Z",
+      "event_type": "HYPOTHESIS_CREATED",
+      "hypothesis_id": "HYP-007",
+      "actor": "Claude (Session 2026-02-05 #1)",
+      "description": "Timeline to $30K MRR hypothesis established",
+      "state_change": {
+        "from": null,
+        "to": "ASSUMED"
+      },
+      "confidence_grade": "C",
+      "supporting_evidence": [
+        "Financial model base case: 18 months",
+        "Range: 12 months (optimistic, 20% probability) to 24+ months (conservative, 30% probability)"
+      ],
+      "document_refs": ["IonWave/Financial_Model_Revenue_Validation.md"],
+      "notes": "CRITICAL: Invalidates original 12-month thesis. Requires business model revision."
+    },
+
+    {
+      "entry_id": "LOG-010",
+      "timestamp": "2026-02-05T08:00:00Z",
+      "event_type": "HYPOTHESIS_CREATED",
+      "hypothesis_id": "HYP-008",
+      "actor": "Claude (Session 2026-02-05 #1)",
+      "description": "Capital sufficiency hypothesis with staged financing strategy",
+      "state_change": {
+        "from": null,
+        "to": "ASSUMED"
+      },
+      "confidence_grade": "C",
+      "supporting_evidence": [
+        "Financial model cash flow analysis",
+        "Staged approach: $30K initial + $20-30K Month 6 + $25-40K Month 12"
+      ],
+      "document_refs": [
+        "IonWave/Financial_Model_Revenue_Validation.md",
+        "tracking/Open_Questions.md"
+      ],
+      "notes": "CRITICAL: Original $30-50K assumption insufficient. Staged financing reduces risk."
+    },
+
+    {
+      "entry_id": "LOG-011",
+      "timestamp": "2026-02-05T10:00:00Z",
+      "event_type": "ARCHITECTURE_ESTABLISHED",
+      "hypothesis_id": null,
+      "actor": "User + Claude (Session 2026-02-05 #1)",
+      "description": "Hypotheses Architecture system formally established as ontological primitive",
+      "state_change": null,
+      "confidence_grade": null,
+      "supporting_evidence": [
+        "User directive: 'This needs to be a systems architecture primitive'",
+        "Terminology shift from 'assumptions' to 'hypotheses' to reflect evolving nature"
+      ],
+      "document_refs": [
+        "data/hypotheses/registry.json",
+        "data/hypotheses/index.json",
+        "data/hypotheses/validation_log.json"
+      ],
+      "notes": "System designed for: revision history with reasoning, grades for detecting weak links, validation plans, impact severity, risk assessment, dedicated dashboard view, bidirectional indexing."
+    },
+
+    {
+      "entry_id": "LOG-012",
+      "timestamp": "2026-02-06T10:00:00Z",
+      "event_type": "CONSTRAINT_SCENARIO_APPLIED",
+      "hypothesis_id": "HYP-006",
+      "actor": "Caio + Claude (Session 2026-02-06 #7)",
+      "description": "CSP-001 applied to HYP-006 (Organic & Referral Lift): decomposed into 5 sub-hypotheses, surfaced 1 new hypothesis (HYP-009). Organic is not a single thing — it's 5+ distinct channels each requiring different mechanisms.",
+      "scenarios_applied": ["SC-02 ($100K MRR in 3 Months)", "SC-03 ($0 Marketing Budget)", "SC-04 (10 Hours/Week)"],
+      "sub_hypotheses_created": ["HYP-006.1", "HYP-006.2", "HYP-006.3", "HYP-006.4", "HYP-006.5"],
+      "new_hypotheses_created": ["HYP-009"],
+      "composite_grade_before": "D",
+      "composite_grade_after": "D",
+      "supporting_evidence": [
+        "All 3 scenarios converged: organic requires 5+ distinct mechanisms (referral, SEO, influencer, PR, WOM)",
+        "0 of 6 required mechanisms currently exist",
+        "HYP-001 relationship reframed: 'mitigates' → 'portfolio_diversifies'"
+      ],
+      "document_refs": ["protocols/case_studies/CSP-001_HYP-006_2026-02-06.md"],
+      "notes": "Grade unchanged but now diagnostic — each sub-component independently testable. First CSP run on the system."
+    },
+
+    {
+      "entry_id": "LOG-013",
+      "timestamp": "2026-02-06T10:30:00Z",
+      "event_type": "HYPOTHESIS_CREATED",
+      "hypothesis_id": "HYP-009",
+      "actor": "Caio + Claude (Session 2026-02-06 #7)",
+      "description": "Pre-Launch Demand Generation hypothesis surfaced by CSP-001 (SC-02 speed compression). Current system assumes zero-to-paid-acquisition on Day 1 with no pre-launch demand building.",
+      "state_change": {
+        "from": null,
+        "to": "ASSUMED"
+      },
+      "confidence_grade": "D",
+      "supporting_evidence": [
+        "CSP-001 SC-02 exposed missing component in growth model",
+        "Pre-launch demand building is established DTC practice"
+      ],
+      "document_refs": ["protocols/case_studies/CSP-001_HYP-006_2026-02-06.md"],
+      "notes": "MEDIUM-HIGH severity. Reduces Day 1 CAC, provides initial organic base, creates social proof."
+    },
+
+    {
+      "entry_id": "LOG-014",
+      "timestamp": "2026-02-06T11:00:00Z",
+      "event_type": "CONSTRAINT_SCENARIO_APPLIED",
+      "hypothesis_id": "HYP-003",
+      "actor": "Caio + Claude (Session 2026-02-06 #7)",
+      "description": "CSP-002 applied to HYP-003 (Monthly Subscriber Churn): decomposed into 4 sub-hypotheses. Key insight: 'churn is a product hypothesis in disguise.' All 4 constraint scenarios applied — churn is the universal tax on every business model variant.",
+      "scenarios_applied": ["SC-01 ($100M in 12 Months)", "SC-02 ($100K MRR in 3 Months)", "SC-03 ($0 Marketing Budget)", "SC-04 (10 Hours/Week)"],
+      "sub_hypotheses_created": ["HYP-003.1", "HYP-003.2", "HYP-003.3", "HYP-003.4"],
+      "new_hypotheses_created": [],
+      "composite_grade_before": "D",
+      "composite_grade_after": "D",
+      "supporting_evidence": [
+        "All 4 scenarios converged: product efficacy is the foundation of all retention",
+        "HYP-003.1 (Product Efficacy) carries 40% weight — most consequential finding across both CSP runs",
+        "Cross-hypothesis sub-link: HYP-006.5 depends on HYP-003.1 (no efficacy, no WOM)",
+        "New concept surfaced: Net Revenue Retention (for future scale consideration)"
+      ],
+      "document_refs": ["protocols/case_studies/CSP-002_HYP-003_2026-02-06.md"],
+      "notes": "Composite initially 1.0 (all D). Proxy evidence then applied to upgrade HYP-003.1."
+    },
+
+    {
+      "entry_id": "LOG-015",
+      "timestamp": "2026-02-06T11:30:00Z",
+      "event_type": "HYPOTHESIS_REVISED",
+      "hypothesis_id": "HYP-003.1",
+      "actor": "Caio + Claude (Session 2026-02-06 #7)",
+      "description": "HYP-003.1 (Product Efficacy & Time-to-Value) upgraded from D to C using Seaonic proxy evidence. Seaonic (near-identical product) has 4.5★ Trustpilot from 49 reviews, sustaining subscriptions at $69/box. General electrolyte VOC corpus also supports rapid result claims.",
+      "state_change": {
+        "from": "ASSUMED",
+        "to": "ASSUMED"
+      },
+      "confidence_grade": "C",
+      "revision_details": {
+        "what_changed": "Grade upgraded D→C based on Seaonic proxy evidence",
+        "why_changed": "Real-world signal from near-identical product (Seaonic: 4.5★ Trustpilot, 49 reviews, sustaining subscriptions at $69/box). General electrolyte VOC shows brain fog clearing, energy, hydration claims. Not D because we have real-world signal. Not B because no IonWave-specific data.",
+        "impact": "HYP-003 composite score moves from 1.00 to 1.40. Bottleneck shifts from 'does marine plasma work?' to 'can we survive early-life churn?'"
+      },
+      "supporting_evidence": [
+        "Seaonic Trustpilot: 4.5★ from 49 reviews (A-grade direct observation)",
+        "Seaonic Amazon: 27 reviews (A-grade direct observation)",
+        "Seaonic on-site: 139 reviews at 5.0★ (curated — discounted)",
+        "General electrolyte VOC: brain fog (VOC-002, VOC-009), energy (VOC-010), hydration (VOC-008)"
+      ],
+      "document_refs": ["protocols/case_studies/CSP-002_HYP-003_2026-02-06.md", "IonWave/Marine_Plasma_Market_Sizing.md"],
+      "notes": "Arguably the most important hypothesis in the entire system. Upgrade path: mine Seaonic review text (C→B, 2-3 hrs), then IonWave beta test (B→A)."
+    },
+    {
+      "entry_id": "LOG-016",
+      "timestamp": "2026-02-06T14:00:00Z",
+      "event_type": "TUP_EVIDENCE_CONTRIBUTION",
+      "hypothesis_id": "HYP-003",
+      "actor": "Caio + Claude (Session 2026-02-06 #10 — M21 Workshop)",
+      "description": "M21 (Subscription & Retention) workshop produced 5 content files providing substantive evidence for HYP-003 churn hypothesis and sub-hypotheses. Retention curve data, 9 churn prediction signals (5 missing from Danilo's model), dunning model (55-70% recovery rate), education-first win-back strategy replacing Danilo's discount ladder, and 15-tactic prioritized retention playbook. Operationalizes HYP-003.3 (Retention Infrastructure) from abstract concept to concrete implementation plan.",
+      "state_change": {
+        "from": "ASSUMED",
+        "to": "ASSUMED"
+      },
+      "confidence_grade": "D",
+      "tup_source": "M21",
+      "evidence_contributed": [
+        "Industry retention curve: Month 1 (82-88%), Month 3 (60-70%), Month 6 (45-55%), Month 12 (30-40%) — validates HYP-003.2 targets",
+        "9 churn prediction signals with intervention timelines — 5 signals missing from Danilo's 4-signal model",
+        "Dunning model: 55-70% recovery rate, -1.5 to -3pp churn impact — highest single-ROI activity",
+        "Education-first win-back strategy replacing discount ladder — addresses 70-80% of churn reasons vs 15-20%",
+        "Tier 1 infrastructure expected to reduce churn from 15-20% to 10-12% (2x LTV improvement)",
+        "Scenario modeling: no infrastructure (5-6.7mo lifetime) vs Tier 1 (8.3-10mo) vs full stack (11-14mo)"
+      ],
+      "hypotheses_affected": ["HYP-002", "HYP-003", "HYP-003.1", "HYP-003.2", "HYP-003.3", "HYP-003.4", "HYP-005"],
+      "document_refs": [
+        "data/m21/churn_prediction.json",
+        "data/m21/retention_playbook.md",
+        "data/m21/win_back_offer_ladder.md",
+        "data/m21/subscription_psychology.md",
+        "data/m21/subscription_platform.json"
+      ],
+      "notes": "Grade unchanged (still D for parent HYP-003 — no IonWave-specific data). But M21 provides the operational blueprint for testing and validating. HYP-003.3 (Retention Infrastructure) upgradeable from D to C once Tier 1 infrastructure is implemented."
+    },
+
+    {
+      "entry_id": "LOG-017",
+      "timestamp": "2026-02-06T14:00:00Z",
+      "event_type": "TUP_EVIDENCE_CONTRIBUTION",
+      "hypothesis_id": "HYP-002",
+      "actor": "Caio + Claude (Session 2026-02-06 #10 — M21 Workshop)",
+      "description": "M21 provides subscription psychology evidence supporting HYP-002 (Subscription Attach Rate). Subscriber driver rankings (convenience > savings > consistency > identity > belonging), subscription-first funnel design recommendation (default to sub, one-time as downgrade), 6x LTV multiplier ($159 vs $26), and optimal discount range (15-20% per ProfitWell).",
+      "state_change": {
+        "from": "ASSUMED",
+        "to": "ASSUMED"
+      },
+      "confidence_grade": "C",
+      "tup_source": "M21",
+      "evidence_contributed": [
+        "Subscription driver ranking: convenience > savings > consistency > identity > belonging",
+        "Subscription-first funnel recommendation: make subscription default, one-time as downgrade",
+        "6x LTV multiplier: subscribers $159 vs one-time $26",
+        "Optimal discount range: 15-20% (ProfitWell B-grade source)",
+        "Platform recommendation: Loop Subscriptions for subscription-first checkout"
+      ],
+      "hypotheses_affected": ["HYP-002", "HYP-005"],
+      "document_refs": [
+        "data/m21/subscription_psychology.md",
+        "data/m21/subscription_platform.json"
+      ],
+      "notes": "HYP-002 grade remains C — evidence is corroborative of existing benchmarks, not new. But M21 adds specificity: driver rankings enable funnel optimization, platform choice enables subscription-first architecture."
+    },
+    {
+      "entry_id": "LOG-018",
+      "timestamp": "2026-02-06T16:00:00Z",
+      "event_type": "ISSUE_FLAGGED",
+      "hypothesis_id": "HYP-004",
+      "actor": "Caio + Claude (Session 2026-02-06 — M10 Workshop)",
+      "description": "Open issue ISS-001 flagged: 67% margin target structurally unachievable with subscription pricing. Subscription discount (15%) drops margin from 66% to 60%. At 60% subscription mix, blended margin = 62.7%. Persona dialogue (Round 4) recommended revising target to 62-64%. Kill threshold (60%) remains viable.",
+      "issue_id": "ISS-001",
+      "state_change": {
+        "from": "ASSUMED",
+        "to": "ASSUMED"
+      },
+      "confidence_grade": "B",
+      "tup_source": "M10",
+      "evidence_contributed": [
+        "One-time margin: 66% ($59 price, $20 COGS)",
+        "Subscription margin: 60% ($50.15 price, $20 COGS)",
+        "Blended margin at 60% sub mix: 62.7%",
+        "HYP-004 target (67%) structurally unachievable with subscription discount",
+        "Recommendation: revise HYP-004 target to 62-64%, maintain 60% kill threshold"
+      ],
+      "hypotheses_affected": ["HYP-004", "HYP-005", "HYP-002"],
+      "document_refs": [
+        "data/m10_pricing_offer/offer_strategy.md",
+        "data/m10_pricing_offer/dialogue_summary.md"
+      ],
+      "notes": "First open issue in the system. The 67% target was set before subscription economics were modeled. With subscription-first architecture (M10 + M21), subscription discount structurally reduces blended margin. HYP-004 needs revision, not the pricing architecture. Issue attached to HYP-004 as ISS-001."
+    },
+    {
+      "entry_id": "LOG-019",
+      "timestamp": "2026-02-06T16:00:00Z",
+      "event_type": "TUP_EVIDENCE_CONTRIBUTION",
+      "hypothesis_id": "HYP-002",
+      "actor": "Caio + Claude (Session 2026-02-06 — M10 Workshop)",
+      "description": "M10 provides pricing-side evidence for HYP-002 (Subscription Conversion). Subscription-first checkout design with 15% discount ($50.15/month displayed as primary), one-time at $59 as de-emphasized alternative. Price anchoring against Seaonic $69 supports subscription value perception. Planned test PT-002 (10% vs 15% subscription discount) will provide first real data.",
+      "state_change": {
+        "from": "ASSUMED",
+        "to": "ASSUMED"
+      },
+      "confidence_grade": "C",
+      "tup_source": "M10",
+      "evidence_contributed": [
+        "Subscription-first checkout architecture defined",
+        "15% discount ($50.15) selected based on ProfitWell optimal range",
+        "Price testing framework established with PT-002 planned for Month 2",
+        "Cart and checkout upsell copy designed for subscription conversion"
+      ],
+      "hypotheses_affected": ["HYP-002"],
+      "document_refs": [
+        "data/m10_pricing_offer/offer_strategy.md",
+        "data/m10_pricing_offer/upsell_page_copy.md",
+        "data/m10_pricing_offer/price_testing_framework.md"
+      ],
+      "notes": "Grade remains C — architecture is designed but untested. PT-002 will provide first A/B evidence on subscription discount effectiveness."
+    },
+
+    {
+      "entry_id": "LOG-020",
+      "timestamp": "2026-02-06T18:00:00Z",
+      "event_type": "TUP_EVIDENCE_CONTRIBUTION",
+      "hypothesis_id": "HYP-006",
+      "actor": "Caio + Claude (Session 2026-02-06 #11 — M22 Workshop)",
+      "description": "M22 (Referral & Community) workshop produced 6 content files directly operationalizing HYP-006 (Organic & Referral Lift) and sub-hypotheses HYP-006.1 (Referral) and HYP-006.5 (Community & WOM). Key contributions: referral program validated ($10/$10 store credit, phased rollout, benchmarks), community strategy with phased platform recommendation (email-first → Skool test → Circle), UGC production system (brand brief, creator program, compliance framework). Danilo overrides: removed 'more complete than LMNT' comparative claim (legal risk), added FTC compliance to all creator docs, phased community approach instead of immediate Facebook Group. 6 persona dialogue upgrades applied.",
+      "state_change": {
+        "from": "ASSUMED",
+        "to": "ASSUMED"
+      },
+      "confidence_grade": "D",
+      "tup_source": "M22",
+      "evidence_contributed": [
+        "Referral program: $10/$10 store credit validated against Seed, Ritual benchmarks. Referral CAC $13.40 vs $35 paid. Phased rollout: manual codes (Month 2-3) → Smile.io (Month 3-12) → optimize",
+        "Referral benchmarks: 3-5% referral rate, 10-15% conversion, 0.15-0.30 viral coefficient (Year 1). Danilo's 0.5 viral coefficient target recalibrated as Year 2+ aspiration.",
+        "Referrer retention effect: referrers have 2-4x higher LTV, 20-30% lower churn. Referred customers +16-25% LTV, -18% churn.",
+        "Community platform evaluation: 7 platforms compared. Facebook Groups acceptable Phase 0 only. Circle recommended Phase 2 ($100K+ revenue).",
+        "UGC production system: brand brief with FTC compliance, creator brief template with content flow structure, creator program with budget tiers ($500 survival / $1K minimum viable / $2K full / $5K scale)",
+        "LMNT comparative claim REMOVED — legal risk. Replaced with unnamed comparisons.",
+        "Creator Compliance Acknowledgment requirement added for legal protection"
+      ],
+      "hypotheses_affected": ["HYP-006", "HYP-006.1", "HYP-006.5", "HYP-002", "HYP-003"],
+      "document_refs": [
+        "data/m22/referral_program.json",
+        "data/m22/community_strategy.md",
+        "data/m22/ugc_brand_brief.md",
+        "data/m22/ugc_library.json",
+        "data/m22/ugc_brief_template.md",
+        "data/m22/ugc_creator_program.json"
+      ],
+      "notes": "Grade unchanged (still D for parent HYP-006 — no IonWave-specific organic/referral data). But M22 provides the operational blueprint for HYP-006.1 (referral program) and HYP-006.5 (community). These sub-hypotheses are now operationally ready for testing post-launch. Intelligence gap: Loop Subscriptions + Smile.io integration unverified."
+    }
+  ],
+
+    {
+      "entry_id": "LOG-021",
+      "timestamp": "2026-02-06T20:00:00Z",
+      "event_type": "TUP_EVIDENCE_CONTRIBUTION",
+      "hypothesis_id": "HYP-001",
+      "actor": "Caio + Claude (Session 2026-02-06 — M14 Workshop)",
+      "description": "M14 Testing & Optimization workshop contributes methodology for validating HYP-001 (CAC), HYP-002 (Subscription Conversion), HYP-004 (Margin). No new evidence data — M14 provides the TESTING FRAMEWORK for generating evidence. Creative testing protocol, experimentation framework, and test queue directly target hypothesis validation.",
+      "state_change": {
+        "from": "ASSUMED",
+        "to": "ASSUMED"
+      },
+      "confidence_grade": "D",
+      "tup_source": "M14",
+      "evidence_contributed": [
+        "Experimentation framework: traffic-based methodology selection (qualitative → pre/post → Bayesian → frequentist) calibrated for IonWave's low-traffic reality",
+        "Creative testing protocol: two-stage kill criteria, sequential batching for $1K budget, creative scaling protocol (graduate → ramp → stabilize → maintain)",
+        "Test queue: CT-001 (hook testing), CT-002 (UGC vs founder), LP-001 (subscription-first default), AT-001 (biohacker vs health-conscious) — all directly test hypothesis assumptions",
+        "Statistical framework: explicit error rate disclosure by confidence level, Bayesian low-conversion warning, sunk cost discipline",
+        "Testing infrastructure: phased tool stack ($0→$200/month), tool spend ≤5% of ad budget discipline",
+        "PT-000 statistical note: +23% RPV lift from $39→$49 is directional, not definitive at 75 total conversions"
+      ],
+      "document_refs": ["data/m14/experimentation_framework.json", "data/m14/creative_testing_protocol.md", "data/m14/test_log.json"],
+      "quality_note": "M14 is methodology, not evidence. Grade stays D because no real test data exists yet. The framework's value is in structuring HOW evidence will be generated."
+    },
+    {
+      "entry_id": "LOG-022",
+      "timestamp": "2026-02-11T12:00:00Z",
+      "event_type": "TUP_EVIDENCE_CONTRIBUTION",
+      "hypothesis_id": "HYP-004",
+      "actor": "Caio + Claude (Session 2026-02-11 — M3 Workshop)",
+      "description": "M3 Financial Model workshop provides CRITICAL analysis of HYP-004 (Gross Margin Sustainability). REC-001 margin dispute FULLY EXPLAINED: Danilo's 40% = fully-loaded GM (includes fulfillment, shipping, payment processing, returns). Bootstrap's 67% = product-only GM. Both correct, different definitions. Working baseline set at 60%. All margin-dependent outputs (8 of 15 tabs) show 3 scenarios. Gap traced to 5 cost categories: fulfillment ($2.50-6.00/order), shipping ($3.50-5.00), payment processing (2.9%+$0.30), returns (5-10%), subscription discount (15%). Sensitivity analysis ranks GM as #1 driver — $122K Y1 cash flow swing. Break-even analysis shows business CANNOT break even at 40% GM with 50% ad spend ratio.",
+      "state_change": {
+        "from": "ASSUMED",
+        "to": "ASSUMED"
+      },
+      "confidence_grade": "C",
+      "tup_source": "M3",
+      "evidence_contributed": [
+        "REC-001 root cause analysis: 27-point margin gap is definitional (product GM vs fully-loaded GM), not a calculation error",
+        "Margin bridge: Product GM 67% → minus fulfillment 7-12% → minus shipping 6-10% → minus payment 3.4% → minus returns 5-7% → minus chargebacks 0.3-0.5% = Fully-loaded GM 34-45%",
+        "Sensitivity tornado: GM is #1 driver ($122K swing), CAC is #2 ($67K swing)",
+        "Break-even at 40% GM with 50% ad spend: IMPOSSIBLE (negative effective margin). Requires GM > 50% for paid-acquisition viability.",
+        "Two-variable matrix: GM 40% + CAC $50 = -$173K Y1 (not survivable). GM 67% + CAC $30 = -$5K Y1 (survivable).",
+        "Kill criteria mapping: RF-6 (Contribution Margin) triggered at GM < ~35%. RF-4 (Gross Margin) warning at < 60%.",
+        "Phase-gated churn threshold recommendation: M30 RF-3 (15%) too aggressive for new brand; recommend Month 1-3: 40%, Month 4-6: 30%, Month 7-12: 20%",
+        "Dialogue upgrade: Organic/renewal revenue is the most important long-term profitability driver (missing from original sensitivity analysis)"
+      ],
+      "hypotheses_affected": ["HYP-004", "HYP-001", "HYP-002", "HYP-003", "HYP-005", "HYP-008"],
+      "document_refs": [
+        "data/m3/landed_cost_breakdown.md",
+        "data/m3/sensitivity_analysis.md",
+        "data/m3/break_even_analysis.md",
+        "data/m3/scenario_planning.md",
+        "data/m3/cash_flow_model.md",
+        "data/m3/working_capital_model.md",
+        "data/m3/capital_requirements.md",
+        "data/m3/budget.md"
+      ],
+      "notes": "REC-001 remains BLOCKER — model uses 60% working baseline but cannot be locked until fulfillment strategy, shipping absorption policy, and return rate are confirmed with actuals. Grade elevated from D to C because the gap is now fully explained and root cause identified, even though resolution requires post-launch data. M3 is the most cross-referenced TUP in the system (draws from M2, M4, M5, M6, M10, M13, M19, M21, M24, M25, M30)."
+    }
+  ],
+
+  "metadata": {
+    "total_entries": 22,
+    "hypotheses_tracked": 10,
+    "date_range": {
+      "earliest": "2026-02-04T10:00:00Z",
+      "latest": "2026-02-11T12:00:00Z"
+    },
+    "event_types": {
+      "HYPOTHESIS_CREATED": 9,
+      "HYPOTHESIS_REVISED": 3,
+      "ARCHITECTURE_ESTABLISHED": 1,
+      "CONSTRAINT_SCENARIO_APPLIED": 2,
+      "TUP_EVIDENCE_CONTRIBUTION": 6,
+      "ISSUE_FLAGGED": 1
+    }
+  }
+}

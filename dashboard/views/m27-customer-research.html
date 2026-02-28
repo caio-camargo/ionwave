@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>M27 Customer Research - IonWave</title>
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+
+  <header class="header">
+    <div class="header-left">
+      <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+        <path d="M2 18 Q7 10 14 14 Q21 18 26 10" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+        <path d="M2 14 Q7 6 14 10 Q21 14 26 6" stroke="#22c55e" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.5"/>
+      </svg>
+      <h1 class="header-title">M27 CUSTOMER RESEARCH</h1>
+    </div>
+    <div class="header-right">
+      <div class="header-meta">
+        <span class="header-meta-label">TUP:</span>
+        <span>M27 (Unified)</span>
+      </div>
+      <div class="header-meta">
+        <span class="header-meta-label">Quality:</span>
+        <span id="quality-score">--</span>
+      </div>
+    </div>
+  </header>
+
+  <nav class="nav-bar">
+    <a href="../index.html">Mission Control</a>
+    <a href="tup-navigator.html">TUP Navigator</a>
+    <a href="m0-trade-thesis.html">M0 Trade Thesis</a>
+    <a href="m26-competitive-intel.html">M26 Competitive Intel</a>
+    <a href="m27-customer-research.html" class="active">M27 Customer Research</a>
+  </nav>
+
+  <div id="file-header"></div>
+
+  <div class="page-content">
+
+    <!-- Meta info -->
+    <div id="meta-section" class="section-grid grid-2" style="margin-bottom: var(--gap-lg);">
+      <div class="loading">Loading metadata...</div>
+    </div>
+
+    <!-- Sheets -->
+    <div id="sheets-container">
+      <div class="loading">Loading sheets...</div>
+    </div>
+
+  </div>
+
+  <footer class="footer">
+    IonWave Mission Control &middot; Trade #84 &middot;
+    <a href="../index.html">&larr; Back to Mission Control</a>
+  </footer>
+
+  <script src="../js/data-loader.js"></script>
+  <script src="../js/renderers.js"></script>
+  <script>
+    const FILE_ID = 'm27_customer_research';
+    console.log('[View] Script loaded for:', FILE_ID);
+
+    document.addEventListener('DOMContentLoaded', async function() {
+      console.log('[View] DOMContentLoaded fired');
+      // Load metadata
+      const meta = await DataLoader.loadFileMeta(FILE_ID);
+      if (!meta) {
+        document.getElementById('meta-section').innerHTML =
+          Renderers.emptyState('Failed to load metadata');
+        return;
+      }
+
+      // Render file header stats
+      document.getElementById('file-header').innerHTML = Renderers.fileHeader(meta);
+      document.getElementById('quality-score').textContent = meta.quality_score || '--';
+
+      // Render meta cards
+      let metaHtml = '';
+
+      // Dependencies card
+      metaHtml += Renderers.card('Dependencies',
+        `<div style="margin-bottom:var(--gap-sm);">
+          <span style="font-size:var(--font-size-xs); color:var(--text-dim);">Feeds Into:</span>
+          ${Renderers.dependencyTags(meta.feeds_into)}
+        </div>
+        <div>
+          <span style="font-size:var(--font-size-xs); color:var(--text-dim);">Requires:</span>
+          ${Renderers.dependencyTags(meta.requires)}
+        </div>`
+      );
+
+      // Blockers card
+      metaHtml += Renderers.card('Key Blockers',
+        `<p style="font-size:var(--font-size-sm); color:var(--text-secondary);">${Renderers.escapeHtml(meta.key_blockers)}</p>
+        <p style="font-size:var(--font-size-xs); color:var(--text-dim); margin-top:var(--gap-sm);">
+          <strong>Next Action:</strong> ${Renderers.escapeHtml(meta.next_action)}
+        </p>`,
+        Renderers.statusBadge('migrated')
+      );
+
+      // Feedback loops
+      if (meta.feedback_loops && meta.feedback_loops.length > 0) {
+        let loopsHtml = '';
+        for (const loop of meta.feedback_loops) {
+          loopsHtml += `<div style="padding:var(--gap-sm) 0; border-bottom:1px solid rgba(255,255,255,0.04);">
+            <div style="font-size:var(--font-size-xs); color:var(--text-dim);">${Renderers.escapeHtml(loop.from)}</div>
+            <div style="font-size:var(--font-size-sm); color:var(--text-secondary); margin-top:2px;">${Renderers.escapeHtml(loop.tension)}</div>
+            <span class="badge badge-warning" style="margin-top:4px;">${loop.status}</span>
+          </div>`;
+        }
+        metaHtml += Renderers.card(`Feedback Loops (${meta.feedback_loops.length})`, loopsHtml);
+      }
+
+      document.getElementById('meta-section').innerHTML = metaHtml;
+
+      // Load and render all sheets
+      const allSheets = await DataLoader.loadAllSheets(FILE_ID);
+      const container = document.getElementById('sheets-container');
+      let sheetsHtml = '';
+
+      for (const sheetMeta of meta.sheets) {
+        const sheetData = allSheets[sheetMeta.id];
+
+        sheetsHtml += `<div class="section-divider">
+          <h2 class="section-title">${Renderers.escapeHtml(sheetMeta.title)}</h2>
+        </div>`;
+
+        if (sheetData) {
+          // Sheet meta info bar
+          sheetsHtml += `<div style="display:flex; gap:var(--gap-sm); align-items:center; margin-bottom:var(--gap-md); font-size:var(--font-size-xs); color:var(--text-dim);">
+            <span>Type: ${sheetData._meta.data_type}</span>
+            <span>&middot;</span>
+            <span>Source: ${sheetMeta.source || '--'}</span>
+            ${sheetMeta.note ? `<span>&middot;</span><span>${Renderers.escapeHtml(sheetMeta.note)}</span>` : ''}
+          </div>`;
+
+          // Render the sheet content
+          sheetsHtml += `<div class="card"><div class="card-body">
+            ${Renderers.autoRender(sheetData)}
+          </div></div>`;
+        } else {
+          sheetsHtml += Renderers.emptyState('Sheet data not yet migrated');
+        }
+      }
+
+      container.innerHTML = sheetsHtml;
+    });
+  </script>
+
+</body>
+</html>

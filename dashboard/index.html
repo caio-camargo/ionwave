@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IonWave Mission Control</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <header class="header">
+    <div class="header-left">
+      <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+        <path d="M2 18 Q7 10 14 14 Q21 18 26 10" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+        <path d="M2 14 Q7 6 14 10 Q21 14 26 6" stroke="#22c55e" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.5"/>
+      </svg>
+      <h1 class="header-title">IONWAVE MISSION CONTROL</h1>
+    </div>
+    <div class="header-right">
+      <div class="header-meta">
+        <span class="header-meta-label">Phase:</span>
+        <span class="badge badge-info">Imagination Sprint</span>
+      </div>
+      <div class="header-meta">
+        <span class="header-meta-label">Updated:</span>
+        <span id="last-updated">--</span>
+      </div>
+    </div>
+  </header>
+
+  <nav class="nav-bar">
+    <a href="index.html" class="active">Mission Control</a>
+    <a href="views/tup-navigator.html">🗺️ TUP Navigator</a>
+    <a href="views/hypotheses-tracker.html">🧪 Hypotheses Tracker</a>
+    <a href="views/financial-forecast.html">📊 Financial Forecast</a>
+    <a href="views/m0-trade-thesis.html">M0 Trade Thesis</a>
+    <a href="views/m26-competitive-intel.html">M26 Competitive Intel</a>
+    <a href="views/m27-customer-research.html">M27 Customer Research</a>
+  </nav>
+
+  <div id="stats-ribbon" class="stats-ribbon">
+    <div class="loading">Loading manifest...</div>
+  </div>
+
+  <div class="page-content">
+
+    <!-- TUP / Cluster Overview -->
+    <div class="section-divider">
+      <h2 class="section-title">🗺️ Cluster Map (TUP System)</h2>
+    </div>
+
+    <div id="cluster-overview" class="section-grid grid-4">
+      <div class="loading">Loading clusters...</div>
+    </div>
+
+    <div style="text-align:right; margin-top:var(--gap-sm); margin-bottom:var(--gap-lg);">
+      <a href="views/tup-navigator.html" class="btn-primary" style="font-size:var(--font-size-xs);">Full TUP Navigator &rarr;</a>
+    </div>
+
+    <div class="section-divider">
+      <h2 class="section-title">Migrated TUPs</h2>
+    </div>
+
+    <div id="tup-cards" class="section-grid grid-3">
+      <div class="loading">Loading...</div>
+    </div>
+
+    <div class="section-divider">
+      <h2 class="section-title">Dependency Chains</h2>
+    </div>
+
+    <div id="dep-chains" class="section-grid grid-2">
+      <div class="loading">Loading...</div>
+    </div>
+
+    <div class="section-divider">
+      <h2 class="section-title">🧪 Hypotheses System</h2>
+    </div>
+
+    <div class="section-grid grid-3">
+      <div class="card">
+        <div class="card-header">
+          <h3 class="card-title">Hypotheses Tracker</h3>
+          <span class="badge badge-critical">8 Hypotheses</span>
+        </div>
+        <div class="card-body">
+          <p>Central registry of all business hypotheses with validation status, confidence grades, and dependency tracking. Track assumptions as they evolve from speculation to validated knowledge.</p>
+          <div style="margin-top: 12px;">
+            <strong>Coverage:</strong> 53+ references across 13 documents<br>
+            <strong>Critical Hypotheses:</strong> 3 (CAC, LTV, Timeline)<br>
+            <strong>Lowest Grade:</strong> D (Churn, LTV, Organic Lift)
+          </div>
+        </div>
+        <div class="card-footer">
+          <a href="views/hypotheses-tracker.html" class="btn-primary">View Tracker →</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <h3 class="card-title">Hypothesis Dependency Audit</h3>
+          <span class="badge badge-success">Complete</span>
+        </div>
+        <div class="card-body">
+          <p>Comprehensive audit mapping all 8 hypotheses to their evidence base across analysis deliverables, data files, and tracking documents. Identifies weak links and dependency chains.</p>
+          <div style="margin-top: 12px;">
+            <strong>Audit Date:</strong> 2026-02-05<br>
+            <strong>Files Audited:</strong> 35+ documents<br>
+            <strong>Weakest Coverage:</strong> HYP-006 (3 refs, speculative)
+          </div>
+        </div>
+        <div class="card-footer">
+          <a href="https://github.com/caio-camargo/ionwave-dashboard/blob/main/IonWave/Hypothesis_Dependency_Audit.md" class="btn-primary" target="_blank">View Audit →</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <h3 class="card-title">Validation Log</h3>
+          <span class="badge badge-info">11 Events</span>
+        </div>
+        <div class="card-body">
+          <p>Chronological log of all hypothesis lifecycle events: creation, revision, validation attempts, and state changes. Full audit trail with reasoning documentation.</p>
+          <div style="margin-top: 12px;">
+            <strong>Latest Event:</strong> Architecture Established<br>
+            <strong>Recent Revisions:</strong> HYP-001 (CAC), HYP-002 (Conversion)<br>
+            <strong>Next Milestone:</strong> Begin validation testing (Month 1-2)
+          </div>
+        </div>
+        <div class="card-footer">
+          <a href="https://github.com/caio-camargo/ionwave-dashboard/blob/main/data/hypotheses/validation_log.json" class="btn-primary" target="_blank">View Log →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-divider">
+      <h2 class="section-title">📊 Analysis Deliverables</h2>
+    </div>
+
+    <div id="analysis-deliverables" class="section-grid grid-3">
+      <div class="loading">Loading...</div>
+    </div>
+
+    <div class="section-divider">
+      <h2 class="section-title">🔴 Critical Open Questions</h2>
+    </div>
+
+    <div id="open-questions">
+      <div class="loading">Loading...</div>
+    </div>
+
+    <div class="section-divider">
+      <h2 class="section-title">Active Feedback Loops</h2>
+    </div>
+
+    <div id="feedback-loops">
+      <div class="loading">Loading...</div>
+    </div>
+
+  </div>
+
+  <footer class="footer">
+    IonWave Mission Control &middot; Trade #84 &middot;
+    Data loaded dynamically from JSON &middot;
+    <a href="https://caio-camargo.github.io/ionwave-dashboard/">GitHub Pages</a>
+  </footer>
+
+  <script src="js/data-loader.js"></script>
+  <script src="js/renderers.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', async function() {
+      const manifest = await DataLoader.loadManifest();
+      if (!manifest) {
+        document.getElementById('stats-ribbon').innerHTML =
+          '<div class="stat-box accent-critical"><div class="stat-value">!</div><div class="stat-label">Failed to load manifest.json</div></div>';
+        return;
+      }
+
+      // ── Stats Ribbon ──
+      const crosswalk = await DataLoader.load('crosswalk.json');
+      const totalTUPs = crosswalk ? Object.keys(crosswalk.tup_to_files).length : 41;
+      const migratedTUPs = 3; // M0, M26, M27
+      const notMigratedTUPs = totalTUPs - migratedTUPs;
+
+      const avgQuality = Object.values(manifest.files)
+        .filter(f => f.quality_score)
+        .map(f => parseFloat(f.quality_score))
+        .reduce((sum, v, _, arr) => sum + v / arr.length, 0);
+
+      document.getElementById('stats-ribbon').innerHTML = `
+        <div class="stat-box accent-info">
+          <div class="stat-value">${totalTUPs}</div>
+          <div class="stat-label">Total TUPs</div>
+        </div>
+        <div class="stat-box accent-success">
+          <div class="stat-value">${migratedTUPs}</div>
+          <div class="stat-label">Migrated TUPs</div>
+        </div>
+        <div class="stat-box accent-warning">
+          <div class="stat-value">${notMigratedTUPs}</div>
+          <div class="stat-label">Not Migrated</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-value">${manifest.total_files}</div>
+          <div class="stat-label">Bootstrap Files</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-value">${avgQuality ? avgQuality.toFixed(1) : '--'}</div>
+          <div class="stat-label">Avg Quality</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-value">${Object.keys(manifest.domains).length}</div>
+          <div class="stat-label">Domains</div>
+        </div>
+      `;
+
+      document.getElementById('last-updated').textContent = manifest.last_updated || '--';
+
+      // ── Cluster Overview ──
+      const crosswalk = await DataLoader.load('crosswalk.json');
+      const clusterEl = document.getElementById('cluster-overview');
+
+      if (crosswalk) {
+        const CLUSTER_COLORS = {
+          'BCL-0': { accent: 'var(--color-info)',    bg: 'var(--color-info-bg)' },
+          'BCL-1': { accent: 'var(--color-success)',  bg: 'var(--color-success-bg)' },
+          'BCL-2': { accent: 'var(--color-critical)', bg: 'var(--color-critical-bg)' },
+          'BCL-3': { accent: 'var(--color-review)',   bg: 'var(--color-review-bg)' },
+          'BCL-4': { accent: 'var(--color-warning)',  bg: 'var(--color-warning-bg)' },
+          'BCL-5': { accent: '#06b6d4',              bg: '#042f2e' },
+          'BCL-6': { accent: '#64748b',              bg: '#1e293b' },
+          'BCL-7': { accent: '#f472b6',              bg: '#500724' }
+        };
+
+        let clusterHtml = '';
+        for (const [clusterId, cluster] of Object.entries(crosswalk.clusters)) {
+          const colors = CLUSTER_COLORS[clusterId] || CLUSTER_COLORS['BCL-6'];
+          const isPending = cluster.decision.includes('PENDING');
+          const isDeferred = cluster.decision.includes('DEFER');
+          const tupCount = cluster.tups.length;
+          const fileCount = Object.values(crosswalk.file_to_tup).filter(m => m.cluster === clusterId).length;
+
+          let statusBadge;
+          if (isPending) statusBadge = '<span class="badge badge-critical">PENDING</span>';
+          else if (isDeferred) statusBadge = '<span class="badge badge-neutral">DEFERRED</span>';
+          else if (cluster.decision.includes('MERGE')) statusBadge = '<span class="badge badge-info">MERGE</span>';
+          else statusBadge = '<span class="badge badge-success">RESOLVED</span>';
+
+          clusterHtml += `
+            <div class="card cluster-card-mini" style="border-left:3px solid ${colors.accent};">
+              <div class="card-header" style="background:${colors.bg}; padding:var(--gap-xs) var(--gap-sm);">
+                <span style="font-weight:600; color:${colors.accent}; font-size:var(--font-size-xs);">${clusterId}</span>
+                ${statusBadge}
+              </div>
+              <div class="card-body" style="padding:var(--gap-sm);">
+                <div style="font-size:var(--font-size-sm); font-weight:600; color:var(--text-primary); margin-bottom:var(--gap-xs);">
+                  ${Renderers.escapeHtml(cluster.name)}
+                </div>
+                <div style="font-size:0.65rem; color:var(--text-dim);">
+                  ${tupCount} TUPs &middot; ${fileCount} files
+                </div>
+              </div>
+            </div>`;
+        }
+        clusterEl.innerHTML = clusterHtml;
+      } else {
+        clusterEl.innerHTML = Renderers.emptyState('Crosswalk data not available');
+      }
+
+      // ── Migrated TUPs Grid ──
+      const tupCardsEl = document.getElementById('tup-cards');
+      const crosswalk = await DataLoader.load('crosswalk.json');
+
+      if (crosswalk) {
+        const migratedTUPs = [
+          {
+            code: 'M0',
+            name: 'Trade Thesis',
+            fileId: '01_strategic_foundation',
+            viewUrl: 'views/m0-trade-thesis.html'
+          },
+          {
+            code: 'M26',
+            name: 'Competitive Intel',
+            fileId: '02_market_intelligence',
+            viewUrl: 'views/m26-competitive-intel.html'
+          },
+          {
+            code: 'M27',
+            name: 'Customer Research',
+            fileId: '03a_customer_research_icp',
+            viewUrl: 'views/m27-customer-research.html'
+          }
+        ];
+
+        let tupHtml = '';
+        for (const tup of migratedTUPs) {
+          const file = manifest.files[tup.fileId];
+          if (!file) continue;
+
+          tupHtml += `<div class="card">
+            <div class="card-header">
+              <span style="font-weight:600; color:var(--color-info);">${tup.code}</span>
+              <span class="badge badge-success">Migrated</span>
+            </div>
+            <div class="card-body">
+              <div style="font-size:var(--font-size-base); font-weight:600; color:var(--text-primary); margin-bottom:var(--gap-sm);">
+                ${Renderers.escapeHtml(tup.name)}
+              </div>
+              <div style="display:flex; justify-content:space-between; margin-bottom:var(--gap-sm);">
+                <span style="font-size:var(--font-size-xs); color:var(--text-dim);">Quality</span>
+                ${Renderers.qualityScore(file.quality_score)}
+              </div>
+              <div style="font-size:var(--font-size-xs); color:var(--text-dim); margin-bottom:var(--gap-sm);">
+                ${file.sheet_count} sheets
+              </div>
+              <a href="${tup.viewUrl}" style="display:block; margin-top:var(--gap-sm); font-size:var(--font-size-xs); color:var(--color-info);">View TUP &rarr;</a>
+            </div>
+          </div>`;
+        }
+        tupCardsEl.innerHTML = tupHtml;
+      } else {
+        tupCardsEl.innerHTML = Renderers.emptyState('Crosswalk data not available');
+      }
+
+      // ── Dependency Chains ──
+      const depChains = document.getElementById('dep-chains');
+      let depHtml = '';
+      for (const chain of manifest.dependency_chains) {
+        depHtml += Renderers.card(
+          chain.name,
+          `<p style="font-size:var(--font-size-xs); color:var(--text-dim); margin-bottom:var(--gap-sm);">${Renderers.escapeHtml(chain.description)}</p>
+          <div style="display:flex; flex-wrap:wrap; gap:var(--gap-xs); align-items:center;">
+            ${chain.sequence.map((id, i) => {
+              const file = manifest.files[id];
+              const label = file ? file.title : id;
+              const badge = file ? Renderers.statusBadge(file.status) : '';
+              return `<span class="dep-tag">${Renderers.escapeHtml(label)}</span>${i < chain.sequence.length - 1 ? '<span style="color:var(--text-dim);">&rarr;</span>' : ''}`;
+            }).join('')}
+          </div>`
+        );
+      }
+      depChains.innerHTML = depHtml;
+
+      // ── Analysis Deliverables ──
+      const deliverablesEl = document.getElementById('analysis-deliverables');
+      const deliverables = [
+        {
+          title: 'Financial Model & Revenue Validation',
+          file: 'Financial_Model_Revenue_Validation.md',
+          date: '2026-02-05',
+          version: 'v1.0.0',
+          status: 'complete',
+          description: 'Comprehensive 3-scenario financial model validating $30K MRR timeline and capital needs',
+          tags: ['Critical', 'Q10', 'Q11']
+        },
+        {
+          title: 'Marine Plasma Market Sizing',
+          file: 'Marine_Plasma_Market_Sizing.md',
+          date: '2026-02-04',
+          version: 'v1.0.0',
+          status: 'complete',
+          description: 'Seaonic revenue estimation and sub-segment sizing analysis',
+          tags: ['Market Research']
+        },
+        {
+          title: "Porter's Five Forces Analysis",
+          file: 'Porter_Five_Forces_Analysis.md',
+          date: '2026-02-03',
+          version: 'v1.1.0',
+          status: 'complete',
+          description: 'Competitive landscape analysis with capital tension identification',
+          tags: ['Strategy']
+        },
+        {
+          title: 'ICP Analysis',
+          file: 'ICP_Analysis.md',
+          date: '2026-02-04',
+          version: 'v1.1.0',
+          status: 'complete',
+          description: '3 customer archetypes with JTBD framework',
+          tags: ['Customer Research']
+        },
+        {
+          title: 'Strategic Foundation Analysis',
+          file: 'Strategic_Foundation_Analysis.md',
+          date: '2026-02-04',
+          version: 'v1.2.0',
+          status: 'complete',
+          description: 'Thesis reconciliation and gap analysis',
+          tags: ['Strategy']
+        }
+      ];
+
+      let deliverablesHtml = '';
+      for (const d of deliverables) {
+        const githubUrl = `https://github.com/caio-camargo/ionwave-dashboard/blob/main/IonWave/${d.file}`;
+        const statusColor = d.status === 'complete' ? 'var(--color-success)' : 'var(--color-warning)';
+        deliverablesHtml += `
+          <div class="card">
+            <div class="card-header" style="display:flex; justify-content:space-between; align-items:start;">
+              <span style="font-weight:600; flex:1;">${Renderers.escapeHtml(d.title)}</span>
+              <span class="badge badge-success" style="background:${statusColor};">${d.version}</span>
+            </div>
+            <div class="card-body">
+              <p style="font-size:var(--font-size-xs); color:var(--text-secondary); margin-bottom:var(--gap-sm);">
+                ${Renderers.escapeHtml(d.description)}
+              </p>
+              <div style="display:flex; flex-wrap:wrap; gap:var(--gap-xs); margin-bottom:var(--gap-sm);">
+                ${d.tags.map(tag => `<span class="dep-tag" style="font-size:var(--font-size-xs);">${Renderers.escapeHtml(tag)}</span>`).join('')}
+              </div>
+              <div style="font-size:var(--font-size-xs); color:var(--text-dim);">
+                ${d.date}
+              </div>
+              <a href="${githubUrl}" target="_blank" rel="noopener" style="display:inline-block; margin-top:var(--gap-sm); font-size:var(--font-size-xs); color:var(--color-info); text-decoration:none;">
+                View on GitHub →
+              </a>
+            </div>
+          </div>`;
+      }
+      deliverablesEl.innerHTML = deliverablesHtml;
+
+      // ── Open Questions (Critical) ──
+      const questionsEl = document.getElementById('open-questions');
+      try {
+        const markdown = await DataLoader.loadTracking('Open_Questions.md');
+        if (markdown) {
+          const questions = DataLoader.parseOpenQuestions(markdown);
+          if (questions.length > 0) {
+            let questionsHtml = '';
+            for (const q of questions) {
+              questionsHtml += `
+                <div class="card" style="border-left:3px solid var(--color-critical); margin-bottom:var(--gap-sm);">
+                  <div class="card-header" style="display:flex; justify-content:space-between; align-items:center;">
+                    <span style="font-weight:600;">${Renderers.escapeHtml(q.id)}: ${Renderers.escapeHtml(q.title)}</span>
+                    <span class="badge badge-critical">${Renderers.escapeHtml(q.status)}</span>
+                  </div>
+                  <div class="card-body">
+                    <p style="font-size:var(--font-size-sm); margin-bottom:var(--gap-sm); color:var(--text-secondary);">
+                      ${Renderers.escapeHtml(q.question)}
+                    </p>
+                    <div style="display:grid; grid-template-columns:1fr 1fr; gap:var(--gap-sm); font-size:var(--font-size-xs); margin-top:var(--gap-sm);">
+                      <div>
+                        <span style="color:var(--text-dim);">Owner:</span> <span style="color:var(--text-secondary);">${Renderers.escapeHtml(q.owner)}</span>
+                      </div>
+                      <div>
+                        <span style="color:var(--text-dim);">Discovered:</span> <span style="color:var(--text-secondary);">${Renderers.escapeHtml(q.discovered)}</span>
+                      </div>
+                    </div>
+                    ${q.blocks ? `<div style="margin-top:var(--gap-xs); font-size:var(--font-size-xs);">
+                      <span style="color:var(--color-warning);">⚠️ Blocks:</span> <span style="color:var(--text-dim);">${Renderers.escapeHtml(q.blocks)}</span>
+                    </div>` : ''}
+                    <details style="margin-top:var(--gap-sm); font-size:var(--font-size-xs);">
+                      <summary style="cursor:pointer; color:var(--color-info);">View options & details</summary>
+                      <div style="margin-top:var(--gap-sm); padding-left:var(--gap-sm); border-left:2px solid var(--border-color);">
+                        ${q.whyMatters ? `<p style="margin-bottom:var(--gap-sm); color:var(--text-dim);"><strong>Why it matters:</strong> ${Renderers.escapeHtml(q.whyMatters)}</p>` : ''}
+                        ${q.options.length > 0 ? `<p style="color:var(--text-dim); margin-bottom:var(--gap-xs);"><strong>Options:</strong></p><ul style="margin:0; padding-left:var(--gap-md);">${q.options.map(opt => `<li style="color:var(--text-dim); margin-bottom:var(--gap-xs);">${Renderers.escapeHtml(opt)}</li>`).join('')}</ul>` : ''}
+                      </div>
+                    </details>
+                  </div>
+                </div>`;
+            }
+            questionsEl.innerHTML = questionsHtml;
+          } else {
+            questionsEl.innerHTML = Renderers.emptyState('No critical questions currently active');
+          }
+        } else {
+          questionsEl.innerHTML = Renderers.emptyState('Could not load Open_Questions.md');
+        }
+      } catch (err) {
+        console.error('Failed to load/parse open questions:', err);
+        questionsEl.innerHTML = Renderers.emptyState('Error loading questions');
+      }
+
+      // ── Feedback Loops ──
+      const loopsEl = document.getElementById('feedback-loops');
+      if (manifest.feedback_loops && manifest.feedback_loops.length > 0) {
+        let loopsHtml = '';
+        for (const loop of manifest.feedback_loops) {
+          const statusCls = loop.status === 'open' ? 'sev-critical' : 'sev-low';
+          loopsHtml += `
+            <div class="card" style="border-left:3px solid ${loop.status === 'open' ? 'var(--color-warning)' : 'var(--color-success)'}; margin-bottom:var(--gap-sm);">
+              <div class="card-body">
+                <div style="display:flex; justify-content:space-between; margin-bottom:var(--gap-xs);">
+                  <span style="font-size:var(--font-size-xs); color:var(--text-dim);">${Renderers.escapeHtml(loop.source)} &rarr; ${Renderers.escapeHtml(loop.target)}</span>
+                  ${Renderers.statusBadge(loop.status)}
+                </div>
+                <p style="font-size:var(--font-size-sm); color:var(--text-secondary);">${Renderers.escapeHtml(loop.tension)}</p>
+                <span style="font-size:var(--font-size-xs); color:var(--text-dim);">Discovered: ${loop.discovered || '--'}</span>
+              </div>
+            </div>`;
+        }
+        loopsEl.innerHTML = loopsHtml;
+      } else {
+        loopsEl.innerHTML = Renderers.emptyState('No active feedback loops');
+      }
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,245 @@
+{
+  "title": "UGC Creator Program",
+  "source_tab": "495_ugc_creator_program",
+  "tup_id": "M22",
+  "tup_version": "1.0.0",
+  "summary": "Structure for building and managing a stable of UGC creators producing content for IonWave ads. Includes economics, sourcing, vetting, payment structures, and volume targets by budget tier.",
+
+  "program_structure": {
+    "goal_at_scale": "20-50 videos/month for ad testing (achievable at $3K-5K/month creative budget)",
+    "launch_goal": "8-12 videos/month (achievable at $1K/month)",
+    "team_size_at_scale": "5-10 active creators",
+    "launch_team_size": "3-5 creators",
+    "output_per_creator": "2-5 videos/month",
+    "note": "Danilo's 20-50/month target is the $5K tier. At launch ($500-1K budget), target 4-12 videos/month."
+  },
+
+  "economics": {
+    "cost_by_creator_tier": [
+      {
+        "tier": "Nano UGC creators",
+        "follower_range": "0-5K (or no following — pure UGC)",
+        "per_video_rate": "$50-150",
+        "notes": "Most are 'UGC-only' creators who never post to their own feeds. Abundant supply."
+      },
+      {
+        "tier": "Micro UGC creators",
+        "follower_range": "5K-25K",
+        "per_video_rate": "$150-300",
+        "notes": "Better on-camera presence, some portfolio. Sweet spot for quality/cost."
+      },
+      {
+        "tier": "Experienced micro",
+        "follower_range": "25K-50K",
+        "per_video_rate": "$250-500",
+        "notes": "Often supplement/wellness niche experience. May want usage rights negotiated separately."
+      }
+    ],
+    "cost_by_video_length": [
+      {"length": "15 seconds", "cost": "$50-100", "best_use": "Hook testing, TikTok Spark ads, Reels"},
+      {"length": "30 seconds", "cost": "$75-175", "best_use": "Primary Meta ad format, TikTok"},
+      {"length": "45-60 seconds", "cost": "$125-250", "best_use": "Storytelling ads, problem/solution, testimonials"},
+      {"length": "Full package (main + hooks + b-roll)", "cost": "$100-400", "best_use": "Best value — negotiate per package, not per video"}
+    ],
+    "danilo_assessment": "Danilo's $50-200/video range is achievable for nano creators via JoinBrands or direct outreach. Slightly optimistic for quality micro creators on established platforms."
+  },
+
+  "budget_tiers": [
+    {
+      "monthly_budget": "$500",
+      "videos_per_month": "4-6",
+      "active_creators": "2-3",
+      "platforms": "JoinBrands + direct outreach (IG/TikTok DMs)",
+      "strategy": "One content type (problem/solution). 2-3 hooks per video. Prioritize learning over volume.",
+      "note": "SURVIVAL MODE — not a systematic testing program. Expect 0-1 winners. Useful for learning, not for scaling."
+    },
+    {
+      "monthly_budget": "$1,000",
+      "videos_per_month": "8-12",
+      "active_creators": "3-5",
+      "platforms": "Billo + Collabstr",
+      "strategy": "Two content types. Test across 2-3 demographics. Start identifying winning formulas.",
+      "note": "MINIMUM VIABLE TESTING — this is the lowest budget where systematic creative testing works. Expect 1-2 winners per month."
+    },
+    {
+      "monthly_budget": "$2,000",
+      "videos_per_month": "15-20",
+      "active_creators": "5-8",
+      "platforms": "Billo + Collabstr + direct relationships",
+      "strategy": "Full content type testing. Start retainer relationships with top 2-3 performers."
+    },
+    {
+      "monthly_budget": "$5,000",
+      "videos_per_month": "30-50",
+      "active_creators": "8-12",
+      "platforms": "Insense + Billo + direct relationships",
+      "strategy": "Danilo's full target range. Complete creative testing matrix. Multiple hook variants per concept."
+    }
+  ],
+
+  "sourcing": {
+    "platforms": [
+      {
+        "name": "JoinBrands",
+        "cost_per_video": "$50-150",
+        "quality": "Low-medium (wide variance)",
+        "turnaround": "3-7 days",
+        "supplement_creators": "Large pool, inconsistent",
+        "best_for": "Bootstrapped start, volume testing",
+        "weakness": "Expect 30-40% to need revision or be unusable"
+      },
+      {
+        "name": "Billo",
+        "cost_per_video": "$99-300",
+        "quality": "Medium-high",
+        "turnaround": "5-10 days",
+        "supplement_creators": "Decent pool, health/fitness creators",
+        "best_for": "Consistent quality at moderate cost",
+        "weakness": "Less control over creator selection"
+      },
+      {
+        "name": "Collabstr",
+        "cost_per_video": "$100-350",
+        "quality": "Medium-high",
+        "turnaround": "5-14 days",
+        "supplement_creators": "Moderate pool, good search/filter",
+        "best_for": "Transparent pricing, specific creator selection",
+        "weakness": "Smaller pool, more manual process"
+      },
+      {
+        "name": "Insense",
+        "cost_per_video": "$150-400 + subscription $400-1200/mo",
+        "quality": "High",
+        "turnaround": "7-14 days",
+        "supplement_creators": "Strong wellness vertical",
+        "best_for": "Meta Ads integration (creator whitelisting/Spark ads)",
+        "weakness": "Most expensive. Only justified at $3K+/month creative spend."
+      },
+      {
+        "name": "Trend.io",
+        "cost_per_video": "~$100 flat rate",
+        "quality": "Medium",
+        "turnaround": "7-14 days",
+        "supplement_creators": "Moderate, more lifestyle-oriented",
+        "best_for": "Predictable flat pricing, product-in-hand content",
+        "weakness": "Quality variance, smaller supplement pool"
+      }
+    ],
+    "organic_sourcing": [
+      "TikTok/Instagram search 'UGC creator for hire' + #UGCcreator hashtag",
+      "Your own customers who love the product (highest authenticity)",
+      "Facebook groups for UGC creators",
+      "Direct outreach to creators in health/fitness/wellness niche"
+    ],
+    "danilo_gap": "Danilo lists Billo, Insense, Collabstr, Fiverr. Add JoinBrands for bootstrapped phase. De-emphasize Fiverr — harder quality control, lose UGC-specific tooling."
+  },
+
+  "creator_vetting": {
+    "criteria": [
+      "Portfolio shows range and quality",
+      "Fits target demographic (age, look, vibe) — for IonWave: 28-45, active lifestyle, health-conscious",
+      "Can follow a brief (review their past branded work)",
+      "Delivers on time (check platform ratings/reviews)",
+      "Natural on camera (not stiff or over-rehearsed)",
+      "Good lighting/audio quality in portfolio",
+      "Responsive communication (test with initial messages)",
+      "Supplement/wellness content experience is a plus but not required"
+    ],
+    "process": "Start with one video before committing to more. This is the single most important vetting step.",
+    "compliance_acknowledgment": "Before receiving product or starting work, every creator must acknowledge in writing: (1) approved talking points, (2) prohibited claims, (3) FTC disclosure requirements. This creates a paper trail protecting IonWave if a creator goes off-script. Use a simple Google Form or signed document.",
+    "danilo_assessment": "Danilo's vetting criteria are thorough. Added demographic fit specificity, communication test, and compliance acknowledgment requirement."
+  },
+
+  "payment_structures": [
+    {
+      "model": "Per Video",
+      "tiers": [
+        "$50-100 for basic testimonial",
+        "$100-200 for scripted/complex",
+        "$200-300 for high-production"
+      ],
+      "best_for": "Launch phase, testing new creators",
+      "recommended_for_ionwave": true,
+      "note": "Start here. Switch to retainer only for proven top performers."
+    },
+    {
+      "model": "Retainer",
+      "structure": "$500-1000/month for X videos",
+      "best_for": "Consistent, proven creators (after 3+ successful videos)",
+      "recommended_for_ionwave": false,
+      "note": "Phase 2. Only after identifying 2-3 creators with proven performance."
+    },
+    {
+      "model": "Performance Bonus",
+      "structure": "Base rate + bonus if video becomes ad winner (e.g., +$100 if ROAS >2x after $500 spend)",
+      "best_for": "Aligning creator incentives with business outcomes",
+      "recommended_for_ionwave": false,
+      "note": "Phase 2. Requires enough ad data to define 'winner' thresholds."
+    }
+  ],
+
+  "ugc_vs_professional": {
+    "ugc_advantages": {
+      "ctr": "2-4x higher than polished content",
+      "cpa": "30-50% lower",
+      "thumb_stop_rate": "Significantly higher — users scroll past 'ad-looking' content",
+      "trust": "Much higher for supplements where trust is the primary purchase barrier"
+    },
+    "professional_advantages": {
+      "fatigue": "Slower creative fatigue (4-8 weeks vs UGC's 2-4 weeks)",
+      "best_use": "Retargeting, brand building, landing pages, website"
+    },
+    "recommended_split": "80% UGC for paid acquisition ads, 20% polished for retargeting and website"
+  },
+
+  "hit_rate": {
+    "at_launch": "5-10% (no data, no proven angles)",
+    "after_2_3_months": "15-25% (some data, emerging patterns)",
+    "mature_program": "20-30% (refined briefs, proven creators)",
+    "hook_variant_hit_rate": "20-30% (on a good concept)",
+    "implication": "At $1K/month producing ~10 videos, expect 1-2 scalable winners. The alternate hooks model (3 hooks per video) effectively triples testing without tripling cost."
+  },
+
+  "creative_fatigue": {
+    "meta": {
+      "time_to_fatigue": "2-4 weeks at $50-100/day per ad",
+      "refresh_cadence": "3-5 new creatives every 2 weeks"
+    },
+    "tiktok": {
+      "time_to_fatigue": "1-3 weeks (faster than Meta)",
+      "refresh_cadence": "2-4 new creatives weekly"
+    },
+    "fatigue_signals": "Frequency >2.5-3.0, or CPA increases 20%+ from baseline",
+    "key_insight": "A 'winning' video doesn't run forever. A winning video gives you a winning ANGLE. Iterate on that angle with new creators, new hooks, new variations."
+  },
+
+  "refresh_strategy": {
+    "week_1_2": "Launch 4-6 UGC pieces, test",
+    "week_3": "Kill underperformers, identify 1-2 winners, introduce 3-4 new pieces",
+    "week_4": "Scale winners, continue testing new concepts",
+    "monthly": "Full creative audit. Archive fatigued winners. Introduce fresh batch.",
+    "quarterly": "Refresh entire creative strategy based on accumulated learnings"
+  },
+
+  "ftc_compliance_summary": {
+    "required_disclosures": [
+      "#ad or #sponsored at beginning of caption",
+      "Verbal disclosure in first few seconds of video",
+      "Platform disclosure tools (Paid Partnership tag, Branded Content toggle)",
+      "Clear and conspicuous — visible without clicking 'more'"
+    ],
+    "brand_liability": "IonWave is liable for creator non-compliance. Include compliance requirements in every brief.",
+    "lmnt_comparison_ruling": "REMOVED 'More complete than LMNT' from all creator materials. Named-competitor comparative claims create cease-and-desist risk. Use unnamed comparisons instead. See ugc_brand_brief.md for approved language.",
+    "full_compliance_doc": "See ugc_brand_brief.md for complete approved/prohibited claims"
+  },
+
+  "intelligence_gaps": [
+    "UGC platform pricing may have shifted since early 2025",
+    "No IonWave-specific ad performance data (pre-launch)",
+    "FTC enforcement trends in supplement UGC for 2026 unknown",
+    "JoinBrands quality for supplement-specific content not independently verified"
+  ],
+
+  "confidence_grade": "B",
+  "confidence_rationale": "Comprehensive program structure with realistic budget tiers, sourcing strategy, and economics. Danilo's framework validated and expanded with research. Weakened by: pre-launch status (no performance data), platform pricing from early 2025."
+}

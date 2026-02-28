@@ -1,0 +1,58 @@
+{
+  "package": "rollout",
+  "version": "1.0.0",
+  "date_created": "2026-02-27",
+  "author": "Caio, Claude",
+  "ai_model": "claude-opus-4-6",
+  "purpose": "Recruiting cascade artifacts for IonWave rollout — the system by which the Trade moves from imagination to execution",
+  "status": "draft",
+  "related_tups": ["M0", "M1", "M4", "M30", "M31", "M35", "M36"],
+  "related_specs": [
+    "project_specs/CONTRACT_ENGINEERING.md",
+    "project_specs/CLAUDE_AS_OS_SYSTEM.md",
+    "project_specs/INTEGRATION_DESIGN_PRINCIPLES.md"
+  ],
+  "structure": {
+    "foundation": [
+      "chain_specification.md",
+      "trade_pitch_onepager.md"
+    ],
+    "va_package": [
+      "va_package/role_brief.md",
+      "va_package/sourcing_playbook.md",
+      "va_package/screening_criteria.md",
+      "va_package/outreach_templates.md",
+      "va_package/bilateral_contract.md"
+    ],
+    "mba_brief": [
+      "mba_brief/role_brief.md",
+      "mba_brief/vp_candidate_profile.md",
+      "mba_brief/sourcing_methodology.md",
+      "mba_brief/screening_criteria.md",
+      "mba_brief/pitch_materials.md",
+      "mba_brief/bilateral_contract.md"
+    ],
+    "vp_brief": [
+      "vp_brief/role_brief.md",
+      "vp_brief/integration_requirements.md",
+      "vp_brief/operator_recruitment.md",
+      "vp_brief/capital_formation.md",
+      "vp_brief/bilateral_contract.md"
+    ],
+    "compliance": [
+      "compliance/agent_specification.md",
+      "compliance/deliverable_registry.md",
+      "compliance/tooling_requirements.md"
+    ]
+  },
+  "file_count": 21,
+  "open_decisions": [
+    "DEC-CHAIN-001: MBA equity amount (resolved: equity, amount TBD)",
+    "DEC-CHAIN-002: VP equity amount (5-10%, exact TBD)",
+    "DEC-CHAIN-003: Approval authority at handoffs (OPEN)",
+    "DEC-CHAIN-004: Chain parallelization (OPEN)",
+    "DEC-CHAIN-005: VA budget amount (OPEN)",
+    "DEC-CHAIN-006: Fallback at MBA→VP link (OPEN)",
+    "DEC-CHAIN-007: Pre-entity equity instruments (OPEN)"
+  ]
+}

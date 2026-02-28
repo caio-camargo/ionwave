@@ -1,0 +1,61 @@
+{
+  "tup_id": "m29",
+  "tup_name": "PR & Communications",
+  "cluster": "BCL-5",
+  "cluster_name": "Growth & Market",
+  "status": "workshopped",
+  "current_version": "1.0.0",
+  "current_quality": "7.6/10",
+  "sheet_count": 7,
+  "sheets": [
+    {"danilo_id": "616", "title": "Future Press Release", "rows": 30, "output_file": "pr_strategy.md"},
+    {"danilo_id": "617", "title": "Milestone Press Releases", "rows": 25, "output_file": "pr_strategy.md"},
+    {"danilo_id": "618", "title": "PR & Media Tracker", "rows": 22, "output_file": "pr_strategy.md"},
+    {"danilo_id": "619", "title": "YouTube & Video Strategy", "rows": 38, "output_file": "video_strategy.md"},
+    {"danilo_id": "620", "title": "Owned Podcast Planning", "rows": 44, "output_file": "podcast_strategy.md"},
+    {"danilo_id": "621", "title": "Crisis Playbook", "rows": 10, "output_file": "crisis_playbook.md"},
+    {"danilo_id": "622", "title": "What If Viral Negative PR", "rows": 39, "output_file": "crisis_playbook.md"}
+  ],
+  "files": [
+    "pr_strategy.md",
+    "video_strategy.md",
+    "podcast_strategy.md",
+    "crisis_playbook.md",
+    "opkit_pr_communications.md",
+    "dialogue_summary.md",
+    "_meta.json"
+  ],
+  "opkits": ["OK-M29-001"],
+  "feeds_into": ["m16", "m23", "m22"],
+  "requires": ["m0", "m8"],
+  "key_blockers": [],
+  "next_action": "Pre-launch: Set up Google Alerts, Qwoted, Featured.com accounts. Complete crisis playbook pre-crisis checklist. Begin expert quote platform daily routine.",
+  "intelligence_gaps": [
+    "Video metrics targets are C-grade benchmarks — validate against actual YouTube analytics post-launch",
+    "Podcast download targets are estimates — validate after 10+ episodes published",
+    "Expert quote platform conversion rates (Qwoted, Featured.com) are reported, not verified",
+    "Tier 1 media target DA estimates are approximate — verify with Ahrefs"
+  ],
+  "revisions": [
+    {
+      "version": "1.0.0",
+      "date": "2026-02-07",
+      "actor": "Caio + Claude (opus-4-6)",
+      "change_type": "initial_workshop",
+      "protocol_used": "TWP-001 v2.0.0",
+      "what_changed": "Initial workshop: 7 Danilo tabs (208 rows) → 4 content files + OpKit + dialogue summary. Tabs 621+622 merged into single crisis_playbook.md. Heavy Founder Mode scoping applied to video/podcast cadence. Tiered media targets added. Weekly PR time budget capped.",
+      "quality_score": 7.6,
+      "quality_rationale": "Strong actionability (4.5/5), good confidence honesty (4/5). Moderate evidence coverage (3.5/5) — most claims are B-C grade benchmarks. Crisis playbook is the strongest component. Video/podcast metrics are C-grade projections.",
+      "dialogue_ref": {
+        "file": "dialogue_summary.md",
+        "tup_version": "1.0.0",
+        "personas": ["Skeptical Investor", "Brand Strategist", "Operations Expert"],
+        "rounds": 5,
+        "saturated": true,
+        "upgrades": 5,
+        "unresolved": 0
+      },
+      "hypotheses_affected": ["HYP-006", "HYP-001", "HYP-003"]
+    }
+  ]
+}

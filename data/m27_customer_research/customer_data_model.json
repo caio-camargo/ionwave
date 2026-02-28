@@ -1,0 +1,153 @@
+{
+  "_meta": {
+    "sheet_name": "Customer Data Model",
+    "parent_file": "03b_customer_research_voc",
+    "version": "1.0.0",
+    "last_updated": "2026-02-04",
+    "updated_by": "claude-opus-4.5",
+    "status": "draft",
+    "quality_score": "6/10",
+    "data_type": "structured_table",
+    "note": "Defines the 15 core customer record fields for the IonWave CRM/CDP. Privacy levels and data sources specified for compliance."
+  },
+  "data": {
+    "model_description": "Core customer record schema for IonWave. Every customer interaction should enrich this record. Privacy-first design with encrypted PII fields.",
+    "fields": [
+      {
+        "field_name": "Email",
+        "data_type": "string",
+        "privacy_level": "PII - Encrypted",
+        "source": "Opt-in form, purchase checkout",
+        "updated_when": "Once (at first capture)",
+        "used_by": ["Klaviyo", "Shopify", "Customer Support"],
+        "notes": "Primary identifier. Must be collected with explicit opt-in consent."
+      },
+      {
+        "field_name": "Name",
+        "data_type": "string",
+        "privacy_level": "PII - Encrypted",
+        "source": "Purchase checkout, opt-in form",
+        "updated_when": "Once (at first capture), customer can update",
+        "used_by": ["Klaviyo", "Shopify", "Customer Support"],
+        "notes": "First and last name. Used for personalization in emails and support."
+      },
+      {
+        "field_name": "Lifecycle Stage",
+        "data_type": "enum",
+        "privacy_level": "Internal",
+        "source": "Computed from purchase history and engagement",
+        "updated_when": "Every interaction (recalculated)",
+        "used_by": ["Klaviyo", "Segmentation Engine", "Reporting"],
+        "notes": "Maps to Customer Segmentation model: Prospect, One-Timer, Repeat, Subscriber, VIP, At-Risk, Lapsed, Churned."
+      },
+      {
+        "field_name": "First Touch Source",
+        "data_type": "string",
+        "privacy_level": "Internal",
+        "source": "UTM parameters, Meta pixel, referral tracking",
+        "updated_when": "Once (first visit/conversion)",
+        "used_by": ["Attribution Model", "Media Acquisition", "Financial Model"],
+        "notes": "Critical for CAC calculation by channel. Never overwrite - first touch only."
+      },
+      {
+        "field_name": "Total Orders",
+        "data_type": "integer",
+        "privacy_level": "Internal",
+        "source": "Shopify order data",
+        "updated_when": "Every purchase",
+        "used_by": ["RFM Scoring", "Segmentation", "LTV Calculation"],
+        "notes": "Cumulative order count. Drives Frequency score in RFM model."
+      },
+      {
+        "field_name": "Total LTV",
+        "data_type": "currency",
+        "privacy_level": "Internal",
+        "source": "Shopify (sum of all order values)",
+        "updated_when": "Every purchase",
+        "used_by": ["RFM Scoring", "Unit Economics", "Financial Model"],
+        "notes": "Gross revenue from customer. Does not include refunds/chargebacks. Drives Monetary score in RFM."
+      },
+      {
+        "field_name": "Days Since Last Purchase",
+        "data_type": "integer",
+        "privacy_level": "Internal",
+        "source": "Computed from Shopify last order date",
+        "updated_when": "Daily (recalculated)",
+        "used_by": ["RFM Scoring", "Churn Risk Model", "At-Risk Triggers"],
+        "notes": "Drives Recency score in RFM. Used to trigger win-back and churn intervention flows."
+      },
+      {
+        "field_name": "Subscription Status",
+        "data_type": "enum",
+        "privacy_level": "Internal",
+        "source": "Shopify / ReCharge subscription data",
+        "updated_when": "Every subscription event (create, pause, cancel, resume)",
+        "used_by": ["Segmentation", "Churn Risk Model", "Revenue Forecasting"],
+        "notes": "Values: None, Active, Paused, Cancelled. Subscription customers have 3-5x higher LTV."
+      },
+      {
+        "field_name": "NPS Score",
+        "data_type": "integer (0-10)",
+        "privacy_level": "Internal",
+        "source": "Post-purchase survey, quarterly NPS survey",
+        "updated_when": "Post-purchase (Day 14) and quarterly",
+        "used_by": ["Customer Feedback Loop", "Product Development", "Churn Risk"],
+        "notes": "Net Promoter Score. 9-10 = Promoter, 7-8 = Passive, 0-6 = Detractor. Detractors trigger immediate outreach."
+      },
+      {
+        "field_name": "Support Tickets",
+        "data_type": "integer",
+        "privacy_level": "Internal",
+        "source": "Helpdesk system (Gorgias, Zendesk, or similar)",
+        "updated_when": "Every support interaction",
+        "used_by": ["Churn Risk Model", "Product Feedback", "Customer Experience"],
+        "notes": "High ticket count without resolution is a strong churn signal. Track resolution rate alongside count."
+      },
+      {
+        "field_name": "Product Feedback",
+        "data_type": "text",
+        "privacy_level": "Internal",
+        "source": "Survey responses, product reviews, support conversations",
+        "updated_when": "Every feedback event",
+        "used_by": ["Product Development", "VOC Database", "Marketing Copy"],
+        "notes": "Qualitative feedback. Should be tagged by category: Taste, Effectiveness, Packaging, Price, Other."
+      },
+      {
+        "field_name": "Referral Count",
+        "data_type": "integer",
+        "privacy_level": "Internal",
+        "source": "Referral program tracking",
+        "updated_when": "Every successful referral",
+        "used_by": ["VIP Identification", "Ambassador Program", "LTV Calculation"],
+        "notes": "Number of successful referrals (referred customer completed purchase). High referrers are ambassador candidates."
+      },
+      {
+        "field_name": "Email Engagement",
+        "data_type": "object",
+        "privacy_level": "Internal",
+        "source": "Klaviyo engagement data",
+        "updated_when": "Every email interaction",
+        "used_by": ["Segmentation", "Churn Risk Model", "Deliverability Management"],
+        "notes": "Tracks open rate, click rate, last engaged date. Disengaged contacts (90+ days no open) should enter sunset flow."
+      },
+      {
+        "field_name": "Ad Engagement",
+        "data_type": "object",
+        "privacy_level": "Internal",
+        "source": "Meta pixel, Google Ads pixel",
+        "updated_when": "Every ad interaction",
+        "used_by": ["Attribution Model", "Retargeting Audiences", "CAC Calculation"],
+        "notes": "Tracks ad impressions, clicks, and conversions. Used to build lookalike audiences from best customers."
+      },
+      {
+        "field_name": "Churn Risk Score",
+        "data_type": "float (0-100)",
+        "privacy_level": "Internal",
+        "source": "Computed from multiple signals (engagement, purchase recency, NPS, support tickets)",
+        "updated_when": "Weekly (recalculated)",
+        "used_by": ["At-Risk Segmentation", "Churn Intervention", "Revenue Forecasting"],
+        "notes": "Composite score. Inputs: Days since last purchase, email engagement trend, NPS trajectory, support ticket frequency. Score >70 triggers churn intervention flow."
+      }
+    ]
+  }
+}

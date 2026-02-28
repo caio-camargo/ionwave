@@ -1,0 +1,117 @@
+{
+  "_meta": {
+    "sheet_name": "Customer Feedback Loop",
+    "parent_file": "03b_customer_research_voc",
+    "version": "1.0.0",
+    "last_updated": "2026-02-04",
+    "updated_by": "claude-opus-4.5",
+    "status": "draft",
+    "quality_score": "5/10",
+    "data_type": "hybrid",
+    "note": "Feedback system design. Channels defined but not yet operational. Will activate post-launch."
+  },
+  "data": {
+    "feedback_channels": [
+      {
+        "channel": "Customer Interviews",
+        "frequency": "Weekly (pre-launch) to Monthly (post-launch)",
+        "who_reviews": "Founder",
+        "action_trigger": "New insight that contradicts assumptions or reveals unmet need",
+        "log_location": "03b_customer_research_voc/voc_database",
+        "notes": "Most valuable channel. Mom Test methodology. 20-30 min each. Target 5-20 interviews before launch."
+      },
+      {
+        "channel": "Post-Purchase Survey",
+        "frequency": "Every order (sent Day 14 after delivery)",
+        "who_reviews": "Founder / CS Lead",
+        "action_trigger": "NPS Detractor score (0-6) triggers immediate personal outreach",
+        "log_location": "Customer Data Model (NPS Score, Product Feedback fields)",
+        "notes": "Short survey: NPS question + one open-ended 'What would make this perfect?' question."
+      },
+      {
+        "channel": "Product Reviews",
+        "frequency": "Daily monitoring",
+        "who_reviews": "CS Lead / Marketing",
+        "action_trigger": "Negative review (<3 stars) triggers personal response within 24 hours",
+        "log_location": "03b_customer_research_voc/voc_database",
+        "notes": "Mine for VOC quotes (positive and negative). Respond to every review publicly."
+      },
+      {
+        "channel": "Support Tickets",
+        "frequency": "Real-time",
+        "who_reviews": "CS Lead",
+        "action_trigger": "Product quality complaint triggers quality review. Repeat issue (3+ tickets) triggers product team escalation.",
+        "log_location": "Helpdesk system + Customer Data Model",
+        "notes": "Tag every ticket by category. Look for patterns weekly. Support is the #1 early warning system."
+      },
+      {
+        "channel": "Social Mentions",
+        "frequency": "Daily monitoring",
+        "who_reviews": "Marketing / Founder",
+        "action_trigger": "Negative mention triggers response within 4 hours. Positive mention triggers engagement + screenshot for social proof.",
+        "log_location": "Social monitoring tool + VOC Database",
+        "notes": "Monitor brand mentions, competitor mentions, and category keywords across Reddit, Twitter/X, Instagram, Facebook groups."
+      },
+      {
+        "channel": "Email Replies",
+        "frequency": "Real-time",
+        "who_reviews": "Founder / CS Lead",
+        "action_trigger": "Any direct reply to a marketing email is treated as high-priority feedback",
+        "log_location": "Klaviyo + VOC Database",
+        "notes": "Email replies are gold. People who reply to marketing emails are highly engaged. Every reply gets a personal response."
+      },
+      {
+        "channel": "Churn Surveys",
+        "frequency": "Every subscription cancellation",
+        "who_reviews": "Founder",
+        "action_trigger": "New churn reason identified triggers product or experience review",
+        "log_location": "ReCharge + VOC Database",
+        "notes": "Short survey at cancellation: 'What's the #1 reason you're cancelling?' + open text field. Track reason distribution monthly."
+      },
+      {
+        "channel": "NPS Survey",
+        "frequency": "Monthly (to subscriber base)",
+        "who_reviews": "Founder",
+        "action_trigger": "NPS drop of 5+ points month-over-month triggers root cause analysis",
+        "log_location": "Survey tool + Customer Data Model",
+        "notes": "Monthly NPS tracks brand health over time. Segment by cohort, acquisition source, and product to identify patterns."
+      }
+    ],
+    "weekly_customer_insight_ritual": {
+      "when": "Every Friday",
+      "duration": "30 minutes",
+      "checklist": [
+        "Review all new VOC quotes added this week (from all channels)",
+        "Update VOC Database with new quotes, tagged by category and use case",
+        "Check NPS trend - any Detractors that need personal follow-up?",
+        "Review support ticket patterns - any new recurring issues?",
+        "Update Customer Archetypes if new insight challenges current personas",
+        "Document one 'surprising finding' even if it seems minor"
+      ],
+      "output": "Weekly Customer Insight Brief (shared with team/stakeholders)"
+    },
+    "customer_advisory_board": {
+      "when_to_start": "After 50 active customers",
+      "size": "5-10 members",
+      "composition": [
+        "2-3 VIP/Champion customers (highest LTV and engagement)",
+        "1-2 Detractors who gave constructive feedback",
+        "1-2 customers from each primary ICP segment",
+        "Rotate 2-3 members every 6 months to keep perspectives fresh"
+      ],
+      "cadence": "Quarterly video calls (60 min)",
+      "structure": [
+        "15 min: Share what we shipped based on their last feedback",
+        "20 min: Present upcoming product/experience changes for input",
+        "20 min: Open discussion - what's on their mind?",
+        "5 min: Thank you + exclusive early access to something as appreciation"
+      ],
+      "incentives": [
+        "Early access to all new products and flavors",
+        "Permanent VIP discount (20-25%)",
+        "Name recognition (with permission) in brand communications",
+        "Direct line to founder for feedback anytime"
+      ]
+    }
+  }
+}

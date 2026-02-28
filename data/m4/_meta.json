@@ -1,0 +1,347 @@
+{
+  "tup_id": "M4",
+  "tup_name": "Fundraising & Investors",
+  "version": "1.0.0",
+  "workshop_protocol": "TWP-001 v2.0.0",
+  "completion_date": "2026-02-11",
+  "status": "migrated",
+  "confidence_level": "B",
+  "quality_scores": {
+    "evidence_coverage": 8.0,
+    "confidence_honesty": 9.0,
+    "upgrade_path_quality": 8.0,
+    "actionability": 9.0,
+    "opkit_reusability": 9.0,
+    "raw_score": 8.6,
+    "calibrated_score": 8.3,
+    "calibration_note": "Conservative adjustment for pre-traction status (no real investor feedback yet, all recommendations theory-based)"
+  },
+  "content_files": [
+    {
+      "filename": "fundraising_strategy.md",
+      "lines": 650,
+      "topics": [
+        "2026 D2C fundraising climate",
+        "Raise vs bootstrap decision framework",
+        "Raise sizing and structure ($30-50K SAFE)",
+        "Investor type targeting (angels, micro-VCs, family offices)",
+        "Pitch strategy (warm intros, cold outreach, Trade-as-pitch novel concept)",
+        "7-week validation sprint timeline",
+        "Backup funding plan (bootstrap, RBF, operator buy-in, strategic partnership, F&F)"
+      ],
+      "confidence": "B"
+    },
+    {
+      "filename": "pitch_deck_framework.md",
+      "lines": 430,
+      "topics": [
+        "Pitch deck purpose and audience",
+        "Slide-by-slide framework (15 slides)",
+        "IonWave deck analysis (EXCELLENT quality, A-grade)",
+        "Deck customization guide (generalizable to any D2C)",
+        "Visual design principles",
+        "Presentation tips and objection handling",
+        "Alternative formats (one-pager, Loom video, Trade-as-pitch)"
+      ],
+      "confidence": "A"
+    },
+    {
+      "filename": "investor_relations.md",
+      "lines": 550,
+      "topics": [
+        "7-stage investor CRM pipeline (Research → Closed/Passed)",
+        "Investor types and targeting (angels, micro-VCs, family offices)",
+        "Outreach templates (warm intro, cold email, follow-up)",
+        "Meeting preparation and objection handling",
+        "Monthly investor updates (template from File 205)",
+        "Relationship management (post-close engagement)",
+        "Investor FAQ (top 20 questions from File 201)"
+      ],
+      "confidence": "B"
+    },
+    {
+      "filename": "term_sheet_and_negotiation.md",
+      "lines": 520,
+      "topics": [
+        "SAFE structure and terms (post-money, cap, discount, pro-rata)",
+        "SAFE vs priced equity comparison",
+        "Term sheet components (priced equity reference)",
+        "Negotiation playbook (File 206: walk-away points, leverage tactics)",
+        "Red flags and walk-away points (predatory terms, investor behavior)",
+        "Legal process and costs ($0-2K for SAFE)",
+        "Closing mechanics (Day 0-14 timeline)"
+      ],
+      "confidence": "B"
+    },
+    {
+      "filename": "diligence_and_exit.md",
+      "lines": 470,
+      "topics": [
+        "Investor due diligence process (angels, micro-VCs, family offices)",
+        "Due diligence Q&A (financials, legal, product, market, team, traction from Files 201, 209)",
+        "Data room setup (8 folders, Google Drive)",
+        "Exit scenarios (PE $6-9M, strategic $8-15M, operator buyout, distributions 20-40%)",
+        "Exit preparation (File 208: clean financials, revenue quality, margin optimization)",
+        "Timeline to exit (Year 3-5 primary, opportunistic Year 1-2)"
+      ],
+      "confidence": "B"
+    }
+  ],
+  "total_lines": 2620,
+  "bootstrap_source": {
+    "file_id": "20",
+    "source_name": "ops_model_v10_dump",
+    "tabs_used": [
+      "201: Investor FAQ",
+      "202: Pitch Deck Slides (15-slide deck, EXCELLENT quality)",
+      "203: Backup Funding Plan",
+      "204: Investor Pipeline CRM (7-stage framework)",
+      "205: Investor Update Template (monthly structure)",
+      "206: Negotiation Playbook",
+      "207: Term Sheet Guide",
+      "208: Exit Preparation",
+      "209: Diligence Answers"
+    ],
+    "quality_note": "All 9 tabs are high quality, directly usable content. Danilo's pitch deck (202) is exceptionally strong."
+  },
+  "research_sources": [
+    {
+      "topic": "2026 D2C fundraising climate",
+      "sources": [
+        "https://www.dealmaker.tech/content/the-ultimate-guide-to-d2c-startup-funding-in-2025-trends-insights",
+        "https://qubit.capital/blog/early-stage-funding-consumer-startups",
+        "https://www.flowjam.com/blog/seed-round-valuation-2025-complete-founders-guide"
+      ],
+      "key_findings": [
+        "D2C funding projected to grow 10-15% in 2026, down 97% from 2021 peak",
+        "Median seed round $3.5M, D2C-specific $5.28M (Forerunner Ventures)",
+        "Investors demand $1-3M revenue before seed (organic growth > paid acquisition)",
+        "Seed investors expect $300-500K ARR, $20K+ monthly revenue, 10%+ MoM growth"
+      ],
+      "confidence": "B"
+    },
+    {
+      "topic": "SAFE vs priced equity trends",
+      "sources": [
+        "https://www.goingvc.com/post/priced-rounds-vs-safes-a-founders-guide-to-smart-fundraising",
+        "https://carta.com/data/pre-seed-and-seed-safes-q3-2024/",
+        "https://1984.vc/docs/founders-handbook/safe-vs-priced-round"
+      ],
+      "key_findings": [
+        "92% of pre-priced rounds use SAFEs (Q3 2025)",
+        "SAFEs dominate <$4M rounds (70%+ at seed stage)",
+        "Threshold for priced equity: $4M+ (70% of $5M+ rounds)",
+        "Post-money SAFEs cause dilution confusion (founders enter Series A with <35-40% ownership)"
+      ],
+      "confidence": "B"
+    },
+    {
+      "topic": "Investor CRM best practices",
+      "sources": [
+        "https://toolkit.techstars.com/build-your-investor-pipeline",
+        "https://visible.vc/blog/best-crm-for-fundraising/",
+        "https://qubit.capital/blog/investor-pipeline-management"
+      ],
+      "key_findings": [
+        "Expect to contact 50+ investors to close 1-3 investments",
+        "Track 7 stages: Research → Outreach → Meeting → Diligence → Term Sheet → Closed → Passed",
+        "Use CRM tools (Airtable, Notion, Streak) to track interactions and automate follow-ups",
+        "Weekly follow-ups without ghosting (persistence vs annoyance balance)"
+      ],
+      "confidence": "A"
+    },
+    {
+      "topic": "LMNT funding history (comparable)",
+      "sources": [
+        "https://pitchbook.com/profiles/company/433623-52",
+        "https://www.crunchbase.com/organization/drink-lmnt",
+        "https://kingscrowd.com/drink-lmnt-on-republic-2021/"
+      ],
+      "key_findings": [
+        "LMNT raised $6.05M total (under $5M initially)",
+        "2021 crowdfunding at $60M valuation (Crowd SAFE, no discount)",
+        "2022 crowdfunding at $200M valuation (Republic)",
+        "Investors include K2 Capital, Strategxy Ventures, Wilder Capital"
+      ],
+      "confidence": "B"
+    }
+  ],
+  "key_findings": [
+    "2026 D2C fundraising climate is selective: Down 97% from 2021 peak, investors demand evidence (revenue, traction) over promises",
+    "SAFEs dominate seed-stage (92% of pre-priced rounds), fast and cheap ($0 legal cost, 1-2 week close vs $5-25K and 4-8 weeks for priced equity)",
+    "IonWave's $30-50K SAFE at $250-500K cap is below typical VC minimum ($500K-1M), best target is angels (D2C operators, health enthusiasts, supplement vets)",
+    "Danilo's 15-slide pitch deck is EXCELLENT quality (A-grade): Clear, visual, data-driven, realistic projections, strong traction plan (7-week validation sprint)",
+    "7-stage investor CRM pipeline (File 204) is actionable: Expect 50+ contacts → 10 meetings → 3 term sheets → 1-2 closes",
+    "Novel concept: Trade-as-pitch (investors interact with Claude vs static deck) is experimental but differentiated — use as secondary diligence tool, not primary pitch",
+    "Exit strategy is realistic and multi-scenario: PE $6-9M at 4-6x EBITDA Year 3-5 (primary), strategic $8-15M (secondary), operator buyout 1.5-3x early, distributions 20-40% Year 2+",
+    "Backup funding plan covers 5 alternatives: Bootstrap (revenue-funded), RBF (Clearco, Lighter Capital), operator buy-in (sweat equity), strategic partnership, F&F"
+  ],
+  "ionwave_specific_insights": [
+    "Pre-revenue status is challenge BUT 7-week validation sprint with clear metrics (≥20 units, CAC ≤$40) de-risks investment",
+    "Capital-efficient raise ($30-50K for 5 months runway to break-even) aligns with 2026 investor preferences (organic growth > growth-at-all-costs)",
+    "Marine plasma differentiation (78 minerals vs 5-7) is double-edged: Novel/compelling BUT requires education/validation",
+    "LMNT + Seaonic positioning is smart: Borrows equity from known brands, clear category anchor",
+    "Unit economics are strong (65-75% margin, 5-6x LTV:CAC target) if CAC stays ≤$40 (validated in Week 6-7)",
+    "Solo founder is risk: Mitigation = advisors, operator buy-in option, structured validation (not betting farm on unproven idea)",
+    "M3 margin dispute (REC-001: Danilo 40% vs Bootstrap 67%) requires resolution — pitch deck uses 65-75% (conservative midpoint)",
+    "Exit path is clear: PE acquisition at 4-6x EBITDA is standard for profitable D2C brands, $6-9M Year 3-5 is realistic"
+  ],
+  "intelligence_gaps": [
+    {
+      "gap": "Investor response data",
+      "description": "No real investor feedback on IonWave pitch, deck, Trade-as-pitch concept yet",
+      "impact": "All recommendations are theory-based, not validated by real conversations",
+      "upgrade_path": "Conduct 10-15 investor meetings (Weeks 3-6), document feedback, iterate pitch/deck/ask",
+      "confidence": "VOID — Requires real investor conversations"
+    },
+    {
+      "gap": "2026 D2C micro-raise comparables",
+      "description": "Most seed data covers $500K-3M rounds, not $30-50K micro-raises",
+      "impact": "Valuation cap ($250-500K) is reasonable guess but not benchmarked against similar micro-raises",
+      "upgrade_path": "Research AngelList, Crunchbase for <$100K raises in D2C/supplement space, interview founders",
+      "confidence": "C"
+    },
+    {
+      "gap": "Trade-as-pitch validation",
+      "description": "Novel concept (investors interact with Claude vs deck) is untested hypothesis",
+      "impact": "Unclear if investors find it valuable or gimmicky, adoption barriers unknown",
+      "upgrade_path": "Test with 3-5 friendly investors, gather qualitative feedback, iterate approach",
+      "confidence": "D — Experimental"
+    },
+    {
+      "gap": "TAM/SAM/SOM market sizing",
+      "description": "Exact electrolyte market size, online supplement buyers, biohacker segment size not researched",
+      "impact": "Investor Q&A has placeholder for market size question, pitch deck may lack specific data",
+      "upgrade_path": "Research IBISWorld, Statista, Euromonitor for electrolyte/supplement market data (cost: $0-500)",
+      "confidence": "C"
+    },
+    {
+      "gap": "Bootstrap-to-forever SAFE liquidity",
+      "description": "If IonWave never raises Series A (bootstraps to profitability), how do SAFE holders get liquidity?",
+      "impact": "Investor may be stuck with unconverted SAFE (no exit trigger, no dividends without negotiation)",
+      "upgrade_path": "Discuss with investor upfront: 'If we bootstrap, I'll [buy back SAFE at X valuation / pay Y% annual dividend]'",
+      "confidence": "C"
+    },
+    {
+      "gap": "Brazil-US cross-border legal structure",
+      "description": "Does SAFE work for Brazilian entity with US investors? Any tax implications?",
+      "impact": "May need legal review of fundraising structure (especially if Danilo is in Brazil, investors in US)",
+      "upgrade_path": "Consult startup attorney familiar with Brazil-US fundraising (cost: $500-1,500)",
+      "confidence": "C"
+    }
+  ],
+  "key_blockers": [
+    {
+      "blocker": "Pre-revenue status",
+      "severity": "HIGH",
+      "mitigation": "7-week validation sprint with clear metrics (Week 7 decision: ≥20 units, CAC ≤$40, repeat customers) de-risks investment",
+      "status": "Mitigated by structure, but still requires investor trust"
+    },
+    {
+      "blocker": "Investor interest unknown",
+      "severity": "HIGH",
+      "mitigation": "Outreach Weeks 1-4 (warm intros + cold emails to 50+ investors) will validate demand for $30-50K SAFE at $250-500K cap",
+      "status": "Blocking until Week 3-4 investor meetings begin"
+    },
+    {
+      "blocker": "Solo founder risk",
+      "severity": "MEDIUM",
+      "mitigation": "Advisors for domain expertise, operator buy-in option if growth requires it, structured decision-making (kill criteria)",
+      "status": "Acknowledged in pitch, mitigated but not eliminated"
+    },
+    {
+      "blocker": "M3 margin dispute (REC-001)",
+      "severity": "MEDIUM",
+      "mitigation": "Pitch deck uses conservative 65-75% margin assumption pending M3 resolution with real COGS data",
+      "status": "Pending M3 reconciliation after first inventory order"
+    }
+  ],
+  "feeds_into": [
+    "M2: Entity & Legal (cap table, SAFE legal docs, trademark for IP protection in exit)",
+    "M3: Financial Model (unit economics, 3-year projections, use of funds, exit valuation)",
+    "M5: Supply Chain & Manufacturing (Biomarine as moat in pitch, exit prep via supply chain reliability)",
+    "M7: Launch & Growth Plan (7-week validation sprint execution, traction metrics for investor updates)",
+    "M18: Sales & Distribution Channels (channel diversification for exit prep, D2C + Amazon + wholesale)"
+  ],
+  "depends_on": [
+    "M0: Trade Thesis (IonWave vision, positioning, differentiation as pitch foundation)",
+    "M3: Financial Model (unit economics, 3-year projections for pitch deck and investor diligence)",
+    "M2: Entity & Legal (entity formation required before SAFE close, cap table management)"
+  ],
+  "opkits": [
+    {
+      "opkit_id": "OK-M4-001",
+      "opkit_name": "D2C Seed Fundraising Framework",
+      "description": "Generalizable framework for ANY D2C brand raising seed capital ($30K-500K), covering fundraising strategy, pitch deck, investor relations, term negotiation, diligence, and exit planning",
+      "reusability_score": 9,
+      "key_components": [
+        "7-stage investor CRM pipeline (Research → Closed/Passed)",
+        "15-slide pitch deck framework (slide-by-slide rationale)",
+        "Investor type targeting (angels, micro-VCs, family offices) with outreach templates",
+        "SAFE structure and negotiation playbook (cap, discount, pro-rata, MFN)",
+        "Due diligence Q&A (top 20 questions + data room setup)",
+        "Exit scenarios (PE, strategic, operator buyout, distributions) and prep steps",
+        "Backup funding plan (bootstrap, RBF, operator buy-in, strategic partnership, F&F)"
+      ]
+    }
+  ],
+  "hypothesis_crossref": [
+    {
+      "hypothesis_id": "HYP-003",
+      "hypothesis_name": "Churn Prevention via High-Quality Product",
+      "relationship": "M4 exit strategy depends on strong retention (40% repeat rate target Year 3) to achieve $6-9M PE valuation — HYP-003 (product quality drives retention) is critical",
+      "evidence_contribution": "Exit prep (File 208) emphasizes customer retention, NPS ≥50, LTV $200+ as acquirer value drivers — aligns with HYP-003 quality focus",
+      "confidence": "B"
+    },
+    {
+      "hypothesis_id": "HYP-006",
+      "hypothesis_name": "Marine Plasma as Key Differentiator",
+      "relationship": "M4 pitch strategy relies on marine plasma (78 minerals) as differentiation vs LMNT/Seaonic — HYP-006 validates this claim is compelling to customers/investors",
+      "evidence_contribution": "Pitch deck (slide 3: Solution) positions marine plasma as core value prop — if HYP-006 is invalidated (customers don't care about 78 minerals), pitch weakens",
+      "confidence": "A"
+    }
+  ],
+  "novel_concepts": [
+    {
+      "concept": "Trade-as-Pitch",
+      "description": "Investors interact with Claude agent (full IonWave Trade context, 41 TUPs) instead of static pitch deck — enables depth, interactivity, transparency",
+      "confidence": "D — Experimental",
+      "advantages": [
+        "Depth: Investor can drill into any area without 'we'll get back to you' delays",
+        "Interactivity: Conversational vs one-way presentation (higher engagement)",
+        "Transparency: Full Trade context (not just curated highlights) builds trust",
+        "Efficiency: Async exploration (investor timeline, not 30-min meeting constraint)",
+        "Differentiation: Novel approach signals innovation, tech-forward culture"
+      ],
+      "challenges": [
+        "Adoption barrier: Most investors expect decks, may resist new format",
+        "Trust/accuracy: Investor must trust Claude's answers (hallucination concern)",
+        "Tech comfort: Not all angels/VCs are AI-native (older demographics)",
+        "IP exposure: Sharing full Trade = sharing full strategy (competitive risk if investor passes)",
+        "Lack of narrative control: Investor asks any question vs guided deck flow"
+      ],
+      "recommendation": "Use as complementary tool (not primary pitch): Deck-first (Weeks 0-4), Trade-as-diligence (Weeks 5-6 for interested investors), learn and iterate",
+      "upgrade_path": [
+        "Build investor-safe Trade export (read-only Claude session, 48-72 hour expiration, NDA-gated)",
+        "Test with 3-5 friendly investors, gather feedback",
+        "Monitor usage: How many accept Trade access? How long do they spend? What do they ask?",
+        "Correlate to conversion: Do Trade users invest at higher rates than deck-only?",
+        "Document learnings: Write case study (M4 content, OpKit refinement, share with startup community)"
+      ]
+    },
+    {
+      "concept": "7-Week Validation Sprint as De-Risking Pitch",
+      "description": "Instead of asking investors to fund 3-year plan, IonWave asks for capital to fund 7-week test with clear success criteria (≥20 units, CAC ≤$40) and kill criteria (<10 units, CAC >$50)",
+      "confidence": "A",
+      "advantages": [
+        "Transparency: Investor knows exactly what capital funds and what success looks like",
+        "Capital efficiency: $30-50K for 7 weeks (not $500K for 12 months) aligns with 2026 investor preferences",
+        "Founder accountability: Clear metrics = objective evaluation (not subjective 'we feel good')",
+        "Kill optionality: If validation fails, founder kills it (doesn't throw good money after bad)"
+      ],
+      "recommendation": "Emphasize in pitch deck (slide 6: Traction Plan) and investor conversations — this is IonWave's strongest de-risking strategy",
+      "reusability": "Highly reusable for any pre-revenue D2C brand — replace '7 weeks' and 'units sold' with relevant timeline and metrics"
+    }
+  ],
+  "session_notes": "M4 Fundraising & Investors TUP completed via TWP-001 v2.0.0 protocol. Phase 4 (Research) covered 2026 D2C fundraising climate, SAFE vs priced equity trends, investor CRM best practices, LMNT comparable. Phase 5 (Content Production) created 5 files (fundraising_strategy, pitch_deck_framework, investor_relations, term_sheet_and_negotiation, diligence_and_exit) totaling 2,620 lines. All 9 content tabs from File 20 (ops_model_v10_dump) integrated. Danilo's pitch deck (File 202) is EXCELLENT quality (A-grade) — highly reusable. Trade-as-pitch concept is novel and experimental (D-grade confidence) — recommend testing with 3-5 investors before scaling. Next phases: Dialogue (Phase 6), Self-Grade (Phase 7), OpKit (Phase 8), Register (Phase 9), Cross-Ref (Phase 10), Log (Phase 11)."
+}

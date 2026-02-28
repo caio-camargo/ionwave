@@ -1,0 +1,59 @@
+{
+  "tup_id": "M28",
+  "title": "Market & Expansion",
+  "cluster": "BCL-5",
+  "cluster_name": "Growth & Market",
+  "bootstrap_source": 21,
+  "bootstrap_source_name": "expansion_growth",
+  "status": "migrated",
+  "quality_score": 8.3,
+  "sheets_consumed": 20,
+  "sheet_ids": [592, 593, 594, 595, 596, 597, 598, 599, 600, 601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611],
+  "structural_sheets": [589, 590, 591, 612],
+  "output_files": [
+    "strategic_landscape.md",
+    "channel_strategy.md",
+    "expansion_paths.md",
+    "constraint_scenarios.md",
+    "product_development.md",
+    "moonshot_lab.md",
+    "b2b_wholesale.md",
+    "amazon_playbook.md",
+    "retail_readiness.md",
+    "dialogue_summary.md",
+    "opkit_market_expansion.md"
+  ],
+  "output_count": 11,
+  "consolidation": "20 → 9 content files + dialogue summary + OpKit",
+  "deduplication": {
+    "merged": ["606/607 → amazon_playbook.md"],
+    "absorbed": ["608/609/610 absorbed into amazon_playbook.md and channel_strategy.md"]
+  },
+  "opkits": ["OK-M28-001"],
+  "revision": {
+    "version": "1.0.0",
+    "date": "2026-02-08",
+    "session": "F",
+    "dialogue_rounds": 7,
+    "dialogue_upgrades": 14,
+    "dialogue_ref": "dialogue_summary.md"
+  },
+  "hypotheses_affected": ["HYP-002", "HYP-004", "HYP-006"],
+  "feeds_into": ["M0", "M14", "M23", "M25", "M26"],
+  "requires": ["M0", "M7", "M8", "M25"],
+  "key_blockers": [
+    "COGS validation needed for pricing models",
+    "Science library needs primary source citations",
+    "Subscription conversion rate unknown until launch"
+  ],
+  "intelligence_gaps": [
+    "Actual COGS for margin modeling across channels",
+    "Head-to-head studies: IonWave vs competitors",
+    "Ocean mineral bioavailability independent verification",
+    "Amazon category competition data (BSR, review counts)",
+    "Gym/CrossFit B2B account retention benchmarks",
+    "Subscription conversion rate benchmark for supplement DTC",
+    "Retail slotting fee actuals for natural channel",
+    "International regulatory requirements (UK, Canada, Australia)"
+  ]
+}

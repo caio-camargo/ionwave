@@ -1,0 +1,76 @@
+{
+  "tup_id": "m11",
+  "tup_name": "VSL Production",
+  "cluster": "BCL-3",
+  "cluster_name": "DR & Creative",
+  "status": "migrated",
+  "revisions": [
+    {
+      "version": "1.0.0",
+      "date": "2026-02-09",
+      "actor": "claude-sonnet-4-5",
+      "change_type": "initial_workshop",
+      "protocol_used": "TWP-001 v2.0.0",
+      "what_changed": "Workshopped M11 from 14 Danilo tabs to 8 production files. Heavy research (FTC compliance 2026, ClickBank VSL benchmarks, Agora direct response). 6-round expert dialogue (D2C Creative Director, Performance Media Buyer, FTC Compliance Attorney) produced 15 upgrades. Quality 9.2/10.",
+      "quality_score": 9.2,
+      "quality_rationale": "FTC compliance rigorously documented (fictional testimonials flagged, substantiation gaps explicit). Testing protocol statistically rigorous (kill criteria, CPA creep thresholds, platform allocation). Financial model realistic (10-20% winner rate). Dialogue upgraded 15 weak points. Only gap: bioavailability claims need RCT OR structure/function pivot.",
+      "dialogue_ref": {
+        "file": "dialogue_summary.md",
+        "tup_version": "1.0.0",
+        "personas": ["D2C Creative Director", "Performance Media Buyer", "FTC Compliance Attorney"],
+        "rounds": 6,
+        "saturated": true,
+        "upgrades": 15,
+        "unresolved": 0
+      },
+      "hypotheses_affected": []
+    }
+  ],
+  "current_version": "1.0.0",
+  "current_quality": 9.2,
+  "sheet_count": 14,
+  "sheets": [
+    {"id": "vsl_script", "title": "VSL Script", "source_tab": 309, "note": "Existing 4-min IonWave script graded with compliance flags (5/10 as-is)"},
+    {"id": "vsl_trade_overview", "title": "VSL Trade Overview", "source_tab": 310, "note": "Philosophy: VSL as Trade"},
+    {"id": "vsl_script_architecture", "title": "VSL Script Architecture", "source_tab": 311, "note": "8-section structure, hook formulas"},
+    {"id": "vsl_testing_protocol", "title": "VSL Testing Protocol", "source_tab": 312, "note": "Statistical kill criteria"},
+    {"id": "vsl_production_spec", "title": "VSL Production Spec", "source_tab": 313, "note": "Shot list, B-roll, FTC compliance"},
+    {"id": "vsl_financial_model", "title": "VSL Financial Model", "source_tab": 314, "note": "Cost structures, ROI scenarios"},
+    {"id": "vsl_post_mortem_template", "title": "VSL Post-Mortem Template", "source_tab": 315, "note": "Learnings transfer"},
+    {"id": "vsl_tup_overview", "title": "VSL TUP Overview", "source_tab": 316, "note": "Lifecycle phases"},
+    {"id": "vsl_script_architecture1", "title": "VSL Script Architecture (duplicate)", "source_tab": 317, "note": "Duplicate of 311 — consolidated"},
+    {"id": "vsl_hook_library", "title": "VSL Hook Library", "source_tab": 318, "note": "10 hook frameworks"},
+    {"id": "vsl_testing_protocol1", "title": "VSL Testing Protocol (duplicate)", "source_tab": 319, "note": "Duplicate of 312 — consolidated"},
+    {"id": "vsl_production_checklist", "title": "VSL Production Checklist", "source_tab": 320, "note": "Execution checklist"},
+    {"id": "vsl_iteration_log", "title": "VSL Iteration Log", "source_tab": 321, "note": "Version tracking template"},
+    {"id": "ref_vsl_breakdown", "title": "Ref VSL Breakdown", "source_tab": 322, "note": "Example VSL analysis"}
+  ],
+  "files": [
+    "vsl_as_trade_framework.md",
+    "script_architecture.md",
+    "hook_library.md",
+    "testing_protocol.md",
+    "production_spec.md",
+    "financial_model.md",
+    "iteration_system.md",
+    "ionwave_vsl_script_graded.md",
+    "dialogue_summary.md",
+    "opkit_vsl_production.md",
+    "_meta.json"
+  ],
+  "opkits": ["OK-M11-001"],
+  "feeds_into": ["M12 (Ad Creative)", "M13 (Media Buying)", "M15 (Landing Pages)", "M23 (Influencer & Creator)"],
+  "requires": ["M0 (Trade Thesis)", "M27 (Customer Research - for avatar insights)", "M3 (Financial Model - for target CPA)"],
+  "key_blockers": [
+    "REC-001 UNRESOLVED: Margin dispute (67% Bootstrap vs 40% Danilo) affects break-even CPA calculation",
+    "Pre-launch: Cannot test FTC-compliant testimonials until Month 2+ (need real customers)",
+    "Bioavailability substantiation: '98% identical to blood plasma' claim requires RCT OR pivot to structure/function language"
+  ],
+  "next_action": "Post-launch Month 1: Test 5 hook variants on ANG-01 (marine plasma mechanism) with $1,200 budget. Collect real customer testimonials for Month 2 VSL refresh.",
+  "intelligence_gaps": [
+    {"gap": "Winning hook type for marine plasma", "grade": "D", "upgrade": "Test 10 hooks (2 per type), identify best-performing type"},
+    {"gap": "Platform-specific CPA (Meta vs TikTok vs YouTube)", "grade": "D", "upgrade": "Test same VSL on 3 platforms with $500 each"},
+    {"gap": "VSL fatigue timeline for marine plasma", "grade": "C", "upgrade": "Track CTR decay over first 3 winning VSLs"},
+    {"gap": "Substantiation file for bioavailability claims", "grade": "D", "upgrade": "Commission RCT OR soften all claims to structure/function"}
+  ]
+}

@@ -1,0 +1,127 @@
+{
+  "tup_id": "m12",
+  "tup_name": "Ad Creative",
+  "cluster": "BCL-3",
+  "cluster_name": "DR & Creative",
+  "status": "migrated",
+  "current_version": "1.0.0",
+  "current_quality": "8.2/10",
+  "workshopped_date": "2026-02-10",
+  "protocol": "TWP-001 v2.0.0",
+  "source_files": ["10a_creative_strategy", "10b_creative_production"],
+  "passet": "imagination",
+  "sheet_count": 26,
+  "sheets": [
+    "Creative Strategy",
+    "Ref Ad Creative Strategy",
+    "Ad Specs",
+    "Platform Specs",
+    "Hook Library",
+    "Angle Library",
+    "Script Templates",
+    "Visual Patterns",
+    "Ad Psychology",
+    "Ad Copy Bank",
+    "Copy Variations",
+    "Copy Templates",
+    "Creative Replenishment",
+    "Replenishment System",
+    "Creative Naming Convention",
+    "File Naming",
+    "Asset Organization",
+    "Creative Performance Tracker",
+    "Creative Fatigue Indicators",
+    "Swipe File System",
+    "Platform Creative Specs",
+    "Creative Brief Template",
+    "Winning Ad Breakdown",
+    "Creative Production Queue",
+    "Creative Engineering",
+    "Messaging Psychology"
+  ],
+  "consolidation": "26 Danilo tabs → 22 production files (18 content + 1 dialogue + 1 opkit + 2 system)",
+  "files": [
+    "creative_strategy.md",
+    "ad_specs.md",
+    "hook_library.md",
+    "angle_library.md",
+    "script_templates.md",
+    "visual_patterns.md",
+    "ad_psychology.md",
+    "ad_copy_bank.md",
+    "creative_replenishment.md",
+    "creative_naming_convention.md",
+    "creative_performance_tracker.md",
+    "creative_fatigue_indicators.md",
+    "swipe_file_system.md",
+    "platform_creative_specs.md",
+    "creative_brief_template.md",
+    "creative_brief_1page.md",
+    "winning_ad_breakdown.md",
+    "creative_production_queue.md",
+    "creative_engineering.md",
+    "creative_library_maintenance.md",
+    "ugc_creator_production_guide.md",
+    "brand_voice_evolution.md",
+    "dialogue_summary.md",
+    "opkit_ad_creative.md"
+  ],
+  "opkits": ["OK-M12-001"],
+  "feeds_into": ["m13", "m14", "m15", "m23"],
+  "requires": ["m0", "m11", "m27"],
+  "hypothesis_links": {
+    "primary": ["HYP-001"],
+    "secondary": ["HYP-006"]
+  },
+  "key_blockers": [],
+  "next_action": "Begin Month 1 creative production: Test 5 angles (Missing Mineral, Contrarian, Comparison, Problem Reframe, Authority) with 2 hook variants each = 10 ads, $200-300 total spend",
+  "intelligence_gaps": [
+    {
+      "gap": "IonWave-specific angle performance",
+      "impact": "High",
+      "validation_path": "Test all 5 angles Month 1-3, measure winner % by angle, establish Tier 1/2/3 rankings"
+    },
+    {
+      "gap": "IonWave-specific creative fatigue timelines",
+      "impact": "High",
+      "validation_path": "Track winner lifespan Month 1-6, measure average days before fatigue by angle/format/platform"
+    },
+    {
+      "gap": "Marine plasma narrative resonance (Quinton story vs mineral count)",
+      "impact": "High",
+      "validation_path": "A/B test Authority angle (Quinton story) vs Missing Mineral (78 vs 3) Month 1-2, measure hook rate + CPA"
+    },
+    {
+      "gap": "Authority angle format-platform matching",
+      "impact": "Medium",
+      "validation_path": "Test Authority angle on YouTube 60-90s (educational format) vs Meta 15s UGC (not recommended), measure performance"
+    },
+    {
+      "gap": "Optimal creative production budget allocation (Tier 1 vs Tier 2 vs Tier 3)",
+      "impact": "Medium",
+      "validation_path": "Track creative ROI by tier Month 3-6: (CAC improvement × orders) - production cost. Adjust budget allocation based on ROI."
+    }
+  ],
+  "revisions": [
+    {
+      "version": "1.0.0",
+      "date": "2026-02-10",
+      "actor": "Claude (Sonnet 4.5) + Operator",
+      "change_type": "initial_workshop",
+      "protocol_used": "TWP-001 v2.0.0",
+      "what_changed": "Full M12 Ad Creative workshop: 26 Danilo tabs + Bootstrap files 10A/10B → 22 production files (18 content files: strategy, psychology, libraries, systems, tracking; 1 dialogue summary with 10 rounds to saturation; 1 OpKit; 2 system files). 3-persona dialogue (D2C Creative Director, Performance Media Buyer, UGC Creator) identified 4 critical post-dialogue files: creative_brief_1page.md, creative_library_maintenance.md, ugc_creator_production_guide.md, brand_voice_evolution.md. Key innovations: 3-tier creative replenishment system (derivatives/new concepts/high-production), 5-indicator fatigue detection matrix, engineering-driven testing hierarchy (angle → hook → format), quarterly library maintenance feedback loop, brand voice 3-phase maturation (Challenger → Expert → Leader), comprehensive FTC compliance throughout. Cross-integrated with M11 (VSL production, 10 hooks), M13 (media buying, 2-4 week fatigue timelines, attribution model), M14 (testing protocols, kill criteria), M15 (landing page psychology), M23 (UGC creator workflows), M27 (ICP targeting). Quality 8.2/10: production-ready with minor intelligence gaps resolvable Month 3-6 with real testing data.",
+      "quality_score": 8.2,
+      "quality_rationale": "Strengths: Comprehensive coverage (22 files), systematic frameworks (testing, fatigue, replenishment), cross-TUP integration, phase-gated evolution, FTC compliance rigor. Weaknesses: 4 files required post-dialogue (initial scope gaps), marine plasma education strategy under-addressed initially, brand voice maturation missing initially, some operator-centric templates needed creator-facing variants. Intelligence gaps (angle performance, fatigue timelines, narrative resonance) require 3-6 months real data. Score 8.2/10 reflects production-ready content with minor refinements + medium intelligence gaps, significantly better than generic D2C creative guides (lacks category-specific rigor, supplement-specific constraints, engineering mindset).",
+      "dialogue_ref": {
+        "file": "dialogue_summary.md",
+        "tup_version": "1.0.0",
+        "personas": ["D2C Creative Director", "Performance Media Buyer", "UGC Creator"],
+        "rounds": 10,
+        "saturated": true,
+        "upgrades": 10,
+        "unresolved": 0
+      },
+      "hypotheses_affected": ["HYP-001"]
+    }
+  ]
+}

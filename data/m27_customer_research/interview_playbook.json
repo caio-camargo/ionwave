@@ -1,0 +1,179 @@
+{
+  "_meta": {
+    "sheet_name": "Customer Interview Playbook",
+    "parent_file": "03b_customer_research_voc",
+    "version": "1.0.0",
+    "last_updated": "2026-02-04",
+    "updated_by": "claude-opus-4.5",
+    "status": "draft",
+    "quality_score": "5/10",
+    "data_type": "narrative",
+    "note": "Consolidated from 'Customer Interview Playbook' and 'Customer Interview Playbook 2'. Provides complete methodology for conducting customer discovery interviews using Mom Test principles."
+  },
+  "data": {
+    "consolidation_notes": {
+      "source_sheets": ["Customer Interview Playbook", "Customer Interview Playbook 2"],
+      "merge_rationale": "Original two sheets contained complementary playbook content split across tabs. Combined into single comprehensive playbook."
+    },
+    "interview_basics": {
+      "who_to_interview": [
+        "Current electrolyte supplement users (LMNT, Liquid IV, Drip Drop, etc.)",
+        "People in target ICP segments (keto/carnivore, biohackers, athletes, fasters)",
+        "People who have STOPPED using electrolyte supplements (churned users)",
+        "People who have never tried electrolyte supplements but match ICP demographics"
+      ],
+      "how_many": "5-20 interviews before launch. You'll know you have enough when you stop hearing new information (saturation).",
+      "how_long": "20-30 minutes each. Respect their time. Better to end early than run over.",
+      "where_to_find_them": [
+        "Reddit communities (r/keto, r/fasting, r/Supplements, r/Biohackers)",
+        "Facebook groups (keto groups, fasting groups, CrossFit groups)",
+        "Personal network (friends, family, colleagues who match ICP)",
+        "Competitor review sections (LMNT, Liquid IV Amazon reviews)",
+        "Post-purchase (after first IonWave customers exist)"
+      ],
+      "compensation": "Not required for pre-launch. Post-launch: free product or 50% discount code as thank you."
+    },
+    "interview_structure": {
+      "total_duration": "30 minutes",
+      "sections": [
+        {
+          "phase": "Warm Up",
+          "time_range": "0-3 min",
+          "duration": "3 min",
+          "goal": "Build rapport. Make them comfortable. Explain the purpose (learning, not selling).",
+          "key_actions": [
+            "Thank them for their time",
+            "Explain: 'I'm researching how people manage hydration and energy. There are no right or wrong answers.'",
+            "Confirm recording permission if applicable",
+            "Do NOT mention your product yet"
+          ]
+        },
+        {
+          "phase": "Background",
+          "time_range": "3-10 min",
+          "duration": "7 min",
+          "goal": "Understand their context, lifestyle, and health routines.",
+          "key_actions": [
+            "Ask about their daily routine and health practices",
+            "Understand their diet and exercise habits",
+            "Learn what supplements they currently take and why",
+            "Listen for unprompted mentions of energy, hydration, or fatigue"
+          ]
+        },
+        {
+          "phase": "Problem Exploration",
+          "time_range": "10-20 min",
+          "duration": "10 min",
+          "goal": "Deeply understand their pain points around hydration, energy, and mineral intake. This is the most important section.",
+          "key_actions": [
+            "Ask about specific moments when they feel worst (energy crashes, cramps, brain fog)",
+            "Explore what they've tried to solve these problems",
+            "Understand what worked and what didn't, and why",
+            "Ask about the emotional impact of these problems",
+            "Follow up on every interesting thread - don't stick to the script robotically"
+          ]
+        },
+        {
+          "phase": "Solution / Product",
+          "time_range": "20-27 min",
+          "duration": "7 min",
+          "goal": "Understand their relationship with current solutions. Only introduce your concept in the last few minutes if relevant.",
+          "key_actions": [
+            "Ask what they're currently using and why they chose it",
+            "Explore what they wish was different about their current solution",
+            "If appropriate, briefly describe the marine plasma concept and gauge reaction",
+            "Ask what would make them switch from their current product",
+            "Do NOT pitch. Observe their genuine reaction."
+          ]
+        },
+        {
+          "phase": "Wrap Up",
+          "time_range": "27-30 min",
+          "duration": "3 min",
+          "goal": "Close gracefully. Get permission for follow-up. Ask the magic question.",
+          "key_actions": [
+            "Ask: 'Is there anything I should have asked but didn't?'",
+            "Ask: 'Who else should I talk to about this?'",
+            "Thank them sincerely",
+            "Ask permission to follow up when product launches"
+          ]
+        }
+      ]
+    },
+    "key_question_categories": {
+      "opening": [
+        "Tell me about your typical day - what does your health routine look like?",
+        "What supplements or health products do you currently use, if any?",
+        "How did you first get interested in [keto / fasting / fitness / biohacking]?"
+      ],
+      "problem_discovery": [
+        "Walk me through the last time you felt really low energy or dehydrated. What happened?",
+        "What's the most frustrating thing about managing your hydration or electrolytes?",
+        "How often does this problem actually affect your day? Give me a recent example.",
+        "What have you tried to solve this? What worked and what didn't?"
+      ],
+      "purchase_journey": [
+        "How did you find out about [their current electrolyte product]?",
+        "What made you choose that one over others?",
+        "What would make you switch to something else?",
+        "How much do you spend on electrolytes/hydration per month?"
+      ],
+      "product_experience": [
+        "What do you love about what you're using now?",
+        "What do you wish was different?",
+        "If you could design the perfect electrolyte product, what would it be?",
+        "What would make you tell a friend about an electrolyte product?"
+      ],
+      "social": [
+        "Where do you go to learn about new health products?",
+        "Who do you trust for health recommendations?",
+        "Have you ever recommended an electrolyte product to someone? What did you say?"
+      ],
+      "closing": [
+        "Is there anything I should have asked you that I didn't?",
+        "Who else do you know that I should talk to about this?",
+        "Can I follow up with you when we have something to share?"
+      ],
+      "magic_question": "If you could wave a magic wand and change one thing about how you manage your hydration and energy, what would it be?"
+    },
+    "synthesis_template": {
+      "after_each_interview": [
+        "Key quote (the most surprising or revealing thing they said)",
+        "Primary pain point (what's actually bothering them most)",
+        "Current solution and satisfaction level (1-10)",
+        "What would make them switch",
+        "Willingness to pay for a better solution",
+        "ICP segment alignment (which archetype do they match?)",
+        "Surprising finding (something you didn't expect)"
+      ],
+      "after_all_interviews": [
+        "Top 3 pain points by frequency",
+        "Top 3 jobs to be done",
+        "Most common current solution and its weaknesses",
+        "Pricing sensitivity range",
+        "Best marketing quotes (with permission to use)",
+        "ICP validation or revision recommendations"
+      ]
+    },
+    "interview_tips": {
+      "dos": [
+        "DO listen more than you talk (80/20 rule)",
+        "DO ask follow-up questions: 'Tell me more about that' and 'Why?'",
+        "DO ask about specific past behavior, not hypothetical future behavior",
+        "DO take notes on emotions, not just facts",
+        "DO shut up after asking a question - let silence do the work",
+        "DO record (with permission) so you can focus on listening",
+        "DO ask about what they've actually done, not what they plan to do"
+      ],
+      "donts": [
+        "DON'T pitch your product (this is research, not sales)",
+        "DON'T ask leading questions ('Don't you think marine plasma is better?')",
+        "DON'T ask 'Would you buy this?' (everyone says yes, it means nothing)",
+        "DON'T interrupt or finish their sentences",
+        "DON'T defend your idea if they criticize it - learn from the criticism",
+        "DON'T take compliments as validation (compliments are worthless in interviews)",
+        "DON'T ask about the future ('Would you use...') - ask about the past ('Have you ever...')"
+      ]
+    }
+  }
+}

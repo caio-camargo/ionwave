@@ -1,0 +1,99 @@
+{
+  "_meta": {
+    "sheet_name": "ODD-1 Complete Thesis",
+    "parent_file": "01_strategic_foundation",
+    "version": "1.1.0",
+    "last_updated": "2026-02-04",
+    "updated_by": "claude-opus-4.5",
+    "status": "superseded",
+    "quality_score": "4/10",
+    "data_type": "narrative",
+    "superseded_by": "thesis.json",
+    "note": "v0 — SUPERSEDED BY THESIS SHEET. Broad electrolyte market framing conflicts with Thesis sheet's narrow marine plasma positioning. Porter's, ICP, and internal evidence all support narrow thesis. Retained for TAM/SAM/SOM estimates and capital plan reference. See Strategic_Foundation_Analysis.md for reconciliation."
+  },
+  "data": {
+    "executive_summary": "IonWave is a premium D2C electrolyte supplement featuring 78 ocean-sourced trace minerals, targeting the $5B+ electrolyte market through keto, carnivore, and biohacker communities. We aim to reach $100K MRR within 12 months through performance marketing and influencer partnerships.",
+    "investment_headline": {
+      "investment": "$30-50K",
+      "target": "$100K MRR",
+      "timeline": "12 months"
+    },
+    "market": {
+      "tam": {
+        "value": "$5B+ (US electrolyte/hydration)",
+        "confidence": "C",
+        "source": "Industry reports"
+      },
+      "sam": {
+        "value": "$500M (premium supplements)",
+        "confidence": "C",
+        "source": "Competitor analysis"
+      },
+      "target_market": {
+        "value": "$50M (keto/carnivore/biohacker)",
+        "confidence": "D",
+        "source": "Community sizing"
+      },
+      "growth_rate": {
+        "value": "8-12% CAGR",
+        "confidence": "C",
+        "source": "Industry reports"
+      },
+      "key_trend": "Shift from sports drinks to functional hydration"
+    },
+    "problem": {
+      "dehydration_epidemic": [
+        "75% of Americans are chronically dehydrated",
+        "Modern diets deplete electrolytes (especially keto/carnivore)",
+        "Symptoms: fatigue, brain fog, muscle cramps, poor recovery"
+      ],
+      "inadequate_solutions": [
+        "Sports drinks: Sugar-laden, synthetic, 3-4 minerals only",
+        "Premium brands (LMNT): Better but still synthetic, limited minerals",
+        "Ocean minerals: Scientifically superior but poorly marketed"
+      ],
+      "trust_gap": [
+        "Supplement industry plagued by fake claims, low quality",
+        "Consumers skeptical, want transparency and science"
+      ]
+    },
+    "solution": {
+      "description": "IonWave: Ocean-sourced electrolytes with 78 trace minerals",
+      "differentiation": [
+        "78 minerals vs. 3-4 in competitors",
+        "Ocean-sourced (natural) vs. synthetic",
+        "Matches human plasma mineral composition",
+        "Third-party tested, transparent sourcing"
+      ],
+      "positioning": [
+        "Premium price ($49-69) justified by quality",
+        "Science-backed, not hype-driven",
+        "Community-focused (keto, carnivore, biohacker)"
+      ]
+    },
+    "why_now": [
+      "CATEGORY AWARENESS: LMNT, Liquid IV proved the market",
+      "DIET TRENDS: Keto/carnivore mainstream, electrolyte need understood",
+      "D2C INFRASTRUCTURE: Shopify, 3PLs, Meta ads make launch cheap",
+      "TRUST SHIFT: Consumers want clean labels, transparency",
+      "INFLUENCER ECOSYSTEM: Health influencers need products to recommend"
+    ],
+    "right_to_win": [
+      "OPERATIONAL EXCELLENCE: Studio model with proven D2C playbooks",
+      "SPEED: Can launch in weeks, not months",
+      "CAPITAL EFFICIENCY: Lean team, performance marketing focus",
+      "DIFFERENTIATED PRODUCT: Ocean-sourced is defensible positioning",
+      "COMMUNITY ACCESS: Relationships in keto/biohacker space"
+    ],
+    "the_ask": {
+      "raising": "$30-50K",
+      "use_of_funds": {
+        "inventory": "$15-20K",
+        "ad_spend_testing": "$10-15K",
+        "operations_buffer": "$5-10K"
+      },
+      "target_outcome": "$100K MRR within 12 months",
+      "expected_return": "5-10x in 3-5 years (acquisition or cash flow)"
+    }
+  }
+}

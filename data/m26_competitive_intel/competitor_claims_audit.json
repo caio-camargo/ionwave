@@ -1,0 +1,114 @@
+{
+  "_meta": {
+    "sheet_name": "Competitor Claims Audit",
+    "parent_file": "02_market_intelligence",
+    "version": "1.0.0",
+    "last_updated": "2026-02-04",
+    "updated_by": "claude-opus-4.5",
+    "status": "draft",
+    "quality_score": "5.5/10",
+    "data_type": "hybrid",
+    "note": "Claims cataloged with substantiation analysis. Needs ongoing monitoring as competitors update messaging."
+  },
+  "data": {
+    "purpose": [
+      "Identify competitor claims that are unsubstantiated or misleading",
+      "Find opportunities to differentiate through stronger evidence",
+      "Build counter-messaging for ad copy and landing pages",
+      "Ensure our own claims are defensible and differentiated"
+    ],
+    "lmnt_claims": [
+      {
+        "claim": "Science-backed electrolyte ratios",
+        "substantiation_status": "Partially substantiated",
+        "evidence": "References some studies but ratios are for sodium loading, not general hydration",
+        "our_counter": "Their ratios are designed for keto/low-carb, not optimal hydration for general population",
+        "opportunity": "Position our marine plasma mineral profile as nature's ratio vs engineered ratio"
+      },
+      {
+        "claim": "No sugar, no junk",
+        "substantiation_status": "True but incomplete",
+        "evidence": "Factually accurate - no sugar added",
+        "our_counter": "True for us too, but they also have no minerals beyond Na/K/Mg",
+        "opportunity": "Agree and extend: no sugar, no junk, AND 78 minerals not just 3"
+      },
+      {
+        "claim": "Used by top athletes and doctors",
+        "substantiation_status": "Substantiated via endorsements",
+        "evidence": "Rogan, Huberman, various athlete sponsorships",
+        "our_counter": "Endorsements are paid, not clinical evidence",
+        "opportunity": "Build our own authority through clinical references and COA transparency"
+      },
+      {
+        "claim": "Everything you need, nothing you don't",
+        "substantiation_status": "Unsubstantiated",
+        "evidence": "Only 3 minerals - body needs 60+ trace minerals",
+        "our_counter": "3 minerals is NOT everything you need. 78 minerals is closer to complete",
+        "opportunity": "Direct comparison: 3 vs 78 minerals is our strongest claim"
+      },
+      {
+        "claim": "Doctor-developed formula",
+        "substantiation_status": "Partially substantiated",
+        "evidence": "Co-founded by Robb Wolf (not an MD, but has nutrition background)",
+        "our_counter": "Developed for keto, not general hydration optimization",
+        "opportunity": "Position as purpose-built for complete hydration, not a keto supplement"
+      },
+      {
+        "claim": "1000mg sodium per serving",
+        "substantiation_status": "Substantiated",
+        "evidence": "Verified on label",
+        "our_counter": "High sodium is a feature for keto, but a bug for general wellness",
+        "opportunity": "Balanced mineral profile vs sodium-heavy approach"
+      }
+    ],
+    "seaonic_claims": [
+      {
+        "claim": "78 minerals from the ocean",
+        "substantiation_status": "Substantiated",
+        "evidence": "Marine plasma sourcing verified",
+        "our_counter": "Same product category - we need to differentiate on price, taste, or trust",
+        "opportunity": "Match the claim, beat the price, add flavors"
+      },
+      {
+        "claim": "Bioavailable marine plasma",
+        "substantiation_status": "Substantiated",
+        "evidence": "Marine plasma is well-documented for bioavailability",
+        "our_counter": "Same ingredient, same benefit - need other differentiators",
+        "opportunity": "Add 3rd party COA testing as trust layer they may lack"
+      },
+      {
+        "claim": "Pure, clean, no additives",
+        "substantiation_status": "Partially substantiated",
+        "evidence": "Ingredient list is clean, but no public COA or testing transparency",
+        "our_counter": "Claim purity without proof - we can publish COAs",
+        "opportunity": "Radical transparency with published test results"
+      },
+      {
+        "claim": "Premium quality hydration",
+        "substantiation_status": "Substantiated by price signal",
+        "evidence": "$69/box positions as premium",
+        "our_counter": "Premium doesn't have to mean overpriced",
+        "opportunity": "Premium-accessible positioning - same quality, better value"
+      }
+    ],
+    "key_vulnerabilities_to_exploit": {
+      "lmnt": [
+        "Only 3 minerals (sodium, potassium, magnesium) vs 78 in marine plasma - their biggest substantive weakness",
+        "Synthetic ingredients - 'lab-made' vs 'ocean-sourced' is a powerful narrative",
+        "Keto-specific formulation positioned as universal - narrow origin story limits appeal"
+      ],
+      "liquid_iv": [
+        "High sugar content contradicts wellness positioning",
+        "CTT technology is just glucose-assisted absorption - not unique"
+      ],
+      "seaonic": [
+        "Price barrier at $69/box limits market size",
+        "Limited marketing sophistication - small team, low ad spend"
+      ],
+      "general": [
+        "No competitor publishes full COA/testing results - transparency gap",
+        "No competitor has cracked flavored marine plasma - taste is the #1 complaint"
+      ]
+    }
+  }
+}

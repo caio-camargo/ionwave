@@ -1,0 +1,78 @@
+{
+  "tup_id": "m23",
+  "tup_name": "Influencer & Creator",
+  "cluster": "BCL-5",
+  "cluster_name": "Growth & Market",
+  "status": "migrated",
+  "current_version": "1.0.0",
+  "current_quality": "8.0/10",
+  "revisions": [
+    {
+      "version": "1.0.0",
+      "date": "2026-02-08",
+      "actor": "Caio + Claude (session F)",
+      "change_type": "initial_workshop",
+      "protocol_used": "TWP-001 v2.0.0",
+      "what_changed": "Initial workshop: 15 Danilo content tabs (500-514, ~377 rows) consolidated into 8 production files + OpKit. Heavy deduplication (tabs 500/508, 501/509, 503/511, 505/506/514 were near-duplicates). Created influencer/creator strategy with phased build approach, UGC playbook with repurposing system, weighted vetting scorecard, IonWave-specific influencer map, contract templates, pipeline operations, database scaffold.",
+      "quality_score": 8.0,
+      "quality_rationale": "Strong actionability (4/5) — execution-ready phasing, scorecard, contracts, pipeline. Good confidence honesty (4.5/5) — liberal C/D grading on unverified data. Evidence coverage limited (3.5/5) — many data points are industry estimates. Multiple VOID dependencies on M7 Regulatory and M2 Legal.",
+      "dialogue_ref": {
+        "file": "dialogue_summary.md",
+        "tup_version": "1.0.0",
+        "personas": ["Skeptical Investor", "Growth Engineer", "Regulatory/Compliance Auditor"],
+        "rounds": 8,
+        "saturated": true,
+        "upgrades": 6,
+        "unresolved": 0
+      },
+      "hypotheses_affected": ["HYP-001", "HYP-006"]
+    }
+  ],
+  "sheet_count": 15,
+  "sheets": [
+    {"danilo_id": "500", "title": "Influencer vs Creator Overview", "rows": 33},
+    {"danilo_id": "501", "title": "Influencer Strategy", "rows": 40},
+    {"danilo_id": "502", "title": "Creator UGC Strategy", "rows": 43},
+    {"danilo_id": "503", "title": "Influencer Contract Template", "rows": 47},
+    {"danilo_id": "504", "title": "Creator Contract Template", "rows": 43},
+    {"danilo_id": "505", "title": "Influencer Pipeline Tracker", "rows": 20},
+    {"danilo_id": "506", "title": "Creator Pipeline Tracker", "rows": 15},
+    {"danilo_id": "507", "title": "Content Repurposing System", "rows": 45},
+    {"danilo_id": "508", "title": "Creator vs Influencer Strategy", "rows": 38},
+    {"danilo_id": "509", "title": "Influencer Tiers Pricing", "rows": 29},
+    {"danilo_id": "510", "title": "Influencer Vetting Scorecard", "rows": 24},
+    {"danilo_id": "511", "title": "Influencer Agreement", "rows": 38},
+    {"danilo_id": "512", "title": "Influencer Database", "rows": 4},
+    {"danilo_id": "513", "title": "Influencer Map", "rows": 22},
+    {"danilo_id": "514", "title": "Creator Pipeline", "rows": 11}
+  ],
+  "files": [
+    "influencer_creator_strategy.md",
+    "creator_ugc_playbook.md",
+    "vetting_scorecard.md",
+    "influencer_map.md",
+    "contract_templates.md",
+    "pipeline_operations.md",
+    "influencer_database_scaffold.md",
+    "dialogue_summary.md",
+    "opkit_influencer_creator.md",
+    "_meta.json"
+  ],
+  "opkits": ["OK-M23-001"],
+  "feeds_into": ["m12", "m14"],
+  "requires": ["m0", "m8", "m22"],
+  "key_blockers": [
+    "M7 Regulatory: approved health claim language needed for compliance package",
+    "M2 Legal: entity name and legal review of contracts needed",
+    "Platform verification: Billo, Insense, Collabstr status needs checking"
+  ],
+  "next_action": "Complete M7 Regulatory to build Pre-Launch Compliance Package. Verify creator platforms are active. Begin product seeding at Month -2.",
+  "intelligence_gaps": [
+    "Influencer rates in marine plasma niche (D-grade estimates)",
+    "Product seeding conversion rate (D-grade benchmark: 5-15%)",
+    "Affiliate commission competitive analysis vs LMNT/AG1",
+    "FTC enforcement specifics for supplement influencer claims",
+    "Creator platform pricing/availability verification",
+    "Tier 2 target competitive screening results"
+  ]
+}

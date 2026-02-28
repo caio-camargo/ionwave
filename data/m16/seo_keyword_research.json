@@ -1,0 +1,314 @@
+{
+  "_meta": {
+    "tup": "M16",
+    "tab": "4 of 7",
+    "title": "SEO Keyword Research",
+    "version": "1.0.0",
+    "date": "2026-02-06",
+    "author": "Caio, Claude (collaborative)",
+    "ai_model": "claude-opus-4-6",
+    "status": "AI Draft",
+    "hypothesis_links": ["HYP-006", "HYP-001"],
+    "danilo_source": "ops_model_v10_dump/411_seo_keyword_research.json (27 rows)",
+    "purpose": "Target keyword list organized by search intent, difficulty, and priority phase. Danilo's keyword volumes are directionally correct but difficulty assessments need calibration for a new domain.",
+    "data_quality_note": "Keyword volumes are estimates from research. Actual volumes should be verified with Google Keyword Planner or Ubersuggest after launch. Marine plasma-specific terms may have lower volume than estimated — monitor GSC impression data."
+  },
+
+  "keyword_categories": {
+    "description": "Keywords organized by search intent — determines content type and conversion expectation",
+    "categories": [
+      {
+        "category": "Brand",
+        "intent": "Navigational",
+        "conversion_rate": "5-10% (highest — they're looking for you)",
+        "content_type": "Homepage, About page",
+        "priority": "Automatic (protect your brand)",
+        "note": "Brand keywords should rank #1 automatically. If not, something is wrong technically."
+      },
+      {
+        "category": "Product / Transactional",
+        "intent": "Transactional",
+        "conversion_rate": "3-5% (high intent to buy)",
+        "content_type": "Product pages, landing pages",
+        "priority": "High — but competitive, target Phase 2-3",
+        "note": "Head terms like 'electrolyte powder' are dominated by Amazon and established brands. New domain: 18-24 months to compete."
+      },
+      {
+        "category": "Comparison / Commercial",
+        "intent": "Commercial investigation",
+        "conversion_rate": "2-4% (evaluating options)",
+        "content_type": "Comparison pages, vs posts, 'best of' roundups",
+        "priority": "High — achievable at medium difficulty",
+        "note": "Comparison intent is high-value because the searcher is ready to buy, just deciding between options. 'LMNT alternative' at 2,900 volume / low KD is a prime target."
+      },
+      {
+        "category": "Problem / Informational",
+        "intent": "Informational",
+        "conversion_rate": "0.5-1.5% (learning, not buying yet)",
+        "content_type": "Blog posts, guides",
+        "priority": "Medium — builds authority and email list",
+        "note": "High volume, low direct conversion. Value is in email capture, brand awareness, and SEO authority building."
+      },
+      {
+        "category": "How-to / Informational",
+        "intent": "Informational",
+        "conversion_rate": "0.5-1% (seeking answers)",
+        "content_type": "How-to guides, pillar pages",
+        "priority": "Medium — featured snippet opportunities",
+        "note": "How-to content has featured snippet potential. Format answers clearly with numbered steps."
+      },
+      {
+        "category": "Ingredient / Informational",
+        "intent": "Informational",
+        "conversion_rate": "0.5-1% (researching ingredients)",
+        "content_type": "Blog posts, science deep-dives",
+        "priority": "Medium-High — builds E-E-A-T authority",
+        "note": "Marine plasma and ocean minerals terms are IonWave's competitive moat. Very low competition."
+      }
+    ]
+  },
+
+  "target_keywords": {
+    "description": "Master keyword list organized by phase (achievability for a new domain). Volumes are estimates — verify post-launch.",
+
+    "phase_1_long_tail": {
+      "description": "Month 1-6: Ultra-long-tail, KD <20, volume <500. These are your first wins.",
+      "target_count": "15-25 keywords targeted via 12-20 blog posts",
+      "keywords": [
+        {
+          "keyword": "marine plasma electrolyte benefits",
+          "est_volume": "50-100",
+          "kd": "<10",
+          "intent": "Informational",
+          "target_page": "Blog post (pillar: Natural Health)",
+          "ionwave_advantage": "Almost zero competition — this is YOUR territory",
+          "status": "To create"
+        },
+        {
+          "keyword": "ocean minerals for hydration",
+          "est_volume": "100-200",
+          "kd": "<10",
+          "intent": "Informational",
+          "target_page": "Blog post (pillar: Hydration Science)",
+          "ionwave_advantage": "Uncontested niche",
+          "status": "To create"
+        },
+        {
+          "keyword": "electrolytes for fasting headache",
+          "est_volume": "100-300",
+          "kd": "5-15",
+          "intent": "Problem/Informational",
+          "target_page": "Blog post (pillar: Keto & Low-Carb)",
+          "ionwave_advantage": "Specific problem, low competition, high purchase intent",
+          "status": "To create"
+        },
+        {
+          "keyword": "signs of electrolyte deficiency during fasting",
+          "est_volume": "100-300",
+          "kd": "5-15",
+          "intent": "Problem/Informational",
+          "target_page": "Blog post (pillar: Keto & Low-Carb)",
+          "ionwave_advantage": "Specific + fasting audience crossover",
+          "status": "To create"
+        },
+        {
+          "keyword": "keto electrolyte drink without sugar",
+          "est_volume": "300-500",
+          "kd": "15-25",
+          "intent": "Commercial",
+          "target_page": "Landing page (Keto audience)",
+          "ionwave_advantage": "IonWave is sugar-free — direct product fit",
+          "status": "To create"
+        },
+        {
+          "keyword": "electrolytes for women over 40",
+          "est_volume": "200-500",
+          "kd": "10-20",
+          "intent": "Commercial",
+          "target_page": "Blog post (pillar: Natural Health)",
+          "ionwave_advantage": "Female Wellness ICP segment (M27)",
+          "status": "To create"
+        },
+        {
+          "keyword": "how much sodium during fasting",
+          "est_volume": "200-400",
+          "kd": "10-20",
+          "intent": "How-to/Informational",
+          "target_page": "Blog post (pillar: Keto & Low-Carb)",
+          "ionwave_advantage": "Protocol-specific, featured snippet potential",
+          "status": "To create"
+        },
+        {
+          "keyword": "electrolyte powder vs tablet",
+          "est_volume": "100-300",
+          "kd": "10-15",
+          "intent": "Comparison",
+          "target_page": "Blog post (pillar: Comparisons)",
+          "ionwave_advantage": "Powder format advantage for IonWave",
+          "status": "To create"
+        },
+        {
+          "keyword": "trace minerals supplement benefits",
+          "est_volume": "200-400",
+          "kd": "15-25",
+          "intent": "Informational",
+          "target_page": "Blog post (pillar: Natural Health)",
+          "ionwave_advantage": "78 minerals positioning — unique angle",
+          "status": "To create"
+        },
+        {
+          "keyword": "LMNT alternative",
+          "est_volume": "2,900",
+          "kd": "Low",
+          "intent": "Commercial",
+          "target_page": "Comparison page",
+          "ionwave_advantage": "High volume, low competition, comparison intent = high CVR",
+          "status": "HIGH PRIORITY — create early"
+        }
+      ]
+    },
+
+    "phase_2_medium_tail": {
+      "description": "Month 6-12: Medium-tail, KD 20-40, volume 500-3,000. Target after building some authority.",
+      "target_count": "10-15 additional keywords",
+      "keywords": [
+        {
+          "keyword": "best electrolyte for fasting",
+          "est_volume": "1,000-2,000",
+          "kd": "25-35",
+          "intent": "Commercial",
+          "target_page": "Pillar page or comparison",
+          "status": "To create"
+        },
+        {
+          "keyword": "electrolytes for keto diet",
+          "est_volume": "1,000-3,000",
+          "kd": "25-40",
+          "intent": "Commercial",
+          "target_page": "Keto landing page",
+          "status": "To create"
+        },
+        {
+          "keyword": "sugar free electrolyte drink",
+          "est_volume": "1,000-2,000",
+          "kd": "25-35",
+          "intent": "Commercial",
+          "target_page": "Product page or landing page",
+          "status": "To create"
+        },
+        {
+          "keyword": "signs of electrolyte imbalance",
+          "est_volume": "5,400",
+          "kd": "Low-Medium",
+          "intent": "Informational",
+          "target_page": "Blog post (pillar: Hydration Science)",
+          "note": "Danilo listed this as Low difficulty — may be achievable earlier",
+          "status": "To create"
+        },
+        {
+          "keyword": "electrolytes for fasting",
+          "est_volume": "4,400",
+          "kd": "Medium",
+          "intent": "Commercial",
+          "target_page": "Landing page",
+          "status": "To create"
+        },
+        {
+          "keyword": "ocean minerals benefits",
+          "est_volume": "1,200",
+          "kd": "Low",
+          "intent": "Informational",
+          "target_page": "Blog post (pillar: Natural Health)",
+          "note": "Danilo listed this correctly — achievable early",
+          "status": "To create"
+        },
+        {
+          "keyword": "how much sodium on keto",
+          "est_volume": "3,600",
+          "kd": "Low-Medium",
+          "intent": "How-to",
+          "target_page": "Blog post (pillar: Keto & Low-Carb)",
+          "status": "To create"
+        },
+        {
+          "keyword": "electrolyte supplement benefits",
+          "est_volume": "500-1,500",
+          "kd": "20-30",
+          "intent": "Informational",
+          "target_page": "Pillar page (Hydration Science)",
+          "status": "To create"
+        }
+      ]
+    },
+
+    "phase_3_head_terms": {
+      "description": "Month 12-24: Head terms, KD 40+, volume 5,000+. Only after DR 30+ and strong content foundation.",
+      "target_count": "5-8 aspirational keywords",
+      "keywords": [
+        {
+          "keyword": "best electrolytes",
+          "est_volume": "12,000",
+          "kd": "High (45-65)",
+          "intent": "Commercial",
+          "target_page": "Comparison page / roundup",
+          "requirements": "DR 40+, 50+ referring domains to page",
+          "status": "Aspirational"
+        },
+        {
+          "keyword": "electrolyte powder",
+          "est_volume": "18,000",
+          "kd": "High (55-70)",
+          "intent": "Transactional",
+          "target_page": "Homepage or product page",
+          "requirements": "DR 50+, 100+ referring domains. Amazon dominates.",
+          "status": "Aspirational"
+        },
+        {
+          "keyword": "electrolyte supplements",
+          "est_volume": "8,000",
+          "kd": "Medium-High (40-55)",
+          "intent": "Transactional",
+          "target_page": "Product page",
+          "requirements": "DR 40+",
+          "status": "Aspirational"
+        },
+        {
+          "keyword": "keto electrolytes",
+          "est_volume": "6,500",
+          "kd": "Medium (30-45)",
+          "intent": "Commercial",
+          "target_page": "Keto landing page",
+          "requirements": "DR 30+, topical authority in keto content cluster",
+          "status": "Aspirational — possibly achievable Month 9-12"
+        },
+        {
+          "keyword": "trace minerals supplement",
+          "est_volume": "2,400",
+          "kd": "Medium (25-40)",
+          "intent": "Transactional",
+          "target_page": "Product page",
+          "status": "Aspirational"
+        }
+      ]
+    }
+  },
+
+  "keyword_research_tools": {
+    "description": "Tools for ongoing keyword research and monitoring",
+    "free": [
+      {"tool": "Google Search Console", "use": "Real impression/click data for YOUR site. The most accurate keyword data you'll ever get.", "cost": "$0"},
+      {"tool": "Google Keyword Planner", "use": "Volume estimates (requires Google Ads account, not spend)", "cost": "$0"},
+      {"tool": "Google Trends", "use": "Relative interest over time, seasonality", "cost": "$0"},
+      {"tool": "AlsoAsked.com", "use": "People Also Ask questions — content ideas", "cost": "Free tier"},
+      {"tool": "AnswerThePublic", "use": "Question-based keyword discovery", "cost": "Limited free searches"}
+    ],
+    "paid": [
+      {"tool": "Ubersuggest", "use": "Keyword research, competitor analysis, content ideas", "cost": "$29/month", "recommendation": "Best value for bootstrapped brands"},
+      {"tool": "Ahrefs Lite", "use": "Comprehensive: keywords, backlinks, competitor analysis, rank tracking", "cost": "$99/month", "recommendation": "Best tool overall, but wait until 20+ pages published"},
+      {"tool": "SEMrush Pro", "use": "Similar to Ahrefs with additional content marketing features", "cost": "$130/month"},
+      {"tool": "Keywords Everywhere", "use": "Browser extension showing volume/CPC on search results", "cost": "$1.25/month (10 credits)", "recommendation": "Extremely cheap, good for quick checks"}
+    ]
+  },
+
+  "competitive_landscape_note": "The electrolyte/supplement SEO space is extremely competitive. Amazon occupies 2-4 positions on page 1 for transactional terms. Healthline/WebMD dominate informational terms. Affiliate sites (Barbend, etc.) compete aggressively for 'best X' commercial terms. IonWave's competitive advantage: marine plasma positioning creates uncontested keyword territory. Build authority there first, then expand."
+}

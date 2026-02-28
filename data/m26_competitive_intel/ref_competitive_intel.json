@@ -1,0 +1,60 @@
+{
+  "_meta": {
+    "sheet_name": "Reference: Competitive Intel (Konscious)",
+    "parent_file": "02_market_intelligence",
+    "version": "1.0.0",
+    "last_updated": "2026-02-04",
+    "updated_by": "claude-opus-4.5",
+    "status": "draft",
+    "quality_score": "6/10",
+    "data_type": "structured_table",
+    "note": "Reference competitor profile for Konscious House of Brands. Not a direct competitor but a DTC supplement playbook reference."
+  },
+  "data": {
+    "company_profile": {
+      "company": "Konscious (House of Brands)",
+      "founder": "Hannah Kowalski",
+      "background": "DTC supplement house of brands model, multiple health products under one umbrella",
+      "headquarters": "Puerto Rico",
+      "recognition": "Inc Female Founders 250",
+      "brands": "Multiple health/wellness brands under Konscious umbrella",
+      "flagship_product": {
+        "name": "Emma Relief",
+        "price": "~$47/bottle",
+        "aov": "~$126 AOV (bundle/upsell strategy)",
+        "note": "Digestive health supplement, strong VSL funnel"
+      },
+      "total_customers": "650K+ customers",
+      "monthly_traffic": "~146K monthly website traffic",
+      "tech_stack": {
+        "platform": "Shopify",
+        "details": "Standard Shopify DTC stack with subscription management"
+      },
+      "amazon_presence": {
+        "status": "Active via Enclave BioActives",
+        "note": "Uses separate brand name on Amazon marketplace"
+      },
+      "authority_figure": {
+        "name": "Dr. Gina Sam",
+        "role": "Medical authority / spokesperson for Emma Relief",
+        "note": "Gastroenterologist lending credibility to digestive health claims"
+      },
+      "pricing_tiers": "Multiple price points with bundle discounts to drive higher AOV",
+      "guarantee": "90-day money-back guarantee",
+      "controversy": {
+        "issue": "BBB F rating",
+        "details": "Better Business Bureau F rating - indicates customer service or complaint issues",
+        "relevance": "Shows that aggressive DTC tactics can generate revenue but create trust problems"
+      }
+    },
+    "monitoring_cadence": [
+      {"activity": "Ad Creative Review", "frequency": "Weekly", "tool": "Meta Ad Library"},
+      {"activity": "Site Changes", "frequency": "Biweekly", "tool": "Manual review, Wayback Machine"},
+      {"activity": "Pricing", "frequency": "Monthly", "tool": "Manual site check"},
+      {"activity": "Reviews", "frequency": "Monthly", "tool": "Amazon, Trustpilot, BBB"},
+      {"activity": "New Products", "frequency": "Monthly", "tool": "Site monitoring, press alerts"},
+      {"activity": "Tech Stack", "frequency": "Quarterly", "tool": "BuiltWith, Wappalyzer"}
+    ],
+    "why_this_matters": "Konscious is not a direct competitor but represents a proven DTC supplement playbook: authority figure + VSL funnel + aggressive Meta ads + subscription + high AOV through bundles. Their successes (650K customers, $126 AOV) and failures (BBB F rating) are both instructive for IonWave's go-to-market strategy."
+  }
+}

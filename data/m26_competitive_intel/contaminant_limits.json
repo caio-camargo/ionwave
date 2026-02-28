@@ -1,0 +1,90 @@
+{
+  "_meta": {
+    "sheet_name": "Contaminant Limits",
+    "parent_file": "02_market_intelligence",
+    "version": "1.0.0",
+    "last_updated": "2026-02-04",
+    "updated_by": "claude-opus-4.5",
+    "status": "draft",
+    "quality_score": "6/10",
+    "data_type": "structured_table",
+    "note": "Critical for marine plasma sourcing. Ocean-sourced products carry heavy metal and microbiological risk. Testing is non-negotiable."
+  },
+  "data": {
+    "critical_context": "Marine plasma is sourced from the ocean. Unlike synthetic electrolytes, ocean-sourced minerals carry inherent risks: heavy metal contamination (mercury, lead, arsenic, cadmium), microbiological contamination, and environmental pollutants. Third-party testing is not optional - it is a regulatory and brand trust requirement. Every batch must be tested. COA (Certificate of Analysis) publication builds trust and differentiates from competitors who make purity claims without evidence.",
+    "testing_requirements": [
+      {
+        "test": "Heavy metals panel",
+        "what_it_covers": "Lead, mercury, arsenic, cadmium",
+        "frequency": "Every batch",
+        "lab_type": "ISO 17025 accredited",
+        "estimated_cost": "$150-300 per panel",
+        "turnaround": "5-7 business days"
+      },
+      {
+        "test": "Microbiological testing",
+        "what_it_covers": "Total plate count, yeast, mold, E.coli, Salmonella, S.aureus, coliforms",
+        "frequency": "Every batch",
+        "lab_type": "ISO 17025 accredited",
+        "estimated_cost": "$200-400 per panel",
+        "turnaround": "7-10 business days"
+      },
+      {
+        "test": "Full mineral analysis",
+        "what_it_covers": "Complete mineral profile verification (all 78+ minerals claimed)",
+        "frequency": "Every batch",
+        "lab_type": "ICP-MS capable lab",
+        "estimated_cost": "$300-500 per analysis",
+        "turnaround": "7-14 business days"
+      },
+      {
+        "test": "Pesticide screen",
+        "what_it_covers": "Common pesticide residues",
+        "frequency": "Quarterly or per new supplier lot",
+        "lab_type": "ISO 17025 accredited",
+        "estimated_cost": "$200-350 per screen",
+        "turnaround": "7-10 business days"
+      },
+      {
+        "test": "Allergen testing",
+        "what_it_covers": "Shellfish, fish allergen cross-contamination (critical for ocean-sourced)",
+        "frequency": "Per supplier lot",
+        "lab_type": "ELISA-capable lab",
+        "estimated_cost": "$100-200 per allergen",
+        "turnaround": "5-7 business days"
+      }
+    ],
+    "microbiological_limits": [
+      {
+        "organism": "Total Plate Count",
+        "limit": "<1000 CFU/g",
+        "note": "Standard for dietary supplements"
+      },
+      {
+        "organism": "Yeast & Mold",
+        "limit": "<100 CFU/g",
+        "note": "Standard for dietary supplements"
+      },
+      {
+        "organism": "E. coli",
+        "limit": "Not detected",
+        "note": "Zero tolerance"
+      },
+      {
+        "organism": "Salmonella",
+        "limit": "Not detected in 25g",
+        "note": "Zero tolerance - standard USP method"
+      },
+      {
+        "organism": "S. aureus",
+        "limit": "Not detected",
+        "note": "Zero tolerance"
+      },
+      {
+        "organism": "Coliforms",
+        "limit": "<10 CFU/g",
+        "note": "Indicator of sanitation quality"
+      }
+    ]
+  }
+}

@@ -1,0 +1,81 @@
+{
+  "tup_id": "m6",
+  "tup_name": "Supply Chain",
+  "cluster": "BCL-1",
+  "cluster_name": "Product & Science",
+  "status": "migrated",
+  "current_version": "1.0.0",
+  "current_quality": 8.4,
+  "sheet_count": 13,
+  "sheets": [
+    {"danilo_id": "233", "title": "Supplier Research", "rows": 29},
+    {"danilo_id": "234", "title": "Supplier Evaluation", "rows": null},
+    {"danilo_id": "235", "title": "Supplier Quotes", "rows": null},
+    {"danilo_id": "236", "title": "Supplier Outreach Tracker", "rows": null},
+    {"danilo_id": "237", "title": "Supplier Backup Plan", "rows": null},
+    {"danilo_id": "238", "title": "Supplier Qualification", "rows": null},
+    {"danilo_id": "239", "title": "Supplier Audit Checklist", "rows": null},
+    {"danilo_id": "240", "title": "Ocean Sourcing Deep Dive", "rows": 35},
+    {"danilo_id": "241", "title": "COA Tracker", "rows": null},
+    {"danilo_id": "242", "title": "CoA Template", "rows": null},
+    {"danilo_id": "243", "title": "Contaminant Limits", "rows": null},
+    {"danilo_id": "244", "title": "Batch Lot Tracking", "rows": null},
+    {"danilo_id": "245", "title": "Restock Decision Framework", "rows": 17}
+  ],
+  "files": [
+    "supplier_research_and_landscape.md",
+    "ocean_sourcing.md",
+    "quality_control_and_coa.md",
+    "restock_framework.md",
+    "dialogue_summary.md",
+    "opkit_supplement_supply_chain.md"
+  ],
+  "consolidation": "13 tabs → 4 content files + dialogue summary + OpKit",
+  "opkits": ["OK-M6-001"],
+  "feeds_into": ["m24", "m3", "m5", "m7"],
+  "requires": ["m0"],
+  "key_blockers": [
+    "All marine plasma supplier data is [VOID — requires human outreach in Week 1-2]",
+    "COGS validation blocked until supplier quotes received",
+    "MOQ and lead time assumptions unconfirmed (based on industry research)",
+    "Exclusivity risk unknown (could block all Tier 1/2 suppliers)"
+  ],
+  "next_action": "Execute supplier outreach campaign (Biocean, Actimar, Quinton) within Week 1-2 of Trade #84 kickoff. Confirm FDA registration, MOQ, pricing, lead time, exclusivity status. Apply Supplier Evaluation Scorecard. Select primary + backup supplier by Week 3.",
+  "intelligence_gaps": [
+    "Supplier availability (resolved via outreach Week 1-2)",
+    "COGS per 10ml sachet (target <$0.55, kill criteria >$0.60)",
+    "Actual lead time (assumed 50 days, validate in first PO)",
+    "Reorder MOQ flexibility (assumed 50-75% of first order, negotiate in contract)",
+    "Microplastics testing availability (optional differentiator, not blocking)"
+  ],
+  "revisions": [
+    {
+      "version": "1.0.0",
+      "date": "2026-02-10",
+      "actor": "Caio (Claude)",
+      "change_type": "initial_workshop",
+      "protocol_used": "TWP-001 v2.0.0",
+      "what_changed": "Workshopped M6 Supply Chain through full TWP-001 protocol. 13 Danilo tabs (4 with structure, 9 void/minimal) consolidated into 4 production files: supplier_research_and_landscape.md (comprehensive supplier vetting, evaluation criteria, outreach templates, COGS calculation, backup plan), ocean_sourcing.md (marine plasma sourcing geography, depth strategy, supplier-specific sources, IonWave positioning), quality_control_and_coa.md (FDA/Prop 65 COA requirements, batch tracking, supplier quality protocol, recall plan), restock_framework.md (reorder point formula, order quantity, demand forecasting, cash flow integration, stress test scenarios). 6-round expert dialogue with 3 personas (Operations Expert, Skeptical Investor, Regulatory Auditor) produced 12 upgrades addressing supplier backup timing, COGS kill criteria, safety stock adequacy, COA pre-contract validation, M13 ad spend integration. All marine plasma supplier data marked [VOID — requires human outreach] which is appropriate for pre-launch context. IonWave-specific supplier research (Biocean, Actimar, Quinton) from Danilo tab 233 integrated with industry best practices research (MOQs 2,500-10,000 units, lead times 14-18 weeks first production / 6-10 weeks reorders, private label vs contract manufacturing). OpKit (OK-M6-001) extracts generalizable method for any supplement brand (8-step process from requirements → supplier selection → COA → restock formula).",
+      "quality_score": 8.4,
+      "quality_rationale": "Strong framework with honest pre-launch gaps. Evidence Coverage 3/5 (many VOIDs but appropriate), Confidence Honesty 5/5 (explicit A/B/C/D grades + VOIDs), Upgrade Path Quality 5/5 (actionable with blocking vs non-blocking distinction), Actionability 4/5 (PM can execute immediately, loses 1pt for data-dependency), OpKit Reusability 4/5 (generalizable method, IonWave context as graded example). Loses points on Evidence Coverage because supplier quotes pending — but this is honest and appropriate for pre-launch TUP. Will upgrade to 9-10/10 after Week 1-2 supplier outreach completes and primary/backup suppliers confirmed.",
+      "dialogue_ref": {
+        "file": "dialogue_summary.md",
+        "tup_version": "1.0.0",
+        "personas": ["Operations Expert", "Skeptical Investor", "Regulatory/Compliance Auditor"],
+        "rounds": 6,
+        "saturated": true,
+        "upgrades": 12,
+        "unresolved": 0,
+        "critical_upgrades": [
+          "U1: Kill criteria for supplier unavailability",
+          "U2: Escalated timeline (Week 1-2 outreach)",
+          "U4: COGS kill criteria (>$0.60 per sachet)",
+          "U5: Lead time validation protocol",
+          "U8: Backup activation decision tree with time gates"
+        ]
+      },
+      "hypotheses_affected": []
+    }
+  ],
+  "source_files": ["05b_formulation_supply"]
+}

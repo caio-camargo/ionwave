@@ -1,0 +1,62 @@
+{
+  "tup_id": "M22",
+  "tup_name": "Referral & Community",
+  "cluster": "BCL-4",
+  "cluster_name": "Retention & Lifecycle",
+  "status": "migrated",
+  "revisions": [
+    {
+      "version": "1.0.0",
+      "date": "2026-02-06",
+      "actor": "Caio + Claude (claude-opus-4-6)",
+      "change_type": "initial_workshop",
+      "protocol_used": "TWP-001 v2.0.0",
+      "what_changed": "Initial workshop. 6 content files produced from Danilo's 6 content tabs + web research across 3 domains (DTC referral, community platforms, UGC). Key Danilo overrides: removed 'more complete than LMNT' comparative claim (legal risk), phased community approach instead of immediate Facebook Group, added FTC compliance framework to all creator-facing docs.",
+      "quality_score": 7.0,
+      "quality_rationale": "Solid research-backed content across 6 files with 6 dialogue upgrades. Three significant Danilo corrections (LMNT claim, compliance embedding, phased community). Weakened by: pre-launch status (no real data), some research from early 2025 training data, inherent scope breadth (referral + community + UGC).",
+      "dialogue_ref": {
+        "file": "dialogue_summary.md",
+        "tup_version": "1.0.0",
+        "personas": ["Skeptical Investor", "Growth Hacker (DTC Performance Marketer)", "Regulatory Counsel"],
+        "rounds": 4,
+        "saturated": true,
+        "upgrades": 6,
+        "unresolved": 0
+      },
+      "hypotheses_affected": ["HYP-006", "HYP-006.1", "HYP-006.5", "HYP-002", "HYP-003"]
+    }
+  ],
+  "current_version": "1.0.0",
+  "current_quality": 7.0,
+  "sheet_count": 6,
+  "sheets": [
+    "referral_program",
+    "community_strategy",
+    "ugc_brand_brief",
+    "ugc_library",
+    "ugc_brief_template",
+    "ugc_creator_program"
+  ],
+  "files": {
+    "referral_program.json": "Referral program architecture: $10/$10 store credit, phased platform rollout, benchmarks, best-in-class examples.",
+    "community_strategy.md": "Community platform evaluation (7 platforms) with phased recommendation: email-first → Skool test → Circle at scale.",
+    "ugc_brand_brief.md": "Creator content guidelines: approved/prohibited claims, FTC compliance, visual requirements.",
+    "ugc_library.json": "UGC tracking database: creator, rights, quality, performance, compliance.",
+    "ugc_brief_template.md": "Production-ready creator brief template with content flow, hook frameworks, compliance, product usage instructions.",
+    "ugc_creator_program.json": "Creator program structure: economics, sourcing platforms, vetting, payment, budget tiers, hit rates, fatigue timelines.",
+    "opkit_referral_community_ugc.md": "OpKit OK-M22-001: Reusable Referral, Community & UGC Growth Kit for DTC consumables.",
+    "dialogue_summary.md": "Persona dialogue transcript: 4 rounds, 3 personas (Skeptical Investor, Growth Hacker, Regulatory Counsel), 6 upgrades, saturated."
+  },
+  "opkits": ["OK-M22-001"],
+  "feeds_into": ["M12 (Ad Creative — UGC feeds creative pipeline)", "M14 (Testing — creative testing matrix dependency)", "M19 (Customer Lifecycle — community retention)", "M23 (Influencer & Creator — boundary: M22=UGC production, M23=influencer partnerships)"],
+  "requires": ["M0 (Trade Thesis — DONE)", "M21 (Subscription & Retention — Loop Subscriptions integration check)"],
+  "key_blockers": [],
+  "next_action": "Verify Loop Subscriptions + Smile.io integration. Create manual referral codes at Month 2. Begin UGC creator sourcing at launch.",
+  "intelligence_gaps": [
+    "CRITICAL: Loop Subscriptions + Smile.io/ReferralCandy integration unverified",
+    "Platform pricing (Circle, Skool, Smile.io, ReferralCandy) from early 2025 — verify before committing",
+    "No IonWave-specific ad performance or referral data (pre-launch)",
+    "Competitor referral/community programs (Seaonic, Quinton) not researched",
+    "M14 dependency: creative testing matrix / angle taxonomy for systematic creative iteration"
+  ]
+}

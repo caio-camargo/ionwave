@@ -1,0 +1,50 @@
+{
+  "_meta": {
+    "sheet_name": "Market Data",
+    "parent_file": "02_market_intelligence",
+    "version": "1.0.0",
+    "last_updated": "2026-02-04",
+    "updated_by": "claude-opus-4.5",
+    "status": "empty_template",
+    "quality_score": "1/10",
+    "data_type": "template",
+    "note": "Almost entirely placeholder. Needs real market data from IBISWorld, Statista, or similar research sources."
+  },
+  "data": {
+    "total_addressable_market": {
+      "value": "US electrolyte market: $XX billion",
+      "confidence": "D",
+      "source": "Placeholder - needs research"
+    },
+    "growth_rate": {
+      "value": "XX% CAGR",
+      "confidence": "D",
+      "source": "Placeholder - needs research"
+    },
+    "key_segments": [
+      "Sports",
+      "Wellness",
+      "Medical"
+    ],
+    "trends": [
+      "Clean label",
+      "Functional",
+      "Subscription"
+    ],
+    "seasonality": {
+      "peak_periods": [
+        {"period": "January", "driver": "New Year resolutions"},
+        {"period": "Summer (June-August)", "driver": "Hydration demand"}
+      ],
+      "note": "Seasonality pattern needs validation with actual sales data"
+    },
+    "data_needed": [
+      "US electrolyte market size (TAM) from IBISWorld or Statista",
+      "Market growth rate (CAGR) with 5-year projection",
+      "Segment breakdown by channel (DTC, retail, Amazon)",
+      "Premium segment size and growth vs mass market",
+      "Marine plasma sub-segment size (if available)",
+      "Subscription vs one-time purchase trends in supplements"
+    ]
+  }
+}

@@ -1,0 +1,91 @@
+{
+  "_meta": {
+    "sheet_name": "Competitive Intelligence",
+    "parent_file": "02_market_intelligence",
+    "version": "1.0.0",
+    "last_updated": "2026-02-04",
+    "updated_by": "claude-opus-4.5",
+    "status": "draft",
+    "quality_score": "5.5/10",
+    "data_type": "structured_table",
+    "note": "LMNT data is reasonably triangulated; Seaonic data is mostly estimated. Intelligence gaps remain significant."
+  },
+  "data": {
+    "competitor_profiles": [
+      {
+        "brand": "LMNT",
+        "annual_revenue": {"value": "$60-80M", "confidence": "B", "source": "2024 reports, Rogan/Huberman mentions"},
+        "monthly_revenue": {"value": "$5-7M", "confidence": "B", "source": "Derived from annual estimate"},
+        "price_point": {"value": "$45/box", "confidence": "A", "source": "Website"},
+        "subscription_rate": {"value": "~50-60%", "confidence": "C", "source": "Industry DTC benchmarks applied"},
+        "ad_spend_monthly": {"value": "$1-2M", "confidence": "B", "source": "Facebook Ad Library 200+ active ads"},
+        "estimated_cac": {"value": "$25-35", "confidence": "C", "source": "Estimated from ad spend / revenue ratio"},
+        "gross_margin": {"value": "70-80%", "confidence": "B", "source": "Synthetic = low COGS"},
+        "key_channels": {"value": "Meta / Podcast / Influencers", "confidence": "A", "source": "Observable ad presence"},
+        "product": {"value": "3 minerals, synthetic", "confidence": "A", "source": "Product label"},
+        "weakness": {"value": "Synthetic, limited minerals", "confidence": "A", "source": "Product analysis"}
+      },
+      {
+        "brand": "SEAONIC",
+        "annual_revenue": {"value": "$500K-2M", "confidence": "C", "source": "Estimated from low review count, limited visibility"},
+        "monthly_revenue": {"value": "$50-150K", "confidence": "C", "source": "Derived from annual estimate"},
+        "price_point": {"value": "$69/box", "confidence": "A", "source": "Website"},
+        "subscription_rate": {"value": "Unknown", "confidence": "D", "source": "No data available"},
+        "ad_spend_monthly": {"value": "$20-50K", "confidence": "C", "source": "Limited ad library presence"},
+        "estimated_cac": {"value": "$40-60", "confidence": "C", "source": "Estimated, higher price point = harder conversion"},
+        "gross_margin": {"value": "65-75%", "confidence": "B", "source": "Marine plasma COGS higher than synthetic"},
+        "key_channels": {"value": "Meta / organic wellness", "confidence": "B", "source": "Observable presence"},
+        "product": {"value": "78 minerals, marine plasma", "confidence": "A", "source": "Product label and website"},
+        "weakness": {"value": "Too expensive, limited marketing", "confidence": "A", "source": "Price comparison and ad analysis"}
+      }
+    ],
+    "intelligence_gaps": [
+      {"gap": "LMNT actual CAC from paid channels", "priority": "HIGH", "how_to_fill": "SEMrush + triangulate with ad library data"},
+      {"gap": "LMNT ROAS by channel", "priority": "HIGH", "how_to_fill": "Estimate from revenue vs ad spend"},
+      {"gap": "LMNT retention / churn rate", "priority": "HIGH", "how_to_fill": "Monitor subscription mentions in reviews"},
+      {"gap": "LMNT customer lifetime value", "priority": "MEDIUM", "how_to_fill": "Model from price + estimated retention"},
+      {"gap": "Seaonic scaling constraints", "priority": "MEDIUM", "how_to_fill": "Research founder interviews, funding status"},
+      {"gap": "Seaonic supplier relationship (exclusive?)", "priority": "CRITICAL", "how_to_fill": "Contact Biocean/Actimar directly"},
+      {"gap": "Seaonic subscription rate and churn", "priority": "MEDIUM", "how_to_fill": "Monitor site changes, review patterns"},
+      {"gap": "Seaonic actual traffic and conversion", "priority": "MEDIUM", "how_to_fill": "SEMrush or SimilarWeb"}
+    ],
+    "competitive_positioning": [
+      {
+        "brand": "LMNT",
+        "price": "$45/box",
+        "product_type": "Synthetic, 3 minerals",
+        "target_customer": "Keto/carnivore, biohackers, athletes",
+        "our_advantage": "78 minerals vs 3, natural vs synthetic"
+      },
+      {
+        "brand": "Seaonic",
+        "price": "$69/box",
+        "product_type": "Marine plasma, 78 minerals",
+        "target_customer": "Premium wellness, biohackers",
+        "our_advantage": "Lower price point, better marketing execution"
+      },
+      {
+        "brand": "Drip Drop",
+        "price": "$20-25/box",
+        "product_type": "ORS-based, medical positioning",
+        "target_customer": "Medical, dehydration recovery",
+        "our_advantage": "Premium positioning, mineral completeness"
+      },
+      {
+        "brand": "Liquid IV",
+        "price": "$25/box",
+        "product_type": "CTT sugar-based",
+        "target_customer": "Mass market, young active",
+        "our_advantage": "No sugar, natural source, premium quality"
+      },
+      {
+        "brand": "IonWave",
+        "price": "$55-59/box (target)",
+        "product_type": "Marine plasma, 78 minerals",
+        "target_customer": "Health-conscious, biohackers, athletes",
+        "our_advantage": "Seaonic quality at closer to LMNT price"
+      }
+    ],
+    "key_insight": "We're positioning between LMNT (mass, synthetic) and Seaonic (premium, marine). We offer Seaonic's product quality at closer to LMNT's price point."
+  }
+}

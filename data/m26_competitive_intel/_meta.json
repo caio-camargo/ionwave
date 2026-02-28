@@ -1,0 +1,59 @@
+{
+  "tup_id": "m26",
+  "tup_name": "Competitive Intel",
+  "title": "Market Intelligence",
+  "tier": 1,
+  "version": "1.1.0",
+  "quality_score": "5.5/10",
+  "audited": true,
+  "audited_session": "Session #5",
+  "last_updated": "2026-02-06",
+  "updated_by": "claude-sonnet-4.5",
+  "sheets": [
+    {"id": "competitive_intel", "title": "Competitive Intelligence", "data_type": "structured_table"},
+    {"id": "competitor_brand_audit", "title": "Competitor Brand Audit", "data_type": "structured_table"},
+    {"id": "competitor_claims_audit", "title": "Competitor Claims Audit", "data_type": "hybrid"},
+    {"id": "competitor_monitoring", "title": "Competitor Monitoring", "data_type": "template"},
+    {"id": "competitor_swipe_catalog", "title": "Competitor Swipe Catalog", "data_type": "template"},
+    {"id": "contaminant_limits", "title": "Contaminant Limits", "data_type": "structured_table"},
+    {"id": "market_data", "title": "Market Data", "data_type": "template", "note": "Mostly empty - needs real market research data"},
+    {"id": "market_landscape_map", "title": "Market Landscape Map", "data_type": "narrative", "note": "Methodology document, not actual data"},
+    {"id": "ref_competitive_intel", "title": "Reference: Competitive Intel (Konscious)", "data_type": "structured_table"},
+    {"id": "porters_five_forces", "title": "Porter's Five Forces Analysis", "data_type": "hybrid"}
+  ],
+  "feeds_into": ["03a_customer_research_icp", "05a_product_strategy", "06_unit_economics"],
+  "requires": ["01_strategic_foundation"],
+  "feedback_loops": [
+    {
+      "from": "porters_five_forces",
+      "to": "01_strategic_foundation/thesis",
+      "tension": "Capital tension: $30-50K raise may be insufficient given rising CPMs (+27% YoY), zero switching costs, and category creation costs ($500K+/mo to scale)",
+      "status": "open",
+      "discovered": "2026-02-04"
+    },
+    {
+      "from": "porters_five_forces",
+      "to": "01_strategic_foundation/thesis",
+      "tension": "Narrow vs broad positioning: Porter's supports narrow marine plasma positioning over broad electrolyte market framing",
+      "status": "open",
+      "discovered": "2026-02-04"
+    }
+  ],
+  "key_blockers": "Market Data sheet mostly empty; supplier data at D-grade; need SEMrush data for LMNT",
+  "next_action": "Fill Market Data with research; execute supplier contact (human); get SEMrush access",
+  "migration_notes": {
+    "date": "2026-02-06",
+    "description": "TUP migration: Renamed from 02_market_intelligence to M26 Competitive Intel",
+    "bootstrap_file": "02_market_intelligence"
+  },
+  "opkits": [
+    {
+      "opkit_id": "opkit_m26_ci_protocol",
+      "name": "Competitive Intelligence Protocol",
+      "source": "ci-protocol/",
+      "description": "Complete CI workflow: Porter's Five Forces, Market Landscape Map, SWOT, with graded examples",
+      "decision": "Bootstrap canon (REC-007 - Danilo canon cluster, but Bootstrap CI protocol is superior)"
+    }
+  ],
+  "opkit_registry": "See data/opkits/registry.json for complete OpKit definitions and navigation"
+}

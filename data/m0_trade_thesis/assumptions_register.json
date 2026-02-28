@@ -1,0 +1,103 @@
+{
+  "_meta": {
+    "sheet_name": "Assumptions Register",
+    "parent_file": "01_strategic_foundation",
+    "version": "1.1.0",
+    "last_updated": "2026-02-04",
+    "updated_by": "claude-opus-4.5",
+    "status": "tension_flagged",
+    "quality_score": "5.5/10",
+    "data_type": "structured_table",
+    "note": "Updated with capital tension flag from Porter's analysis + new addressable demand assumption. Confidence levels upgraded to A/B/C/D system with evidence-based reassessment."
+  },
+  "data": {
+    "assumptions": [
+      {
+        "assumption": "CAC",
+        "current_value": "<$40",
+        "confidence": {
+          "level": "C",
+          "original_label": "Medium",
+          "updated_assessment": "Medium-Low — Porter's: Meta CPMs rising 27% YoY; zero switching costs = continuous re-acquisition; category creation (not capture) inflates CAC",
+          "source": "Industry benchmarks + Porter's capital tension analysis",
+          "upgrade_path": "Live ad testing with $5K minimum spend"
+        },
+        "validation_method": "Live ad testing",
+        "linked_files": ["06_unit_economics", "12_media_acquisition"]
+      },
+      {
+        "assumption": "LTV",
+        "current_value": ">$120",
+        "confidence": {
+          "level": "D",
+          "original_label": "Low",
+          "updated_assessment": "Low — No new evidence. Porter's: zero switching costs suggest LTV is fragile",
+          "source": "Estimated from competitor benchmarks",
+          "upgrade_path": "Cohort analysis at 6 months post-launch"
+        },
+        "validation_method": "Cohort analysis at 6mo",
+        "linked_files": ["06_unit_economics", "08_financial_model"]
+      },
+      {
+        "assumption": "Subscription rate",
+        "current_value": ">50%",
+        "confidence": {
+          "level": "C",
+          "original_label": "Medium",
+          "updated_assessment": "Medium — ICP Analysis: Keto/Carnivore and Biohacker segments are subscription-friendly (identity-driven, daily use). Exhausted Professional is convenience-driven = also subscription-friendly",
+          "source": "DTC subscription benchmarks + ICP Analysis",
+          "upgrade_path": "Checkout data from first 100 orders"
+        },
+        "validation_method": "Checkout data",
+        "linked_files": ["06_unit_economics", "07_offer_strategy"]
+      },
+      {
+        "assumption": "Monthly churn",
+        "current_value": "<8%",
+        "confidence": {
+          "level": "D",
+          "original_label": "Low",
+          "updated_assessment": "Low-Medium — ICP JTBD: job stickiness varies: Keto (HIGH), Wellness (MODERATE), Identity (LOW — switches with trends). No comparable marine plasma churn data",
+          "source": "Industry average is 6.5% for DTC supplements + ICP JTBD analysis",
+          "upgrade_path": "Cohort tracking after Month 2"
+        },
+        "validation_method": "Cohort tracking",
+        "linked_files": ["06_unit_economics", "08_financial_model"]
+      },
+      {
+        "assumption": "Gross margin",
+        "current_value": ">65%",
+        "confidence": {
+          "level": "B",
+          "original_label": "High",
+          "updated_assessment": "Medium-High — Porter's: supplier concentration risk (Actimar/Biocean oligopoly) could compress margins; alternative suppliers not yet validated",
+          "source": "Preliminary supplier quotes + Porter's supplier analysis",
+          "upgrade_path": "Finalize supplier contracts with Biocean"
+        },
+        "validation_method": "Supplier quotes",
+        "linked_files": ["06_unit_economics", "05b_formulation_supply", "08_financial_model"]
+      },
+      {
+        "assumption": "Addressable demand exists at current awareness",
+        "current_value": ">50 qualified leads from $5K ad spend",
+        "confidence": {
+          "level": "D",
+          "original_label": "New — added from Porter's capital tension analysis",
+          "updated_assessment": "Low — Marine plasma is not an established consumer category. IonWave must CREATE demand, not just capture it. This tests whether the narrow market has capturable demand at current awareness levels",
+          "source": "Porter's persona dialogue (category creation framing)",
+          "upgrade_path": "Initial Meta ad test targeting marine plasma / premium electrolyte keywords"
+        },
+        "validation_method": "Initial Meta ad test",
+        "linked_files": ["08_financial_model", "12_media_acquisition"]
+      }
+    ],
+    "capital_tension_flag": {
+      "status": "OPEN",
+      "summary": "$30-50K capital plan faces headwinds from rising CPMs (27% YoY), category creation costs (3-5x capture costs), and zero switching costs. Kill criteria partially address this but don't test market existence.",
+      "source": "Porter's Five Forces persona dialogue + ICP JTBD analysis",
+      "discovered": "2026-02-04",
+      "resolution_path": "Build/audit 08_Financial_Model.xlsx with scenarios linking these assumptions to revenue projections",
+      "see_also": "Strategic_Foundation_Analysis.md"
+    }
+  }
+}

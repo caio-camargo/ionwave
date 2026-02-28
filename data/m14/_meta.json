@@ -1,0 +1,39 @@
+{
+  "tup_id": "M14",
+  "tup_name": "Testing & Optimization",
+  "cluster": "BCL-3",
+  "status": "migrated",
+  "revisions": [
+    {
+      "version": "1.0.0",
+      "date": "2026-02-06",
+      "actor": "Caio + Claude (claude-opus-4-6)",
+      "change_type": "initial_workshop",
+      "quality_score": 7.5,
+      "dialogue_ref": {
+        "file": "dialogue_summary.md",
+        "tup_version": "1.0.0",
+        "personas": ["CRO Statistician", "Bootstrapped DTC Founder", "Growth Hacker (Performance Marketer)"],
+        "rounds": 4,
+        "saturated": true,
+        "upgrades": 9,
+        "unresolved": 0
+      },
+      "hypotheses_affected": ["HYP-001", "HYP-002", "HYP-004"],
+      "notes": "Near green-field build — Danilo's 7 tabs had only ~50 unique rows with 3 near-duplicates. Google Optimize recommendation replaced. 3 research agents deployed (low-traffic testing methodology, Shopify tool landscape, creative testing frameworks). Produced 6 content files + OpKit + dialogue summary. Key innovations: two-stage kill criteria (leading indicators → conversion with 50+ click minimum), traffic-based methodology selection, tool-spend ≤5% discipline, passive audience learning from Meta breakdowns."
+    }
+  ],
+  "current_version": "1.0.0",
+  "current_quality": 7.5,
+  "sheet_count": 6,
+  "sheets": [
+    "creative_testing_protocol",
+    "audience_testing_strategy",
+    "experimentation_framework",
+    "ab_testing_framework",
+    "test_log",
+    "testing_infrastructure"
+  ],
+  "danilo_source_tabs": [375, 376, 377, 378, 379, 380, 381],
+  "danilo_source_note": "Tabs 379/380/381 were near-duplicates — consolidated into single ab_testing_framework.md. Tab 348 (M12 Creative Testing Protocol1) used as additional source for creative_testing_protocol.md."
+}

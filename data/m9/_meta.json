@@ -1,0 +1,70 @@
+{
+  "tup_id": "m9",
+  "tup_name": "Ecommerce Infra",
+  "cluster": "BCL-6",
+  "version": "1.0.0",
+  "quality_score": "8.5/10",
+  "workshopped_date": "2026-02-09",
+  "protocol": "TWP-001 v2.0.0",
+  "source_files": ["31_implementation_execution"],
+  "danilo_tabs": {
+    "structural": ["282_p_m9", "283_c_m9", "284_ip_m9", "295_v_m9"],
+    "content": [
+      {"id": "285", "name": "Tech Stack", "rows": 23, "quality": "STRONG"},
+      {"id": "286", "name": "Store Setup Checklist", "rows": 65, "quality": "STRONG"},
+      {"id": "287", "name": "Tracking Setup", "rows": 51, "quality": "STRONG"},
+      {"id": "288", "name": "Tool Stack Architecture", "rows": 7, "quality": "THIN"},
+      {"id": "289", "name": "Page Speed Checklist", "rows": 35, "quality": "Moderate"},
+      {"id": "290", "name": "Page Speed Checklist1", "rows": 29, "quality": "DUPLICATE"},
+      {"id": "291", "name": "Security Checklist", "rows": 31, "quality": "GOOD"},
+      {"id": "292", "name": "Tool Login Credentials", "rows": 12, "quality": "Template"},
+      {"id": "293", "name": "Folder Structure Map", "rows": 2, "quality": "Scaffold"},
+      {"id": "294", "name": "Asset Naming Convention", "rows": 19, "quality": "GOOD"}
+    ],
+    "total_content_tabs": 10,
+    "total_rows": 274
+  },
+  "consolidation": "10 tabs → 4 content files + dialogue summary + OpKit",
+  "output_files": [
+    "data/m9/tech_stack_and_tools.md",
+    "data/m9/store_setup_and_launch.md",
+    "data/m9/tracking_and_attribution.md",
+    "data/m9/operations_governance.md",
+    "data/m9/dialogue_summary.md",
+    "data/m9/opkit_ecommerce_infrastructure.md"
+  ],
+  "opkit": "OK-M9-001",
+  "dialogue": {
+    "rounds": 6,
+    "personas": 3,
+    "upgrades": 14,
+    "unresolved": 0,
+    "saturation": true
+  },
+  "hypothesis_links": {
+    "primary": ["HYP-001", "HYP-003"],
+    "secondary": ["HYP-008"]
+  },
+  "cross_tup_references": ["M30", "M14", "M17", "M24", "M25", "M22"],
+  "key_concepts": [
+    "Theme performance budget (8 apps, 500KB JS)",
+    "Week 1 Setup Sequence (7 days to launch)",
+    "MER over ROAS (M30 alignment)",
+    "Subscription-first UX (toggle > dropdown)",
+    "Phase-gated tool stack (Core → Growth → Scale)",
+    "Consent Mode v2",
+    "Ad account hijacking prevention",
+    "Do Not Install app list"
+  ],
+  "corrections_applied": [
+    "ROAS → MER as north star metric (per M30 U2)",
+    "Google Optimize removed (shut down Sep 2023)",
+    "FID → INP in Core Web Vitals (replaced March 2024)",
+    "Shopify pricing verified for 2026"
+  ],
+  "intelligence_gaps": [
+    "All targets are pre-launch estimates",
+    "Subscription UX conversion lift (15-20%) is industry directional, not IonWave-specific",
+    "Headless/composable commerce intentionally excluded (premature for target operator)"
+  ]
+}

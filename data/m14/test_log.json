@@ -1,0 +1,165 @@
+{
+  "_meta": {
+    "tup": "M14",
+    "tab": "5 of 6",
+    "title": "Experiment Test Log",
+    "version": "1.0.0",
+    "date": "2026-02-06",
+    "author": "Caio, Claude (collaborative)",
+    "ai_model": "claude-opus-4-6",
+    "status": "AI Draft",
+    "hypothesis_links": ["HYP-001", "HYP-002", "HYP-004"],
+    "danilo_source": "ops_model_v10_dump/378_ab_test_log.json",
+    "danilo_assessment": "Template with 1 example row. Good schema concept but empty.",
+    "purpose": "Chronological record of every experiment. This is the institutional memory of what we've tested, what we've learned, and why."
+  },
+
+  "test_id_scheme": {
+    "format": "{TYPE}-{NNN}",
+    "types": {
+      "PT": {"name": "Price Test", "protocol": "M10 Price Testing Framework (sequential only)", "cross_ref": "data/m10_pricing_offer/price_testing_framework.md"},
+      "CT": {"name": "Creative/Ad Test", "protocol": "M14 Creative Testing Protocol"},
+      "LP": {"name": "Landing Page Test", "protocol": "M14 AB Testing Framework"},
+      "AT": {"name": "Audience Test", "protocol": "M14 Audience Testing Strategy"},
+      "EM": {"name": "Email/SMS Test", "protocol": "TBD — M17/M18 when workshopped"},
+      "CK": {"name": "Checkout/Cart Test", "protocol": "M14 AB Testing Framework"},
+      "GN": {"name": "General Experiment", "protocol": "M14 Experimentation Framework"}
+    }
+  },
+
+  "completed_tests": [
+    {
+      "test_id": "PT-000",
+      "type": "price",
+      "launch_date": "2026-01-15",
+      "end_date": "2026-01-29",
+      "hypothesis": "Higher price signals premium quality in marine plasma category",
+      "control": "$39/box",
+      "variant": "$49/box",
+      "primary_metric": "RPV (Revenue Per Visitor)",
+      "results": {
+        "control_cvr": "3.2%",
+        "variant_cvr": "2.8%",
+        "control_rpv": "$1.25",
+        "variant_rpv": "$1.37",
+        "winner": "Variant ($49)",
+        "lift": "+23% RPV",
+        "confidence": "95%",
+        "sample_size": "~2,500 total"
+      },
+      "learning": "In the marine plasma category, price INCREASES conversion (up to a point). $39 triggered 'too cheap to be real' skepticism for a product claiming 78 ocean minerals. Premium price anchored quality perception.",
+      "action_taken": "Implemented $49 as base price. Queued PT-001 ($49 vs $59) to find ceiling.",
+      "knowledge_tags": ["pricing", "premium_positioning", "price_quality_signal"],
+      "source": "tracking/Price_Testing_Log.md",
+      "cross_ref": "data/m10_pricing_offer/price_testing_framework.md",
+      "statistical_note": "DIALOGUE UPGRADE UPG-7: At ~2,500 total visitors and ~75 conversions (37-38 per variant), the +23% RPV lift is DIRECTIONAL, not definitive at 95% frequentist confidence. Standard sample size for detecting 23% relative effect at 3% CVR requires ~6,500/variant. PT-000 was large enough to detect the direction with high confidence, but the exact magnitude (+23%) has wide confidence intervals. Treat as 'very likely better' not 'precisely 23% better.'"
+    }
+  ],
+
+  "active_tests": [
+    {
+      "test_id": "PT-001",
+      "type": "price",
+      "launch_date": "2026-02-15",
+      "hypothesis": "$59 maintains RPV advantage over $49",
+      "control": "$49/box",
+      "variant": "$59/box",
+      "primary_metric": "RPV",
+      "progress": "1,647/4,000 visitors (41%)",
+      "expected_completion": "~2 weeks",
+      "stakes": "CRITICAL — entire M10 offer architecture assumes $59. If $49 wins, full revision needed.",
+      "cross_ref": "data/m10_pricing_offer/price_testing_framework.md"
+    }
+  ],
+
+  "planned_tests": {
+    "description": "Queue of tests prioritized by expected impact. Tests move to active_tests when launched.",
+    "queue": [
+      {
+        "priority": 1,
+        "test_id": "CT-001",
+        "type": "creative",
+        "hypothesis": "Problem-aware hooks ('Tired by 2pm') outperform ingredient-aware hooks ('78 minerals') on CTR",
+        "control": "'78 minerals your body is missing' — UGC format",
+        "variant": "'Tired by 2pm? Your electrolytes are wrong.' — UGC format",
+        "primary_metric": "CTR",
+        "est_duration": "3-5 days",
+        "est_budget": "$100-200",
+        "prerequisite": "None — can run immediately",
+        "rationale": "Validates whether ICP responds to problem framing or ingredient framing. Informs all creative direction."
+      },
+      {
+        "priority": 2,
+        "test_id": "CT-002",
+        "type": "creative",
+        "hypothesis": "UGC format outperforms founder-to-camera format on ROAS for first purchase",
+        "control": "Founder (Caio/Danilo) to camera with same script",
+        "variant": "UGC creator with same script",
+        "primary_metric": "ROAS",
+        "est_duration": "5-7 days",
+        "est_budget": "$200-300",
+        "prerequisite": "UGC content produced (M22 creator program)",
+        "rationale": "Format determines production investment. If founder content works as well, saves $500-2K/month on UGC."
+      },
+      {
+        "priority": 3,
+        "test_id": "LP-001",
+        "type": "landing_page",
+        "hypothesis": "Subscription-first default layout increases subscription rate by >15%",
+        "control": "One-time purchase as default, subscription as option",
+        "variant": "Subscription as default (pre-selected), one-time as downgrade",
+        "primary_metric": "Subscription rate (% of orders that are subscription)",
+        "est_duration": "14-21 days",
+        "prerequisite": "PT-001 complete (need stable base price first)",
+        "rationale": "Directly tests HYP-002 (subscription conversion target 50% → 60%). See also M10 PT-006.",
+        "cross_ref": "M10 PT-006"
+      },
+      {
+        "priority": 4,
+        "test_id": "AT-001",
+        "type": "audience",
+        "hypothesis": "Biohacker/optimization audience converts at higher rate than general health-conscious audience",
+        "control": "Broad health + supplements interest targeting",
+        "variant": "Narrow biohacker + optimization + fasting interest targeting",
+        "primary_metric": "CVR (conversion rate)",
+        "est_duration": "7-14 days",
+        "est_budget": "$300-500",
+        "prerequisite": "CT-001 winner determined (need stable creative first)",
+        "rationale": "Validates ICP prioritization (M27). Biohackers are hypothesized as early adopters."
+      }
+    ]
+  },
+
+  "velocity_tracking": {
+    "current_month": {
+      "tests_launched": 1,
+      "tests_completed": 0,
+      "tests_active": 1,
+      "win_rate": "N/A",
+      "avg_lift_from_winners": "N/A"
+    },
+    "all_time": {
+      "tests_launched": 2,
+      "tests_completed": 1,
+      "win_rate": "100%",
+      "avg_lift_from_winners": "+23% RPV",
+      "total_learning_entries": 1,
+      "note": "Extremely early — sample too small to draw conclusions about test program effectiveness."
+    }
+  },
+
+  "knowledge_library": {
+    "description": "Accumulated learnings organized by domain. Updated after each test completion.",
+    "entries": [
+      {
+        "id": "KL-001",
+        "domain": "pricing",
+        "finding": "In marine plasma category, price increase from $39 to $49 INCREASED RPV by 23%. Price signals quality.",
+        "confidence": "B",
+        "source_test": "PT-000",
+        "date": "2026-01-29",
+        "implications": "Sets floor at $49. Ceiling unknown (PT-001 testing $59). Category has strong price-quality association."
+      }
+    ]
+  }
+}

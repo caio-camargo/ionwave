@@ -1,0 +1,86 @@
+{
+  "_meta": {
+    "sheet_name": "Narrative Hypothesis Table",
+    "parent_file": "01_strategic_foundation",
+    "version": "1.1.0",
+    "last_updated": "2026-02-04",
+    "updated_by": "claude-opus-4.5",
+    "status": "evidence_informed",
+    "quality_score": "4.5/10",
+    "data_type": "hybrid",
+    "note": "Evidence For/Against filled from Porter's v1.1.0, ICP Analysis v1.0.0, and 03B VOC. No A/B test or real-world performance data exists yet."
+  },
+  "data": {
+    "principle": "Narratives aren't just stories - they're hypotheses about what will resonate. Test them systematically. Update based on evidence.",
+    "hypotheses": [
+      {
+        "narrative": "78 minerals vs just 3",
+        "audience": "Customers",
+        "hypothesis": "Differentiation drives purchase",
+        "evidence_for": "Biohacker persona demands 'best-in-class' (ICP); LMNT-031 shows community values premium; 6 taste complaints suggest salt overload from 3-mineral approach",
+        "evidence_against": "No evidence customers understand mineral count; '78 minerals' could confuse; no A/B test data",
+        "confidence": "C+",
+        "status": "Testing — needs ad A/B"
+      },
+      {
+        "narrative": "Ocean-sourced is better",
+        "audience": "Customers",
+        "hypothesis": "Natural positioning resonates",
+        "evidence_for": "Keto dieter worldview: ancestral/natural is better (ICP); Quinton 125yr heritage validates marine plasma; LMNT lawsuits punish 'unnatural'",
+        "evidence_against": "'Natural' overused in supplements + FTC scrutiny; requires education; no conversion data",
+        "confidence": "C",
+        "status": "Testing — needs LP test"
+      },
+      {
+        "narrative": "Your body is 70% ocean",
+        "audience": "Customers",
+        "hypothesis": "Science angle builds trust",
+        "evidence_for": "Optimizer demands data (ICP); good for podcasts/longform; resonates with 'body as system' worldview",
+        "evidence_against": "Scientifically imprecise (60% water, not ocean); could seem pseudoscience; no evidence outperforms simpler claims",
+        "confidence": "C-",
+        "status": "Testing — HIGH RISK"
+      },
+      {
+        "narrative": "$2M EBITDA in 24 months",
+        "audience": "Operators",
+        "hypothesis": "Financial outcome motivates",
+        "evidence_for": "Standard DTC playbook; math works if assumptions validate",
+        "evidence_against": "Porter's capital tension: $30-50K may be insufficient; category creation costs not factored; $100K MRR may need >50% of sub-segment",
+        "confidence": "D",
+        "status": "Testing — UNDERMINED by Porter's"
+      },
+      {
+        "narrative": "<10 hrs/week after Month 4",
+        "audience": "Operators",
+        "hypothesis": "Lifestyle outcome motivates",
+        "evidence_for": "DTC automation mature (Shopify, Klaviyo, Meta); subscription reduces complexity",
+        "evidence_against": "Ignores category creation work (content, community, education); customer service unpredictable during growth",
+        "confidence": "C-",
+        "status": "Testing — ops only"
+      },
+      {
+        "narrative": "Copy excellence, execute cleaner",
+        "audience": "Team",
+        "hypothesis": "Methodology creates alignment",
+        "evidence_for": "Porter's confirms LMNT proved playbook; can learn strengths (service, community) and avoid weaknesses (taste, maltodextrin)",
+        "evidence_against": "'Copying' uninspiring for team; doesn't address IonWave novelty; marine plasma IS the novel element",
+        "confidence": "C",
+        "status": "Testing — reframe"
+      }
+    ],
+    "testing_methodology": [
+      "A/B test ad copy with different narratives",
+      "Track which narratives get repeated by customers (word of mouth)",
+      "Survey customers: 'Why did you buy?'",
+      "Watch which email subject lines get opens",
+      "Interview churned customers: What didn't resonate?"
+    ],
+    "confidence_scale": {
+      "90_plus": "Strong evidence, core narrative",
+      "70_to_90": "Good evidence, use confidently",
+      "50_to_70": "Mixed signals, keep testing",
+      "30_to_50": "Weak evidence, might pivot",
+      "below_30": "Probably wrong, stop using"
+    }
+  }
+}

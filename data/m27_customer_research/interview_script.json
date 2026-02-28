@@ -1,0 +1,144 @@
+{
+  "_meta": {
+    "sheet_name": "Customer Interview Script",
+    "parent_file": "03b_customer_research_voc",
+    "version": "1.0.0",
+    "last_updated": "2026-02-04",
+    "updated_by": "claude-opus-4.5",
+    "status": "draft",
+    "quality_score": "5/10",
+    "data_type": "narrative",
+    "note": "Mom Test-based interview script. Designed to extract real customer behavior and pain points without biasing responses. Use the Interview Playbook for methodology and Interview Questions for the full question bank."
+  },
+  "data": {
+    "methodology": "The Mom Test by Rob Fitzpatrick",
+    "core_principle": "Talk about their life, not your idea. Ask about specifics in the past instead of generics about the future. Talk less and listen more.",
+    "script": {
+      "setup": {
+        "duration": "2 min",
+        "opening_line": "Hey [Name], thanks so much for taking the time to chat. I'm doing research on how people manage their hydration and energy throughout the day. I'm not selling anything - I'm genuinely trying to learn. There are no right or wrong answers, and honestly, the more critical you are, the more helpful it is for me. Sound good?",
+        "notes": "Smile. Be warm. Make them feel like the expert (because they are). Do NOT mention IonWave, marine plasma, or any product concept yet."
+      },
+      "problem_discovery": {
+        "duration": "10 min",
+        "questions": [
+          {
+            "question": "Tell me about your health routine - what does a typical day look like for you?",
+            "why": "Opens the conversation broadly. Listen for unprompted mentions of energy, hydration, fatigue, or supplements.",
+            "follow_ups": ["What made you start doing that?", "How long have you been doing it that way?"]
+          },
+          {
+            "question": "When was the last time you felt really low energy or not great during the day? Walk me through what happened.",
+            "why": "Gets a specific past event, not a hypothetical. Look for emotional language.",
+            "follow_ups": ["What did you do about it?", "How often does that happen?"]
+          },
+          {
+            "question": "What have you tried to solve that? What's worked and what hasn't?",
+            "why": "Reveals their solution awareness and what's failed them. Pay attention to WHY things didn't work.",
+            "follow_ups": ["Why did you stop using that?", "What was the biggest problem with it?"]
+          },
+          {
+            "question": "How much time or money do you spend dealing with this?",
+            "why": "If they're already spending time and money, the problem is real. If not, it might not be painful enough.",
+            "follow_ups": ["Is that worth it to you?", "What would you pay for a perfect solution?"]
+          },
+          {
+            "question": "What's the worst part about this whole thing?",
+            "why": "Cuts to the emotional core. The answer here is often the best marketing hook.",
+            "follow_ups": ["Tell me more about that.", "How does that make you feel?"]
+          },
+          {
+            "question": "Have you ever told anyone else about this problem?",
+            "why": "If they talk about it with others, it's a real pain point, not just interview performance.",
+            "follow_ups": ["What did they say?", "Did they have the same problem?"]
+          },
+          {
+            "question": "If this problem was completely solved tomorrow, what would be different about your life?",
+            "why": "Reveals the desired outcome and the emotional payoff they're seeking.",
+            "follow_ups": ["What would that feel like?", "What would you do with that extra energy / time / focus?"]
+          }
+        ]
+      },
+      "current_behavior": {
+        "duration": "5 min",
+        "questions": [
+          {
+            "question": "Are you currently using any electrolyte or hydration product? What is it?",
+            "why": "Understand current solution and level of category awareness.",
+            "follow_ups": ["How did you find out about it?", "Why that one specifically?"]
+          },
+          {
+            "question": "What do you love about it? What do you wish was different?",
+            "why": "Identifies competitive strengths to match and weaknesses to exploit.",
+            "follow_ups": ["If you could change one thing, what would it be?"]
+          },
+          {
+            "question": "Have you looked at switching to something else recently?",
+            "why": "Active searchers are your best early customers.",
+            "follow_ups": ["What are you looking for?", "What's holding you back from switching?"]
+          },
+          {
+            "question": "Where do you go to learn about new health products? Who do you trust?",
+            "why": "Reveals your marketing channels and authority sources.",
+            "follow_ups": ["Why do you trust them?", "Have you ever bought something based on their recommendation?"]
+          }
+        ]
+      },
+      "wrap_up": {
+        "duration": "3 min",
+        "questions": [
+          {
+            "question": "Is there anything I should have asked you that I didn't?",
+            "why": "Often reveals the most important insight of the entire interview. People know what matters to them.",
+            "follow_ups": []
+          },
+          {
+            "question": "Who else should I be talking to about this? Anyone in your life who deals with similar stuff?",
+            "why": "Snowball recruiting for more interviews. Warm intros convert better.",
+            "follow_ups": ["Would you be willing to introduce me?"]
+          },
+          {
+            "question": "Thanks so much - this was incredibly helpful. Can I reach out again if we build something based on this research?",
+            "why": "Plants the seed for future engagement. Gets permission for follow-up.",
+            "follow_ups": []
+          }
+        ]
+      }
+    },
+    "do_not_list": {
+      "title": "Anti-Patterns to Avoid (The Mom Test Rules)",
+      "anti_patterns": [
+        {
+          "pattern": "Fishing for compliments",
+          "example": "Don't you think an ocean-sourced electrolyte would be amazing?",
+          "why_its_bad": "Leading question. Everyone will say yes to be polite. This teaches you nothing.",
+          "instead": "Ask what they've tried and what's missing. Let them tell you what they want."
+        },
+        {
+          "pattern": "Pitching instead of listening",
+          "example": "Spending more than 20% of the interview talking about your idea.",
+          "why_its_bad": "You're here to learn, not sell. Every minute you talk is a minute you're not learning.",
+          "instead": "Ask a question, then shut up. Count to 5 in your head before speaking again."
+        },
+        {
+          "pattern": "Asking hypothetical questions",
+          "example": "Would you buy a product that does X?",
+          "why_its_bad": "Hypothetical yes means nothing. People are terrible at predicting future behavior.",
+          "instead": "Ask about past behavior: 'Have you ever bought...' or 'Tell me about the last time you...'"
+        },
+        {
+          "pattern": "Accepting vague answers",
+          "example": "Letting them say 'Yeah, I sometimes feel tired' without digging deeper.",
+          "why_its_bad": "Vague answers don't give you actionable insights. You need specific stories.",
+          "instead": "Follow up: 'Tell me about the most recent time. What happened exactly?'"
+        },
+        {
+          "pattern": "Talking to the wrong people",
+          "example": "Interviewing friends and family who will never buy your product.",
+          "why_its_bad": "Friendly feedback from non-customers is misleading and waste of time.",
+          "instead": "Talk to people who match your ICP and are actively dealing with the problem."
+        }
+      ]
+    }
+  }
+}

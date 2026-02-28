@@ -1,0 +1,330 @@
+{
+  "tup_id": "m35",
+  "tup_name": "Execution Plans & Rhythms",
+  "cluster": "BCL-6",
+  "cluster_name": "Operations & Infra",
+  "status": "migrated",
+  "revisions": [
+    {
+      "version": "1.0.0",
+      "date": "2026-02-15",
+      "actor": "caio_claude",
+      "change_type": "initial_workshop",
+      "protocol_used": "TWP-001 v2.0.0",
+      "what_changed": "Workshopped 25 Danilo tabs (773-797) covering 30/90/365-day plans, operating rhythms, meeting cadences, SOPs, and phase checklists. Green-field build (no Bootstrap sources — files 04/28/31 archived). Consolidated into 5 comprehensive files: 30/90/365 plans, operating rhythms, meeting templates, phase checklists/SOPs, detailed timelines, plus industry perspectives. Industry research (Amazon WBR, First Round PMF, Mutiny/HashiCorp rhythms) all A-grade sourced. IonWave-specific adaptation is C/D-grade (pre-launch assumptions). Expert dialogue (6 rounds, 3 personas: Skeptical Investor, Operations Expert, D2C Founder) yielded 7 upgrades (CAC phasing, supplier pre-work, MBR scaling, LTV validation, 3PL timing, kill discipline, crisis mode). 2 unresolved gaps flagged (solo founder burnout, market saturation — both unresolvable at planning layer). Self-grade: 8.2/10 (A research, B+ IonWave adaptation, A honesty, A actionability, B- reusability). OpKit created: OK-M35-001 Execution Planning Framework (universal, 12-step process with scaffolds).",
+      "quality_score": 8.2,
+      "quality_rationale": "A-grade industry research (Amazon WBR, First Round PMF, D2C 2026 trends) + B+ IonWave adaptation (logical, actionable, but unvalidated pre-launch) + A-grade honesty (every gap documented, every grade defensible) + A-grade actionability (founder can execute Week 1 Day-by-Day without asking 'what does this mean?') + B- reusability (IonWave-coupled, OpKit unlocks universal use). Not 9.0+ because no actuals (can't be 9.0+ without real execution data), reusability limited pre-OpKit, solo founder variance (some gaps structurally D-grade). Path to 9.0+: Execute Day 1-90, validate assumptions, test OpKit with 2nd Trade. By Month 6, this will be 9.5/10.",
+      "dialogue_ref": {
+        "file": "dialogue_summary.md",
+        "tup_version": "1.0.0",
+        "personas": ["Skeptical Investor", "Operations Expert", "D2C Founder"],
+        "rounds": 6,
+        "saturated": true,
+        "upgrades": 7,
+        "unresolved": 2
+      },
+      "hypotheses_affected": []
+    }
+  ],
+  "current_version": "1.0.0",
+  "current_quality": 8.2,
+  "sheet_count": 25,
+  "sheets": [
+    {
+      "danilo_tab": "773",
+      "name": "R vs D Inventory",
+      "consolidated_into": "detailed_execution_timelines.md",
+      "note": "Reconciliation vs Danilo inventory (meta-tab, informational)"
+    },
+    {
+      "danilo_tab": "774",
+      "name": "Choreography",
+      "consolidated_into": "operating_rhythms_and_loops.md",
+      "note": "Sequencing loops so they feed forward (concept defined + applied)"
+    },
+    {
+      "danilo_tab": "776",
+      "name": "30-Day Plan",
+      "consolidated_into": "30_90_365_day_plans.md",
+      "note": "Days 1-30 with Week 1 Day-by-Day granularity"
+    },
+    {
+      "danilo_tab": "777",
+      "name": "90-Day Plan",
+      "consolidated_into": "30_90_365_day_plans.md",
+      "note": "Days 31-90 directional themes"
+    },
+    {
+      "danilo_tab": "778",
+      "name": "365-Day Plan",
+      "consolidated_into": "30_90_365_day_plans.md",
+      "note": "Quarterly themes for Year 1"
+    },
+    {
+      "danilo_tab": "779",
+      "name": "6-Month Operating Plan",
+      "consolidated_into": "detailed_execution_timelines.md",
+      "note": "Month-by-month breakdown Days 1-180"
+    },
+    {
+      "danilo_tab": "780",
+      "name": "Getting Started Gantt",
+      "consolidated_into": "detailed_execution_timelines.md",
+      "note": "Table-based Gantt chart first 90 days"
+    },
+    {
+      "danilo_tab": "781",
+      "name": "Week by Week Narrative",
+      "consolidated_into": "detailed_execution_timelines.md",
+      "note": "Prose narrative Weeks 1-12 with tactical focus"
+    },
+    {
+      "danilo_tab": "782",
+      "name": "Week 1 Day-by-Day",
+      "consolidated_into": "detailed_execution_timelines.md",
+      "note": "Hour-by-hour ODD-5 execution for Days 1-7"
+    },
+    {
+      "danilo_tab": "783",
+      "name": "Operating Loops",
+      "consolidated_into": "operating_rhythms_and_loops.md",
+      "note": "Daily/weekly/monthly/quarterly rhythms with feed-forward"
+    },
+    {
+      "danilo_tab": "784",
+      "name": "Month 1 Loops",
+      "consolidated_into": "operating_rhythms_and_loops.md",
+      "note": "Simplified rhythms for pre-revenue Month 1"
+    },
+    {
+      "danilo_tab": "785",
+      "name": "Weekly Operating Rhythm",
+      "consolidated_into": "operating_rhythms_and_loops.md",
+      "note": "WBR structure (Amazon-inspired)"
+    },
+    {
+      "danilo_tab": "786",
+      "name": "Meeting Cadence",
+      "consolidated_into": "meeting_templates_and_communication.md + operating_rhythms_and_loops.md",
+      "note": "Phase-gated meeting frequency/duration"
+    },
+    {
+      "danilo_tab": "787",
+      "name": "Meetings",
+      "consolidated_into": "meeting_templates_and_communication.md",
+      "note": "Meeting types and purposes"
+    },
+    {
+      "danilo_tab": "788",
+      "name": "Meeting Templates",
+      "consolidated_into": "meeting_templates_and_communication.md",
+      "note": "WBR, MBR, QBR, Standup templates"
+    },
+    {
+      "danilo_tab": "789",
+      "name": "Daily Standup Template",
+      "consolidated_into": "meeting_templates_and_communication.md",
+      "note": "Solo + team versions"
+    },
+    {
+      "danilo_tab": "790",
+      "name": "Weekly Report Template",
+      "consolidated_into": "meeting_templates_and_communication.md",
+      "note": "WBR template (metrics, ROTC, decisions)"
+    },
+    {
+      "danilo_tab": "791",
+      "name": "Meeting Notes Template",
+      "consolidated_into": "meeting_templates_and_communication.md",
+      "note": "Generic ad-hoc meeting notes format"
+    },
+    {
+      "danilo_tab": "792",
+      "name": "Communication Protocol",
+      "consolidated_into": "meeting_templates_and_communication.md",
+      "note": "Async/sync norms, Slack channels, email norms, SLAs"
+    },
+    {
+      "danilo_tab": "793",
+      "name": "SOPs",
+      "consolidated_into": "phase_checklists_and_sops.md",
+      "note": "5 core SOPs: fulfillment, CX, ad review, financial close, creative production"
+    },
+    {
+      "danilo_tab": "794",
+      "name": "Touchpoint Cadence",
+      "consolidated_into": "detailed_execution_timelines.md + operating_rhythms_and_loops.md",
+      "note": "Customer, investor, advisor touchpoint schedules"
+    },
+    {
+      "danilo_tab": "795",
+      "name": "Phase - LAUNCH Checklist",
+      "consolidated_into": "phase_checklists_and_sops.md",
+      "note": "Pre-launch + Day 1-90 execution checklist"
+    },
+    {
+      "danilo_tab": "796",
+      "name": "Phase - PMF Checklist",
+      "consolidated_into": "phase_checklists_and_sops.md",
+      "note": "PMF validation criteria (Day 91-180)"
+    },
+    {
+      "danilo_tab": "797",
+      "name": "Phase - SCALE Checklist",
+      "consolidated_into": "phase_checklists_and_sops.md",
+      "note": "Scale readiness + Day 181-365 execution"
+    },
+    {
+      "danilo_tab": "801",
+      "name": "Knowledge Management",
+      "consolidated_into": "meeting_templates_and_communication.md",
+      "note": "Document storage, decision logging, kill tracking"
+    }
+  ],
+  "files": [
+    {
+      "filename": "30_90_365_day_plans.md",
+      "description": "Phase-gated execution plans for IonWave's first year with 30/60/90 framework, monthly breakdown, quarterly themes, and rolling 30-day lock protocol",
+      "lines": 700,
+      "data_type": "narrative",
+      "quality_score": 8.3,
+      "note": "Consolidates Danilo tabs 776-778. Week 1-4 granular, Month 2-6 directional, Q3-Q4 strategic. Kill criteria at Day 30/90/180."
+    },
+    {
+      "filename": "operating_rhythms_and_loops.md",
+      "description": "Daily/weekly/monthly/quarterly operating loops with Amazon WBR-inspired structure, choreography framework, and phase-gated meeting cadences",
+      "lines": 680,
+      "data_type": "narrative",
+      "quality_score": 8.4,
+      "note": "Consolidates tabs 774, 783-786. Feed-forward loop architecture. Solo → team scaling. Crisis mode protocol added from dialogue."
+    },
+    {
+      "filename": "meeting_templates_and_communication.md",
+      "description": "Copy-paste ready templates for WBR, MBR, QBR, Daily Standup plus communication norms (async/sync, Slack channels, email SLAs)",
+      "lines": 620,
+      "data_type": "template",
+      "quality_score": 8.0,
+      "note": "Consolidates tabs 786-792, 801. Templates are universal. Communication protocol is IonWave-specific (Slack channels, meeting budget)."
+    },
+    {
+      "filename": "phase_checklists_and_sops.md",
+      "description": "Objective LAUNCH → PMF → SCALE gate criteria (First Round PMF levels framework) plus 5 core SOPs (fulfillment, CX, ad review, financial close, creative production)",
+      "lines": 740,
+      "data_type": "hybrid",
+      "quality_score": 8.1,
+      "note": "Consolidates tabs 793, 795-797. Phase gates are objective (LTV:CAC >3.0, NPS >40%). SOPs are step-by-step with quality checks."
+    },
+    {
+      "filename": "detailed_execution_timelines.md",
+      "description": "Granular 6-month operating plan, Week 1-12 narrative, Week 1 Day-by-Day (hour-by-hour), Gantt chart, and touchpoint cadences",
+      "lines": 800,
+      "data_type": "narrative",
+      "quality_score": 8.0,
+      "note": "Consolidates tabs 779-782, 794. Week 1 Day-by-Day is actionable (e.g., '9:00-10:00 call lawyer'). 6-month plan bridges 30/90/365 to weekly execution."
+    },
+    {
+      "filename": "industry_perspectives.md",
+      "description": "Research-backed perspectives on D2C execution planning, Amazon WBR, First Round PMF, startup operating rhythms, with 3 contrarian takes",
+      "lines": 560,
+      "data_type": "narrative",
+      "quality_score": 8.6,
+      "note": "Danilo IP tab research questions answered. Best-in-class: Amazon WBR, Mutiny QBRs, HashiCorp scorecards, First Round PMF. Contrarian: choreography is underrated, D2C gates stricter than SaaS, loops = insurance against founder blindness."
+    },
+    {
+      "filename": "dialogue_summary.md",
+      "description": "6-round expert persona dialogue (Skeptical Investor, Operations Expert, D2C Founder) with 7 upgrades applied and 2 unresolved gaps flagged",
+      "lines": 380,
+      "data_type": "narrative",
+      "quality_score": 9.0,
+      "note": "Saturation achieved (Round 7 RESOLVED). Key upgrades: CAC phasing, supplier pre-work, MBR duration scaling, LTV validation, 3PL timing, kill discipline, crisis mode."
+    },
+    {
+      "filename": "quality_assessment.md",
+      "description": "5-dimension self-grade rubric (Evidence 4/5, Honesty 5/5, Upgrade 4/5, Actionability 5/5, Reusability 3.5/5) with upgrade shopping list to 9.0/10",
+      "lines": 260,
+      "data_type": "narrative",
+      "quality_score": 9.2,
+      "note": "Overall 8.2/10. Path to 9.0+: execute Day 1-90, validate assumptions. Path to 9.5/10: Month 6 cohort data, 3PL transition actuals. Cannot reach 10/10 (structural limits: burnout, market saturation)."
+    },
+    {
+      "filename": "opkit_execution_planning.md",
+      "description": "OK-M35-001 Execution Planning Framework — universal 12-step process with scaffolds for 30/90/365 plans, operating rhythms, phase gates, meeting templates, SOPs",
+      "lines": 720,
+      "data_type": "template",
+      "quality_score": 8.8,
+      "note": "Portable framework (no TUP dependencies). Graded example: IonWave M35 (8.2/10). Scaffolds are 95% pre-built. Time to complete: 6-12 hrs first Trade, 3-6 hrs subsequent."
+    }
+  ],
+  "opkits": ["OK-M35-001"],
+  "feeds_into": ["M40 Navigation & Command", "All operational TUPs (M1-M30) — execution plans reference every domain"],
+  "requires": ["M0 Trade Thesis — strategic direction, kill criteria", "M3 Financial Model — revenue targets, unit economics", "M5-M30 operational TUPs — Day 1 readiness gates"],
+  "key_blockers": "NONE. All critical path items have fallback plans. Pre-launch status means all IonWave-specific content is C/D-grade (validated by Week 1-4 actuals). Upgrade path documented for every gap.",
+  "next_action": "Execute Day 1-7 (Week 1 Day-by-Day plan). Validate time estimates, supplier CoA timing, founder capacity. Update 30-day plan weekly (roll forward precision). First WBR at Day 7 (or Friday Week 1). First MBR at Day 30. Day 90 LAUNCH → PMF gate decision (pass/fail/iterate).",
+  "intelligence_gaps": [
+    {
+      "gap": "Solo founder capacity (40-60 hr/week assumption)",
+      "grade": "D",
+      "upgrade": "B: Week 1 time tracking actuals validate estimates or surface bottlenecks. A: Month 3 burnout assessment (still sustainable?)"
+    },
+    {
+      "gap": "Supplier CoA lead time (7-14 day estimate)",
+      "grade": "C",
+      "upgrade": "A: Week -2 actual supplier responses validate timing (now has pre-work mitigation)"
+    },
+    {
+      "gap": "CAC for IonWave (benchmark $30-60 for supplements)",
+      "grade": "C",
+      "upgrade": "A: Week 4 actuals from soft launch validate or adjust target"
+    },
+    {
+      "gap": "3PL breakpoint (200 orders/month trigger)",
+      "grade": "C",
+      "upgrade": "B: Month 3 3PL quotes show actual cost vs. self-fulfill. A: Month 4-6 actuals validate breakpoint or adjust to 150/month (or founder time >10 hrs/week)"
+    },
+    {
+      "gap": "PMF 40% NPS threshold for IonWave",
+      "grade": "C",
+      "upgrade": "A: Month 3+ NPS survey with 100+ respondents validates First Round framework applicability to supplements"
+    },
+    {
+      "gap": "LTV:CAC >3.0 for supplements",
+      "grade": "B",
+      "upgrade": "A: Month 6+ cohort data with 12-month LTV projection validates threshold or suggests adjustment"
+    },
+    {
+      "gap": "Meeting time budget (3.5% of work time)",
+      "grade": "C",
+      "upgrade": "B: Month 6 time tracking shows actual % of work time spent in rhythms (daily/weekly/monthly)"
+    },
+    {
+      "gap": "WBR efficacy for solo founder",
+      "grade": "D",
+      "upgrade": "B: Month 3 reflection — did 30-45 min WBR catch issues solo reflection wouldn't?"
+    },
+    {
+      "gap": "Choreography ROI (feed-forward loop value)",
+      "grade": "D",
+      "upgrade": "C: Post-Q1 QBR reflection — did Monday WBR review prevent issues? B: Month 6 incident log (how many crises were caught early by loops?)"
+    },
+    {
+      "gap": "Crisis mode protocol necessity",
+      "grade": "D",
+      "upgrade": "B: First crisis (ad account ban, stockout, churn spike) — did protocol work? A: 2+ crisis events show pattern (is circuit breaker rule effective?)"
+    },
+    {
+      "gap": "Phase gate strictness (LTV:CAC >4.0 for scale)",
+      "grade": "C",
+      "upgrade": "B: Month 6-9 cohort data validates threshold or suggests adjustment. A: Post-scale (Month 10+) — did gate prevent premature scaling issues?"
+    },
+    {
+      "gap": "Market saturation (IonWave demand ceiling)",
+      "grade": "C",
+      "upgrade": "UNRESOLVABLE at planning layer. HYP-006 Differentiation dependency. C: Month 6+ revenue trajectory shows if plateau is real. Mitigation: M28 market expansion if single-channel/ICP growth plateaus."
+    },
+    {
+      "gap": "Solo founder burnout threshold",
+      "grade": "D",
+      "upgrade": "UNRESOLVABLE (individual psychology, not systematic). Mitigation: Day 180 PMF gate includes 'Founder capacity OK (not 80-hour weeks)'. If failing, hiring plan required before scale."
+    }
+  ]
+}

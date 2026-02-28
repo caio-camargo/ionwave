@@ -1,0 +1,191 @@
+{
+  "tup_id": "m8",
+  "tup_name": "Brand Identity",
+  "cluster": "BCL-1",
+  "cluster_name": "Product & Science",
+  "status": "migrated",
+  "current_version": "1.0.0",
+  "current_quality": "7.8/10",
+  "workshopped_date": "2026-02-10",
+  "protocol": "TWP-001 v2.0.0",
+  "source_files": ["09_brand_messaging", "05a_product_strategy"],
+  "passet": "imagination",
+  "sheet_count": 16,
+  "sheets": [
+    "Brand Guidelines",
+    "Tone of Voice Guide",
+    "Visual Identity System",
+    "Brand Story",
+    "Competitor Brand Audit",
+    "Packaging Design System",
+    "Packaging Brief",
+    "Packaging Analysis",
+    "Brand Naming",
+    "Domain Selection",
+    "Brand Tracking Metrics",
+    "Form Factor Analysis",
+    "Serving Size Engineering",
+    "Unboxing Experience",
+    "Photo Brief",
+    "Social Media Guidelines"
+  ],
+  "consolidation": "16 Danilo tabs → 7 content files + 1 dialogue summary + 1 workshop summary + 1 OpKit",
+  "files": [
+    "brand_strategy.md",
+    "brand_voice_tone.md",
+    "packaging_design.md",
+    "brand_naming_domain.md",
+    "brand_messaging_storytelling.md",
+    "remaining_brand_systems.md",
+    "industry_perspectives.md",
+    "dialogue_summary.md",
+    "m8_workshop_summary.md",
+    "opkit_brand_identity.md"
+  ],
+  "opkits": ["OK-M8-001"],
+  "feeds_into": ["m11", "m12", "m15", "m23", "m29"],
+  "requires": ["m0", "m27"],
+  "hypothesis_links": {
+    "primary": [],
+    "secondary": ["HYP-003", "HYP-006"],
+    "note": "M8 is foundational infrastructure, not a hypothesis test. Brand positioning decisions inform how we communicate hypotheses (e.g., HYP-006 churn rate may benefit from strong brand voice/unboxing; HYP-003 marine plasma category viability depends on positioning clarity), but M8 itself doesn't validate or invalidate business assumptions."
+  },
+  "key_blockers": [
+    "Logo design (CRITICAL — launch blocker)",
+    "Photography / visual assets (CRITICAL — launch blocker)",
+    "Lab-verified Supplement Facts Panel (CRITICAL — cannot print packaging without supplier CoA + third-party ICP-MS analysis)",
+    "Prop 65 heavy metal testing (CRITICAL — cannot sell in California without testing or warning)",
+    "Trademark clearance (CRITICAL — cannot print 'IonWave' on packaging without USPTO clearance)",
+    "Domain acquisition (CRITICAL — cannot launch without ionwave.com or fallback)"
+  ],
+  "next_action": "Execute 6 CRITICAL blockers in Week 1-2: (1) Domain check (ionwave.com availability), (2) USPTO trademark search ('IonWave' Class 005), (3) Commission logo designer ($500-2K), (4) Book brand photoshoot ($3-5K), (5) Legal review of all label copy (FDA consultant $2-5K), (6) Lab testing (supplier CoA + third-party Supplement Facts Panel verification + Prop 65)",
+  "intelligence_gaps": [
+    {
+      "gap": "Lab-verified Supplement Facts Panel",
+      "severity": "CRITICAL",
+      "impact": "Can't print packaging without exact mineral values (FDA requirement)",
+      "validation_path": "Supplier CoA + third-party ICP-MS analysis",
+      "owner": "M9 (Supply Chain) + M8"
+    },
+    {
+      "gap": "Prop 65 heavy metal testing",
+      "severity": "CRITICAL",
+      "impact": "Can't sell in California without testing or warning",
+      "validation_path": "Third-party lab test (lead, cadmium, arsenic)",
+      "owner": "M9 (Supply Chain)"
+    },
+    {
+      "gap": "Logo design",
+      "severity": "CRITICAL",
+      "impact": "Can't launch brand without logo (packaging, website, ads)",
+      "validation_path": "Commission designer ($500-2K), create brand guidelines",
+      "owner": "M8 + Design Team"
+    },
+    {
+      "gap": "Photography / visual assets",
+      "severity": "CRITICAL",
+      "impact": "Can't build website, ads, or packaging mockups without images",
+      "validation_path": "Brand photoshoot ($3-5K), asset library creation",
+      "owner": "M8 + Photography Team"
+    },
+    {
+      "gap": "Trademark clearance",
+      "severity": "CRITICAL",
+      "impact": "Can't print 'IonWave' on packaging without USPTO clearance",
+      "validation_path": "USPTO search + trademark attorney consult ($1-2K)",
+      "owner": "Legal + M8"
+    },
+    {
+      "gap": "Domain acquisition",
+      "severity": "CRITICAL",
+      "impact": "Can't launch without ionwave.com (or fallback)",
+      "validation_path": "Check availability, acquire or negotiate",
+      "owner": "M8 + Ops"
+    },
+    {
+      "gap": "FDA regulatory review (all label copy)",
+      "severity": "HIGH",
+      "impact": "Legal risk if claims violate supplement regulations",
+      "validation_path": "Hire FDA consultant ($2-5K), review all files",
+      "owner": "M7 (Regulatory) + M8"
+    },
+    {
+      "gap": "Absorption rate validation",
+      "severity": "HIGH",
+      "impact": "Core differentiation claim is D-grade without study",
+      "validation_path": "Commission bioavailability study OR cite peer-reviewed research",
+      "owner": "M5 (Formulation) + M8"
+    },
+    {
+      "gap": "Founder story",
+      "severity": "HIGH",
+      "impact": "Emotional connection missing, brand feels corporate",
+      "validation_path": "Founder interview, narrative writing",
+      "owner": "M8 + Founder"
+    },
+    {
+      "gap": "Voice example library (50+ samples)",
+      "severity": "HIGH",
+      "impact": "Copywriters can't execute consistently with only 3 examples",
+      "validation_path": "Build graded example database, categorize by context",
+      "owner": "M8 + Content Team"
+    },
+    {
+      "gap": "Customer voice research",
+      "severity": "MEDIUM",
+      "impact": "Messaging hierarchy not validated by real customers",
+      "validation_path": "Review mining (Quinton/Seaonic), early adopter interviews",
+      "owner": "M27 (Customer Research)"
+    },
+    {
+      "gap": "90-day social content calendar",
+      "severity": "MEDIUM",
+      "impact": "Launch readiness for social media",
+      "validation_path": "Build content calendar, create post templates",
+      "owner": "M16 (Content & SEO)"
+    },
+    {
+      "gap": "Iconography library (15 custom icons)",
+      "severity": "MEDIUM",
+      "impact": "Packaging, website, app (Phase 2+) need consistent icons",
+      "validation_path": "Commission icon designer ($500-1K)",
+      "owner": "M8 + Design Team"
+    },
+    {
+      "gap": "Influencer partnership strategy",
+      "severity": "MEDIUM",
+      "impact": "AG1/Momentous model (find 'our Huberman')",
+      "validation_path": "Research marine biologists, biohackers, endurance athletes",
+      "owner": "M23 (Influencer & Creator)"
+    }
+  ],
+  "revisions": [
+    {
+      "version": "1.0.0",
+      "date": "2026-02-10",
+      "actor": "Claude (Sonnet 4.5) + Operator",
+      "change_type": "initial_workshop",
+      "protocol_used": "TWP-001 v2.0.0",
+      "what_changed": "Full M8 Brand Identity workshop: 16 Danilo tabs (Brand Guidelines, Tone of Voice, Visual Identity, Brand Story, Competitor Audit, Packaging Design/Brief/Analysis, Brand Naming, Domain Selection, Brand Tracking, Form Factor, Serving Size, Unboxing, Photo Brief, Social Media Guidelines) → 7 content files (brand_strategy, brand_voice_tone, packaging_design, brand_naming_domain, brand_messaging_storytelling, remaining_brand_systems, industry_perspectives) + dialogue summary (9 rounds, 5 upgrades) + workshop summary + OpKit. Research: 4 web searches (D2C brand identity 2026, marine plasma branding, packaging design, competitive voice analysis). Personas: Brand Strategist, CPG Designer, Copywriter. Key content: Positioning ('accessible marine plasma' Phase 1 → 'complete mineralization' Phase 2+), voice principles (5 core: Informed Guide archetype, science-backed not academic, explain don't gatekeep, transparency-first, conversational-professional), packaging system (sachet/box/mailer with FDA compliance checklist, Prop 65, sustainability strategy, unboxing flow with progress tracker), brand naming evaluation (IonWave trademark/domain strategy), messaging architecture (awareness ladder, 3 tagline variants, 5 social content pillars), visual identity (typography/color/logo brief/photo brief), 3-phase brand evolution model (Challenger → Category Ownership → Market Leader), competitor audit (LMNT/AG1/Momentous/Quinton positioning map), 3 contrarian takes. Quality 7.8/10: strong foundation with clear intelligence gaps (6 CRITICAL blockers: logo, photography, CoA, Prop 65, trademark, domain) and actionable upgrade paths documented.",
+      "quality_score": 7.8,
+      "quality_rationale": "Strengths: Clear positioning ('accessible marine plasma'), well-defined voice principles (Informed Guide archetype, 5 core principles), FDA-aware packaging system (compliance checklist, Prop 65 strategy, sustainability trade-offs documented), unboxing-optimized experience (progress tracker added via dialogue), 3 strong contrarian takes, 3-phase brand evolution model. Weaknesses: CRITICAL BLOCKERS (6): no logo, no photography, no Supplement Facts Panel (CoA needed), no Prop 65 testing, no trademark clearance, no domain acquisition. Legal gaps: FDA claims not reviewed, absorption percentages unverified (98% vs 10-15% needs study or softening). Human dependencies: founder story missing (requires interview), customer testimonials unavailable (pre-launch), voice example library insufficient (3 examples, needs 50+). Score 7.8/10 reflects strong strategic foundation with clear execution gaps that are typical for pre-launch brand work (all gaps documented with upgrade paths). Upgrade to 8.5+: execute 6 CRITICAL blockers, legal review, absorption study, founder interview, voice example library expansion.",
+      "dialogue_ref": {
+        "file": "dialogue_summary.md",
+        "tup_version": "1.0.0",
+        "personas": ["Brand Strategist", "CPG Designer", "Copywriter"],
+        "rounds": 9,
+        "saturated": true,
+        "upgrades": 5,
+        "unresolved": 0,
+        "upgrades_applied": [
+          "Sachet vs box messaging split (evergreen sachet, flexible box positioning)",
+          "Supplement Facts Panel escalated to CRITICAL blocker (not Phase 2 upgrade)",
+          "Absorption claims softened (98% → 'highly bioavailable ionic form', FDA-safe language)",
+          "Tagline separated by context (ads='78 Minerals. 30 Seconds. Zero BS.' vs packaging='Complete Mineralization, Simplified.')",
+          "Inside lid progress tracker added to unboxing experience (30-day checklist)"
+        ]
+      },
+      "hypotheses_affected": []
+    }
+  ]
+}

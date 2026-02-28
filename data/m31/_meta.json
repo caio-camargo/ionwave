@@ -1,0 +1,178 @@
+{
+  "tup_id": "m31",
+  "tup_name": "Hiring",
+  "cluster": "BCL-6",
+  "cluster_name": "Operations & Infra",
+  "status": "migrated",
+  "revisions": [
+    {
+      "version": "1.0.0",
+      "date": "2026-02-16",
+      "actor": "caio_claude",
+      "change_type": "initial_workshop",
+      "protocol_used": "TWP-001 v2.0.0",
+      "what_changed": "Workshopped 31 Danilo tabs (640-670) covering hiring strategy, processes, job specs, compensation, and firing/offboarding. Green-field build (Bootstrap File 16 archived, not used). Consolidated into 5 comprehensive content files: hiring strategy (team evolution, PM competence framework, operator vs employee), hiring processes (sourcing, interviews, onboarding, firing), job specifications (11 roles from operator to CEO/CFO/VP phase-gated by MRR), compensation framework (equity vs cash, market data, dilution waterfall), industry perspectives (2026 D2C hiring landscape, remote trends). Expert dialogue (6 rounds, 6 upgrades: PM competence conversational embedding, pipeline-building 4-6 weeks early, dilution waterfall math, firing timing humane protocols, community engagement sourcing, hybrid creative sprint model). Self-grade: 8.0/10 (A evidence on Danilo frameworks, C/D on IonWave timing pre-launch). OpKit created: OK-M31-001 D2C Hiring Framework (14-step universal process with scaffolds).",
+      "quality_score": 8.0,
+      "quality_rationale": "A-grade Danilo frameworks (PM competence 59-row scorecard, job specs, interview protocols, firing guide) + A-grade 2026 market research (Upwork, FlexJobs, Ravio verified sources) + B-grade dialogue upgrades (dilution waterfall, hybrid model, community sourcing) + C/D-grade IonWave timing (pre-revenue assumptions, Month 1-6 projections). Conservative grading: explicit D-grade flagging with upgrade paths. Not 9.0+ because no real hiring data (can't validate timeline/equity/competence assumptions without actual hires). Path to 9.0+: Execute Month 3-4 Creative PM hire, validate process timing, survey operator equity expectations.",
+      "dialogue_ref": {
+        "file": "dialogue_summary.md",
+        "tup_version": "1.0.0",
+        "personas": ["HR Professional (D2C/Startup)", "Startup Recruiter (Early-Stage)", "D2C Founder (Operational)"],
+        "rounds": 6,
+        "saturated": true,
+        "upgrades": 6,
+        "unresolved": 0
+      },
+      "hypotheses_affected": ["HYP-001"]
+    }
+  ],
+  "current_version": "1.0.0",
+  "current_quality": 8.0,
+  "sheet_count": 31,
+  "sheets": [
+    {"danilo_tab": "640", "name": "Team", "consolidated_into": "hiring_strategy.md"},
+    {"danilo_tab": "641", "name": "Team1", "consolidated_into": "hiring_strategy.md", "note": "3-4 PM Maximum Constraint"},
+    {"danilo_tab": "642", "name": "Internal Team", "consolidated_into": "hiring_strategy.md"},
+    {"danilo_tab": "643", "name": "Labor Strategy", "consolidated_into": "hiring_strategy.md", "note": "Hire PMs who think, not VAs"},
+    {"danilo_tab": "644", "name": "Head of Ops", "consolidated_into": "job_specifications.md"},
+    {"danilo_tab": "645", "name": "Compensation Philosophy", "consolidated_into": "compensation_framework.md", "note": "Equity framework, market data sources"},
+    {"danilo_tab": "646", "name": "Firing/Offboarding Guide", "consolidated_into": "hiring_processes.md", "note": "33 rows"},
+    {"danilo_tab": "647", "name": "Onboarding Checklist", "consolidated_into": "hiring_processes.md", "note": "25 rows"},
+    {"danilo_tab": "648", "name": "Offboarding Checklist", "consolidated_into": "hiring_processes.md"},
+    {"danilo_tab": "649", "name": "Operator Search Dashboard", "consolidated_into": "hiring_processes.md"},
+    {"danilo_tab": "650", "name": "Operator Search Tracker", "consolidated_into": "hiring_processes.md"},
+    {"danilo_tab": "651", "name": "Operator Scorecard", "consolidated_into": "hiring_processes.md", "note": "6-dimension scorecard"},
+    {"danilo_tab": "652", "name": "Screening Interview", "consolidated_into": "hiring_processes.md"},
+    {"danilo_tab": "653", "name": "Focused Interview", "consolidated_into": "hiring_processes.md"},
+    {"danilo_tab": "654", "name": "Reference Interview", "consolidated_into": "hiring_processes.md"},
+    {"danilo_tab": "655", "name": "Candidate Evaluation", "consolidated_into": "hiring_processes.md"},
+    {"danilo_tab": "656", "name": "Operator Sourcing", "consolidated_into": "hiring_processes.md"},
+    {"danilo_tab": "657", "name": "Operator Outreach", "consolidated_into": "hiring_processes.md"},
+    {"danilo_tab": "658", "name": "Founder/CEO Job Description", "consolidated_into": "job_specifications.md"},
+    {"danilo_tab": "659", "name": "CEO Job Spec", "consolidated_into": "job_specifications.md", "note": "44 rows"},
+    {"danilo_tab": "660", "name": "CEO Hiring Process", "consolidated_into": "job_specifications.md"},
+    {"danilo_tab": "661", "name": "CEO Scorecard", "consolidated_into": "job_specifications.md"},
+    {"danilo_tab": "662", "name": "CFO Job Spec", "consolidated_into": "job_specifications.md", "note": "32 rows"},
+    {"danilo_tab": "663", "name": "PM Job Spec", "consolidated_into": "job_specifications.md", "note": "28 rows"},
+    {"danilo_tab": "664", "name": "CM Job Spec", "consolidated_into": "job_specifications.md", "note": "40 rows"},
+    {"danilo_tab": "665", "name": "CM Hiring Process", "consolidated_into": "job_specifications.md"},
+    {"danilo_tab": "666", "name": "Venture Partner Job Spec", "consolidated_into": "job_specifications.md", "note": "45 rows"},
+    {"danilo_tab": "667", "name": "Venture Partner Compensation", "consolidated_into": "compensation_framework.md"},
+    {"danilo_tab": "668", "name": "Venture Partner Scorecard", "consolidated_into": "job_specifications.md"},
+    {"danilo_tab": "669", "name": "PM Competence Framework", "consolidated_into": "hiring_strategy.md", "note": "59 rows - 18-question scorecard, 'Don't spend $1 on ads until score >60'"},
+    {"danilo_tab": "670", "name": "V_M31", "consolidated_into": "workshop_summary.md", "note": "Vision/verification meta tab"}
+  ],
+  "files": [
+    {
+      "filename": "hiring_strategy.md",
+      "description": "When to hire, team evolution (solo → operator → PMs), PM Competence Framework (18-question scorecard >60 before ad spend), operator vs employee distinction, 3-4 PM maximum constraint",
+      "lines": 650,
+      "data_type": "narrative",
+      "quality_score": 8.5,
+      "note": "Consolidates tabs 640-643, 669. Novel: PM Competence Framework prevents $5-10K waste, 3-4 PM anti-scaling constraint."
+    },
+    {
+      "filename": "hiring_processes.md",
+      "description": "Complete hiring workflow: sourcing (community engagement, pipeline-building 4-6 weeks early), interviews (screening/focused/reference), candidate evaluation, onboarding (8-11 hrs Day 1), firing/offboarding (humane protocols)",
+      "lines": 580,
+      "data_type": "narrative",
+      "quality_score": 8.0,
+      "note": "Consolidates tabs 646-657. Dialogue upgrades: avoid Friday firings, community engagement playbook, pipeline-building timeline."
+    },
+    {
+      "filename": "job_specifications.md",
+      "description": "11 role specs (Operator, Creative PM, Ops PM, Growth PM, Head of Ops, CM, CFO, CEO, Venture Partner) phase-gated by MRR ($0 / $15-25K / $30-50K / $75-150K+ triggers). Responsibilities, requirements, scorecards.",
+      "lines": 720,
+      "data_type": "hybrid",
+      "quality_score": 7.5,
+      "note": "Consolidates tabs 644, 658-666, 668. CEO/CFO/VP marked Phase 3+ (post-PMF). Operator + 3 PMs are Phase 1-2 focus."
+    },
+    {
+      "filename": "compensation_framework.md",
+      "description": "Equity vs cash trade-offs, operator equity model (10-25% with dilution waterfall), market data sources (Levels.fyi, Pave, Carta), negotiation framework, 4-year vesting standard",
+      "lines": 420,
+      "data_type": "narrative",
+      "quality_score": 8.0,
+      "note": "Consolidates tabs 645, 667. Dialogue upgrade: dilution waterfall example shows founder+operator+SAFE stacking math."
+    },
+    {
+      "filename": "industry_perspectives.md",
+      "description": "2026 D2C hiring landscape (4.5% unemployment, 85% remote preference, contractor marketplaces), remote vs in-person trade-offs, hybrid creative sprint model, sourcing channels (Upwork/Contra/Twitter/communities)",
+      "lines": 380,
+      "data_type": "narrative",
+      "quality_score": 8.5,
+      "note": "7 2026 web sources (Upwork, FlexJobs, Ravio, Trends.vc, AngelList). Dialogue upgrade: hybrid sprint model (3-5 days every 6-8 weeks)."
+    },
+    {
+      "filename": "dialogue_summary.md",
+      "description": "6-round expert persona dialogue (HR Professional, Startup Recruiter, D2C Founder) to saturation, 6 upgrades applied (PM competence embedding, pipeline-building, dilution waterfall, firing timing, community sourcing, hybrid model)",
+      "lines": 280,
+      "data_type": "narrative",
+      "quality_score": 9.0,
+      "note": "100% upgrade efficiency (6 rounds, 6 upgrades, saturation achieved). All upgrades actionable."
+    },
+    {
+      "filename": "quality_assessment.md",
+      "description": "5-dimension self-grade rubric (Evidence 8.5/10, Honesty 9.0/10, Upgrade Paths 8.0/10, Actionability 8.0/10, Reusability 7.5/10) with upgrade shopping list to 9.0/10",
+      "lines": 320,
+      "data_type": "narrative",
+      "quality_score": 9.0,
+      "note": "Overall 8.0/10. Path to 9.0+: real hiring data Month 3-4, operator equity precedent from Nilo, time actual onboarding."
+    },
+    {
+      "filename": "workshop_summary.md",
+      "description": "Complete workshop summary: input (31 tabs), process (11 phases), output (8 files), key innovations (PM Competence, operator equity, 3-4 PM constraint, pipeline-building, hybrid model, community sourcing), evidence quality breakdown",
+      "lines": 410,
+      "data_type": "narrative",
+      "quality_score": 8.5,
+      "note": "Comprehensive workshop documentation with explicit intelligence gaps and upgrade paths."
+    }
+  ],
+  "opkits": ["OK-M31-001"],
+  "feeds_into": ["All operational TUPs requiring human labor (M1 Labor Chain, M9 Ecommerce, M12 Creative, M13 Media Buying, M17-M22 Retention, M24 Fulfillment, M30 Analytics, M35 Execution)"],
+  "requires": ["M0 Trade Thesis — strategic direction, revenue targets", "M3 Financial Model — cash runway, MRR triggers for hiring", "M2 Entity & Legal — cap table structure, equity pool"],
+  "key_blockers": "NONE. All critical path items have precedent or fallback. Pre-launch status means IonWave hiring timing is C/D-grade (validated Month 1-6). Operator equity negotiation requires Studio 4 precedent (ask Nilo).",
+  "next_action": "Month 1-2: Post operator role (Upwork + Twitter + referrals), build pipeline 4-6 weeks before Month 3-4 hire. Operator Day 1 onboarding (8-11 hrs), execute PM Competence scorecard (score >60 before ad spend). Month 3-4: Hire Creative PM if $15-25K MRR + creative bottleneck. Maintain 3-4 PM maximum constraint.",
+  "intelligence_gaps": [
+    {
+      "gap": "Operator equity split precedent (Studio 4 historical)",
+      "grade": "C",
+      "upgrade": "B: Ask Nilo for 2-3 anonymized examples. A: Document negotiation ranges, formalize Studio valuation methodology."
+    },
+    {
+      "gap": "First hire timing for IonWave ($15K? $25K? Burnout trigger?)",
+      "grade": "D",
+      "upgrade": "B: Track founder hrs/week Month 1-3, if >60 hrs sustained + revenue >$15K MRR, start recruiting."
+    },
+    {
+      "gap": "PM Competence Framework real-world validation",
+      "grade": "C",
+      "upgrade": "B: Test with Month 3-4 Creative PM hire. A: Refine questions based on actual operator performance correlation."
+    },
+    {
+      "gap": "Contractor marketplace quality (Upwork vs Contra vs Freelancer)",
+      "grade": "C",
+      "upgrade": "B: Test all 3 platforms Month 1-2, document quality/cost/speed. A: Build preferred vendor list."
+    },
+    {
+      "gap": "Onboarding time estimate (8-11 hrs Day 1)",
+      "grade": "C",
+      "upgrade": "A: Time actual onboarding Month 3-4, validate or adjust estimate."
+    },
+    {
+      "gap": "Firing protocol effectiveness (avoid Friday + holiday timing)",
+      "grade": "B",
+      "upgrade": "A: If firing occurs, document humane process adherence, legal clearance, network access timing."
+    },
+    {
+      "gap": "Hybrid creative sprint ROI ($2-6K/year travel cost)",
+      "grade": "C",
+      "upgrade": "B: Execute 1-2 sprints, measure creative output quality vs remote-only baseline. A: Formalize sprint cadence + budget allocation."
+    },
+    {
+      "gap": "Community engagement sourcing conversion rate",
+      "grade": "C",
+      "upgrade": "B: Track Trends.vc/Discord engagement → hire conversion. A: Document playbook refinements."
+    }
+  ]
+}

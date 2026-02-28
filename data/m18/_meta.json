@@ -1,0 +1,56 @@
+{
+  "tup_id": "m18",
+  "tup_name": "Email Lifecycle Flows",
+  "cluster": "BCL-4",
+  "version": "1.0.0",
+  "workshopped_date": "2026-02-09",
+  "protocol": "TWP-001 v2.0.0",
+  "quality_score": 8.7,
+  "danilo_tabs": [
+    { "index": 432, "name": "P-M18", "type": "structural" },
+    { "index": 433, "name": "C-M18", "type": "structural" },
+    { "index": 434, "name": "IP-M18", "type": "structural" },
+    { "index": 435, "name": "Email Welcome", "type": "content", "quality": "STRONG", "rows": 104 },
+    { "index": 436, "name": "Email Cart Abandoned", "type": "content", "quality": "STRONG", "rows": 53 },
+    { "index": 437, "name": "Email Post-Purchase", "type": "content", "quality": "STRONG", "rows": 130 },
+    { "index": 438, "name": "Welcome Series", "type": "content", "quality": "TEMPLATE", "rows": 38 },
+    { "index": 439, "name": "Welcome Series Flow", "type": "content", "quality": "TEMPLATE", "rows": 25 },
+    { "index": 440, "name": "Abandoned Cart Sequence", "type": "content", "quality": "TEMPLATE", "rows": 41 },
+    { "index": 441, "name": "Abandoned Cart Flow", "type": "content", "quality": "TEMPLATE", "rows": 29 },
+    { "index": 442, "name": "Post-Purchase Sequence", "type": "content", "quality": "TEMPLATE", "rows": 39 },
+    { "index": 443, "name": "Post-Purchase Flow", "type": "content", "quality": "TEMPLATE", "rows": 24 },
+    { "index": 444, "name": "Win-Back Sequence", "type": "content", "quality": "GOOD", "rows": 30 },
+    { "index": 445, "name": "Win-Back Flow", "type": "content", "quality": "TEMPLATE", "rows": 22 },
+    { "index": 446, "name": "Lifecycle Automations", "type": "content", "quality": "STRONG", "rows": 14 },
+    { "index": 447, "name": "V-M18", "type": "structural" }
+  ],
+  "output_files": [
+    "welcome_and_nurture.md",
+    "cart_recovery.md",
+    "post_purchase_and_retention.md",
+    "winback_and_lifecycle.md"
+  ],
+  "opkits": ["OK-M18-001"],
+  "dialogue": {
+    "rounds": 6,
+    "personas": 3,
+    "upgrades": 14,
+    "unresolved": 0
+  },
+  "corrections": [
+    "M18 is 'Email Lifecycle Flows', not 'SMS' as listed in tracker/registry",
+    "Product format standardized to 'sachet' (tabs 442/443 said 'scoop')",
+    "PP5 statistics flagged as aspirational (Confidence: D) until validated",
+    "AC2 objection handling rewritten: lead with result, not science defense",
+    "AC3 auto-apply free shipping instead of discount code"
+  ],
+  "hypothesis_links": ["HYP-002", "HYP-006"],
+  "cross_tup": ["m17", "m9", "m19", "m16", "m21", "m30"],
+  "intelligence_gaps": [
+    { "gap": "IonWave customer statistics (PP5)", "grade": "D", "upgrade_path": "Validate with real survey data after Month 3" },
+    { "gap": "Supplement-specific email benchmarks", "grade": "C", "upgrade_path": "Track IonWave-specific metrics from Day 1, compare to health/wellness vertical averages" },
+    { "gap": "Klaviyo AI features effectiveness", "grade": "C", "upgrade_path": "Test Personalized Send Time and Channel Affinity after 30 days of data" },
+    { "gap": "Cart vs. Checkout abandonment split performance", "grade": "D", "upgrade_path": "Measure after first 200 entries in each flow" },
+    { "gap": "Browse abandonment viability at IonWave scale", "grade": "D", "upgrade_path": "Evaluate when product page traffic exceeds 500/month" }
+  ]
+}

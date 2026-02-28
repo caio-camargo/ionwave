@@ -1,0 +1,62 @@
+{
+  "tup_id": "m10",
+  "tup_name": "Pricing & Offer",
+  "cluster": "BCL-5",
+  "cluster_name": "Growth & Market",
+  "status": "workshopped",
+  "current_version": "1.0.0",
+  "current_quality": 7.4,
+  "sheet_count": 6,
+  "sheets": [
+    {"id": "offer_strategy", "title": "Offer Strategy", "file": "offer_strategy.md", "data_type": "narrative"},
+    {"id": "price_testing_framework", "title": "Price Testing Framework", "file": "price_testing_framework.md", "data_type": "narrative"},
+    {"id": "product_customization", "title": "Product Customization", "file": "product_customization.md", "data_type": "narrative"},
+    {"id": "sku_architecture", "title": "SKU Architecture", "file": "sku_architecture.md", "data_type": "narrative"},
+    {"id": "product_roadmap", "title": "Product Roadmap", "file": "product_roadmap.md", "data_type": "narrative"},
+    {"id": "upsell_page_copy", "title": "Upsell Page Copy", "file": "upsell_page_copy.md", "data_type": "narrative"}
+  ],
+  "files": [
+    "offer_strategy.md",
+    "price_testing_framework.md",
+    "product_customization.md",
+    "sku_architecture.md",
+    "product_roadmap.md",
+    "upsell_page_copy.md",
+    "dialogue_summary.md",
+    "_meta.json"
+  ],
+  "opkits": ["OK-M10-001"],
+  "feeds_into": ["m3", "m15", "m12", "m21"],
+  "requires": ["m0", "m26", "m27"],
+  "key_blockers": "PT-001 ($49 vs $59) still running — entire pricing architecture conditional on result. Follow-on capital needed for Wave 2 SKU expansion.",
+  "next_action": "Await PT-001 completion. If $59 wins, architecture is confirmed. If $49 wins, revision needed across all tabs.",
+  "intelligence_gaps": [
+    "PT-001 not concluded — base price uncertain",
+    "No segment-specific pricing data",
+    "Bundle conversion data missing",
+    "Flavored production COGS not confirmed",
+    "Customer demand for flavored marine plasma untested"
+  ],
+  "revisions": [
+    {
+      "version": "1.0.0",
+      "date": "2026-02-06",
+      "actor": "Caio + Claude (claude-opus-4-6)",
+      "change_type": "initial_workshop",
+      "protocol_used": "TWP-001 v2.0.0",
+      "what_changed": "Initial workshop: 6 content tabs filled from financial model data, M21 subscription research, competitive intelligence, and price testing log. Subscription-first pricing architecture with $59 base, 15% subscription discount, wave-gated SKU roadmap.",
+      "quality_score": 7.4,
+      "quality_rationale": "Strong evidence base from existing project data (financial model, competitive intel, M21). Confidence limited by PT-001 still running and lack of real customer data. All claims properly graded. Dialogue produced 4 upgrades including HYP-004 revision flag.",
+      "dialogue_ref": {
+        "file": "dialogue_summary.md",
+        "tup_version": "1.0.0",
+        "personas": ["Skeptical Investor", "Growth Engineer", "Brand Strategist"],
+        "rounds": 8,
+        "saturated": true,
+        "upgrades": 4,
+        "unresolved": 0
+      },
+      "hypotheses_affected": ["HYP-002", "HYP-004", "HYP-005", "HYP-003.4"]
+    }
+  ]
+}

@@ -1,0 +1,236 @@
+{
+  "title": "Referral Program Design",
+  "source_tab": "490_referral_program_design",
+  "tup_id": "M22",
+  "tup_version": "1.0.0",
+  "summary": "IonWave referral program architecture: $10/$10 store credit structure, phased platform rollout, and metrics framework. Validated against DTC supplement benchmarks.",
+  "core_principle": "Referral programs AMPLIFY existing product-market fit — they do not create it. Do not invest in referral infrastructure until organic advocacy signals emerge (unsolicited sharing, positive reviews, NPS >= 8). The phased rollout below reflects this.",
+
+  "why_referrals_matter": {
+    "evidence": [
+      "Referred customers have 16-25% higher LTV and 18% lower churn (Wharton School, Schmitt et al.)",
+      "Referral CAC is a fraction of paid acquisition ($13.40 vs $35 target paid CAC for IonWave)",
+      "Social proof is embedded in the acquisition mechanism",
+      "Referrers themselves have 2-4x higher LTV and 20-30% lower churn (consistency principle)",
+      "Compounds over time — customers refer customers",
+      "Validates product-market fit when referral rate exceeds 3%"
+    ]
+  },
+
+  "incentive_structure": {
+    "recommended": {
+      "name": "Give $10, Get $10 (Store Credit)",
+      "referrer_gets": "$10 store credit on next order",
+      "friend_gets": "$10 off first order",
+      "rationale": "At $59 one-time / $50.15 subscription, $10 = 17-20% discount. Research consensus is 15-25% is the sweet spot. Below 10% doesn't motivate; above 25% attracts deal-seekers who churn faster."
+    },
+    "economics": {
+      "referral_cac": "$13.40 (blended: $10 friend discount + ~$3.40 marginal COGS when referrer redeems credit)",
+      "vs_paid_cac": "$35 target — referral is 62% cheaper",
+      "first_order_gp_one_time": "$25.60 net GP ($59 - $10 discount - $20 COGS - $3.40 credit cost)",
+      "first_order_gp_subscription": "$16.75 net GP ($50.15 - $10 discount - $20 COGS - $3.40 credit cost)",
+      "vs_paid_first_order": "Paid acquisition first-order net GP is -$1.31 — doesn't break even until Order 2"
+    },
+    "danilo_validation": "Danilo recommended '$10/$10' — research confirms this is sound. One adjustment: make referrer reward a store credit, not cash. Cash drains cash; store credit drives re-engagement.",
+    "guard_rail": "Do NOT exceed $15 friend discount. At $15 off $50.15 subscription, IonWave nets only $15.15 GP — dangerously thin.",
+    "alternatives_considered": [
+      {
+        "structure": "Give 20%, Get 20%",
+        "referrer_gets": "20% of friend's order",
+        "friend_gets": "20% off",
+        "pros": "Scales with order value",
+        "cons": "Complex tracking, variable cost, harder to communicate",
+        "verdict": "Defer to Phase 2"
+      },
+      {
+        "structure": "Free Product",
+        "referrer_gets": "Free product",
+        "friend_gets": "Free product",
+        "pros": "Highest perceived value (AG1, LMNT use this)",
+        "cons": "Requires multi-SKU or sample pack. COGS $20/unit is high for single-SKU brand",
+        "verdict": "Unlock when Wave 2 Starter Kit ($8-10 COGS, $25 perceived value) exists"
+      },
+      {
+        "structure": "Points/Rewards",
+        "referrer_gets": "Points toward products",
+        "friend_gets": "Points",
+        "pros": "Gamification",
+        "cons": "Complexity unjustified below 500 active referrers",
+        "verdict": "Defer"
+      },
+      {
+        "structure": "Tiered (escalating rewards)",
+        "referrer_gets": "Increasing rewards per referral milestone",
+        "friend_gets": "Same",
+        "pros": "Motivates multiple referrals, can increase volume 20-40%",
+        "cons": "Complexity not justified at early scale",
+        "verdict": "Introduce after 6+ months of data"
+      }
+    ]
+  },
+
+  "phased_rollout": {
+    "phase_0": {
+      "name": "Manual MVP",
+      "timeline": "Month 2-3",
+      "cost": "$0",
+      "description": "Create 10-20 unique Shopify discount codes for most engaged customers. Personal outreach via email/DM. Track in spreadsheet.",
+      "exit_criteria": "2-3 successful manual referrals = signal to automate"
+    },
+    "phase_1": {
+      "name": "Platform Launch",
+      "timeline": "Month 3-12",
+      "cost": "$0-59/month",
+      "platform": "Smile.io free tier (upgrade to $49/mo if volume warrants) OR ReferralCandy ($59/mo)",
+      "description": "Automate post-purchase referral flows. Integrate with Klaviyo lifecycle emails. Add referral CTA to post-purchase page, account page, package insert.",
+      "integration_note": "CHECK: Does Loop Subscriptions integrate with Smile.io/ReferralCandy? Avoid data silos between subscription management and referral tracking."
+    },
+    "phase_2": {
+      "name": "Optimize & Scale",
+      "timeline": "Month 12+",
+      "cost": "Based on volume",
+      "description": "Test higher incentives if referral rate >5%. Consider tiered rewards. Evaluate platform upgrade. Test product-based referral incentive once Starter Kit exists."
+    }
+  },
+
+  "platform_comparison": [
+    {
+      "platform": "Shopify native (manual codes)",
+      "monthly_cost": "$0",
+      "setup_effort": "Built-in",
+      "verdict": "Phase 0 MVP"
+    },
+    {
+      "platform": "Smile.io",
+      "monthly_cost": "Free tier, then $49-599/mo",
+      "setup_effort": "Native Shopify app, very easy",
+      "verdict": "RECOMMENDED Phase 1. Free tier lets you test."
+    },
+    {
+      "platform": "ReferralCandy",
+      "monthly_cost": "$59-299/mo + commission",
+      "setup_effort": "Native Shopify app, ~1 hour",
+      "verdict": "Phase 1 alternative if dedicated referral tool preferred"
+    },
+    {
+      "platform": "Friendbuy",
+      "monthly_cost": "$249+/mo",
+      "setup_effort": "API integration",
+      "verdict": "Too expensive. Enterprise-focused. Phase 2+ only."
+    },
+    {
+      "platform": "Referral Rock",
+      "monthly_cost": "$200+/mo",
+      "setup_effort": "Integration available",
+      "verdict": "Too expensive. More B2B focused."
+    }
+  ],
+
+  "triggers": [
+    "After first purchase (post-purchase confirmation page)",
+    "After positive review submission",
+    "In post-purchase email sequence (Day 14 — peak enthusiasm window)",
+    "Account page (persistent visibility)",
+    "Package insert (physical touchpoint)",
+    "After NPS score >= 8"
+  ],
+
+  "referral_messaging": {
+    "principle": "Frame as sharing knowledge, not sharing a discount",
+    "examples": [
+      "Share the science of 78 ocean minerals with someone you care about",
+      "Know someone who takes electrolytes? Give them the ocean's version.",
+      "Give $10 off to a friend, get $10 credit for yourself"
+    ],
+    "danilo_note": "Danilo's triggers list is solid. Adding NPS-based trigger and emphasizing education-forward messaging per research."
+  },
+
+  "metrics": {
+    "year_1_targets": {
+      "referral_rate": "3-5% (% of customers who refer)",
+      "referral_conversion": "10-15% (% of referred who purchase)",
+      "referral_cac": "<$15 (cost per referred customer)",
+      "referred_ltv": ">baseline D2C LTV (expect +8-20%)",
+      "viral_coefficient": "0.15-0.30",
+      "revenue_from_referrals": "2-5% of total revenue"
+    },
+    "danilo_target_assessment": {
+      "referral_rate_5pct": "Achievable — upper end of realistic Year 1 range",
+      "conversion_20pct": "Aspirational — best-in-class territory. Target 10-15% initially.",
+      "viral_coefficient_0_5": "AGGRESSIVE — 0.5 is best-in-class (AG1-level). Recalibrate to 0.15-0.30 for Year 1, treat 0.5 as Year 2+ goal.",
+      "referral_cac_15": "Achievable at $13.40 blended cost"
+    }
+  },
+
+  "best_in_class_examples": [
+    {
+      "brand": "AG1 (Athletic Greens)",
+      "price": "~$79/month",
+      "structure": "Free product (5 travel packs) as referral incentive",
+      "platform": "Custom-built (enterprise)",
+      "takeaway": "Product-based referral has highest perceived value. IonWave can replicate once Starter Kit exists."
+    },
+    {
+      "brand": "LMNT",
+      "price": "~$45/box",
+      "structure": "Free sample pack as referral + top-of-funnel acquisition",
+      "platform": "Custom",
+      "takeaway": "5-sachet sample pack (COGS ~$3-4) could be powerful Wave 2 referral reward."
+    },
+    {
+      "brand": "Seed",
+      "price": "~$50/month",
+      "structure": "$10/$10 discount/credit",
+      "platform": "Standard",
+      "takeaway": "Education-driven sharing. Science story is natural referral hook — directly analogous to IonWave."
+    },
+    {
+      "brand": "Ritual",
+      "price": "~$33-36/month",
+      "structure": "$10/$10 account credit",
+      "platform": "Friendbuy",
+      "takeaway": "Proves $10/$10 works at comparable price points. Most directly analogous structure."
+    }
+  ],
+
+  "referrer_retention_effect": {
+    "finding": "Referring increases both referrer and referred LTV",
+    "data_points": [
+      "Referred customers: 16-25% higher LTV, 18% lower churn",
+      "Referrers: 2-4x higher LTV, 20-30% lower churn",
+      "Mechanism: consistency principle (canceling after recommending creates cognitive dissonance) + store credit creates financial re-engagement incentive"
+    ],
+    "projected_impact": {
+      "non_referring_subscriber": {"monthly_churn": "12%", "avg_months": 8.3, "ltv_gp": "$250"},
+      "referring_subscriber": {"monthly_churn": "8-10%", "avg_months": "10-12.5", "ltv_gp": "$300-375"},
+      "referred_subscriber": {"monthly_churn": "10-11%", "avg_months": "9-10", "ltv_gp": "$270-300"}
+    },
+    "caveat": "Blended LTV impact across total base is modest (~1-2% lift) because only 3-5% of customers actually refer. Primary ROI is CAC reduction, not retention bonus."
+  },
+
+  "implementation_checklist": [
+    {"task": "Validate Loop Subscriptions referral integration capability", "phase": 0, "owner": "Caio"},
+    {"task": "Create 10-20 manual referral codes in Shopify", "phase": 0, "owner": "Caio"},
+    {"task": "Add 'Would you recommend us?' to post-purchase survey", "phase": 0, "owner": "Caio"},
+    {"task": "Design referral messaging (education-forward, not discount-forward)", "phase": 0, "owner": "Caio"},
+    {"task": "Install Smile.io free tier (if manual MVP shows traction)", "phase": 1, "owner": "Caio"},
+    {"task": "Add referral CTA to post-purchase page", "phase": 1, "owner": "Caio"},
+    {"task": "Add referral section to account page", "phase": 1, "owner": "Caio"},
+    {"task": "Create referral email in Klaviyo (Day 14 post-purchase)", "phase": 1, "owner": "Caio"},
+    {"task": "Design referral card for package insert", "phase": 1, "owner": "Caio"},
+    {"task": "Set up referral metrics tracking in dashboard", "phase": 1, "owner": "Caio"},
+    {"task": "Test higher incentives if referral rate >5%", "phase": 2, "owner": "Caio"},
+    {"task": "Evaluate product-based referral once Starter Kit exists", "phase": 2, "owner": "Caio"}
+  ],
+
+  "intelligence_gaps": [
+    "CRITICAL: Loop Subscriptions + Smile.io/ReferralCandy integration unverified. If they don't integrate, the founder has two separate customer databases. Verify BEFORE committing to either platform.",
+    "Current AG1, LMNT, Seed, Ritual program structures may have changed since early 2025",
+    "2026 pricing for Smile.io, ReferralCandy needs live verification",
+    "Seaonic/Quinton/Totum Sport referral programs not researched (direct competitors)",
+    "M14 (Testing) dependency: creative testing matrix / angle taxonomy needed for systematic creative iteration"
+  ],
+
+  "confidence_grade": "C+",
+  "confidence_rationale": "Strong structural framework backed by research benchmarks. Weakened by: no IonWave-specific data (pre-launch), platform pricing may have shifted, competitor program details from early 2025 training data."
+}

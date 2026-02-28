@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>M26 Competitive Intel - IonWave</title>
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+
+  <header class="header">
+    <div class="header-left">
+      <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+        <path d="M2 18 Q7 10 14 14 Q21 18 26 10" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+        <path d="M2 14 Q7 6 14 10 Q21 14 26 6" stroke="#22c55e" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.5"/>
+      </svg>
+      <h1 class="header-title">M26 COMPETITIVE INTEL</h1>
+    </div>
+    <div class="header-right">
+      <div class="header-meta">
+        <span class="header-meta-label">Quality:</span>
+        <span id="quality-score">--</span>
+      </div>
+      <div class="header-meta">
+        <span class="header-meta-label">Version:</span>
+        <span id="version">--</span>
+      </div>
+    </div>
+  </header>
+
+  <nav class="nav-bar">
+    <a href="../index.html">Mission Control</a>
+    <a href="tup-navigator.html">TUP Navigator</a>
+    <a href="m0-trade-thesis.html">M0 Trade Thesis</a>
+    <a href="m26-competitive-intel.html" class="active">M26 Competitive Intel</a>
+    <a href="m27-customer-research.html">M27 Customer Research</a>
+  </nav>
+
+  <div id="file-header"></div>
+
+  <div class="page-content">
+    <div id="meta-section" class="section-grid grid-2" style="margin-bottom: var(--gap-lg);">
+      <div class="loading">Loading metadata...</div>
+    </div>
+
+    <div id="sheets-container">
+      <div class="loading">Loading sheets...</div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    IonWave Mission Control &middot; Trade #84 &middot;
+    <a href="../index.html">&larr; Back to Mission Control</a>
+  </footer>
+
+  <script src="../js/data-loader.js"></script>
+  <script src="../js/renderers.js"></script>
+  <script>
+    const FILE_ID = 'm26_competitive_intel';
+
+    document.addEventListener('DOMContentLoaded', async function() {
+      const meta = await DataLoader.loadFileMeta(FILE_ID);
+      if (!meta) {
+        document.getElementById('meta-section').innerHTML =
+          Renderers.emptyState('Failed to load metadata');
+        return;
+      }
+
+      document.getElementById('file-header').innerHTML = Renderers.fileHeader(meta);
+      document.getElementById('quality-score').innerHTML = Renderers.qualityScore(meta.quality_score);
+      document.getElementById('version').textContent = 'v' + meta.version;
+
+      let metaHtml = '';
+      metaHtml += Renderers.card('Feeds Into', Renderers.dependencyTags(meta.feeds_into));
+      metaHtml += Renderers.card('Key Blockers',
+        `<p style="font-size:var(--font-size-sm); color:var(--text-secondary);">${Renderers.escapeHtml(meta.key_blockers)}</p>
+        <p style="font-size:var(--font-size-xs); color:var(--text-dim); margin-top:var(--gap-sm);">
+          <strong>Next Action:</strong> ${Renderers.escapeHtml(meta.next_action)}
+        </p>`,
+        Renderers.statusBadge('draft')
+      );
+
+      if (meta.feedback_loops && meta.feedback_loops.length > 0) {
+        let loopsHtml = '';
+        for (const loop of meta.feedback_loops) {
+          loopsHtml += `<div style="padding:var(--gap-sm) 0; border-bottom:1px solid rgba(255,255,255,0.04);">
+            <div style="font-size:var(--font-size-xs); color:var(--text-dim);">${Renderers.escapeHtml(loop.from)}</div>
+            <div style="font-size:var(--font-size-sm); color:var(--text-secondary); margin-top:2px;">${Renderers.escapeHtml(loop.tension)}</div>
+            <span class="badge badge-warning" style="margin-top:4px;">${loop.status}</span>
+          </div>`;
+        }
+        metaHtml += Renderers.card(`Feedback Loops (${meta.feedback_loops.length})`, loopsHtml);
+      }
+
+      document.getElementById('meta-section').innerHTML = metaHtml;
+
+      const allSheets = await DataLoader.loadAllSheets(FILE_ID);
+      const container = document.getElementById('sheets-container');
+      let sheetsHtml = '';
+
+      for (const sheetMeta of meta.sheets) {
+        const sheetData = allSheets[sheetMeta.id];
+
+        sheetsHtml += `<div class="section-divider">
+          <h2 class="section-title">${Renderers.escapeHtml(sheetMeta.title)}</h2>
+        </div>`;
+
+        if (sheetData) {
+          sheetsHtml += `<div style="display:flex; gap:var(--gap-sm); align-items:center; margin-bottom:var(--gap-md); font-size:var(--font-size-xs); color:var(--text-dim);">
+            <span>Type: ${sheetData._meta.data_type}</span>
+            <span>&middot;</span>
+            ${Renderers.qualityScore(sheetData._meta.quality_score)}
+            <span>&middot;</span>
+            ${Renderers.statusBadge(sheetData._meta.status)}
+            ${sheetData._meta.note ? `<span style="margin-left:var(--gap-sm);" data-tooltip="${Renderers.escapeHtml(sheetData._meta.note)}">&#9432;</span>` : ''}
+          </div>`;
+
+          sheetsHtml += `<div class="card"><div class="card-body">
+            ${Renderers.autoRender(sheetData)}
+          </div></div>`;
+        } else {
+          sheetsHtml += Renderers.emptyState('Sheet data not yet migrated');
+        }
+      }
+
+      container.innerHTML = sheetsHtml;
+    });
+  </script>
+
+</body>
+</html>

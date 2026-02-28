@@ -1,0 +1,58 @@
+{
+  "tup_id": "M36",
+  "tup_name": "Operational Infrastructure",
+  "cluster": "BCL-6",
+  "status": "migrated",
+  "quality_score": 8.1,
+  "quality_assessment": "Strong systems-thinking foundation from Danilo. Company-as-a-system model is the best conceptual framework in the whole ops cluster. Risk register is complete and actionable. CM authority model correctly flagged as TBD. Performance monitoring has the right thresholds but Phase 2 automation blocked on DEC-2026-02-17-003. One structural gap: IP tab (800) was empty — industry perspectives section thin.",
+  "source_tabs_count": 43,
+  "source_sheets": "798-844 (P-M36 through end of M36)",
+  "output_files": [
+    "operational_system.md",
+    "decision_rights.md",
+    "knowledge_management.md",
+    "risk_and_continuity.md",
+    "performance_monitoring.md",
+    "opkit_operational_infrastructure.md"
+  ],
+  "opkit_id": "OK-M36-001",
+  "workshop_date": "2026-02-17",
+  "workshopped_by": "Claude (TWP-001 v2.0.0)",
+  "dialogue_rounds": 5,
+  "dialogue_upgrades": 7,
+  "key_innovations": [
+    "Company-as-a-system: 7 subsystems with inputs/outputs/metrics/owners — optimize the system not the parts",
+    "Capabilities maturity 1-4 scoring across 11 domains — gives a single number for operational readiness",
+    "CM authority model: two variants (Solo Founder and CM Model) documented explicitly, not collapsed",
+    "Never-go-cold protocol: minimum viable ops week prevents neglect decay during low-activity periods",
+    "Risk register with L×I scoring: pre-launch risk map with mitigation owners and triggers",
+    "Phase 1 / Phase 2 monitoring: repo-based reviews now, automated API triggers post-launch"
+  ],
+  "intelligence_gaps": [
+    "CM hire threshold: at what MRR/complexity does CM become necessary? (DECISION TBD)",
+    "Monitoring system architecture: GitHub Actions vs Apps Script (DEC-2026-02-17-003 TBD)",
+    "Industry perspectives section: IP-M36 tab was empty — no external benchmarking data incorporated",
+    "Capability target timelines: M6 and M18 targets are rough estimates, not validated benchmarks",
+    "Key person insurance: coverage amount and provider not yet specified"
+  ],
+  "decision_tbds": [
+    "CM Authority Model — when to activate 3-tier authority (flagged in decision_rights.md)",
+    "Monitoring System Architecture — DEC-2026-02-17-003 (flagged in performance_monitoring.md)"
+  ],
+  "feeds_into": [
+    "M9 (ecommerce infra)",
+    "M25 (financial ops)",
+    "M30 (analytics)",
+    "M31 (hiring)"
+  ],
+  "requires": [
+    "M0 (trade thesis)",
+    "M3 (financial model)",
+    "M24 (fulfillment)"
+  ],
+  "key_blockers": [
+    "CM authority model decision",
+    "Anthropic API key for monitoring system"
+  ],
+  "next_action": "Expert review of risk register + CM authority model decision with Danilo"
+}

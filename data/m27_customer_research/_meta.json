@@ -1,0 +1,107 @@
+{
+  "tup_id": "m27",
+  "tup_name": "Customer Research",
+  "title": "Customer Research (ICP + VOC)",
+  "tier": 1,
+  "version": "2.0.0",
+  "quality_score": "6.5/10",
+  "audited": true,
+  "audited_session": "Session #5",
+  "last_updated": "2026-02-06",
+  "updated_by": "claude-sonnet-4.5",
+  "migration_notes": {
+    "date": "2026-02-06",
+    "description": "TUP migration: Merged 03A_Customer_Research_ICP and 03B_Customer_Research_VOC into unified M27 Customer Research module",
+    "source_files": ["03A_Customer_Research_ICP.xlsx", "03B_Customer_Research_VOC.xlsx"],
+    "bootstrap_files": ["03a_customer_research_icp", "03b_customer_research_voc"]
+  },
+  "sheets": [
+    {"id": "customer_archetypes", "title": "Customer Archetypes", "data_type": "structured_table", "source": "03A", "note": "Core personas and archetypes"},
+    {"id": "customer_segmentation", "title": "Customer Segmentation", "data_type": "structured_table", "source": "03A"},
+    {"id": "segmentation_matrix", "title": "Segmentation Matrix", "data_type": "structured_table", "source": "03A"},
+    {"id": "icp", "title": "Ideal Customer Profile", "data_type": "hybrid", "source": "03A"},
+    {"id": "psychographic_profiles", "title": "Psychographic Profiles", "data_type": "structured_table", "source": "03A", "note": "Deep psychographic profiles merged from 1&2"},
+    {"id": "customer_data_model", "title": "Customer Data Model", "data_type": "structured_table", "row_count": 15, "source": "03B"},
+    {"id": "customer_feedback_loop", "title": "Customer Feedback Loop", "data_type": "hybrid", "row_count": 8, "source": "03B"},
+    {"id": "interview_playbook", "title": "Customer Interview Playbook", "data_type": "narrative", "source": "03B", "note": "Consolidated from 'Customer Interview Playbook' and 'Customer Interview Playbook 2'"},
+    {"id": "interview_questions", "title": "Customer Interview Questions", "data_type": "narrative", "row_count": 28, "source": "03B"},
+    {"id": "interview_script", "title": "Customer Interview Script", "data_type": "narrative", "source": "03B", "note": "Mom Test-based script for customer discovery interviews"},
+    {"id": "voc_collection", "title": "Voice of Customer Collection", "data_type": "hybrid", "source": "03B", "note": "Consolidated from 'Voice of Customer' and partial 'Voice of Customer Database' templates"},
+    {"id": "voc_database", "title": "VOC Database", "data_type": "structured_table", "row_count": 12, "source": "03B", "note": "Consolidated from 'Voice of Customer Database' and 'Voice of Customer Database 2'"}
+  ],
+  "consolidation_notes": {
+    "03a_original_sheet_count": 6,
+    "03a_migrated_sheet_count": 5,
+    "03a_changes": [
+      "Merged deep_psychographic_profiles 1&2",
+      "ICP Analysis merged into _meta.json analysis_summary"
+    ],
+    "03b_original_sheet_count": 9,
+    "03b_migrated_sheet_count": 7,
+    "03b_changes": [
+      "Merged 'Customer Interview Playbook' and 'Customer Interview Playbook 2' into single 'interview_playbook' file",
+      "Merged 'Voice of Customer' collection templates with 'Voice of Customer Database' structure into 'voc_collection'",
+      "Merged 'Voice of Customer Database' and 'Voice of Customer Database 2' quote records into single 'voc_database'"
+    ],
+    "total_sheet_count": 12
+  },
+  "feeds_into": ["05a_product_strategy", "05b_formulation_supply", "09_brand_messaging", "10a_creative_strategy", "07_offer_strategy", "11a_funnel_strategy"],
+  "requires": ["01_strategic_foundation", "02_market_intelligence"],
+  "feedback_loops": [
+    {
+      "from": "voc_collection",
+      "to": "01_strategic_foundation/interview_insights",
+      "tension": "VOC produced 31 LMNT quotes at saturation. Interview Insights backfilled with LMNT proxy data, labeled as proxy throughout.",
+      "status": "resolved_with_proxy",
+      "discovered": "2026-02-04",
+      "resolution": "Interview Insights backfilled with LMNT proxy data. Must be replaced with IonWave-specific data post-launch."
+    }
+  ],
+  "analysis_deliverable": {
+    "file": "IonWave/ICP_Analysis.md",
+    "version": "1.0.0",
+    "persona_dialogue": {
+      "run_id": "ICP-2026-02-04-001",
+      "source": "03A"
+    }
+  },
+  "key_blockers": "LMNT customer voice at saturation (31 quotes) connected downstream via proxy data; no IonWave-specific interviews yet; Female Wellness ICP needs deeper research",
+  "next_action": "Begin IonWave customer interviews post-launch; validate Female Wellness ICP assumptions; collect fasting-specific VOC",
+  "version_history": [
+    {
+      "version": "2.0.0",
+      "date": "2026-02-06",
+      "description": "TUP migration: Merged 03A and 03B into unified M27 Customer Research module with TUP-based organization",
+      "updated_by": "claude-sonnet-4.5"
+    },
+    {
+      "version": "1.0.1",
+      "date": "2026-02-04",
+      "description": "03B VOC audit and consolidation",
+      "updated_by": "claude-opus-4.5"
+    },
+    {
+      "version": "1.0.0",
+      "date": "2026-02-04",
+      "description": "03A ICP audit and analysis",
+      "updated_by": "claude-opus-4.5"
+    }
+  ],
+  "opkits": [
+    {
+      "opkit_id": "opkit_m27_icp_analysis",
+      "name": "ICP Analysis Framework",
+      "source": "data/m27_customer_research/icp.json",
+      "description": "ICP definition framework with segmentation, archetypes, psychographics",
+      "decision": "Bootstrap canon (implicit from REC-007)"
+    },
+    {
+      "opkit_id": "opkit_m27_voc_protocol",
+      "name": "Voice of Customer Collection Protocol",
+      "source": "data/m27_customer_research/",
+      "description": "Mom Test-based interview protocol with playbook, script, 28 questions, database structure",
+      "decision": "Bootstrap canon (implicit from REC-007)"
+    }
+  ],
+  "opkit_registry": "See data/opkits/registry.json for complete OpKit definitions and navigation"
+}

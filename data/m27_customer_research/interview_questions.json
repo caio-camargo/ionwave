@@ -1,0 +1,88 @@
+{
+  "_meta": {
+    "sheet_name": "Customer Interview Questions",
+    "parent_file": "03b_customer_research_voc",
+    "version": "1.0.0",
+    "last_updated": "2026-02-04",
+    "updated_by": "claude-opus-4.5",
+    "status": "draft",
+    "quality_score": "5/10",
+    "data_type": "narrative",
+    "note": "Standard question bank for customer interviews. Organized by category. Use as a menu - don't ask every question in every interview. Follow the conversation."
+  },
+  "data": {
+    "usage_instructions": "This is a question bank, not a rigid script. Pick 8-12 questions per interview based on the interviewee's profile and where the conversation naturally goes. The best interviews follow the customer's thread, not a checklist.",
+    "categories": [
+      {
+        "category": "Opening",
+        "purpose": "Build rapport and understand their context",
+        "questions": [
+          "Tell me a little about yourself - what does a typical day look like for you?",
+          "How would you describe your approach to health and wellness? Where does it fit in your priorities?",
+          "What got you interested in health optimization / keto / fitness / fasting in the first place?"
+        ]
+      },
+      {
+        "category": "Problem Exploration",
+        "purpose": "Deeply understand pain points and their impact",
+        "questions": [
+          "Walk me through the last time you felt really depleted, low energy, or dehydrated. What was happening?",
+          "How often does low energy, brain fog, or dehydration affect your day? Can you give me a recent specific example?",
+          "What's the most frustrating part of dealing with hydration or electrolyte balance?",
+          "When this problem is at its worst, how does it affect the rest of your life - work, relationships, mood?"
+        ]
+      },
+      {
+        "category": "Current Solutions",
+        "purpose": "Understand competitive landscape from customer perspective",
+        "questions": [
+          "What are you currently doing to manage your hydration and electrolyte intake?",
+          "How did you find out about [their current solution]? What made you choose it?",
+          "On a scale of 1-10, how satisfied are you with your current approach? What would make it a 10?",
+          "What have you tried before that didn't work? Why did you stop using it?"
+        ]
+      },
+      {
+        "category": "Jobs to Be Done",
+        "purpose": "Understand the deeper motivations and desired outcomes",
+        "questions": [
+          "When you reach for an electrolyte product, what are you actually trying to accomplish in that moment?",
+          "If this problem was completely solved, what would be different about your day?",
+          "What does 'feeling optimally hydrated' actually mean to you? What does it feel like?",
+          "Is this something you think about daily, or only when something goes wrong?"
+        ]
+      },
+      {
+        "category": "Purchase Behavior",
+        "purpose": "Understand how they buy and what drives decisions",
+        "questions": [
+          "How much do you spend per month on electrolytes or hydration products?",
+          "Where do you typically buy supplements and health products? Online? Specific stores?",
+          "What would make you switch from your current product to something new?",
+          "When you're deciding between two health products, what are the top 3 things you look at?"
+        ]
+      },
+      {
+        "category": "Product Concept Testing",
+        "purpose": "Gauge reaction to marine plasma concept (use sparingly, late in interview)",
+        "questions": [
+          "Have you ever heard of marine plasma or ocean-sourced minerals?",
+          "What's your initial reaction when I say 'electrolytes sourced from deep ocean water with 78 naturally occurring minerals'?",
+          "If a product like that existed, what questions would you need answered before trying it?",
+          "What would you expect to pay for a premium, ocean-sourced electrolyte product?",
+          "What would make you skeptical about a product making these claims?",
+          "If you tried it and loved it, how would you describe it to a friend?"
+        ]
+      },
+      {
+        "category": "Closing",
+        "purpose": "Wrap up and get referrals",
+        "questions": [
+          "Is there anything I should have asked you that I didn't? Anything else on your mind about this topic?",
+          "Who else do you know who deals with similar hydration or energy challenges? Would you be willing to connect us?",
+          "Would it be okay if I followed up with you when we have something to share? What's the best way to reach you?"
+        ]
+      }
+    ]
+  }
+}

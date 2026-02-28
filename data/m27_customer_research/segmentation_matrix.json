@@ -1,0 +1,140 @@
+{
+  "_meta": {
+    "sheet_name": "Segmentation Matrix (RFM)",
+    "parent_file": "03a_customer_research_icp",
+    "version": "1.0.0",
+    "last_updated": "2026-02-04",
+    "updated_by": "claude-opus-4.5",
+    "status": "draft",
+    "quality_score": "5/10",
+    "data_type": "structured_table",
+    "note": "RFM segmentation template. Count and percentage columns are empty pending launch data. Scoring definitions and segment strategies are defined."
+  },
+  "data": {
+    "rfm_scoring": {
+      "recency": {
+        "description": "How recently did the customer make a purchase?",
+        "scoring": [
+          {"score": 5, "definition": "Purchased within last 30 days"},
+          {"score": 4, "definition": "Purchased within last 60 days"},
+          {"score": 3, "definition": "Purchased within last 90 days"},
+          {"score": 2, "definition": "Purchased within last 180 days"},
+          {"score": 1, "definition": "Purchased 180+ days ago"}
+        ]
+      },
+      "frequency": {
+        "description": "How often does the customer purchase?",
+        "scoring": [
+          {"score": 5, "definition": "10+ orders"},
+          {"score": 4, "definition": "6-9 orders"},
+          {"score": 3, "definition": "3-5 orders"},
+          {"score": 2, "definition": "2 orders"},
+          {"score": 1, "definition": "1 order"}
+        ]
+      },
+      "monetary": {
+        "description": "How much does the customer spend?",
+        "scoring": [
+          {"score": 5, "definition": "Top 10% spenders"},
+          {"score": 4, "definition": "Top 25% spenders"},
+          {"score": 3, "definition": "Top 50% spenders"},
+          {"score": 2, "definition": "Bottom 50% spenders"},
+          {"score": 1, "definition": "Bottom 25% spenders"}
+        ]
+      }
+    },
+    "segments": [
+      {
+        "segment": "Champions",
+        "rfm_range": "R:5, F:5, M:5",
+        "definition": "Best customers. Bought recently, buy often, spend the most.",
+        "customer_count": null,
+        "percentage": null,
+        "strategy": "Reward them. Make them ambassadors. Give early access to new products. Never lose these customers."
+      },
+      {
+        "segment": "Loyal Customers",
+        "rfm_range": "R:3-5, F:4-5, M:3-5",
+        "definition": "Buy frequently and spend well. May not have purchased most recently.",
+        "customer_count": null,
+        "percentage": null,
+        "strategy": "Upsell premium products. Ask for reviews. Invite to referral program. Subscription offers."
+      },
+      {
+        "segment": "Potential Loyalists",
+        "rfm_range": "R:4-5, F:2-3, M:2-3",
+        "definition": "Recent buyers with moderate frequency. Have potential to become loyal.",
+        "customer_count": null,
+        "percentage": null,
+        "strategy": "Offer subscription. Engage with post-purchase education. Build habit formation."
+      },
+      {
+        "segment": "New Customers",
+        "rfm_range": "R:5, F:1, M:1-2",
+        "definition": "Just made first purchase. Critical window to convert to repeat buyer.",
+        "customer_count": null,
+        "percentage": null,
+        "strategy": "Welcome series. Product education. Replenishment reminders. Make first experience exceptional."
+      },
+      {
+        "segment": "Promising",
+        "rfm_range": "R:3-4, F:1-2, M:1-2",
+        "definition": "Somewhat recent buyers who haven't bought much yet.",
+        "customer_count": null,
+        "percentage": null,
+        "strategy": "Create brand awareness. Offer trials. Re-engage with valuable content."
+      },
+      {
+        "segment": "Need Attention",
+        "rfm_range": "R:3, F:3, M:3",
+        "definition": "Average customers in all dimensions. At risk of sliding.",
+        "customer_count": null,
+        "percentage": null,
+        "strategy": "Reactivation campaigns. Limited-time offers. Personalized product recommendations."
+      },
+      {
+        "segment": "About to Sleep",
+        "rfm_range": "R:2-3, F:2, M:2",
+        "definition": "Below average recency and frequency. Showing disengagement signals.",
+        "customer_count": null,
+        "percentage": null,
+        "strategy": "Win-back campaigns. Survey to understand disengagement. Offer incentive to return."
+      },
+      {
+        "segment": "At Risk",
+        "rfm_range": "R:1-2, F:3-5, M:3-5",
+        "definition": "Were great customers but haven't purchased recently. High value at risk of churning.",
+        "customer_count": null,
+        "percentage": null,
+        "strategy": "Urgent win-back. Personalized re-engagement. Direct outreach. Understand what changed."
+      },
+      {
+        "segment": "Hibernating",
+        "rfm_range": "R:1-2, F:1-2, M:1-2",
+        "definition": "Low activity across all dimensions. Last purchase was long ago.",
+        "customer_count": null,
+        "percentage": null,
+        "strategy": "Sunset sequence. Final offers. If no response, move to suppression to protect list health."
+      },
+      {
+        "segment": "Lost",
+        "rfm_range": "R:1, F:1, M:1",
+        "definition": "Lowest scores across all dimensions. Likely churned permanently.",
+        "customer_count": null,
+        "percentage": null,
+        "strategy": "Suppress from regular campaigns. Include in annual re-engagement only. Clean from list after 12 months."
+      }
+    ],
+    "segment_movement_tracking": {
+      "goal": "Track customer movement between RFM segments monthly to identify trends, validate retention strategies, and catch churn signals early.",
+      "cadence": "Monthly RFM recalculation",
+      "key_metrics": [
+        "% of New Customers converting to Potential Loyalists within 60 days",
+        "% of Potential Loyalists converting to Loyal Customers within 6 months",
+        "% of At Risk customers recovered via win-back campaigns",
+        "Average time from Champions to At Risk (churn velocity)"
+      ],
+      "status": "Template - tracking begins post-launch"
+    }
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "tup_id": "m30",
+  "tup_name": "Analytics & Dashboards",
+  "cluster": "BCL-6",
+  "version": "1.0.0",
+  "quality_score": 8.2,
+  "status": "migrated",
+  "workshopped_date": "2026-02-08",
+  "protocol": "TWP-001 v2.0.0",
+  "source_sheets": [
+    { "index": 627, "name": "Data Dictionary", "rows": 8 },
+    { "index": 628, "name": "Reporting Templates", "rows": 8 },
+    { "index": 629, "name": "Metrics Dashboard Master", "rows": 37 },
+    { "index": 630, "name": "Key Metrics Dashboard", "rows": 7 },
+    { "index": 631, "name": "KPI Dashboard", "rows": 7 },
+    { "index": 632, "name": "Red Flag Dashboard", "rows": 22 },
+    { "index": 633, "name": "Cross-Tab Validation Rules", "rows": 27 },
+    { "index": 634, "name": "Data Freshness Requirements", "rows": 48 },
+    { "index": 635, "name": "Screenshot Evidence Log", "rows": 5 }
+  ],
+  "output_files": [
+    "data_dictionary.md",
+    "dashboards_and_reporting.md",
+    "red_flags_and_validation.md",
+    "data_governance.md",
+    "dialogue_summary.md",
+    "opkit_analytics_measurement.md",
+    "_meta.json"
+  ],
+  "consolidation": "9 tabs -> 4 content files + dialogue summary + OpKit",
+  "revision": {
+    "dialogue_ref": "M30-DLG-2026-02-08",
+    "rounds": 6,
+    "upgrades_applied": 13,
+    "unresolved": 0,
+    "personas": ["Data-Obsessed D2C Operator", "Growth Engineer", "Skeptical Investor"]
+  },
+  "hypotheses_affected": ["HYP-001", "HYP-003", "HYP-004", "HYP-008"],
+  "cross_references": {
+    "primary": ["M0 (Thesis — kill criteria source)", "M25 (Financial Ops — Survival Five, 13-week forecast)"],
+    "secondary": ["M28 (channel strategy, attribution)", "M24 (fulfillment/supply chain)", "M19 (CRM lifecycle)", "M17 (email metrics)", "M20 (support/chargeback)", "M10 (pricing)", "M14 (testing)"]
+  },
+  "intelligence_gaps": [
+    "G1: All metrics are targets, no actuals (pre-launch)",
+    "G2: Attribution methodology needs implementation at launch",
+    "G3: Cohort LTV requires 6+ months of data to validate",
+    "G4: Google Sheets MVD template exists as concept, not downloadable file",
+    "G5: Kill thresholds may need calibration after Month 3 with real data",
+    "G6: Graceful degradation untested — may need further simplification"
+  ]
+}

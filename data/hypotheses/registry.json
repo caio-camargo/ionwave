@@ -1,0 +1,1239 @@
+{
+  "_meta": {
+    "version": "2.0.0",
+    "last_updated": "2026-02-06",
+    "purpose": "Central registry of all testable hypotheses underlying the IonWave business model",
+    "total_hypotheses": 19,
+    "top_level_hypotheses": 9,
+    "sub_hypotheses": 9,
+    "decomposed_parents": ["HYP-003", "HYP-006"],
+    "note": "Sub-hypotheses (HYP-003.1-003.4, HYP-006.1-006.5) created via CSP-001 protocol. HYP-009 surfaced as new hypothesis.",
+    "by_state": {
+      "ASSUMED": 19,
+      "TESTING": 0,
+      "VALIDATED": 0,
+      "INVALIDATED": 0,
+      "RETIRED": 0
+    },
+    "by_severity": {
+      "CRITICAL": 4,
+      "HIGH": 4,
+      "MEDIUM": 8,
+      "LOW": 3
+    },
+    "by_grade": {
+      "A": 0,
+      "B": 1,
+      "C": 5,
+      "D": 13
+    }
+  },
+  "hypotheses": [
+    {
+      "id": "HYP-001",
+      "name": "Customer Acquisition Cost (CAC)",
+      "category": "unit_economics",
+      "description": "We can acquire customers at ≤$40 CAC through Meta ads and optimize to ≤$35 within 6 months",
+      "impact_severity": "CRITICAL",
+      "current_state": "ASSUMED",
+      "revisions": [
+        {
+          "revision_id": 1,
+          "date": "2026-02-02",
+          "value": "$35",
+          "grade": "C",
+          "reasoning": "Industry benchmark for DTC supplements. Based on competitor analysis and typical Meta CPMs for health/wellness products. No validation data yet - this is an educated guess from industry standards.",
+          "evidence_type": "benchmark",
+          "evidence_quality": "Secondary research from industry reports and competitor estimates",
+          "supporting_documents": [
+            "data/01_strategic_foundation/assumptions_register.json",
+            "IonWave/Porter_Five_Forces_Analysis.md"
+          ],
+          "changed_by": "claude-opus-4.5",
+          "change_type": "initial",
+          "confidence_factors": {
+            "positive": [
+              "Industry benchmark exists (DTC supplements typically $30-50)",
+              "Competitor data available (LMNT, Liquid IV)"
+            ],
+            "negative": [
+              "No actual ad testing yet",
+              "Marine plasma = niche category (may be higher CAC)",
+              "Rising Meta CPMs (Porter's analysis shows 27% YoY increase)"
+            ]
+          }
+        },
+        {
+          "revision_id": 2,
+          "date": "2026-02-05",
+          "value": "$35 (critical range: $30-45)",
+          "grade": "C",
+          "reasoning": "Financial model sensitivity analysis reveals CAC is THE highest-impact variable on business viability. At $30 CAC, hit $30K MRR in 6 months (optimistic). At $35 CAC, hit target in 18 months (base case). At $45 CAC, never hit target - business not viable. Grade unchanged (still untested), but impact severity elevated to CRITICAL and validation priority set to immediate (first 30 days). Range reflects uncertainty that will collapse with testing.",
+          "evidence_type": "model_analysis",
+          "evidence_quality": "Mathematical modeling based on cohort dynamics, but no empirical validation",
+          "supporting_documents": [
+            "IonWave/Financial_Model_Revenue_Validation.md#section-2-5-sensitivity-analysis",
+            "tracking/Open_Questions.md#Q10",
+            "tracking/Open_Questions.md#Q11"
+          ],
+          "changed_by": "claude-sonnet-4-20250514",
+          "change_type": "revision",
+          "impact_change": "Elevated from HIGH to CRITICAL",
+          "confidence_factors": {
+            "positive": [
+              "Model quantifies exact impact (6mo vs 18mo vs never)",
+              "Porter's provides market context (rising CPMs)"
+            ],
+            "negative": [
+              "Still completely untested",
+              "Category creation typically 3-5x normal CAC",
+              "Zero switching costs increase acquisition difficulty"
+            ]
+          }
+        }
+      ],
+      "current_value": "$35 (range: $30-45)",
+      "current_grade": "C",
+      "validation_plan": {
+        "method": "Track A: Live Meta ad testing with 3-5 creative angles",
+        "cost": "$5K in first 30 days",
+        "timeline": "Month 1-2",
+        "success_criteria": "CAC ≤ $40 with improving trend over first $3K spend",
+        "kill_criteria": "CAC > $50 after $3K spend with no improvement trajectory",
+        "owner": "Caio + Danilo",
+        "validation_triggers": [
+          "100 customers acquired",
+          "$5K total ad spend deployed",
+          "3+ creative angles tested"
+        ]
+      },
+      "feeds_into": ["HYP-005", "HYP-007", "HYP-008"],
+      "depends_on": [],
+      "risk_if_wrong": {
+        "severity": "FATAL",
+        "description": "If actual CAC >$45, business model is not viable at current pricing. LTV:CAC ratio drops below 2.5x kill threshold. Would need to either: (1) pivot positioning to broader market with lower CAC, (2) increase pricing significantly, or (3) kill trade.",
+        "financial_impact": "Every $5 increase in CAC adds 6 months to timeline or makes business non-viable",
+        "mitigation": "Staged capital approach allows early exit at Month 2 checkpoint. $3K test identifies viability before major capital deployment."
+      },
+      "related_hypotheses": {
+        "amplifies": ["HYP-002", "HYP-003"],
+        "mitigated_by": ["HYP-006"]
+      }
+    },
+    {
+      "id": "HYP-002",
+      "name": "Subscription Attach Rate",
+      "category": "unit_economics",
+      "description": "≥50% of first-time customers will opt for subscription (vs. one-time purchase)",
+      "impact_severity": "HIGH",
+      "current_state": "ASSUMED",
+      "revisions": [
+        {
+          "revision_id": 1,
+          "date": "2026-02-02",
+          "value": "50%",
+          "grade": "C",
+          "reasoning": "Based on DTC supplement benchmarks (40-60% typical) and ICP analysis showing subscription-friendly segments (Keto/Carnivore and Biohacker are identity-driven, daily use products). Exhausted Professional is convenience-driven which also supports subscriptions. Grade C because based on category benchmarks but not product-specific data.",
+          "evidence_type": "benchmark",
+          "evidence_quality": "Industry data + ICP behavioral analysis",
+          "supporting_documents": [
+            "data/01_strategic_foundation/assumptions_register.json",
+            "IonWave/ICP_Analysis.md"
+          ],
+          "changed_by": "claude-opus-4.5",
+          "change_type": "initial",
+          "confidence_factors": {
+            "positive": [
+              "ICP segments are subscription-friendly (identity + habit products)",
+              "Electrolyte category has strong subscription precedent (LMNT)",
+              "Daily use product supports habit formation"
+            ],
+            "negative": [
+              "Marine plasma = new category (unknown attachment)",
+              "Higher price point may reduce subscription willingness",
+              "No funnel tested yet"
+            ]
+          }
+        },
+        {
+          "revision_id": 2,
+          "date": "2026-02-05",
+          "value": "50% (target: 60%)",
+          "grade": "C",
+          "reasoning": "Financial model shows subscribers are 6x more valuable than one-time buyers ($159 LTV vs $26). Subscription rate directly impacts timeline: 60% = 15 months to target, 50% = 18 months, 40% = 24+ months or not viable. Recommendation: design subscription-first funnel (default to sub, one-time as 'downgrade') to drive toward 60%. Grade unchanged pending funnel testing.",
+          "evidence_type": "model_analysis",
+          "evidence_quality": "Mathematical impact quantified, but funnel design untested",
+          "supporting_documents": [
+            "IonWave/Financial_Model_Revenue_Validation.md#section-2-5-sensitivity-analysis"
+          ],
+          "changed_by": "claude-sonnet-4-20250514",
+          "change_type": "revision",
+          "confidence_factors": {
+            "positive": [
+              "Model quantifies value (6x LTV multiplier)",
+              "Subscription-first funnel design identified as lever"
+            ],
+            "negative": [
+              "Funnel not designed or tested yet",
+              "Higher pricing may create psychological barrier to subscription commitment"
+            ]
+          }
+        }
+      ],
+      "current_value": "50% (target: 60%)",
+      "current_grade": "C",
+      "validation_plan": {
+        "method": "Track A: Checkout data from first 100 orders; A/B test subscription incentives",
+        "cost": "Included in launch costs",
+        "timeline": "Month 1 (immediate data from launch)",
+        "success_criteria": "≥45% subscription rate in first 100 orders",
+        "kill_criteria": "<35% after first 100 orders signals funnel redesign needed urgently",
+        "owner": "Caio (funnel design) + Danilo (incentive testing)",
+        "validation_triggers": [
+          "100 orders placed",
+          "Subscription vs. one-time split measured",
+          "A/B test: 15% discount vs. free shipping vs. bonus item"
+        ]
+      },
+      "feeds_into": ["HYP-005", "HYP-007"],
+      "depends_on": [],
+      "risk_if_wrong": {
+        "severity": "HIGH",
+        "description": "If subscription rate <40%, one-time buyers don't generate enough LTV to support CAC. Business becomes dependent on repeat one-time purchases (1.35 orders assumed), which is fragile. Timeline extends significantly or business becomes non-viable.",
+        "financial_impact": "Every 10% drop in subscription rate adds 3-6 months to timeline",
+        "mitigation": "Subscription-first funnel design, aggressive email nurture for one-time → sub conversion, incentive optimization"
+      },
+      "related_hypotheses": {
+        "amplifies": ["HYP-003"],
+        "compounded_by": ["HYP-001"]
+      }
+    },
+    {
+      "id": "HYP-003",
+      "name": "Monthly Subscriber Churn Rate",
+      "category": "unit_economics",
+      "description": "Subscriber churn will be ≤12% per month (average 8.3 month lifetime)",
+      "impact_severity": "HIGH",
+      "current_state": "ASSUMED",
+      "has_children": ["HYP-003.1", "HYP-003.2", "HYP-003.3", "HYP-003.4"],
+      "composite_scoring": {
+        "method": "weighted",
+        "weights_sum_to": 1.0,
+        "composite_score": 1.40,
+        "composite_grade": "D",
+        "note": "Upgraded from 1.0 to 1.40 after Seaonic proxy evidence applied to HYP-003.1 (D→C). Still D but approaching C. Bottleneck shifts from 'does marine plasma work?' to 'can we survive early-life churn?'"
+      },
+      "revisions": [
+        {
+          "revision_id": 1,
+          "date": "2026-02-02",
+          "value": "12%",
+          "grade": "D",
+          "reasoning": "Based on DTC supplement industry average (6.5-15% range). Grade D because no marine plasma-specific data exists and no product testing has been done. Porter's analysis identified zero switching costs as a risk factor for churn. ICP analysis shows variable stickiness: Keto/Carnivore (HIGH stickiness - identity-driven), Wellness (MODERATE), Identity/Trend followers (LOW - will switch). Without product delivering on promises, churn could be higher.",
+          "evidence_type": "benchmark",
+          "evidence_quality": "Industry average only, no product-specific validation",
+          "supporting_documents": [
+            "data/01_strategic_foundation/assumptions_register.json",
+            "IonWave/Porter_Five_Forces_Analysis.md"
+          ],
+          "changed_by": "claude-opus-4.5",
+          "change_type": "initial",
+          "confidence_factors": {
+            "positive": [
+              "Falls within industry range (6.5-15%)",
+              "Keto/Carnivore segments are sticky (identity-driven)"
+            ],
+            "negative": [
+              "Product untested - don't know if it delivers on promises",
+              "Zero switching costs (Porter's) = high churn risk",
+              "Premium pricing may increase churn sensitivity",
+              "Marine plasma efficacy not yet proven to customers"
+            ]
+          }
+        },
+        {
+          "revision_id": 2,
+          "date": "2026-02-05",
+          "value": "12% (risk range: 8-15%)",
+          "grade": "D",
+          "reasoning": "Financial model reveals churn has high impact on viability. At 8% churn, hit $30K MRR in 16 months. At 12%, hit in 18 months (base case). At 15%, hit in 24+ months or business not viable (LTV collapses to $64 vs. $159 at 8%). Subscriber lifetime at 15% churn is only 6.7 months - insufficient to recover CAC and generate profit. Grade remains D - this is one of the weakest hypotheses requiring immediate post-launch validation. Product MUST deliver on promises.",
+          "evidence_type": "model_analysis",
+          "evidence_quality": "Impact quantified but no empirical validation of product efficacy",
+          "supporting_documents": [
+            "IonWave/Financial_Model_Revenue_Validation.md#section-2-5-sensitivity-analysis"
+          ],
+          "changed_by": "claude-sonnet-4-20250514",
+          "change_type": "revision",
+          "confidence_factors": {
+            "positive": [
+              "Model quantifies impact and identifies kill threshold (>15%)"
+            ],
+            "negative": [
+              "Still completely untested",
+              "Product efficacy unknown",
+              "No retention strategy in place yet",
+              "Marine plasma results timeline unclear (how fast do customers feel benefits?)"
+            ]
+          }
+        },
+        {
+          "revision_id": 3,
+          "date": "2026-02-06",
+          "value": "12% (decomposed into 4 sub-hypotheses via CSP-002, composite score 1.40)",
+          "grade": "D",
+          "reasoning": "CSP-001 applied (run CSP-002): decomposed monolithic 12% churn into 4 independently testable sub-hypotheses. Key insight: 'churn is a product hypothesis in disguise.' All 4 constraint scenarios applied (unique — churn is the universal tax). HYP-003.1 (Product Efficacy) upgraded D→C using Seaonic proxy evidence (4.5★ Trustpilot, sustaining subscriptions at $69/box). Composite moves from 1.00 to 1.40. Early-life churn (HYP-003.2) identified as the real kill zone. Cross-hypothesis sub-link discovered: HYP-006.5 (Community WOM) depends on HYP-003.1 (product efficacy).",
+          "evidence_type": "diagnostic_analysis",
+          "evidence_quality": "CSP protocol applied across 4 constraint scenarios + Seaonic proxy evidence",
+          "supporting_documents": [
+            "protocols/case_studies/CSP-002_HYP-003_2026-02-06.md"
+          ],
+          "changed_by": "claude-sonnet-4-5-20250929",
+          "change_type": "decomposition",
+          "confidence_factors": {
+            "positive": [
+              "Decomposition reveals that product efficacy (highest-weight component) has C-grade proxy evidence from Seaonic",
+              "Bottleneck shifts to early-life churn — more actionable than 'product untested'",
+              "40% weight on product efficacy is the single most consequential finding across both CSP runs"
+            ],
+            "negative": [
+              "3 of 4 sub-hypotheses still D-grade",
+              "Zero retention infrastructure exists",
+              "Early-life churn (Month 1-3) is the real kill zone and completely unknown"
+            ]
+          }
+        }
+      ],
+      "current_value": "12% (risk range: 8-15%)",
+      "current_grade": "D",
+      "validation_plan": {
+        "method": "Track A: Cohort tracking starting Month 2; Track B: Customer feedback surveys, usage tracking",
+        "cost": "Included in ops (Shopify analytics + manual outreach)",
+        "timeline": "Month 2-4 (need 60-90 days to measure retention)",
+        "success_criteria": "≤12% churn in Month 2 cohort",
+        "kill_criteria": ">15% churn in first 2 cohorts signals product-market fit problem - pivot or kill",
+        "owner": "Danilo (retention monitoring) + Caio (intervention strategies)",
+        "validation_triggers": [
+          "100 subscribers acquired (Month 2)",
+          "First cohort completes 60 days (Month 4)",
+          "Churn reasons documented from cancellation surveys"
+        ]
+      },
+      "feeds_into": ["HYP-005", "HYP-007"],
+      "depends_on": [],
+      "risk_if_wrong": {
+        "severity": "CRITICAL",
+        "description": "If churn >15%, LTV collapses and business is not viable at current CAC. LTV:CAC ratio drops below 2.5x kill threshold. Indicates product is not delivering on promises or wrong market fit. Would require fundamental product or positioning pivot.",
+        "financial_impact": "15% churn reduces LTV from $159 to $64 - makes business non-viable",
+        "mitigation": "Retention focus from Day 1: onboarding sequence, results tracking, proactive outreach to at-risk customers, product quality obsession"
+      },
+      "related_hypotheses": {
+        "compounded_by": ["HYP-001", "HYP-002"],
+        "mitigated_by": []
+      }
+    },
+    {
+      "id": "HYP-003.1",
+      "name": "Product Efficacy & Time-to-Value",
+      "parent_id": "HYP-003",
+      "weight": 0.40,
+      "constraint_scenario_origin": "CSP-002 applied to HYP-003, Scenarios 2 and 3 (CRITICAL/HIGH)",
+      "decomposition_rationale": "Product efficacy is the foundation of all retention — 'churn is a product hypothesis in disguise.' Arguably the most important hypothesis in the entire system. Everything downstream depends on it.",
+      "category": "unit_economics",
+      "description": "Marine plasma supplementation produces tangible, felt results within 14-30 days of daily use",
+      "impact_severity": "CRITICAL",
+      "current_state": "ASSUMED",
+      "current_grade": "C",
+      "revisions": [
+        {
+          "revision_id": 1,
+          "date": "2026-02-06",
+          "value": "Tangible results within 14-30 days (proxy evidence: C+)",
+          "grade": "C",
+          "reasoning": "Decomposed from HYP-003 via CSP-002. Seaonic proxy evidence provides moderate confidence: 4.5★ Trustpilot from 49 reviews, 27 Amazon reviews, 139 on-site reviews at 5.0★ (curated), sustaining subscriptions at $69/box. Near-identical product (ocean-sourced marine plasma, 78 minerals, powder stick format). General electrolyte VOC also supports: brain fog clearing (VOC-002, VOC-009), sustained energy past 3pm (VOC-010), hydration improvement (VOC-008). Not D because real-world signal from near-identical product. Not B because no IonWave-specific data and review content not mined for time-to-value specifics.",
+          "evidence_type": "proxy_analysis",
+          "evidence_quality": "Seaonic Trustpilot (A-grade direct observation), Amazon reviews (A-grade), general electrolyte VOC (B-grade similar product). Limitation: review text not mined, Seaonic 5.0★ on-site suggests curation.",
+          "supporting_documents": [
+            "protocols/case_studies/CSP-002_HYP-003_2026-02-06.md",
+            "IonWave/Marine_Plasma_Market_Sizing.md"
+          ],
+          "changed_by": "claude-sonnet-4-5-20250929",
+          "change_type": "initial",
+          "confidence_factors": {
+            "positive": [
+              "Seaonic (near-identical product) has 4.5★ Trustpilot, sustaining subscriptions at $69/box",
+              "General electrolyte VOC shows rapid result claims (brain fog, energy, hydration)",
+              "Customers paying premium and staying — implies perceived efficacy"
+            ],
+            "negative": [
+              "No IonWave-specific data",
+              "Seaonic review text not mined for time-to-value specifics",
+              "Seaonic on-site 5.0★ suggests curation/filtering",
+              "Synthetic electrolyte VOC may not transfer to marine plasma"
+            ]
+          }
+        }
+      ],
+      "current_value": "Tangible results within 14-30 days",
+      "validation_plan": {
+        "method": "Phase 1: Mine Seaonic Trustpilot/Amazon review text for efficacy specifics and time-to-value (2-3 hrs, upgrades C→B). Phase 2: IonWave beta test with 20-30 users, daily symptom tracking, pre/post surveys at Day 7/14/30 (upgrades B→A).",
+        "cost": "Phase 1: 2-3 hours research. Phase 2: Product samples + time.",
+        "timeline": "Phase 1: Next session. Phase 2: Pre-launch.",
+        "success_criteria": "≥60% of beta users report noticeable improvement by Day 30",
+        "kill_criteria": "<30% report any noticeable change by Day 30 → product doesn't deliver perceived value, churn will be catastrophic"
+      },
+      "feeds_into": ["HYP-006.5"],
+      "depends_on": [],
+      "risk_if_wrong": {
+        "severity": "FATAL",
+        "description": "If product doesn't deliver perceived results, nothing else matters. No amount of retention infrastructure can save a product that doesn't work. This is the master hypothesis.",
+        "financial_impact": "Complete business model failure if product doesn't deliver perceived value"
+      }
+    },
+    {
+      "id": "HYP-003.2",
+      "name": "Early-Life Churn (Month 1-3)",
+      "parent_id": "HYP-003",
+      "weight": 0.30,
+      "constraint_scenario_origin": "CSP-002 applied to HYP-003, Scenarios 2 and 3",
+      "decomposition_rationale": "Churn follows a time-series curve — high in months 1-2, declining over time. The monolithic 12% masks critical early-life dynamics. A customer who survives Month 3 is likely to stay.",
+      "category": "unit_economics",
+      "description": "Month 1-3 churn will be ≤15% per month (higher than steady-state but survivable), declining monthly",
+      "impact_severity": "HIGH",
+      "current_state": "ASSUMED",
+      "current_grade": "D",
+      "revisions": [
+        {
+          "revision_id": 1,
+          "date": "2026-02-06",
+          "value": "Month 1 ≤15%, Month 2 ≤12%, Month 3 ≤10% (declining curve)",
+          "grade": "D",
+          "reasoning": "Decomposed from HYP-003 via CSP-002. The kill zone — if customers don't survive months 1-3, steady-state is irrelevant. No onboarding designed. SC-02 revealed: 'timing dependency — churn has fundamentally different character in Month 1 vs Month 6.'",
+          "evidence_type": "diagnostic_analysis",
+          "evidence_quality": "CSP-derived, no onboarding or retention data",
+          "supporting_documents": [
+            "protocols/case_studies/CSP-002_HYP-003_2026-02-06.md"
+          ],
+          "changed_by": "claude-sonnet-4-5-20250929",
+          "change_type": "initial"
+        }
+      ],
+      "current_value": "Month 1 ≤15%, Month 2 ≤12%, Month 3 ≤10%",
+      "validation_plan": {
+        "method": "Track cohort-level churn by month. Design onboarding email sequence with expectation-setting. Measure 'time to first reorder'.",
+        "cost": "Included in ops",
+        "timeline": "Month 2-5 (need 3 full months of first cohort data)",
+        "success_criteria": "Month 1 churn ≤15%, Month 2 ≤12%, Month 3 ≤10% (declining curve)",
+        "kill_criteria": "Month 1 churn >25% or Month 2 churn not declining → product or positioning problem, not a retention problem"
+      },
+      "feeds_into": [],
+      "depends_on": [],
+      "risk_if_wrong": {
+        "severity": "CRITICAL",
+        "description": "If early-life churn is >25% in Month 1, LTV calculation is meaningless — customers never reach steady-state. This is the kill zone.",
+        "financial_impact": "High early-life churn burns through acquired customers faster than they can be replaced"
+      }
+    },
+    {
+      "id": "HYP-003.3",
+      "name": "Retention Infrastructure Effectiveness",
+      "parent_id": "HYP-003",
+      "weight": 0.20,
+      "constraint_scenario_origin": "CSP-002 applied to HYP-003, Scenarios 3 and 4",
+      "decomposition_rationale": "Retention infrastructure (save flows, pause, re-engagement) is operations-driven retention — distinct from product-driven retention (HYP-003.1). Lower weight because less scalable.",
+      "category": "unit_economics",
+      "description": "Automated retention flows will recover 20-30% of at-risk churners",
+      "impact_severity": "MEDIUM",
+      "current_state": "ASSUMED",
+      "current_grade": "D",
+      "revisions": [
+        {
+          "revision_id": 1,
+          "date": "2026-02-06",
+          "value": "20-30% recovery of at-risk churners",
+          "grade": "D",
+          "reasoning": "Decomposed from HYP-003 via CSP-002. Zero retention infrastructure exists — no save flows, no pause options, no re-engagement automation. SC-04 revealed: 'only automated retention matters under time constraint.' 12% churn assumes these things exist — without them, churn is probably 15-20%+.",
+          "evidence_type": "diagnostic_analysis",
+          "evidence_quality": "CSP-derived, no infrastructure exists",
+          "supporting_documents": [
+            "protocols/case_studies/CSP-002_HYP-003_2026-02-06.md"
+          ],
+          "changed_by": "claude-sonnet-4-5-20250929",
+          "change_type": "initial"
+        }
+      ],
+      "current_value": "20-30% recovery rate",
+      "validation_plan": {
+        "method": "Build save flow in Shopify (pause, downsell, 'one more month'), measure recovery rate on cancellation attempts",
+        "cost": "Shopify subscription app + development time",
+        "timeline": "Month 1-2 (build), Month 2-4 (measure)",
+        "success_criteria": "≥20% of cancellation attempts saved (paused, downsold, or retained)",
+        "kill_criteria": "<10% save rate after 60 days → save flow ineffective, churn is a product problem not an operations problem"
+      },
+      "feeds_into": [],
+      "depends_on": [],
+      "risk_if_wrong": {
+        "severity": "MEDIUM",
+        "description": "If save flows are ineffective, churn is entirely product-driven — which makes HYP-003.1 even more critical."
+      }
+    },
+    {
+      "id": "HYP-003.4",
+      "name": "Consumption-Cadence Match",
+      "parent_id": "HYP-003",
+      "weight": 0.10,
+      "constraint_scenario_origin": "CSP-002 applied to HYP-003, Scenario 3",
+      "decomposition_rationale": "Subscription cadence vs actual consumption rate is a distinct, testable mechanism — if 30-day supply lasts 45 days, customers cancel because they don't need more yet",
+      "category": "unit_economics",
+      "description": "30-day subscription cadence matches actual consumption rate within ±5 days",
+      "impact_severity": "MEDIUM",
+      "current_state": "ASSUMED",
+      "current_grade": "D",
+      "revisions": [
+        {
+          "revision_id": 1,
+          "date": "2026-02-06",
+          "value": "Consumption within 25-35 day window for 30-day subscription",
+          "grade": "D",
+          "reasoning": "Decomposed from HYP-003 via CSP-002. Unknown until real customers use product. Proxy: Seaonic sells 30-sachet boxes on subscription cadence, suggesting consumption roughly matches, but no direct data on actual consumption rate.",
+          "evidence_type": "diagnostic_analysis",
+          "evidence_quality": "Weak proxy from Seaonic subscription cadence only",
+          "supporting_documents": [
+            "protocols/case_studies/CSP-002_HYP-003_2026-02-06.md"
+          ],
+          "changed_by": "claude-sonnet-4-5-20250929",
+          "change_type": "initial"
+        }
+      ],
+      "current_value": "25-35 day consumption window",
+      "validation_plan": {
+        "method": "Survey first 50 subscribers: 'When did you run out?' Compare to billing cycle.",
+        "cost": "Free (email survey)",
+        "timeline": "Month 2-3",
+        "success_criteria": "≥70% of customers consume product within 25-35 day window",
+        "kill_criteria": "Median consumption >40 days → product lasts too long, customers accumulate surplus and cancel"
+      },
+      "feeds_into": [],
+      "depends_on": [],
+      "risk_if_wrong": {
+        "severity": "LOW",
+        "description": "If cadence mismatches, fix is operational (adjust subscription frequency or pack size) not strategic."
+      }
+    },
+    {
+      "id": "HYP-004",
+      "name": "Gross Margin Sustainability",
+      "category": "unit_economics",
+      "description": "Can maintain 65-69% gross margin at scale with current supplier and pricing",
+      "impact_severity": "MEDIUM",
+      "current_state": "ASSUMED",
+      "revisions": [
+        {
+          "revision_id": 1,
+          "date": "2026-02-02",
+          "value": "67% ($20 COGS at $59 price)",
+          "grade": "B",
+          "reasoning": "Based on preliminary supplier quotes from Biocean showing $18-20 COGS for marine plasma formulation. Grade B (not A) because: (1) quotes are preliminary, not locked contracts, (2) Porter's analysis identified supplier concentration risk (Actimar/Biocean oligopoly), (3) alternative suppliers not yet validated. Higher confidence than other hypotheses because based on actual supplier data, not benchmarks.",
+          "evidence_type": "supplier_quote",
+          "evidence_quality": "Primary source (supplier quotes) but not yet contracted",
+          "supporting_documents": [
+            "data/01_strategic_foundation/assumptions_register.json",
+            "IonWave/Porter_Five_Forces_Analysis.md"
+          ],
+          "changed_by": "claude-opus-4.5",
+          "change_type": "initial",
+          "confidence_factors": {
+            "positive": [
+              "Actual supplier quotes (not estimates)",
+              "Multiple suppliers quoted (Biocean, potentially others)",
+              "Margin is healthy for DTC (65-69% vs. 70%+ ideal)"
+            ],
+            "negative": [
+              "Supplier oligopoly risk (few suppliers = pricing power)",
+              "Volume discounts not yet negotiated",
+              "Marine plasma supply chain not diversified",
+              "Alternative suppliers (Ibiza, Formentera sources) not yet validated"
+            ]
+          }
+        }
+      ],
+      "current_value": "67% ($20 COGS at $59 price)",
+      "current_grade": "B",
+      "validation_plan": {
+        "method": "Track A: Lock supplier contract with volume tiers; Track B: Source alternative suppliers for negotiating leverage",
+        "cost": "Time cost only (supplier negotiations)",
+        "timeline": "Before first inventory order (Month 0-1)",
+        "success_criteria": "Contract locked at ≤$20 COGS with volume discounts",
+        "kill_criteria": "COGS >$25 at any volume makes unit economics non-viable (File 06 kill criterion)",
+        "owner": "Danilo (negotiations) + supply chain research",
+        "validation_triggers": [
+          "Supplier contract signed",
+          "MOQ (Minimum Order Quantity) confirmed",
+          "Volume tier pricing documented"
+        ]
+      },
+      "feeds_into": ["HYP-005", "HYP-007"],
+      "depends_on": [],
+      "risk_if_wrong": {
+        "severity": "MEDIUM-HIGH",
+        "description": "Margin compression reduces gross profit per order, which affects LTV. Every $2 increase in COGS reduces gross profit by ~3-4%. At $25 COGS (unit economics kill threshold), margin drops to 58%, making CAC payback much longer.",
+        "financial_impact": "Margin compression of 5-10% adds 2-4 months to breakeven timeline",
+        "mitigation": "Diversify supplier options, negotiate aggressively, consider pricing increase if needed ($59 → $69)"
+      },
+      "related_hypotheses": {
+        "feeds_into": ["HYP-005"]
+      },
+      "open_issues": [
+        {
+          "issue_id": "ISS-001",
+          "date_flagged": "2026-02-06",
+          "flagged_by": "M10 workshop persona dialogue (Round 4: Skeptical Investor vs Growth Engineer)",
+          "severity": "HIGH",
+          "type": "target_mismatch",
+          "summary": "67% margin target structurally unachievable with subscription pricing",
+          "detail": "M10 Offer Strategy models subscription at 15% discount ($50.15). At $20 COGS: one-time margin = 66%, subscription margin = 60%. At 60% subscription mix (HYP-002 target), blended margin = 62.7%. The 67% target was set before subscription economics were modeled — it assumed one-time pricing only. The target is not 'wrong' for one-time purchases, but irrelevant as a blended metric given the subscription-first architecture that M10 and M21 both recommend.",
+          "recommended_action": "Revise HYP-004 target from 67% to 62-64% (subscription-adjusted blended margin). Keep 60% as kill threshold (unchanged). Add revision #2 with updated value. This does NOT require changing the pricing architecture — the pricing is correct; the hypothesis target was naive.",
+          "validation_log_ref": "LOG-018",
+          "resolution": null,
+          "resolved_date": null,
+          "resolved_by": null
+        }
+      ]
+    },
+    {
+      "id": "HYP-005",
+      "name": "Blended Customer Lifetime Value (LTV)",
+      "category": "unit_economics",
+      "description": "Blended LTV (60% subscribers, 40% one-time) will be ≥$106",
+      "impact_severity": "CRITICAL",
+      "current_state": "ASSUMED",
+      "revisions": [
+        {
+          "revision_id": 1,
+          "date": "2026-02-02",
+          "value": "$106",
+          "grade": "D",
+          "reasoning": "Derived hypothesis calculated from: HYP-002 (50% subscription rate), HYP-003 (12% churn), HYP-004 (67% margin). Subscriber LTV = $159 (8.3 months × $19 gross profit). One-time buyer LTV = $26 (1.35 orders). Blended (60% weight to subs) = $106. Grade D because this is a DERIVED hypothesis dependent on 3 other unvalidated hypotheses. If any component hypothesis is wrong, LTV collapses. This is a weak link.",
+          "evidence_type": "derived_calculation",
+          "evidence_quality": "Mathematical derivation from other D/C grade hypotheses",
+          "supporting_documents": [
+            "IonWave/06_Unit_Economics.xlsx",
+            "data/01_strategic_foundation/assumptions_register.json"
+          ],
+          "changed_by": "claude-opus-4.5",
+          "change_type": "initial",
+          "confidence_factors": {
+            "positive": [
+              "Calculation methodology is sound"
+            ],
+            "negative": [
+              "Depends on 3 unvalidated hypotheses",
+              "Churn assumption is D-grade",
+              "Subscription rate is C-grade",
+              "Compound uncertainty: if 2+ components are wrong, LTV is very wrong"
+            ]
+          }
+        },
+        {
+          "revision_id": 2,
+          "date": "2026-02-05",
+          "value": "$106 (range: $64-$159 based on churn variance)",
+          "grade": "D",
+          "reasoning": "Financial model sensitivity reveals LTV is outcome variable highly sensitive to churn and subscription rate. Conservative scenario (15% churn, 40% subs) = $64 LTV. Base case (12% churn, 50% subs) = $106 LTV. Optimistic (8% churn, 60% subs) = $159+ LTV. This wide range reflects compounded uncertainty. LTV:CAC ratio determines viability: need ≥2.5x minimum. At $64 LTV and $35 CAC = 1.8x (KILL). At $106 LTV and $35 CAC = 3.0x (viable). Grade remains D due to dependency on unvalidated components.",
+          "evidence_type": "model_analysis",
+          "evidence_quality": "Range quantified but underlying components unvalidated",
+          "supporting_documents": [
+            "IonWave/Financial_Model_Revenue_Validation.md#section-2-1-unit-economics"
+          ],
+          "changed_by": "claude-sonnet-4-20250514",
+          "change_type": "revision",
+          "confidence_factors": {
+            "positive": [
+              "Model shows sensitivity and kill thresholds"
+            ],
+            "negative": [
+              "Still derived from unvalidated components",
+              "Wide range ($64-$159) reflects high uncertainty",
+              "LTV only improvable through better retention (hard)"
+            ]
+          }
+        }
+      ],
+      "current_value": "$106 (range: $64-$159)",
+      "current_grade": "D",
+      "validation_plan": {
+        "method": "Track A: Cohort analysis at 6 months post-launch to measure actual LTV",
+        "cost": "Included in ops",
+        "timeline": "Month 6-9 (need time for cohorts to mature)",
+        "success_criteria": "Actual LTV ≥$100 with LTV:CAC ≥2.8x",
+        "kill_criteria": "LTV:CAC <2.5x after 6 months = business not viable",
+        "owner": "Caio (analytics) + Danilo (decision)",
+        "validation_triggers": [
+          "First cohort reaches 6 months (Month 7)",
+          "100+ customers in cohort for statistical significance",
+          "LTV:CAC ratio calculated from actual data"
+        ]
+      },
+      "feeds_into": ["HYP-007"],
+      "depends_on": ["HYP-001", "HYP-002", "HYP-003", "HYP-004"],
+      "risk_if_wrong": {
+        "severity": "FATAL",
+        "description": "LTV is the denominator in LTV:CAC ratio. If LTV <$88 (at $35 CAC), ratio drops below 2.5x viability threshold. Business cannot sustain customer acquisition. This is a compound risk - any component hypothesis being wrong collapses LTV.",
+        "financial_impact": "LTV $20 below assumption = add 6-12 months to timeline or non-viable",
+        "mitigation": "Focus on retention (churn) and subscription conversion as primary LTV drivers. Subscription rate and churn are more controllable than CAC."
+      },
+      "related_hypotheses": {
+        "weak_link": "Dependent on 4 other hypotheses - weakest link determines outcome"
+      }
+    },
+    {
+      "id": "HYP-006",
+      "name": "Organic & Referral Lift",
+      "category": "growth",
+      "description": "10% of customer volume will come from organic/referral (unpaid) sources",
+      "impact_severity": "MEDIUM",
+      "current_state": "ASSUMED",
+      "has_children": ["HYP-006.1", "HYP-006.2", "HYP-006.3", "HYP-006.4", "HYP-006.5"],
+      "composite_scoring": {
+        "method": "weighted",
+        "weights_sum_to": 1.0,
+        "composite_score": 1.0,
+        "composite_grade": "D",
+        "note": "Grade unchanged after CSP decomposition but now diagnostic — each sub-component independently testable"
+      },
+      "revisions": [
+        {
+          "revision_id": 1,
+          "date": "2026-02-05",
+          "value": "10%",
+          "grade": "D",
+          "reasoning": "Assumption that word-of-mouth, referrals, organic social, and SEO will drive 10% of customer volume on top of paid acquisition. Grade D because completely untested and no mechanisms in place yet (no referral program, no SEO, no influencer strategy). Based on typical DTC ranges (5-20%) but marine plasma is unknown category.",
+          "evidence_type": "assumption",
+          "evidence_quality": "Industry range with no product-specific basis",
+          "supporting_documents": [
+            "IonWave/Financial_Model_Revenue_Validation.md"
+          ],
+          "changed_by": "claude-sonnet-4-20250514",
+          "change_type": "initial",
+          "confidence_factors": {
+            "positive": [
+              "Health products tend to generate word-of-mouth if they work",
+              "ICP segments (Keto/Carnivore) are community-driven"
+            ],
+            "negative": [
+              "No referral program designed yet",
+              "No influencer strategy in place",
+              "Marine plasma = unknown category (low existing awareness)",
+              "Zero PR or content strategy"
+            ]
+          }
+        },
+        {
+          "revision_id": 2,
+          "date": "2026-02-06",
+          "value": "10% (decomposed into 5 sub-hypotheses via CSP-001)",
+          "grade": "D",
+          "reasoning": "CSP-001 applied: decomposed monolithic 10% organic lift into 5 independently testable sub-hypotheses (Referral 3-4%, SEO 2-3%, Influencer 2-3%, PR 1-2%, WOM 1-2%). All scenarios converged on key finding: organic is not a single thing but 5+ distinct channels each requiring different mechanisms, timelines, and investments. 0 of 6 required mechanisms currently exist. Composite score 1.0 (Grade D). Also surfaced HYP-009 (Pre-Launch Demand Generation) as missing hypothesis.",
+          "evidence_type": "diagnostic_analysis",
+          "evidence_quality": "CSP protocol applied across 3 constraint scenarios",
+          "supporting_documents": [
+            "protocols/case_studies/CSP-001_HYP-006_2026-02-06.md"
+          ],
+          "changed_by": "claude-sonnet-4-5-20250929",
+          "change_type": "decomposition",
+          "confidence_factors": {
+            "positive": [
+              "Decomposition makes D-grade diagnostic (know exactly which components are weak)",
+              "Each sub-hypothesis has specific validation plan",
+              "Upgrade path now concrete: referral program → SEO → influencer → C-grade composite"
+            ],
+            "negative": [
+              "All 5 sub-hypotheses are D-grade",
+              "No organic mechanism currently exists",
+              "Weights are estimates, need refinement from validation data"
+            ]
+          }
+        }
+      ],
+      "current_value": "10% (range: 5-20%)",
+      "current_grade": "D",
+      "validation_plan": {
+        "method": "Track A: Attribution tracking ('How did you hear about us?'), referral program launch, UTM tracking; Track B: PR/influencer outreach",
+        "cost": "$10/referral credit + PR time",
+        "timeline": "Month 3+ (need customer base first)",
+        "success_criteria": "≥5% organic by Month 6",
+        "kill_criteria": "<5% organic by Month 6 signals need for PR/influencer push",
+        "owner": "Caio (attribution) + marketing lead (referral program)",
+        "validation_triggers": [
+          "100 customers to refer from",
+          "Referral program launched",
+          "Attribution data collected"
+        ]
+      },
+      "feeds_into": ["HYP-007"],
+      "depends_on": [],
+      "risk_if_wrong": {
+        "severity": "MEDIUM",
+        "description": "If organic <5%, effective CAC is higher (more reliance on paid). Adds 2-4 months to timeline. Indicates weak word-of-mouth (product not remarkable or community not engaged). Mitigated by fact that paid acquisition alone can work, just slower.",
+        "financial_impact": "Each 5% drop in organic adds $5-10K in capital needs over 18 months",
+        "mitigation": "Don't rely on organic - treat as upside. If organic is strong (>15%), timeline accelerates."
+      },
+      "related_hypotheses": {
+        "portfolio_diversifies": ["HYP-001"],
+        "note": "Reframed from 'mitigates' to 'portfolio_diversifies' per CSP-001 analysis — organic provides acquisition channel diversification, not just passive mitigation"
+      }
+    },
+    {
+      "id": "HYP-006.1",
+      "name": "Referral Program Contribution",
+      "parent_id": "HYP-006",
+      "weight": 0.35,
+      "constraint_scenario_origin": "CSP-001 applied to HYP-006, all 3 scenarios (structural dependency)",
+      "decomposition_rationale": "Referral is a distinct mechanism requiring its own program design, incentive structure, and measurement — appeared in all 3 applied scenarios",
+      "category": "growth",
+      "description": "Referral program will contribute 3-4% of total customer volume",
+      "impact_severity": "MEDIUM",
+      "current_state": "ASSUMED",
+      "current_grade": "D",
+      "revisions": [
+        {
+          "revision_id": 1,
+          "date": "2026-02-06",
+          "value": "3-4% of total customer volume",
+          "grade": "D",
+          "reasoning": "Decomposed from HYP-006 via CSP-001. Highest-weight sub-hypothesis because most controllable and measurable. No referral program exists yet.",
+          "evidence_type": "diagnostic_analysis",
+          "evidence_quality": "CSP-derived estimate, no program designed",
+          "supporting_documents": [
+            "protocols/case_studies/CSP-001_HYP-006_2026-02-06.md"
+          ],
+          "changed_by": "claude-sonnet-4-5-20250929",
+          "change_type": "initial"
+        }
+      ],
+      "current_value": "3-4% of total customer volume",
+      "validation_plan": {
+        "method": "Launch referral program Month 2, track referral conversion rate over 60 days",
+        "cost": "$20 give/get referral credit per conversion",
+        "timeline": "Month 2-4",
+        "success_criteria": "≥2% of customers come from referrals by Month 4",
+        "kill_criteria": "<1% after 60 days of active referral program → referral is not a viable channel"
+      },
+      "feeds_into": [],
+      "depends_on": [],
+      "risk_if_wrong": {
+        "severity": "LOW",
+        "description": "If referral doesn't work, other organic channels must compensate. Not fatal — referral is one of 5 organic sub-channels."
+      }
+    },
+    {
+      "id": "HYP-006.2",
+      "name": "SEO & Content Contribution",
+      "parent_id": "HYP-006",
+      "weight": 0.25,
+      "constraint_scenario_origin": "CSP-001 applied to HYP-006, Scenarios 3 and 4",
+      "decomposition_rationale": "SEO has fundamentally different ramp curve (3-6 months) and requires distinct infrastructure (content pipeline) — cannot be treated as same channel as referral or influencer",
+      "category": "growth",
+      "description": "SEO/content will contribute 2-3% of total customer volume by Month 6",
+      "impact_severity": "MEDIUM",
+      "current_state": "ASSUMED",
+      "current_grade": "D",
+      "revisions": [
+        {
+          "revision_id": 1,
+          "date": "2026-02-06",
+          "value": "2-3% of total customer volume by Month 6",
+          "grade": "D",
+          "reasoning": "Decomposed from HYP-006 via CSP-001. Long ramp time (3-6 months to rank). No content strategy exists.",
+          "evidence_type": "diagnostic_analysis",
+          "evidence_quality": "CSP-derived estimate, no strategy designed",
+          "supporting_documents": [
+            "protocols/case_studies/CSP-001_HYP-006_2026-02-06.md"
+          ],
+          "changed_by": "claude-sonnet-4-5-20250929",
+          "change_type": "initial"
+        }
+      ],
+      "current_value": "2-3% of total customer volume",
+      "validation_plan": {
+        "method": "Publish 20+ SEO articles in first 3 months, track organic traffic and conversion",
+        "cost": "Content creation time (AI-assisted pipeline)",
+        "timeline": "Month 3-6 (3-6 month SEO ramp)",
+        "success_criteria": "≥500 organic visits/month with ≥1% conversion rate by Month 6",
+        "kill_criteria": "<100 organic visits/month after 20 articles published → content strategy not viable"
+      },
+      "feeds_into": [],
+      "depends_on": [],
+      "risk_if_wrong": {
+        "severity": "LOW",
+        "description": "SEO is long-term play. If content doesn't rank, other channels compensate short-term."
+      }
+    },
+    {
+      "id": "HYP-006.3",
+      "name": "Influencer Seeding Contribution",
+      "parent_id": "HYP-006",
+      "weight": 0.20,
+      "constraint_scenario_origin": "CSP-001 applied to HYP-006, all 3 scenarios",
+      "decomposition_rationale": "Influencer seeding is a distinct channel requiring product samples, outreach playbook, and tracking — appeared in all 3 applied scenarios",
+      "category": "growth",
+      "description": "Free product seeding to micro-influencers will contribute 2-3% of customer volume",
+      "impact_severity": "MEDIUM",
+      "current_state": "ASSUMED",
+      "current_grade": "D",
+      "revisions": [
+        {
+          "revision_id": 1,
+          "date": "2026-02-06",
+          "value": "2-3% of total customer volume",
+          "grade": "D",
+          "reasoning": "Decomposed from HYP-006 via CSP-001. Partially planned but unexecuted. Appeared in all 3 scenarios.",
+          "evidence_type": "diagnostic_analysis",
+          "evidence_quality": "CSP-derived estimate, partially planned",
+          "supporting_documents": [
+            "protocols/case_studies/CSP-001_HYP-006_2026-02-06.md"
+          ],
+          "changed_by": "claude-sonnet-4-5-20250929",
+          "change_type": "initial"
+        }
+      ],
+      "current_value": "2-3% of total customer volume",
+      "validation_plan": {
+        "method": "Send free product to 50 micro-influencers, track UTM codes and promo codes",
+        "cost": "50 × product cost + shipping (~$1,500)",
+        "timeline": "Month 2-4",
+        "success_criteria": "≥10 of 50 influencers post, generating ≥50 customers",
+        "kill_criteria": "<5 of 50 post, or <10 customers generated → seeding not effective without payment"
+      },
+      "feeds_into": [],
+      "depends_on": [],
+      "risk_if_wrong": {
+        "severity": "LOW",
+        "description": "If free seeding doesn't work, may need paid influencer partnerships (higher cost, different channel economics)."
+      }
+    },
+    {
+      "id": "HYP-006.4",
+      "name": "PR & Earned Media Contribution",
+      "parent_id": "HYP-006",
+      "weight": 0.10,
+      "constraint_scenario_origin": "CSP-001 applied to HYP-006, Scenarios 2 and 3",
+      "decomposition_rationale": "PR/earned media is least controllable organic channel — requires compelling narrative and external validation, distinct from referral or content strategies",
+      "category": "growth",
+      "description": "PR coverage will contribute 1-2% of customer volume in launch quarter",
+      "impact_severity": "LOW",
+      "current_state": "ASSUMED",
+      "current_grade": "D",
+      "revisions": [
+        {
+          "revision_id": 1,
+          "date": "2026-02-06",
+          "value": "1-2% of total customer volume in launch quarter",
+          "grade": "D",
+          "reasoning": "Decomposed from HYP-006 via CSP-001. Lowest weight because least controllable. No PR strategy exists.",
+          "evidence_type": "diagnostic_analysis",
+          "evidence_quality": "CSP-derived estimate, no strategy designed",
+          "supporting_documents": [
+            "protocols/case_studies/CSP-001_HYP-006_2026-02-06.md"
+          ],
+          "changed_by": "claude-sonnet-4-5-20250929",
+          "change_type": "initial"
+        }
+      ],
+      "current_value": "1-2% of total customer volume",
+      "validation_plan": {
+        "method": "Pitch 20+ media outlets, track coverage and attributed traffic",
+        "cost": "Time cost (founder effort)",
+        "timeline": "Month 1-3",
+        "success_criteria": "≥3 articles published, generating measurable traffic spike",
+        "kill_criteria": "<1 article after 20 pitches → story angle not compelling"
+      },
+      "feeds_into": [],
+      "depends_on": [],
+      "risk_if_wrong": {
+        "severity": "LOW",
+        "description": "PR is upside — not critical to business model viability."
+      }
+    },
+    {
+      "id": "HYP-006.5",
+      "name": "Community & Word-of-Mouth",
+      "parent_id": "HYP-006",
+      "weight": 0.10,
+      "constraint_scenario_origin": "CSP-001 applied to HYP-006, implicit in all scenarios",
+      "decomposition_rationale": "WOM is most dependent on product quality (HYP-003.1 cross-link) — distinct from strategy-driven channels like referral or SEO",
+      "category": "growth",
+      "description": "Organic WOM through communities will contribute 1-2% of volume",
+      "impact_severity": "LOW",
+      "current_state": "ASSUMED",
+      "current_grade": "D",
+      "revisions": [
+        {
+          "revision_id": 1,
+          "date": "2026-02-06",
+          "value": "1-2% of total customer volume",
+          "grade": "D",
+          "reasoning": "Decomposed from HYP-006 via CSP-001. Most dependent on product quality — no community strategy exists. Cross-link: depends on HYP-003.1 (product efficacy) — no efficacy, no WOM.",
+          "evidence_type": "diagnostic_analysis",
+          "evidence_quality": "CSP-derived estimate, no strategy designed",
+          "supporting_documents": [
+            "protocols/case_studies/CSP-001_HYP-006_2026-02-06.md"
+          ],
+          "changed_by": "claude-sonnet-4-5-20250929",
+          "change_type": "initial"
+        }
+      ],
+      "current_value": "1-2% of total customer volume",
+      "validation_plan": {
+        "method": "Track 'how did you hear about us' attribution, monitor brand mentions",
+        "cost": "Free (operational data + social monitoring)",
+        "timeline": "Month 3-6",
+        "success_criteria": "≥5% of customers cite 'friend' or 'community' in attribution survey",
+        "kill_criteria": "<2% community attribution after 6 months → product doesn't generate organic conversation"
+      },
+      "feeds_into": [],
+      "depends_on": ["HYP-003.1"],
+      "risk_if_wrong": {
+        "severity": "LOW",
+        "description": "If WOM is weak, product may not be remarkable enough for organic conversation — signals product quality issue."
+      }
+    },
+    {
+      "id": "HYP-007",
+      "name": "Timeline to $30K MRR",
+      "category": "strategic",
+      "description": "IonWave will reach $30K MRR within 18 months under base case assumptions",
+      "impact_severity": "CRITICAL",
+      "current_state": "ASSUMED",
+      "revisions": [
+        {
+          "revision_id": 1,
+          "date": "2026-02-02",
+          "value": "12 months",
+          "grade": "D",
+          "reasoning": "Original thesis stated $30K MRR (or $100K MRR - conflicting targets) within 12 months. Grade D because no financial model existed to validate this. Based on optimistic linear growth assumption with no cohort modeling, no capital constraints, and no sensitivity analysis.",
+          "evidence_type": "thesis_statement",
+          "evidence_quality": "Stated goal with no validation methodology",
+          "supporting_documents": [
+            "data/01_strategic_foundation/odd1_thesis.json"
+          ],
+          "changed_by": "claude-opus-4.5",
+          "change_type": "initial",
+          "confidence_factors": {
+            "positive": [
+              "None - purely aspirational"
+            ],
+            "negative": [
+              "No financial model to support",
+              "Assumed linear growth (not realistic)",
+              "Didn't account for capital constraints",
+              "Didn't model cohort dynamics"
+            ]
+          }
+        },
+        {
+          "revision_id": 2,
+          "date": "2026-02-05",
+          "value": "18 months (base case)",
+          "grade": "C",
+          "reasoning": "Financial model reveals 12-month timeline is NOT achievable under realistic assumptions. Base case (50-60% probability): 18 months. Optimistic case (20-30% probability): 6 months. Conservative case (30-40% probability): never (business not viable). 12-month timeline requires everything going right from Day 1 - unrealistic. Grade upgraded to C because now based on cohort modeling, but still untested. Recommendation: revise thesis to 18 months OR lower Year 1 target to $15-23K MRR.",
+          "evidence_type": "financial_model",
+          "evidence_quality": "Mathematical modeling with scenario analysis, but assumptions unvalidated",
+          "supporting_documents": [
+            "IonWave/Financial_Model_Revenue_Validation.md#section-2-2-scenario-comparison",
+            "tracking/Open_Questions.md#Q11"
+          ],
+          "changed_by": "claude-sonnet-4-20250514",
+          "change_type": "revision",
+          "impact_change": "Timeline extended from 12 months to 18 months (base case)",
+          "confidence_factors": {
+            "positive": [
+              "Now based on month-by-month cohort model",
+              "Accounts for churn, retention, capital constraints",
+              "3 scenarios modeled with probabilities"
+            ],
+            "negative": [
+              "Model is only as good as its assumptions",
+              "All underlying hypotheses (CAC, churn, subs) are unvalidated",
+              "Real-world execution always has surprises"
+            ]
+          }
+        }
+      ],
+      "current_value": "18 months (range: 6-24+ months based on scenario)",
+      "current_grade": "C",
+      "validation_plan": {
+        "method": "Track A: Monthly MRR tracking with checkpoints at Month 6, 12, 18",
+        "cost": "Included in ops",
+        "timeline": "Ongoing from Month 1",
+        "success_criteria": "On track for 18-month timeline: $8-10K MRR by Month 6, $20K+ by Month 12",
+        "kill_criteria": "<$5K MRR by Month 6 or <$15K by Month 12 signals off-track",
+        "owner": "Danilo (monitoring) + Caio (execution)",
+        "validation_triggers": [
+          "Month 6: $8-10K MRR checkpoint",
+          "Month 12: $20-25K MRR checkpoint",
+          "Month 18: $30K+ MRR target"
+        ]
+      },
+      "feeds_into": ["HYP-008"],
+      "depends_on": ["HYP-001", "HYP-002", "HYP-003", "HYP-004", "HYP-005", "HYP-006"],
+      "risk_if_wrong": {
+        "severity": "HIGH",
+        "description": "Overpromising destroys investor credibility. If you tell investors 12 months and deliver 24 months, trust is broken. Better to set honest 18-month expectation and over-deliver. Timeline affects capital planning - wrong timeline = wrong capital raise size.",
+        "financial_impact": "Missing timeline by 6+ months requires additional capital raise or stalled growth",
+        "mitigation": "Set 18-month timeline in investor materials. Celebrate milestones ($10K, $20K, $30K MRR) regardless of timing."
+      },
+      "related_hypotheses": {
+        "outcome_of": "All other hypotheses - this is the ultimate derived metric"
+      }
+    },
+    {
+      "id": "HYP-008",
+      "name": "Capital Sufficiency",
+      "category": "strategic",
+      "description": "$30-50K initial raise + $40-50K follow-on at Month 6 will fund path to $30K MRR",
+      "impact_severity": "CRITICAL",
+      "current_state": "ASSUMED",
+      "revisions": [
+        {
+          "revision_id": 1,
+          "date": "2026-02-02",
+          "value": "$30-50K (total)",
+          "grade": "D",
+          "reasoning": "Original thesis assumed $30-50K raise would be sufficient to reach sustainability ($30K MRR or $100K MRR - unclear). Grade D because no cash flow modeling, no capital burn analysis, no validation of sufficiency. Didn't account for timing of cash flows, Stripe holds, inventory reorder timing, or capital constraints during growth phase.",
+          "evidence_type": "thesis_statement",
+          "evidence_quality": "Use of funds outlined but not validated with cash flow model",
+          "supporting_documents": [
+            "data/01_strategic_foundation/odd1_thesis.json",
+            "IonWave/08_Financial_Model.xlsx (60-day cash flow only)"
+          ],
+          "changed_by": "claude-opus-4.5",
+          "change_type": "initial",
+          "confidence_factors": {
+            "positive": [
+              "Use of funds broken down (inventory, ads, buffer)"
+            ],
+            "negative": [
+              "No month-by-month cash flow modeling",
+              "Didn't account for capital constraint at scale",
+              "Assumed revenue would cover growth faster than it does"
+            ]
+          }
+        },
+        {
+          "revision_id": 2,
+          "date": "2026-02-05",
+          "value": "$75-100K total ($30-50K initial + $40-50K follow-on at Month 6)",
+          "grade": "C",
+          "reasoning": "Financial model reveals $30-50K is INSUFFICIENT for base case. Capital burn: Months 0-6 burn $30-40K (learning phase), Months 7-12 need $25-35K more (scaling), Months 13-18 need $20-30K more (growth to target). Total: $75-90K. Capital constraint hits at Month 6-8 with initial raise only. Recommendation: staged approach - initial $30-50K to validate (Month 0-6), then raise $40-50K follow-on IF metrics hit. Grade C because model quantifies need, but assumes follow-on capital is available (not validated).",
+          "evidence_type": "financial_model",
+          "evidence_quality": "Capital burn modeled month-by-month, but availability of follow-on not validated",
+          "supporting_documents": [
+            "IonWave/Financial_Model_Revenue_Validation.md#section-2-3-capital-sufficiency",
+            "tracking/Open_Questions.md#Q10"
+          ],
+          "changed_by": "claude-sonnet-4-20250514",
+          "change_type": "revision",
+          "impact_change": "Capital requirement tripled from $30-50K to $75-100K (staged)",
+          "confidence_factors": {
+            "positive": [
+              "Month-by-month cash flow modeled",
+              "Staged approach de-risks both sides",
+              "Month 6 milestones defined for follow-on trigger"
+            ],
+            "negative": [
+              "Follow-on capital not yet lined up",
+              "If can't raise follow-on, growth stalls",
+              "Assumes base case metrics hit (if don't, follow-on harder to raise)"
+            ]
+          }
+        }
+      ],
+      "current_value": "$75-100K total (staged: $30-50K + $40-50K)",
+      "current_grade": "C",
+      "validation_plan": {
+        "method": "Track A: Line up follow-on capital sources NOW (angels, seed funds, RBF); Track B: Hit Month 6 milestones to unlock follow-on",
+        "cost": "Time cost (fundraising conversations)",
+        "timeline": "Months 1-6 (line up sources), Month 6 (decision to raise follow-on)",
+        "success_criteria": "Follow-on capital sources identified and committed conditionally on Month 6 metrics",
+        "kill_criteria": "Can't raise follow-on at Month 6 = slow bootstrap path (24-30 month timeline) or kill if metrics poor",
+        "owner": "Danilo (fundraising)",
+        "validation_triggers": [
+          "3+ follow-on sources identified and warm by Month 3",
+          "Month 6 checkpoint: $8-10K MRR, CAC ≤$38, churn ≤12%, LTV:CAC ≥2.8x",
+          "Follow-on raise closes by Month 7"
+        ]
+      },
+      "feeds_into": [],
+      "depends_on": ["HYP-007"],
+      "risk_if_wrong": {
+        "severity": "FATAL",
+        "description": "If $30-50K is treated as total capital (not staged), business hits wall at Month 6-8. Can't scale even if metrics are good. Death by undercapitalization. If follow-on can't be raised, growth stalls and timeline extends to 24-30 months (bootstrap path) or business fails.",
+        "financial_impact": "Undercapitalization = death spiral. Can't spend enough to learn, can't iterate fast enough",
+        "mitigation": "Staged approach is THE mitigation. Don't deploy all $30-50K if metrics are bad. Stop at Month 2 if CAC >$50. Line up follow-on NOW, don't wait until Month 6 to start conversations."
+      },
+      "related_hypotheses": {
+        "enables": "All execution - capital is oxygen for growth"
+      }
+    },
+    {
+      "id": "HYP-009",
+      "name": "Pre-Launch Demand Generation",
+      "category": "growth",
+      "description": "A pre-launch waitlist and community building campaign will generate 500+ qualified leads before paid acquisition begins",
+      "impact_severity": "MEDIUM",
+      "current_state": "ASSUMED",
+      "current_grade": "D",
+      "revisions": [
+        {
+          "revision_id": 1,
+          "date": "2026-02-06",
+          "value": "500+ qualified leads pre-launch",
+          "grade": "D",
+          "reasoning": "Surfaced by CSP-001 applied to HYP-006 (Scenario 2: $100K MRR in 3 Months). Speed compression exposed that the current system assumes zero-to-paid-acquisition on Day 1 with no pre-launch demand building. A pre-launch period that builds demand before capital deployment is a distinct, testable hypothesis. Not yet designed or executed.",
+          "evidence_type": "diagnostic_analysis",
+          "evidence_quality": "CSP-derived insight, no strategy designed",
+          "supporting_documents": [
+            "protocols/case_studies/CSP-001_HYP-006_2026-02-06.md"
+          ],
+          "changed_by": "claude-sonnet-4-5-20250929",
+          "change_type": "initial",
+          "confidence_factors": {
+            "positive": [
+              "Pre-launch demand building is well-established DTC practice",
+              "Reduces Day 1 CAC and provides initial organic base",
+              "Creates social proof before ad spend deployment"
+            ],
+            "negative": [
+              "No landing page or waitlist designed",
+              "No community building strategy",
+              "Marine plasma awareness is near-zero — may be hard to generate demand without product",
+              "500 leads is aspirational with no benchmark"
+            ]
+          }
+        }
+      ],
+      "current_value": "500+ qualified leads",
+      "validation_plan": {
+        "method": "Build landing page + lead magnet, run organic + small paid campaign to drive signups. Track conversion to purchase after launch.",
+        "cost": "Landing page + $500-1000 small paid test to validate lead magnet appeal",
+        "timeline": "Pre-launch (Month -2 to Month 0)",
+        "success_criteria": "500+ email signups with ≥10% open rate and ≥3% click rate",
+        "kill_criteria": "<100 signups after 4 weeks of effort → insufficient market pull, reconsider positioning",
+        "owner": "Caio (landing page, lead magnet) + Danilo (paid test budget)"
+      },
+      "feeds_into": ["HYP-001", "HYP-006"],
+      "depends_on": [],
+      "risk_if_wrong": {
+        "severity": "MEDIUM",
+        "description": "If pre-launch demand building fails, Day 1 starts cold — all acquisition through paid channels with no social proof. Not fatal but means higher early CAC and slower organic flywheel.",
+        "financial_impact": "Without pre-launch leads, first 30 days of CAC will be higher (cold start penalty)",
+        "mitigation": "Even a small waitlist (100-200) provides testimonial seed and early revenue. Set modest expectation."
+      },
+      "related_hypotheses": {
+        "supported_by": [],
+        "accelerates": ["HYP-006"],
+        "reduces_cost_of": ["HYP-001"]
+      }
+    }
+  ]
+}

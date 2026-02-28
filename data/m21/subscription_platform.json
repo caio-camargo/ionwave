@@ -1,0 +1,124 @@
+{
+  "tup_id": "M21",
+  "sheet_name": "subscription_platform",
+  "version": "1.0.0",
+  "last_updated": "2026-02-06",
+  "description": "Subscription platform comparison for DTC supplement brands on Shopify",
+  "recommendation": {
+    "pre_launch": "Loop Subscriptions (free plan for ≤50 subscribers, then $99/mo + 0.75%)",
+    "at_scale": "Re-evaluate at 500+ subscribers — Stay AI if churn exceeds 10%, Recharge if operational complexity increases",
+    "rationale": "Danilo's original recommendation (Skio) is invalidated by 6x price increase ($100→$599/mo). Loop offers best cost-to-feature ratio for pre-launch with proven supplement brand results.",
+    "confidence": "C",
+    "upgrade_path": "Verify current Loop/Skio/Recharge pricing via official websites before committing. Pricing may have changed since research date."
+  },
+  "platforms": [
+    {
+      "name": "Loop Subscriptions",
+      "pricing": {
+        "free_plan": "Up to 50 subscribers",
+        "growth_plan": "$99/mo + 0.75% GMV (no per-order fees)",
+        "confidence": "C",
+        "source": "Web research 2026-02",
+        "note": "No per-order fees is unusual and significant cost advantage"
+      },
+      "shopify_native_checkout": true,
+      "churn_prevention": {
+        "rating": "Strong",
+        "features": ["Cancel flow with alternatives", "Pause/skip", "Swap product", "Dunning management"],
+        "confidence": "C"
+      },
+      "notable_users": ["Livingood Daily (reduced churn 10%→2%)"],
+      "pros": ["Free tier for launch", "No per-order fees", "Shopify native", "Strong cancel flows", "Proven supplement results"],
+      "cons": ["Smaller ecosystem than Recharge", "Fewer third-party integrations", "Less established"],
+      "ionwave_fit": "BEST for pre-launch. Free tier means zero subscription platform cost until 50 subscribers. Migrate to paid plan as base grows."
+    },
+    {
+      "name": "Recharge",
+      "pricing": {
+        "standard_plan": "$99/mo + $0.65/order",
+        "fifty_fifty_plan": "$50/mo + no transaction fees for first 50 subscribers",
+        "pro_plan": "$499/mo + $0.19/order",
+        "confidence": "C",
+        "source": "Web research 2026-02",
+        "note": "50-50 plan is new and designed for pre-launch brands"
+      },
+      "shopify_native_checkout": true,
+      "churn_prevention": {
+        "rating": "Good (improved from Basic)",
+        "features": ["Cancel flow builder", "Pause/skip", "Smart dunning retries", "Churn analytics dashboard"],
+        "confidence": "C",
+        "note": "Now supports Shopify native checkout — previous 'No' in Danilo's comparison is outdated"
+      },
+      "notable_users": ["Largest merchant base in DTC subscriptions", "LMNT (reported)", "Multiple supplement brands"],
+      "pros": ["Market leader", "Best integration ecosystem", "Strongest analytics", "Most migration tools available"],
+      "cons": ["Per-order fees add up", "Historically slower to innovate", "Pro plan expensive"],
+      "ionwave_fit": "GOOD backup. 50-50 plan competitive for pre-launch. Best choice if integration ecosystem matters (Klaviyo, Gorgias, etc.)."
+    },
+    {
+      "name": "Skio",
+      "pricing": {
+        "plan": "$599/mo + 1%",
+        "confidence": "C",
+        "source": "Web research 2026-02",
+        "note": "6x increase from Danilo's $100/mo figure. Invalidates original recommendation."
+      },
+      "shopify_native_checkout": true,
+      "churn_prevention": {
+        "rating": "Good",
+        "features": ["Passwordless customer portal", "One-click actions", "Cancel flow"],
+        "confidence": "C"
+      },
+      "notable_users": ["Mid-market DTC brands"],
+      "pros": ["Best customer portal UX (passwordless)", "Shopify native from inception"],
+      "cons": ["$599/mo is prohibitive for pre-launch", "Smaller feature set than Recharge"],
+      "ionwave_fit": "NOT RECOMMENDED at current pricing. $599/mo is not justifiable pre-launch. Danilo's recommendation based on outdated pricing."
+    },
+    {
+      "name": "Stay AI",
+      "pricing": {
+        "plan": "$149/mo + 1.5%",
+        "confidence": "C",
+        "source": "Web research 2026-02 + Danilo's comparison"
+      },
+      "shopify_native_checkout": true,
+      "churn_prevention": {
+        "rating": "Best (AI-powered)",
+        "features": ["AI churn prediction", "Auto-deploy retention offers", "Behavioral scoring", "Claims 15-30% churn reduction"],
+        "confidence": "C",
+        "note": "AI features are the differentiator but claims are not independently verified"
+      },
+      "notable_users": ["DTC brands focused on retention optimization"],
+      "pros": ["Best churn prevention AI", "Proactive intervention", "Strong analytics"],
+      "cons": ["Higher base + percentage costs", "AI claims not independently verified", "Overkill for pre-launch"],
+      "ionwave_fit": "EVALUATE AT MONTH 6+ if churn exceeds 10% with basic infrastructure. The AI features have most value once you have behavioral data from 200+ subscribers."
+    }
+  ],
+  "analytics_targets": {
+    "churn_rate": {"target": "<8%", "source": "Danilo original + industry benchmark", "confidence": "C"},
+    "subscription_as_pct_revenue": {"target": ">50%", "source": "Danilo original", "confidence": "D", "note": "50% is conservative. AG1-level brands target 70-80%."},
+    "subscriber_lifetime": {"target": ">10 months", "source": "Derived from churn target: 1/0.08 = 12.5mo at target, 1/0.10 = 10mo at floor", "confidence": "B"},
+    "involuntary_churn_recovery": {"target": ">50%", "source": "Industry benchmark for full dunning stack", "confidence": "C"}
+  },
+  "decision_timing": {
+    "when_to_decide": "Pre-launch (needed for Shopify store setup)",
+    "reversibility": "Medium — migration between platforms is possible but painful (subscriber data export/import, notification disruption). Choose carefully but don't over-agonize.",
+    "recommendation": "Start with Loop free plan. Lock in before launch. Evaluate at 500 subscribers whether to stay or migrate."
+  },
+  "intelligence_gaps": [
+    {
+      "gap": "Current Loop Subscriptions pricing not independently verified on official site",
+      "upgrade_path": "Visit loop.subscription.com pricing page, screenshot, date-stamp",
+      "priority": "HIGH — affects platform recommendation"
+    },
+    {
+      "gap": "Loop's Klaviyo integration depth unknown",
+      "upgrade_path": "Check Loop + Klaviyo integration docs, confirm churn signal passthrough",
+      "priority": "MEDIUM — affects churn prediction capability"
+    },
+    {
+      "gap": "Skio $599/mo needs second source",
+      "upgrade_path": "Check skio.com/pricing directly",
+      "priority": "LOW — even if lower, still likely >$200/mo based on market trend"
+    }
+  ]
+}

@@ -1,0 +1,189 @@
+{
+  "_meta": {
+    "sheet_name": "VOC Database",
+    "parent_file": "03b_customer_research_voc",
+    "version": "1.0.0",
+    "last_updated": "2026-02-04",
+    "updated_by": "claude-opus-4.5",
+    "status": "draft",
+    "quality_score": "6/10",
+    "data_type": "structured_table",
+    "note": "Consolidated from 'Voice of Customer Database' and 'Voice of Customer Database 2'. Contains 12 representative VOC quotes from competitor research. Full LMNT corpus is 31 quotes at saturation. This data needs to be connected to 01_strategic_foundation/interview_insights (currently empty)."
+  },
+  "data": {
+    "database_info": {
+      "total_quotes": 12,
+      "sources": ["Reddit", "Reviews", "Support email", "Interview", "Amazon competitor review", "Facebook Group"],
+      "saturation_status": "LMNT VOC at saturation (31 quotes in full corpus). IonWave-specific VOC not yet started.",
+      "downstream_connection": {
+        "target": "01_strategic_foundation/interview_insights",
+        "status": "NOT CONNECTED - interview_insights sheet is 100% empty template",
+        "action_required": "Backfill interview_insights with synthesized VOC data"
+      }
+    },
+    "quotes": [
+      {
+        "id": "VOC-001",
+        "quote": "I'm drinking so much water but I still feel like crap",
+        "source": "Reddit",
+        "subreddit": "r/keto",
+        "category": "Problem",
+        "subcategory": "Hydration-Depletion",
+        "use_case": "Hook",
+        "archetype_alignment": ["Keto Kevin", "Exhausted Professional"],
+        "confidence": "A",
+        "notes": "High-frequency complaint in keto communities. Classic electrolyte depletion symptom described in natural language."
+      },
+      {
+        "id": "VOC-002",
+        "quote": "My brain fog literally disappeared after 3 days",
+        "source": "Review",
+        "subreddit": null,
+        "category": "Result",
+        "subcategory": "Mental-Clarity",
+        "use_case": "Testimonial",
+        "archetype_alignment": ["Biohacker Ben", "Exhausted Professional"],
+        "confidence": "B",
+        "notes": "Strong result claim. Would need verification for ad use. Common theme across electrolyte reviews."
+      },
+      {
+        "id": "VOC-003",
+        "quote": "How is this different from the $10 stuff at CVS?",
+        "source": "Support email",
+        "subreddit": null,
+        "category": "Objection",
+        "subcategory": "Price-Value",
+        "use_case": "FAQ",
+        "archetype_alignment": ["Weekend Warrior Will", "Price Shoppers (negative persona)"],
+        "confidence": "A",
+        "notes": "Core objection. Must be addressed in landing page, FAQ, and ad creative. Differentiation messaging critical."
+      },
+      {
+        "id": "VOC-004",
+        "quote": "I just want to feel like I did in my 20s",
+        "source": "Interview",
+        "subreddit": null,
+        "category": "Desire",
+        "subcategory": "Youth-Energy",
+        "use_case": "Angle",
+        "archetype_alignment": ["Exhausted Professional", "Fasting Fiona"],
+        "confidence": "B",
+        "notes": "Deep emotional desire. Powerful for long-form copy and VSL. Resonates broadly across segments."
+      },
+      {
+        "id": "VOC-005",
+        "quote": "Tastes like chemicals and didn't do anything",
+        "source": "Amazon competitor review",
+        "subreddit": null,
+        "category": "Complaint",
+        "subcategory": "Taste-Efficacy",
+        "use_case": "Comparison",
+        "archetype_alignment": ["CrossFit Claire", "Keto Kevin"],
+        "confidence": "A",
+        "notes": "Common competitor complaint. Double pain point: taste AND efficacy. Use in comparison ads and landing page."
+      },
+      {
+        "id": "VOC-006",
+        "quote": "I was so tired by 2pm every day I could barely function",
+        "source": "Reddit",
+        "subreddit": null,
+        "category": "Problem",
+        "subcategory": "Energy-Crash",
+        "use_case": "Ad hook",
+        "archetype_alignment": ["Exhausted Professional"],
+        "confidence": "A",
+        "notes": "Extremely relatable problem statement. Specific time (2pm) makes it vivid. Strong ad hook potential."
+      },
+      {
+        "id": "VOC-007",
+        "quote": "Keto flu hit me like a truck",
+        "source": "Facebook Group",
+        "subreddit": null,
+        "category": "Problem",
+        "subcategory": "Keto-Flu",
+        "use_case": "Ad hook",
+        "archetype_alignment": ["Keto Kevin"],
+        "confidence": "A",
+        "notes": "Visceral description of keto flu. High emotional impact. One of the most validated pain points in VOC corpus."
+      },
+      {
+        "id": "VOC-008",
+        "quote": "I drink so much water but I still feel dehydrated",
+        "source": "Review",
+        "subreddit": null,
+        "category": "Problem",
+        "subcategory": "Hydration-Paradox",
+        "use_case": "Ad hook",
+        "archetype_alignment": ["Keto Kevin", "CrossFit Claire", "Exhausted Professional"],
+        "confidence": "A",
+        "notes": "The hydration paradox is a core educational angle. People don't understand that water without minerals doesn't hydrate properly."
+      },
+      {
+        "id": "VOC-009",
+        "quote": "My brain fog finally cleared up",
+        "source": "Review",
+        "subreddit": null,
+        "category": "Result",
+        "subcategory": "Mental-Clarity",
+        "use_case": "Testimonial",
+        "archetype_alignment": ["Biohacker Ben", "Exhausted Professional"],
+        "confidence": "B",
+        "notes": "Brain fog resolution is a top reported benefit. Strong testimonial for landing page and email sequences."
+      },
+      {
+        "id": "VOC-010",
+        "quote": "I actually have energy past 3pm now",
+        "source": "Review",
+        "subreddit": null,
+        "category": "Result",
+        "subcategory": "Energy-Sustained",
+        "use_case": "Testimonial",
+        "archetype_alignment": ["Exhausted Professional"],
+        "confidence": "B",
+        "notes": "Specific time reference makes it relatable. Pairs well with VOC-006 (the problem statement) for before/after narrative."
+      },
+      {
+        "id": "VOC-011",
+        "quote": "Why didn't anyone tell me about this sooner",
+        "source": "Review",
+        "subreddit": null,
+        "category": "Result",
+        "subcategory": "Discovery-Regret",
+        "use_case": "Social proof",
+        "archetype_alignment": ["All archetypes"],
+        "confidence": "B",
+        "notes": "Powerful social proof quote. Implies the product exceeded expectations. Works in ads, emails, and landing page."
+      },
+      {
+        "id": "VOC-012",
+        "quote": "Tastes way better than I expected",
+        "source": "Review",
+        "subreddit": null,
+        "category": "Product",
+        "subcategory": "Taste-Positive",
+        "use_case": "Objection handling",
+        "archetype_alignment": ["CrossFit Claire", "Weekend Warrior Will"],
+        "confidence": "B",
+        "notes": "Addresses taste objection proactively. 'Better than expected' framing lowers the bar and sets up positive surprise."
+      }
+    ],
+    "category_index": {
+      "Problem": ["VOC-001", "VOC-006", "VOC-007", "VOC-008"],
+      "Result": ["VOC-002", "VOC-009", "VOC-010", "VOC-011"],
+      "Objection": ["VOC-003"],
+      "Desire": ["VOC-004"],
+      "Complaint": ["VOC-005"],
+      "Product": ["VOC-012"]
+    },
+    "use_case_index": {
+      "Ad hook": ["VOC-006", "VOC-007", "VOC-008"],
+      "Hook": ["VOC-001"],
+      "Testimonial": ["VOC-002", "VOC-009", "VOC-010"],
+      "FAQ": ["VOC-003"],
+      "Angle": ["VOC-004"],
+      "Comparison": ["VOC-005"],
+      "Social proof": ["VOC-011"],
+      "Objection handling": ["VOC-012"]
+    }
+  }
+}

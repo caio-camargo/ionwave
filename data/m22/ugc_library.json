@@ -1,0 +1,87 @@
+{
+  "title": "UGC Library",
+  "source_tab": "493_ugc_library",
+  "tup_id": "M22",
+  "tup_version": "1.0.0",
+  "summary": "Centralized tracking database for all user-generated content — organized by creator, platform, rights status, quality grade, usage, and performance.",
+
+  "schema": {
+    "id": "Unique ID (UGC-001, UGC-002, etc.)",
+    "date_added": "Date content was added to library",
+    "creator": "Creator handle or name",
+    "creator_type": "organic | paid_ugc | influencer | customer",
+    "platform": "TikTok | Instagram | YouTube | Twitter/X | Other",
+    "content_type": "video_review | unboxing | day_in_life | problem_solution | testimonial | photo | b_roll",
+    "length_seconds": "Video duration",
+    "link": "URL to original content",
+    "raw_file_location": "Google Drive / Dropbox path to RAW file",
+    "rights_status": "pending | approved | paid | denied | organic",
+    "rights_document": "Link to signed release or DM screenshot",
+    "quality_grade": "A | B | C | D (see grading rubric)",
+    "used_in": "Ad IDs, landing pages, emails where content was deployed",
+    "performance": {
+      "roas": "Return on ad spend if used in paid ads",
+      "ctr": "Click-through rate",
+      "cpa": "Cost per acquisition",
+      "impressions": "Total impressions",
+      "status": "winner | testing | retired | unused"
+    },
+    "hooks_count": "Number of alternate hooks filmed",
+    "has_broll": "true | false",
+    "compliance_checked": "true | false — has brief compliance been verified?",
+    "notes": "Freeform notes"
+  },
+
+  "rights_status_definitions": {
+    "pending": "Rights requested, awaiting creator response",
+    "approved": "Written permission received — can use in ads and marketing",
+    "paid": "Licensed for agreed fee — usage rights per contract",
+    "denied": "Creator declined usage — do NOT use",
+    "organic": "Creator tagged brand in original post — does NOT constitute consent for commercial use. Must obtain explicit written permission before using in ANY paid advertising or marketing materials"
+  },
+
+  "quality_grading_rubric": {
+    "A": "High quality: good lighting, clear audio, authentic delivery, strong hook, product visible, follows brand brief. Ready for paid ads immediately.",
+    "B": "Good quality: mostly follows brief, minor issues fixable in editing (color grade, crop, caption overlay). Usable with light editing.",
+    "C": "Mediocre: decent concept but poor execution (bad audio, shaky, off-brand messaging). May be salvageable for b-roll or testimonial quotes.",
+    "D": "Unusable: off-brand, poor quality, compliance issues, or creator didn't follow brief. Archive or discard."
+  },
+
+  "outreach_template": {
+    "purpose": "Template for requesting usage rights from organic UGC creators",
+    "message": "Hey [Name]!\n\nLove your [post/video] about IonWave! Would you be open to us featuring it in our marketing?\n\nWe'd credit you and can offer [free product / $X store credit / affiliate code].\n\nLet me know!",
+    "notes": [
+      "Personalize — reference specific content they made",
+      "Always offer something in exchange (product, credit, or affiliate code)",
+      "Follow up once after 5 days if no response",
+      "If denied, respect immediately — do not re-ask"
+    ]
+  },
+
+  "entries": [
+    {
+      "id": "UGC-001",
+      "date_added": "[placeholder]",
+      "creator": "@[placeholder]",
+      "creator_type": "paid_ugc",
+      "platform": "TikTok",
+      "content_type": "video_review",
+      "length_seconds": null,
+      "link": "[placeholder]",
+      "raw_file_location": "[placeholder]",
+      "rights_status": "approved",
+      "quality_grade": "A",
+      "used_in": null,
+      "performance": {"status": "unused"},
+      "hooks_count": 3,
+      "has_broll": true,
+      "compliance_checked": false,
+      "notes": "Template entry — replace with real content"
+    }
+  ],
+
+  "danilo_assessment": "Template structure is sound. Added: creator_type field (distinguishes organic vs paid), length_seconds, raw_file_location, compliance_checked flag, quality grading rubric, and performance tracking fields. Danilo's outreach template is good — kept with minor refinements.",
+
+  "confidence_grade": "B",
+  "confidence_rationale": "Clean operational template ready for use. No intelligence gaps — this is a tracking tool, not a strategic document."
+}

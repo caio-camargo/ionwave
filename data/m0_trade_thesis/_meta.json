@@ -1,0 +1,96 @@
+{
+  "tup_id": "m0",
+  "tup_name": "Trade Thesis",
+  "title": "Strategic Foundation",
+  "tier": 1,
+  "version": "1.4.0",
+  "quality_score": "6.5/10",
+  "audited": true,
+  "audited_session": "Session #5",
+  "last_updated": "2026-02-06",
+  "updated_by": "claude-sonnet-4.5",
+  "sheets": [
+    {"id": "assumptions_register", "title": "Assumptions Register", "data_type": "structured_table", "row_count": 6, "note": "5 original + 1 new demand assumption; capital tension flagged"},
+    {"id": "interview_insights", "title": "Interview Insights Synthesis", "data_type": "structured_table", "row_count": 20, "note": "Backfilled with LMNT proxy data (03B VOC). All data explicitly labeled as proxy."},
+    {"id": "narrative_hypotheses", "title": "Narrative Hypothesis Table", "data_type": "hybrid", "row_count": 6, "note": "Evidence For/Against filled from Porter's, ICP, VOC. All at C- to C+ confidence."},
+    {"id": "odd1_thesis", "title": "ODD-1 Complete Thesis", "data_type": "narrative", "row_count": 79, "note": "v0 — SUPERSEDED by thesis.json. Retained for TAM/SAM/SOM and capital plan."},
+    {"id": "thesis", "title": "Strategic Thesis", "data_type": "hybrid", "row_count": 30, "note": "CANONICAL thesis. Narrow marine plasma positioning validated by Porter's + ICP."}
+  ],
+  "analysis_deliverable": {
+    "file": "IonWave/Strategic_Foundation_Analysis.md",
+    "version": "1.2.0",
+    "grade": "B",
+    "market_sizing": "IonWave/Marine_Plasma_Market_Sizing.md",
+    "persona_dialogue": {
+      "run_id": "SF-2026-02-04-001",
+      "rounds": 8,
+      "saturation": true,
+      "upgrades": 5,
+      "resolved": 3,
+      "summary_file": "IonWave/Strategic_Foundation_Dialogue_Summary.md"
+    }
+  },
+  "feeds_into": ["02_market_intelligence", "03a_customer_research_icp", "05a_product_strategy", "06_unit_economics", "04_planning_roadmaps"],
+  "requires": [],
+  "feedback_loops": [
+    {
+      "from": "02_market_intelligence/porters_five_forces",
+      "tension": "Capital tension: $30-50K raise may be insufficient given rising CPMs, zero switching costs, and category creation costs",
+      "status": "flagged_in_assumptions",
+      "discovered": "2026-02-04",
+      "resolution": "New demand assumption added; financial model needed to quantify"
+    },
+    {
+      "from": "02_market_intelligence/porters_five_forces",
+      "tension": "Two conflicting theses existed (ODD-1 broad vs Thesis narrow). Porter's, ICP, and internal evidence all support narrow.",
+      "status": "resolved",
+      "discovered": "2026-02-04",
+      "resolution": "ODD-1 reclassified as v0/superseded. Thesis sheet is canonical. See Strategic_Foundation_Analysis.md"
+    },
+    {
+      "from": "03b_customer_research_voc/voice_of_customer",
+      "tension": "VOC produced 31 LMNT quotes at saturation but data never connected to Interview Insights Synthesis sheet",
+      "status": "resolved_with_proxy",
+      "discovered": "2026-02-04",
+      "resolution": "Interview Insights backfilled with LMNT proxy data. Labeled as proxy throughout. Must be replaced with IonWave-specific data post-launch."
+    }
+  ],
+  "key_blockers": "No financial model linked to thesis; Right to Win reframed (singular: marine plasma positioning); sub-segment sized at $300K-$1.5M (thesis reframed — marine plasma = differentiation tool, not market definition)",
+  "next_action": "Build/audit 08_Financial_Model; validate $30K MRR Year 1 target; research Female Wellness ICP; collect fasting-specific VOC",
+  "migration_notes": {
+    "date": "2026-02-06",
+    "description": "TUP migration: Renamed from 01_strategic_foundation to M0 Trade Thesis",
+    "bootstrap_file": "01_strategic_foundation"
+  },
+  "opkits": [
+    {
+      "opkit_id": "opkit_m0_thesis_structure",
+      "name": "Thesis Structure Checklist",
+      "source": "ops_model_v10_dump/1204_m0_thesis_structure.json",
+      "description": "16-field decision-forcing checklist (ICP, Positioning, Product, Distribution, Finance, Kill Criteria)",
+      "decision": "REC-002f"
+    },
+    {
+      "opkit_id": "opkit_m0_computational_pmf",
+      "name": "Computational PMF Observer",
+      "source": "ops_model_v10_dump/137_computational_pmf.json",
+      "description": "10 signals → weighted PMF assessment (No PMF/Early/Achieved/Strong)",
+      "decision": "REC-002b"
+    },
+    {
+      "opkit_id": "opkit_m0_anti_goals",
+      "name": "Anti-Goals Boundary Conditions",
+      "source": "ops_model_v10_dump/115_anti_goals.json",
+      "description": "8 constraints defining what IonWave is NOT",
+      "decision": "REC-002d"
+    },
+    {
+      "opkit_id": "opkit_m0_bifurcation_points",
+      "name": "Bifurcation Points Controller Stack",
+      "source": "ops_model_v10_dump/131_bifurcation_points.json",
+      "description": "Early Warning → Bifurcation → Kill controller stack for 8 metrics",
+      "decision": "REC-002a"
+    }
+  ],
+  "opkit_registry": "See data/opkits/registry.json for complete OpKit definitions and navigation"
+}

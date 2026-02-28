@@ -1,0 +1,62 @@
+{
+  "tup_id": "M1",
+  "tup_name": "Labor Chain & Deployment",
+  "cluster": "BCL-6",
+  "status": "migrated",
+  "quality_grade": "8.6/10",
+  "danilo_tabs": {
+    "structural": ["140_p_m1", "141_c_m1", "142_ip_m1", "159_v_m1"],
+    "content": [
+      "143_role_engineering_framework",
+      "144_role_engineering",
+      "145_labor_sequencing_framework",
+      "146_studio_4_taxonomy",
+      "147_trustee_framework",
+      "148_overdetermined_coordination",
+      "149_operator_certification",
+      "150_operator_toolkit",
+      "151_operator_contract_template",
+      "152_operator_onboarding_checklist",
+      "153_recruiter_onboarding_checklist",
+      "154_cm_onboarding_checklist",
+      "155_odd_4_contract_templates",
+      "156_commission_stacking",
+      "157_relationship_map",
+      "158_contact_registry"
+    ],
+    "total": 20
+  },
+  "output_files": [
+    "role_engineering_and_coordination.md",
+    "labor_chain_and_sequencing.md",
+    "operator_system.md",
+    "hiring_and_onboarding.md",
+    "relationships_and_compensation.md"
+  ],
+  "opkits": ["OK-M1-001"],
+  "dialogue": {
+    "personas": 3,
+    "rounds": 6,
+    "upgrades": 34,
+    "applied": 24,
+    "critical_upgrades": 5,
+    "saturation": true
+  },
+  "corrections": [
+    "7-week sprint corrected to 12-week (industry standard)",
+    "Single-trigger equity acceleration corrected to double-trigger",
+    "Contractor classification flagged as high legal risk",
+    "CM reporting line fixed (not through CoS)",
+    "IP assignment language fixed (explicit assignment, not work-for-hire)",
+    "Commission Stacking tab reframed (external programs tagged to M15/M16/M19)"
+  ],
+  "hypothesis_links": ["HYP-001"],
+  "cross_tup": ["M0", "M9", "M15", "M16", "M18", "M19", "M24", "M25", "M30", "M31", "M35", "M36"],
+  "intelligence_gaps": [
+    "Attorney review of operator contract (misclassification, equity instrument)",
+    "409A valuation for equity grant pricing",
+    "State-specific non-compete enforceability analysis",
+    "Trustee authority formalization in operating agreement",
+    "CM grading rubric calibration with live operator data"
+  ]
+}

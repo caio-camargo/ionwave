@@ -1,0 +1,132 @@
+{
+  "tup_id": "m5",
+  "tup_name": "Product Formulation",
+  "cluster": "BCL-1",
+  "status": "migrated",
+  "version": "1.0.0",
+  "quality_score": "8.5/10",
+  "workshopped_date": "2026-02-10",
+  "protocol": "TWP-001 v2.0.0",
+  "source_files": ["05a_product_strategy", "05b_formulation_supply", "36_reference_specifications"],
+  "passet": "imagination",
+  "sheet_count": 15,
+  "danilo_tabs": [
+    {"danilo_id": "unknown", "title": "Formulation Master", "status": "partial", "note": "Ocean-sourced thesis, LMNT comparison"},
+    {"danilo_id": "unknown", "title": "Ingredient Deep-Dives", "status": "partial"},
+    {"danilo_id": "unknown", "title": "Mineral Profile Spec", "status": "partial", "note": "Na 1000mg, K 200mg, Mg 60mg"},
+    {"danilo_id": "unknown", "title": "Bioavailability Research", "status": "partial", "note": "Ionic forms"},
+    {"danilo_id": "unknown", "title": "Dosing Protocols", "status": "partial"},
+    {"note": "9 void/minimal tabs"}
+  ],
+  "consolidation": "15 Danilo tabs (5 with partial content, 9 void/minimal) → 4 content files + dialogue summary + OpKit",
+  "output_files": [
+    "data/m5/formulation_specification.md",
+    "data/m5/scientific_substantiation.md",
+    "data/m5/product_development.md",
+    "data/m5/usage_protocols_and_stacking.md",
+    "data/m5/dialogue_summary.md"
+  ],
+  "opkits": ["OK-M5-001"],
+  "feeds_into": ["m7", "m6", "m3", "m8"],
+  "requires": ["m0", "m26"],
+  "hypothesis_links": {
+    "primary": [],
+    "secondary": [],
+    "note": "M5 is foundational product spec — no direct hypothesis testing, but provides inputs to M7 claims (HYP-related) and M3 COGS validation"
+  },
+  "key_blockers": [
+    "All trace mineral amounts are [VOID — requires supplier CoA in Week 1-2]",
+    "Taste profile untested (requires beta testing Week 3-4 with 50-100 users)",
+    "Bioavailability advantage unproven (ocean minerals vs synthetic — requires RCT Q3 2026, $50K-$150K)",
+    "Stability data incomplete (requires Month 3-6 accelerated testing)",
+    "Premium pricing justification depends on unproven hypothesis (78 minerals > synthetic 3-4)"
+  ],
+  "intelligence_gaps": [
+    "Exact amounts for 78 trace minerals (supplier CoA-dependent, upgrade path: Week 1-2 outreach to Biocean/Actimar/Quinton)",
+    "Taste acceptability (upgrade path: 50-100 beta testers, success criteria ≥70% rating 7/10+)",
+    "Shelf life validation (upgrade path: accelerated stability Month 3-6, real-time 24-month confirmatory)",
+    "Bioavailability RCT (upgrade path: Q3 2026 head-to-head vs LMNT, $50K-$150K cost)",
+    "Microplastic contamination levels (upgrade path: quarterly testing <1µm, $2K-$5K per test)",
+    "Heavy metal batch variability (upgrade path: every batch testing, not random sampling)"
+  ],
+  "next_action": "Execute M6 supplier outreach (Week 1-2) to obtain CoAs with exact trace mineral amounts. Simultaneously prepare taste testing protocol (recruit 50-100 keto/fasting users). Apply for NSF Certified for Sport (Month 3) to allow 12-16 week buffer before Month 6 launch. Update formulation_specification.md with supplier data once received.",
+  "danilo_source_note": "15 tabs total. 5 tabs had partial IonWave-specific content (Formulation Master with ocean-sourced thesis + LMNT comparison, Mineral Profile Spec with Na/K/Mg amounts, Bioavailability Research, Dosing Protocols, Ingredient Deep-Dives). 9 tabs were void/minimal placeholders. Vision: 'Most scientifically rigorous electrolyte formulation — one that could withstand peer review.' Key differentiator: 78 ocean minerals vs synthetic 3-4. Critical intelligence gap: Exact trace mineral amounts supplier-dependent (marked throughout as [VOID — requires CoA]). Heavy green-field build using Phase 4 industry research (optimal ratios, bioavailability by form, competitor analysis LMNT/Liquid IV/Drip Drop/Ultima/Nuun, FDA upper limits, ocean-sourced vs synthetic research, René Quinton marine plasma).",
+  "phase_4_research_summary": {
+    "optimal_ratios": "Na:K:Mg 17:3:1 (1000:200:60mg) validated by Volek & Phinney keto research + LMNT formulation. Sweat loss averages 220:63:16:8 (Na:K:Ca:Mg). Target population: keto/fasting/performance (2-3g supplemental sodium daily).",
+    "bioavailability_hierarchy": "Magnesium forms: Glycinate (40-50%) > Citrate (30%) > Chloride (12%) > Oxide (4-5%). Ocean minerals = chloride/sulfate blend (lower bioavailability than citrate/glycinate, but natural 78-mineral spectrum = trade-off accepted). Marine biocenosis theory: phytoplankton pre-chelate minerals → enhanced bioavailability (Grade B-C evidence, no head-to-head RCT).",
+    "competitor_analysis": "LMNT (1000:200:60, stevia, $2.19/serving, keto-focused), Liquid IV (500-630 Na, 370-390 K, 0 Mg, 11g sugar, CTT®, $1.50/serving), Drip Drop (330 Na, 185 K, 11 Mg, 7g sugar, ORS formula), Ultima (55 Na, 250 K, 100 Mg, stevia, $0.83/serving), Nuun (300 Na, 150 K, 25 Mg, effervescent tablets, $0.75/serving). IonWave positioning: LMNT clone with ocean-sourced upgrade, premium $2.50/serving justified by 78-mineral story (value proposition = values-based, not purely evidence-based).",
+    "fda_upper_limits": "No UL for sodium (FDA guideline <2,300mg daily). Potassium: no UL for healthy individuals (FDA regulatory 99mg supplement limit is not toxicology-based). Magnesium: 350mg UL from supplements (not including food). IonWave = 1,000 Na (43% of guideline), 200 K (4% RDA), 60 Mg (14% DV, 17% of UL) — wide safety margins.",
+    "ocean_vs_synthetic": "Ocean minerals: pre-chelated by phytoplankton (marine biocenosis), ionic form (already dissolved), full spectrum (78 elements). Synthetic: mined/chemically synthesized, simple salts (chloride/citrate/oxide), 3-4 minerals only. Evidence: Marine plasma (Quinton isotonic/hypertonic) has historical clinical use (1897-1925), modern studies show 'enhanced bioavailability' for marine-derived Mg/Ca (mechanism unclear, manufacturer claims). Grade C evidence: plausible but unproven superiority.",
+    "rene_quinton_research": "Historical (1897-1925): Replaced 66-104% of dogs' blood with isotonic seawater (animals survived). Treated infants with subcutaneous marine plasma injections (1905 outcomes documented). Modern: No FDA-approved uses, lacks contemporary RCTs. Quinton isotonic (9‰) vs hypertonic (33‰) — IonWave = hypertonic equivalent (user dilutes powder).",
+    "sources": [
+      "LMNT electrolyte ratios (science.drinklmnt.com)",
+      "ACSM exercise guidelines (300-600mg Na/hour)",
+      "NIH mineral fact sheets (RDAs, ULs)",
+      "Magnesium bioavailability studies (citrate 5.13% blood increase, glycinate 4.88%)",
+      "Marine plasma research (Quinton Medical, oceanplasma.org)",
+      "Competitor websites (LMNT, Liquid IV, Drip Drop, Ultima, Nuun)",
+      "FDA supplement guidelines (21 CFR Part 111)",
+      "2025 FDA/FTC enforcement data"
+    ]
+  },
+  "dialogue_summary": {
+    "rounds": 6,
+    "personas": [
+      "Formulation Scientist (challenges mineral ratios, bioavailability claims, sourcing purity, stability)",
+      "Skeptical Nutritionist (questions ocean-sourced superiority, demands RCTs, critiques trace mineral necessity)",
+      "Regulatory/Claims Auditor (flags unsubstantiated claims, checks FDA compliance, verifies safety warnings)"
+    ],
+    "upgrades": 22,
+    "saturation_signal": "Round 6 focused on strategic planning (RCT scenarios, polypharmacy guidance, post-market surveillance) rather than fundamental formulation flaws. Diminishing returns achieved.",
+    "key_upgrades": [
+      "Marine biocenosis reality check (processing may reduce pre-chelation, but natural 78-mineral ratios = true differentiator)",
+      "Bioavailability trade-off analysis (IonWave prioritizes full-spectrum over maximum single-nutrient absorption)",
+      "Value proposition clarity (premium justified by ocean sourcing, sustainability, values-based purchase — NOT purely evidence-based)",
+      "Heavy metal testing every batch (not random 1 in 10 — mandatory for ocean sourcing)",
+      "Microplastic testing protocol (quarterly, $2K-$5K, <1µm detection)",
+      "Hangover protocol disclaimer (reducing alcohol = only proven prevention, IonWave addresses dehydration not toxicity)",
+      "Kidney disease contraindication specificity (eGFR <60, CKD Stage 3-5)",
+      "ACE inhibitor warning strength (DO NOT USE without physician supervision, not just 'consult')",
+      "RCT outcome scenarios (superior/equivalent/inferior bioavailability → strategic pivots documented)",
+      "Adverse event surveillance protocol (log complaints, monthly review, thresholds trigger investigation/halt)"
+    ]
+  },
+  "self_grade": {
+    "raw_scores": {
+      "evidence_coverage": 8.5,
+      "confidence_honesty": 9.5,
+      "upgrade_path_quality": 9.0,
+      "actionability": 7.5,
+      "opkit_reusability": 8.0
+    },
+    "calibrated_scores": {
+      "evidence_coverage": 8.0,
+      "confidence_honesty": 9.5,
+      "upgrade_path_quality": 8.5,
+      "actionability": 8.0,
+      "opkit_reusability": 8.5
+    },
+    "overall_quality": "8.5/10",
+    "rationale": "Strong evidence coverage for core electrolytes (A-grade). Exceptional confidence honesty (A/B/C/D grades + VOIDs appropriately applied). Clear upgrade paths with WHO/WHAT/WHEN/HOW MUCH. Actionable for PM execution (Week 1-2 supplier outreach, taste testing, stability protocols). OpKit generalizes to any mineral-based supplement. Pre-launch uncertainty (exact trace minerals, taste, stability, bioavailability RCT) keeps score at 8.5 (conservative) vs 9.0+. Target met (8.5-9.0 range).",
+    "strengths": [
+      "Confidence honesty (9.5/10) — no grade inflation, transparent VOIDs",
+      "Evidence coverage for core electrolytes (A-grade substantiation)",
+      "Safety warnings (kidney disease, ACE inhibitors, hyperkalemia) — rigorous",
+      "Upgrade paths (clear, costed, sequenced)"
+    ],
+    "limitations": [
+      "Ocean mineral bioavailability unproven (requires RCT)",
+      "Taste profile untested (beta testing Week 3-4)",
+      "Supplier CoA dependency (exact trace minerals)",
+      "Competitive differentiation risk (premium vs LMNT justified by values, not proven performance)"
+    ]
+  },
+  "bcl1_progress": {
+    "cluster_name": "Product & Science",
+    "cluster_total": 4,
+    "cluster_done": 3,
+    "cluster_remaining": 1,
+    "cluster_status": "75% complete (M5, M6, M7 done; M8 Brand Identity remains)",
+    "cluster_quality_avg": "8.5/10 (M5: 8.5, M6: 8.4, M7: 8.7)"
+  }
+}

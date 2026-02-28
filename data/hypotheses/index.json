@@ -1,0 +1,1272 @@
+{
+  "schema_version": "1.1.0",
+  "last_updated": "2026-02-06",
+  "description": "Bidirectional index linking hypotheses to supporting documents and vice versa. Updated from comprehensive dependency audit.",
+
+  "hypothesis_to_documents": {
+    "HYP-001": {
+      "hypothesis_name": "Customer Acquisition Cost (CAC)",
+      "reference_count": 15,
+      "referenced_in": [
+        {
+          "document": "IonWave/Financial_Model_Revenue_Validation.md",
+          "section": "Unit Economics Assumptions",
+          "context": "Base case $35 CAC with sensitivity analysis ($30-$45 range). CAC is highest-impact variable on timeline and capital needs.",
+          "relevance": "PRIMARY"
+        },
+        {
+          "document": "IonWave/Strategic_Foundation_Analysis.md",
+          "section": "1.2 Capital Tension Analysis",
+          "context": "CAC <$40 assumption vs. rising Meta CPMs (27% YoY). CAC may be higher and less stable than ODD-1 assumed.",
+          "relevance": "RELATED"
+        },
+        {
+          "document": "IonWave/Porter_Five_Forces_Analysis.md",
+          "section": "Force 3 - Threat of Substitutes",
+          "context": "Rising CPMs compress CAC efficiency. Zero switching costs increase CAC pressure.",
+          "relevance": "SUPPORTING"
+        },
+        {
+          "document": "IonWave/Marine_Plasma_Market_Sizing.md",
+          "section": "Seaonic Competitive Intel",
+          "context": "35% affiliate commission indicates 65%+ gross margin requirement and CAC sensitivity.",
+          "relevance": "SUPPORTING"
+        },
+        {
+          "document": "tracking/Open_Questions.md",
+          "section": "Q10: Capital Sufficiency",
+          "context": "CAC variance drives capital need (±$15K per $5 CAC change).",
+          "relevance": "RELATED"
+        },
+        {
+          "document": "data/01_strategic_foundation/assumptions_register.json",
+          "section": "assumption_005",
+          "context": "Customer acquisition CAC <$40. Confidence: D (not validated).",
+          "relevance": "PRIMARY"
+        },
+        {
+          "document": "data/01_strategic_foundation/thesis.json",
+          "section": "execution.marketing_strategy",
+          "context": "Acquisition cost assumptions embedded in execution plan.",
+          "relevance": "SUPPORTING"
+        },
+        {
+          "document": "data/m14/creative_testing_protocol.md",
+          "section": "Kill/Scale Decision Framework",
+          "context": "Two-stage kill criteria calibrated for $45 CPA target. Creative testing protocol directly generates CAC validation data. Test queue CT-001/CT-002 test message angles that determine CAC.",
+          "relevance": "PRIMARY"
+        },
+        {
+          "document": "data/m17/email_flow_architecture.md",
+          "section": "Master Automation Map + Benchmarks",
+          "context": "M17 TUP: Email flows generate revenue at $0 marginal CAC. 12 automation flows collectively target 30-40% of total revenue from email by Month 7-12. Every email conversion reduces blended CAC.",
+          "relevance": "SUPPORTING"
+        },
+        {
+          "document": "data/m14/experimentation_framework.json",
+          "section": "Testing Priority Matrix",
+          "context": "Ad creative hooks ranked as highest-impact testing element. Traffic-based methodology ensures valid CAC measurement at each growth stage.",
+          "relevance": "SUPPORTING"
+        },
+        {
+          "document": "data/m23/pipeline_operations.md",
+          "section": "§3 Attribution Framework",
+          "context": "M23 TUP: Influencer CPO target <$18 (below CAC target). Attribution framework tracks both direct (code use) and indirect (branded search lift) to avoid undercounting influencer value. Influencer hybrid deals break-even at 13 sales per partnership.",
+          "relevance": "SUPPORTING"
+        },
+        {
+          "document": "data/m30/data_dictionary.md",
+          "section": "§2 Acquisition Metrics + §8 Hypothesis Monitoring Metrics",
+          "context": "M30 TUP: Defines CAC formula precisely (Total Marketing Spend / New Customers), distinguishes blended CAC from per-channel CAC, establishes MER as primary efficiency metric over ROAS (U2). Kill threshold: >$60 for 14 days. Awareness vs conversion attribution model (U4).",
+          "relevance": "PRIMARY"
+        },
+        {
+          "document": "data/m30/red_flags_and_validation.md",
+          "section": "§1 Existential Kill Criteria (RF-1)",
+          "context": "M30 TUP: CAC classified as EXISTENTIAL kill metric (1 of 3). >$60 for 14 days triggers 48-hr action plan. Escalation protocol defined. V0 Master Consistency Check ensures kill threshold matches M0 Thesis.",
+          "relevance": "PRIMARY"
+        },
+        {
+          "document": "data/m9/tracking_and_attribution.md",
+          "section": "§1 North Star Metric (MER) + §5 Tracking Architecture",
+          "context": "M9 TUP: Tracking infrastructure enables accurate CAC measurement. MER as primary efficiency metric (aligned with M30). Pixel + CAPI hybrid recovers 85-98% of conversion data vs 40-70% browser-only. Without server-side tracking, CAC calculation is fundamentally inaccurate.",
+          "relevance": "SUPPORTING"
+        },
+        {
+          "document": "data/m15/cro_testing_framework.md",
+          "section": "§5 Server-Side Tracking + §1 CRO Testing Methodology",
+          "context": "M15 TUP: Server-side tracking requirement (Shopify pixel + Meta CAPI + Elevar) — client-side analytics miss 15-25% of conversions, making CAC calculation fundamentally inaccurate. CRO testing tracks RPV (revenue per visitor) not just CVR, providing more accurate channel efficiency measurement. Landing page CVR directly determines cost per acquisition.",
+          "relevance": "SUPPORTING"
+        }
+      ]
+    },
+
+    "HYP-002": {
+      "hypothesis_name": "Free-to-Subscription Conversion Rate",
+      "reference_count": 16,
+      "referenced_in": [
+        {
+          "document": "IonWave/Financial_Model_Revenue_Validation.md",
+          "section": "Conversion Assumptions",
+          "context": "Base 50%, optimistic 60% conversion rate. Represents subscribers as % of paying customers.",
+          "relevance": "PRIMARY"
+        },
+        {
+          "document": "IonWave/Marine_Plasma_Market_Sizing.md",
+          "section": "Market Entry Analysis - Business Model",
+          "context": "Freemium model conversion benchmarks. 40-60% range for supplement subscription adoption.",
+          "relevance": "SUPPORTING"
+        },
+        {
+          "document": "IonWave/ICP_Analysis.md",
+          "section": "Strategic Implication - Jobs to Be Done",
+          "context": "Subscription stickiness varies by job. Job 3 (Daily Wellness) likely has highest subscription rate.",
+          "relevance": "RELATED"
+        },
+        {
+          "document": "data/01_strategic_foundation/assumptions_register.json",
+          "section": "assumption_007",
+          "context": "Subscription adoption 40-50%. Confidence: D (not validated).",
+          "relevance": "PRIMARY"
+        },
+        {
+          "document": "data/03a_customer_research_icp/customer_segmentation.json",
+          "section": "lifecycle_value.subscription_propensity",
+          "context": "Segment-specific subscription likelihood. Health segments show higher subscription intent.",
+          "relevance": "SUPPORTING"
+        },
+        {
+          "document": "data/m21/subscription_psychology.md",
+          "section": "Why People Subscribe + Subscription-First Design",
+          "context": "Subscription driver rankings (convenience > savings > consistency > identity > belonging). Recommends subscription-first funnel. 6x LTV multiplier ($159 vs $26). Optimal discount 15-20%.",
+          "relevance": "PRIMARY"
+        },
+        {
+          "document": "data/m21/subscription_platform.json",
+          "section": "Platform Recommendation",
+          "context": "Loop Subscriptions recommended for subscription-first checkout architecture. Enables default-to-subscription funnel design supporting HYP-002 target.",
+          "relevance": "SUPPORTING"
+        },
+        {
+          "document": "data/m10_pricing_offer/",
+          "section": "Offer Strategy + SKU Architecture",
+          "context": "M10 TUP: Offer architecture directly determines subscription pricing, discount structure, and subscription-first funnel design. Subscription conversion is a function of offer framing.",
+          "relevance": "PRIMARY"
+        },
+        {
+          "document": "data/m17/email_post_purchase.md",
+          "section": "Email 4 (Subscription Reminder) + Email 6 (30-Day Milestone)",
+          "context": "M17 TUP: Post-purchase Email 4 (Day 21) is primary subscription conversion touchpoint — non-subscriber version pitches Subscribe & Save with % off + free shipping. Email 6 offers 90-day bundle upsell. Replenishment flow triggers at projected depletion.",
+          "relevance": "PRIMARY"
+        },
+        {
+          "document": "data/m28/constraint_scenarios.md",
+          "section": "§5 Subscription Conversion Sensitivity (Dialogue Upgrade U12)",
+          "context": "M28 TUP: Stress-tests subscription conversion rate across scenarios. Viable down to 30%, YELLOW at 20%, crisis at 10%. Improvement levers table identifies 6 interventions. Below 20% triggers investigation.",
+          "relevance": "PRIMARY"
+        },
+        {
+          "document": "data/m28/expansion_paths.md",
+          "section": "§2 New Product Readiness Triggers",
+          "context": "M28 TUP: Expansion trigger #3 requires >50 customer demand requests for new SKU. Subscription conversion affects product expansion timing — low sub rate delays line extension confidence.",
+          "relevance": "SUPPORTING"
+        },
+        {
+          "document": "data/m9/store_setup_and_launch.md",
+          "section": "§5 Subscription Setup + Subscription UX Pattern (U8)",
+          "context": "M9 TUP: Subscription-first UX pattern (toggle > dropdown, subscription price shown first, pre-selected). Toggle converts 15-20% better than dropdown. Subscription as default purchase option. Recharge/Skio setup checklist. Directly impacts HYP-002 subscription conversion rate.",
+          "relevance": "PRIMARY"
+        },
+        {
+          "document": "data/m15/checkout_optimization.md",
+          "section": "§5 Subscription-First Checkout Design + §6 Subscription Rate as Tier-1 Metric",
+          "context": "M15 TUP: Subscription-first checkout with pre-selected toggle, per-serving cost framing, Shop Pay priority (50% conversion lift). Subscription rate elevated to tier-1 CRO metric — 3.7x LTV difference (subscriber $305 vs one-time $83). Directly impacts conversion from one-time to subscriber.",
+          "relevance": "PRIMARY"
+        },
+        {
+          "document": "data/m15/funnel_architecture.md",
+          "section": "§2 Funnel Architectures (A-H) + §5 Traffic Routing by Audience Temperature",
+          "context": "M15 TUP: 8 funnel architectures matched to audience temperature. Architecture choice determines subscription conversion opportunity — LP (cold traffic education) → PDP (subscription-first checkout). Quiz funnel for personalized recommendation increases subscription commitment.",
+          "relevance": "SUPPORTING"
+        },
+        {
+          "document": "data/m24/inventory_management.md",
+          "section": "§2 Subscription vs One-Time Demand + §6 Cohort Decay Model (U6)",
+          "context": "M24 TUP: Two-stream inventory demand model separates subscription (predictable, cohort-based churn decay) from one-time (ad-spend-driven). Subscription cohort decay model shows Month 2 churn highest (20-30%), stabilizing at 8-12% by Month 6+. Renewal clustering warning prevents fulfillment bottlenecks. Subscription rate directly determines inventory forecasting accuracy.",
+          "relevance": "SUPPORTING"
+        }
+      ]
+    },
+
+    "HYP-003": {
+      "hypothesis_name": "Monthly Churn Rate",
+      "reference_count": 13,
+      "referenced_in": [
+        {
+          "document": "IonWave/Financial_Model_Revenue_Validation.md",
+          "section": "Retention Modeling",
+          "context": "12% monthly churn (conservative). SaaS SMB benchmarks 5-10%, supplements 8-15%.",
+          "relevance": "PRIMARY"
+        },
+        {
+          "document": "tracking/Open_Questions.md",
+          "section": "Q11: Revenue Path Validation",
+          "context": "1% churn change = ±$3K MRR at Month 18. Churn's compounding effect on trajectory.",
+          "relevance": "RELATED"
+        },
+        {
+          "document": "data/01_strategic_foundation/assumptions_register.json",
+          "section": "assumption_008",
+          "context": "Monthly churn <10%. Confidence: D (speculative).",
+          "relevance": "PRIMARY"
+        },
+        {
+          "document": "data/03a_customer_research_icp/segmentation_matrix.json",
+          "section": "retention_drivers",
+          "context": "Segment-specific churn risk factors. Daily Wellness job has lowest churn risk.",
+          "relevance": "SUPPORTING"
+        },
+        {
+          "document": "protocols/case_studies/CSP-002_HYP-003_2026-02-06.md",
+          "section": "Full case study",
+          "context": "CSP-002: Decomposed into 4 sub-hypotheses (efficacy, early-life churn, retention infrastructure, consumption-cadence). Seaonic proxy evidence applied to HYP-003.1. All 4 constraint scenarios applied.",
+          "relevance": "PRIMARY"
+        },
+        {
+          "document": "data/m21/churn_prediction.json",
+          "section": "Full file",
+          "context": "Industry retention curve (Month 1: 82-88%, Month 3: 60-70%, Month 6: 45-55%, Month 12: 30-40%). 9 churn prediction signals with intervention timelines. Composite risk scoring. Dunning model (55-70% recovery rate, -1.5 to -3pp churn). 5 signals missing from Danilo's model.",
+          "relevance": "PRIMARY"
+        },
+        {
+          "document": "data/m21/retention_playbook.md",
+          "section": "Full file",
+          "context": "15-tactic prioritized retention playbook (3 tiers). Tier 1 expected to reduce churn from 15-20% to 10-12%. Maps directly to HYP-003.1-003.4 sub-hypotheses. Implementation timeline. Anti-patterns section.",
+          "relevance": "PRIMARY"
+        },
+        {
+          "document": "data/m21/win_back_offer_ladder.md",
+          "section": "Full file",
+          "context": "Education-first win-back strategy. Replaces Danilo's discount ladder (10%→30%). Pre-cancellation save flow + post-cancellation 8-step sequence over 180 days. Addresses 70-80% of churn reasons vs 15-20% for discounts.",
+          "relevance": "PRIMARY"
+        },
+        {
+          "document": "data/m21/subscription_psychology.md",
+          "section": "Why People Cancel",
+          "context": "Ranked cancellation reasons: too much product (20-30%), not seeing results (15-25%), too expensive (15-20%), switched (10-15%), forgot (5-10%), bad experience (5-10%). Supplements face structural higher churn.",
+          "relevance": "SUPPORTING"
+        },
+        {
+          "document": "data/m17/email_post_purchase.md",
+          "section": "Full 7-email sequence",
+          "context": "M17 TUP: Post-purchase onboarding sequence is primary churn prevention mechanism — Day 0 first-use tip, Day 7 check-in, Day 14 science reinforcement, Day 25 review request (catches dissatisfied before they churn). Replenishment reminder at Day 21 prevents involuntary churn from running out.",
+          "relevance": "PRIMARY"
+        },
+        {
+          "document": "data/m17/email_winback.md",
+          "section": "4-email win-back sequence",
+          "context": "M17 TUP: Win-back flow recovers lapsed customers (60-105 days). 4-email escalation: emotional → updates → 25% discount → sunset. Target >5% win-back rate. Addresses both voluntary and involuntary churn.",
+          "relevance": "SUPPORTING"
+        },
+        {
+          "document": "data/m30/data_dictionary.md",
+          "section": "§3 Retention & Subscription Metrics",
+          "context": "M30 TUP: Defines churn precisely — voluntary vs involuntary, monthly churn formula (Cancelled / Active at start of month). Target: <8%. Kill: >15% for 2 months. Distinguishes paused vs cancelled.",
+          "relevance": "PRIMARY"
+        },
+        {
+          "document": "data/m30/red_flags_and_validation.md",
+          "section": "§1 Monitoring Kill Criteria (RF-3)",
+          "context": "M30 TUP: Monthly churn classified as MONITORING kill metric. >15% for 2 consecutive months triggers customer research and product/offer audit. Escalation protocol defined.",
+          "relevance": "SUPPORTING"
+        }
+      ]
+    },
+
+    "HYP-004": {
+      "hypothesis_name": "Gross Margin",
+      "reference_count": 13,
+      "referenced_in": [
+        {
+          "document": "IonWave/Financial_Model_Revenue_Validation.md",
+          "section": "Unit Economics Assumptions",
+          "context": "67% gross margin (COGS, hosting, payment processing). Conservative for SaaS, middle-of-road for supplements.",
+          "relevance": "PRIMARY"
+        },
+        {
+          "document": "IonWave/Marine_Plasma_Market_Sizing.md",
+          "section": "Seaonic Competitive Intel - Pricing",
+          "context": "$1.79/serving with 35% affiliate commission suggests 65%+ margin achievable.",
+          "relevance": "SUPPORTING"
+        },
+        {
+          "document": "IonWave/Strategic_Foundation_Analysis.md",
+          "section": "Capital Tension Analysis",
+          "context": "Margin compression from supplier power creates margin risk.",
+          "relevance": "RELATED"
+        },
+        {
+          "document": "IonWave/Porter_Five_Forces_Analysis.md",
+          "section": "Force 2 - Bargaining Power of Suppliers",
+          "context": "Marine plasma supplier concentration (3-5 qualified) constrains margin expansion.",
+          "relevance": "SUPPORTING"
+        },
+        {
+          "document": "data/01_strategic_foundation/assumptions_register.json",
+          "section": "assumption_006",
+          "context": "Gross margin >60%. Confidence: C (benchmarked but not validated).",
+          "relevance": "PRIMARY"
+        },
+        {
+          "document": "data/02_market_intelligence/competitive_intel.json",
+          "section": "pricing_analysis",
+          "context": "LMNT, Seaonic, Totum pricing structures. 60-70% margin range validated across competitors.",
+          "relevance": "SUPPORTING"
+        },
+        {
+          "document": "data/m10_pricing_offer/",
+          "section": "Offer Strategy + Price Testing",
+          "context": "M10 TUP: Price point × COGS = margin. Every price test directly tests this hypothesis. Bundle pricing and SKU architecture affect blended margin.",
+          "relevance": "PRIMARY"
+        },
+        {
+          "document": "data/m28/b2b_wholesale.md",
+          "section": "§7 B2B Unit Economics Model (Dialogue Upgrade U14)",
+          "context": "M28 TUP: B2B channel economics — $200 acquisition cost, $588/mo revenue, $275/mo net margin, 0.7-month payback, 13.2x LTV:CAC at 80% retention. Wholesale pricing at 50% of MSRP ($24.50) validates B2B margin structure.",
+          "relevance": "PRIMARY"
+        },
+        {
+          "document": "data/m28/amazon_playbook.md",
+          "section": "§2 Amazon Economics",
+          "context": "M28 TUP: Amazon margin waterfall — $12.20 net per unit at 26% margin after referral fees, FBA, PPC. Break-even analysis by COGS tier. Amazon margin significantly lower than D2C (~50%) but higher volume.",
+          "relevance": "SUPPORTING"
+        },
+        {
+          "document": "data/m28/retail_readiness.md",
+          "section": "§4 Retail Economics — Margin Waterfall",
+          "context": "M28 TUP: Retail margin waterfall — $9.52 net per unit at 19% margin after retailer margin (40%), distributor cut (15-20%), and trade spend. Retail is brand-building, not margin play. Volume break-even: ~1 unit/store/week across 100 stores.",
+          "relevance": "SUPPORTING"
+        },
+        {
+          "document": "data/m24/international_and_scaling.md",
+          "section": "§5 Free Shipping Economics + §6 Returns & Exchanges + §7 Free Shipping Cost at Scale (U18)",
+          "context": "M24 TUP: Free shipping absorbs $5-8/order into margin. Subscriber free shipping always, one-time $5.99 flat or free over $75. If free shipping cost >8% of revenue, triggers threshold adjustment. Returns processing $3.50-9.00/return at 3PL. Break-even: $49 order → $23 margin after free shipping (47% vs 60% without). Shipping policy directly compresses contribution margin.",
+          "relevance": "SUPPORTING"
+        },
+        {
+          "document": "data/m15/checkout_optimization.md",
+          "section": "§4 AOV Boosters + §7 Post-Purchase Page Optimization",
+          "context": "M15 TUP: AOV optimization (order bumps, post-purchase upsells, bundle offers) directly affects contribution margin per order. Shop Pay Installments for $47+ orders reduces price sensitivity. Post-purchase one-click upsell adds revenue without re-entering payment. Free shipping threshold strategy ($75) drives bundle/multi-unit purchase.",
+          "relevance": "SUPPORTING"
+        },
+        {
+          "document": "data/m15/cro_testing_framework.md",
+          "section": "§2 FTC & DSHEA Compliance Framework + §4 California Prop 65",
+          "context": "M15 TUP: Compliance costs directly impact margin — annual legal review ($2-5K), Prop 65 CoA testing per batch, FTC violation fines ($53,088+ per violation). Non-compliance is existential margin risk. Prop 65 testing for marine plasma (arsenic, cadmium, lead, mercury) is a gating requirement before CA sales.",
+          "relevance": "SUPPORTING"
+        }
+      ]
+    },
+
+    "HYP-005": {
+      "hypothesis_name": "Blended LTV",
+      "reference_count": 8,
+      "referenced_in": [
+        {
+          "document": "IonWave/Financial_Model_Revenue_Validation.md",
+          "section": "LTV Calculation and Sensitivity",
+          "context": "Blended LTV $106 (range $64-159). Wide range reflects churn and margin uncertainty.",
+          "relevance": "PRIMARY"
+        },
+        {
+          "document": "tracking/Open_Questions.md",
+          "section": "Q11: Revenue Path Validation",
+          "context": "LTV:CAC ratio 3.0 base case (range 1.8-5.3). Base case barely sustainable.",
+          "relevance": "RELATED"
+        },
+        {
+          "document": "IonWave/ICP_Analysis.md",
+          "section": "Segment Prioritization Matrix",
+          "context": "Chronic health segments may deliver 2-3x LTV vs. baseline. High-LTV segment identification.",
+          "relevance": "SUPPORTING"
+        },
+        {
+          "document": "data/01_strategic_foundation/assumptions_register.json",
+          "section": "assumption_009",
+          "context": "LTV >$150. Confidence: D (composite of weak inputs).",
+          "relevance": "PRIMARY"
+        },
+        {
+          "document": "data/03a_customer_research_icp/icp.json",
+          "section": "economic_profile.lifetime_value",
+          "context": "Biohacker segment $180-250 LTV; Daily Wellness $120-180.",
+          "relevance": "SUPPORTING"
+        },
+        {
+          "document": "data/01_strategic_foundation/narrative_hypotheses.json",
+          "section": "hypothesis_003",
+          "context": "Marine plasma stickiness drives retention. Confidence: D (speculative).",
+          "relevance": "RELATED"
+        },
+        {
+          "document": "data/m10_pricing_offer/",
+          "section": "Offer Strategy + SKU Architecture + Product Roadmap",
+          "context": "M10 TUP: LTV = f(price, retention, margin, AOV). Offer architecture (bundles, upsells, line extensions) directly drives AOV and purchase frequency components of LTV.",
+          "relevance": "PRIMARY"
+        },
+        {
+          "document": "data/m17/email_flow_architecture.md",
+          "section": "Master Automation Map + Lifecycle Stages",
+          "context": "M17 TUP: Email lifecycle engine drives LTV through 12 automated touchpoints. Post-purchase → subscription conversion (HYP-002 link). Replenishment reminders prevent involuntary churn. VIP recognition + referral activation create advocacy loop. Email targeting 30-40% of total revenue by Month 7-12.",
+          "relevance": "SUPPORTING"
+        }
+      ]
+    },
+
+    "HYP-006": {
+      "hypothesis_name": "Organic Growth Lift",
+      "reference_count": 13,
+      "referenced_in": [
+        {
+          "document": "IonWave/Financial_Model_Revenue_Validation.md",
+          "section": "Growth Assumptions",
+          "context": "10% organic lift (range 5-20%) from virality/word-of-mouth. Conservative assumption.",
+          "relevance": "PRIMARY"
+        },
+        {
+          "document": "IonWave/ICP_Analysis.md",
+          "section": "Health-Challenged Segment",
+          "context": "Strong word-of-mouth potential. Organic lift may be 15-25% IF health segment penetrated.",
+          "relevance": "RELATED"
+        },
+        {
+          "document": "data/01_strategic_foundation/narrative_hypotheses.json",
+          "section": "hypothesis_005",
+          "context": "Marine plasma novelty drives social sharing. Confidence: D (speculative).",
+          "relevance": "SUPPORTING"
+        },
+        {
+          "document": "protocols/case_studies/CSP-001_HYP-006_2026-02-06.md",
+          "section": "Full case study",
+          "context": "CSP-001: Decomposed into 5 sub-hypotheses (referral, SEO, influencer, PR, WOM). Surfaced HYP-009. Reframed HYP-001 relationship from 'mitigates' to 'portfolio_diversifies'.",
+          "relevance": "PRIMARY"
+        },
+        {
+          "document": "data/m22/referral_program.json",
+          "section": "Full file",
+          "context": "M22 TUP: Referral program design ($10/$10 store credit), phased rollout, benchmarks (3-5% referral rate, 10-15% conversion). Operationalizes HYP-006.1. Referral CAC $13.40 vs $35 paid.",
+          "relevance": "PRIMARY"
+        },
+        {
+          "document": "data/m22/community_strategy.md",
+          "section": "Full file",
+          "context": "M22 TUP: Community platform evaluation (7 platforms), phased strategy (email-first → Skool → Circle). Operationalizes HYP-006.5.",
+          "relevance": "PRIMARY"
+        },
+        {
+          "document": "data/m22/ugc_creator_program.json",
+          "section": "Full file",
+          "context": "M22 TUP: UGC production system supporting organic content pipeline. Budget tiers, sourcing platforms, creative fatigue management. Supports all HYP-006 sub-hypotheses through content amplification.",
+          "relevance": "SUPPORTING"
+        },
+        {
+          "document": "data/m29/pr_strategy.md",
+          "section": "Full file",
+          "context": "M29 TUP: PR & media strategy — earned media generates high-DA backlinks that accelerate SEO (HYP-006.2). Expert quote platforms, podcast guesting, media outreach. Phase-gated timeline, tiered media targets. Weekly PR time budget capped at 2-3 hrs/week.",
+          "relevance": "PRIMARY"
+        },
+        {
+          "document": "data/m23/influencer_creator_strategy.md",
+          "section": "§2 Combined Strategy, §5 Founder Mode Phasing",
+          "context": "M23 TUP: Influencer seeding directly operationalizes HYP-006.3 (influencer channel). Phase 0 product seeding (30-50 nanos) + Phase 2 micro-influencer hybrid deals. Combined strategy: creators for ad creative volume, influencers for audience reach. Unit Economics Validation Gate: >1.5x ROAS before paid influencer deals.",
+          "relevance": "PRIMARY"
+        },
+        {
+          "document": "data/m23/influencer_map.md",
+          "section": "Tier 1-3 targets",
+          "context": "M23 TUP: IonWave-specific influencer target map — Tier 1 (dream: Huberman, Attia), Tier 2 (achievable: DeLauer, Berry), Tier 3 (micro: volume seeding). Micro-influencer volume strategy (50 > 1 macro). Pre-outreach competitive screening added.",
+          "relevance": "SUPPORTING"
+        },
+        {
+          "document": "data/m28/channel_strategy.md",
+          "section": "§1 Channel Acquisition Matrix + §2 Channel Sequencing",
+          "context": "M28 TUP: 13-channel acquisition matrix with IonWave priorities. 4-phase channel sequencing (Phase 1 D2C → Phase 2 Amazon → Phase 3 B2B → Phase 4 Retail). Platform concentration risk rules. Multi-touch attribution model. PPC campaign architecture.",
+          "relevance": "PRIMARY"
+        },
+        {
+          "document": "data/m28/expansion_paths.md",
+          "section": "§1 Expansion Options Matrix + §4 Recommended Sequence",
+          "context": "M28 TUP: 8-path expansion matrix (Amazon, B2B, Line Extensions, Retail, International, White Label, Digital Products, Adjacent Categories). Recommended 5-step expansion sequence with timing gates. White label guardrails prevent competitor creation.",
+          "relevance": "PRIMARY"
+        },
+        {
+          "document": "data/m28/constraint_scenarios.md",
+          "section": "§1-4 Extreme Constraint Scenarios",
+          "context": "M28 TUP: 4 extreme scenarios stress-test growth assumptions — $100M in 12mo, $100K MRR in 3mo, $0 marketing budget, 10hrs/week from Day 1. Cross-scenario synthesis reveals that channel diversification and organic growth are essential regardless of scenario.",
+          "relevance": "SUPPORTING"
+        }
+      ]
+    },
+    "HYP-009": {
+      "hypothesis_name": "Pre-Launch Demand Generation",
+      "reference_count": 1,
+      "referenced_in": [
+        {
+          "document": "protocols/case_studies/CSP-001_HYP-006_2026-02-06.md",
+          "section": "Section 7: New Hypotheses Surfaced",
+          "context": "Surfaced by CSP-001 SC-02 (speed compression). Current system assumes zero-to-paid-acquisition on Day 1. Pre-launch demand building is a missing component.",
+          "relevance": "PRIMARY"
+        }
+      ]
+    },
+
+    "HYP-007": {
+      "hypothesis_name": "Timeline to $30K MRR",
+      "reference_count": 8,
+      "referenced_in": [
+        {
+          "document": "IonWave/Financial_Model_Revenue_Validation.md",
+          "section": "All Scenarios - Timeline Analysis",
+          "context": "Base case 18 months (not 12). Original 12-month thesis NOT achievable.",
+          "relevance": "PRIMARY"
+        },
+        {
+          "document": "tracking/Open_Questions.md",
+          "section": "Q11: Revenue Path Validation",
+          "context": "Core question answered. Timeline revision required for investor communication.",
+          "relevance": "PRIMARY"
+        },
+        {
+          "document": "IonWave/Strategic_Foundation_Analysis.md",
+          "section": "Capital Tension Analysis",
+          "context": "ODD-1 assumes 12-month; Porter's/ICP suggest longer. 12-month contradicts structural analysis.",
+          "relevance": "RELATED"
+        },
+        {
+          "document": "IonWave/Marine_Plasma_Market_Sizing.md",
+          "section": "Strategic Implications for IonWave",
+          "context": "Seaonic took 6+ years to reach $100-180K revenue. Growth is slow without capital.",
+          "relevance": "SUPPORTING"
+        },
+        {
+          "document": "data/01_strategic_foundation/assumptions_register.json",
+          "section": "assumption_010",
+          "context": "Achieve $100K MRR within 12 months. Confidence: D (contradicted by analysis).",
+          "relevance": "PRIMARY"
+        },
+        {
+          "document": "data/01_strategic_foundation/thesis.json",
+          "section": "execution.milestones",
+          "context": "Timeline milestones not validated against financial model.",
+          "relevance": "PRIMARY"
+        },
+        {
+          "document": "IonWave/Porter_Five_Forces_Analysis.md",
+          "section": "Capital tension flag",
+          "context": "Category creation extends timeline. Timeline depends on positioning choice (Q9).",
+          "relevance": "SUPPORTING"
+        },
+        {
+          "document": "IonWave/ICP_Analysis.md",
+          "section": "Job 3 hypothesis to test first",
+          "context": "2-3 month discovery phase delays revenue acceleration.",
+          "relevance": "RELATED"
+        }
+      ]
+    },
+
+    "HYP-008": {
+      "hypothesis_name": "Capital Sufficiency",
+      "reference_count": 7,
+      "referenced_in": [
+        {
+          "document": "IonWave/Financial_Model_Revenue_Validation.md",
+          "section": "Capital Requirements Analysis",
+          "context": "$75-100K total needed (staged). Original $30-50K insufficient for base case.",
+          "relevance": "PRIMARY"
+        },
+        {
+          "document": "tracking/Open_Questions.md",
+          "section": "Q10: Capital Sufficiency",
+          "context": "Staged financing strategy recommended. Go/no-go at Month 2, Month 6.",
+          "relevance": "PRIMARY"
+        },
+        {
+          "document": "IonWave/Strategic_Foundation_Analysis.md",
+          "section": "1.2 Capital Tension Analysis",
+          "context": "Capital tension confirmed across Porter's, ICP, market sizing analyses.",
+          "relevance": "RELATED"
+        },
+        {
+          "document": "IonWave/Porter_Five_Forces_Analysis.md",
+          "section": "Force 1 - Capital tension flag",
+          "context": "$30-50K insufficient given CPMs and category creation. Cash-flow valley = death zone.",
+          "relevance": "PRIMARY"
+        },
+        {
+          "document": "IonWave/Marine_Plasma_Market_Sizing.md",
+          "section": "Seaonic Competitive Intel",
+          "context": "Seaonic appears capital-constrained. Undercapitalization limits growth.",
+          "relevance": "SUPPORTING"
+        },
+        {
+          "document": "data/01_strategic_foundation/assumptions_register.json",
+          "section": "assumption_011",
+          "context": "Raise $30-50K to reach $100K MRR. Confidence: D (contradicted).",
+          "relevance": "PRIMARY"
+        },
+        {
+          "document": "data/01_strategic_foundation/thesis.json",
+          "section": "execution.capital_plan",
+          "context": "Capital plan needs revision based on financial model.",
+          "relevance": "PRIMARY"
+        }
+      ]
+    }
+  },
+
+  "document_to_hypotheses": {
+    "IonWave/Financial_Model_Revenue_Validation.md": {
+      "hypotheses_referenced": ["HYP-001", "HYP-002", "HYP-003", "HYP-004", "HYP-005", "HYP-006", "HYP-007", "HYP-008"],
+      "document_type": "ANALYSIS",
+      "primary_purpose": "Validate revenue timeline and capital requirements through comprehensive 3-scenario financial modeling",
+      "confidence_contribution": "Upgrades HYP-001 and HYP-007 from D to C; establishes HYP-003, HYP-005, HYP-006 at D"
+    },
+
+    "IonWave/Strategic_Foundation_Analysis.md": {
+      "hypotheses_referenced": ["HYP-001", "HYP-004", "HYP-007", "HYP-008"],
+      "document_type": "ANALYSIS",
+      "primary_purpose": "Reconcile conflicting theses, integrate Porter's and ICP evidence, flag capital tension",
+      "confidence_contribution": "Identifies CAC and capital tensions; validates narrow positioning thesis"
+    },
+
+    "IonWave/Porter_Five_Forces_Analysis.md": {
+      "hypotheses_referenced": ["HYP-001", "HYP-004", "HYP-007", "HYP-008"],
+      "document_type": "RESEARCH",
+      "primary_purpose": "Analyze market structure forces and identify capital/CAC pressures from competitive dynamics",
+      "confidence_contribution": "Provides structural evidence for CAC inflation and capital needs; B-grade source"
+    },
+
+    "IonWave/ICP_Analysis.md": {
+      "hypotheses_referenced": ["HYP-002", "HYP-005", "HYP-006", "HYP-007"],
+      "document_type": "RESEARCH",
+      "primary_purpose": "Define ideal customer profiles, segment prioritization, and LTV potential by persona",
+      "confidence_contribution": "Segment-level LTV and conversion insights; identifies Job 3 hypothesis priority"
+    },
+
+    "IonWave/Marine_Plasma_Market_Sizing.md": {
+      "hypotheses_referenced": ["HYP-001", "HYP-002", "HYP-004", "HYP-007", "HYP-008"],
+      "document_type": "RESEARCH",
+      "primary_purpose": "Size marine plasma DTC sachet segment, estimate Seaonic revenue, validate TAM assumptions",
+      "confidence_contribution": "Reframes market opportunity; validates margin assumptions; challenges timeline"
+    },
+
+    "tracking/Open_Questions.md": {
+      "hypotheses_referenced": ["HYP-001", "HYP-003", "HYP-005", "HYP-007", "HYP-008"],
+      "document_type": "TRACKING",
+      "primary_purpose": "Critical decision points and strategic questions requiring resolution before proceeding",
+      "confidence_contribution": "Q10 and Q11 now ANALYZED status; references hypothesis validation needs"
+    },
+
+    "data/01_strategic_foundation/assumptions_register.json": {
+      "hypotheses_referenced": ["HYP-001", "HYP-002", "HYP-003", "HYP-004", "HYP-005", "HYP-007", "HYP-008"],
+      "document_type": "DATA",
+      "primary_purpose": "Original assumption registry from ODD-1 thesis (pre-validation)",
+      "confidence_contribution": "Historical baseline; all assumptions marked D-grade before analysis"
+    },
+
+    "data/01_strategic_foundation/thesis.json": {
+      "hypotheses_referenced": ["HYP-001", "HYP-007", "HYP-008"],
+      "document_type": "DATA",
+      "primary_purpose": "Canonical strategic thesis with execution plan, milestones, and capital strategy",
+      "confidence_contribution": "Original thesis document requiring revision based on hypothesis validation"
+    },
+
+    "data/01_strategic_foundation/narrative_hypotheses.json": {
+      "hypotheses_referenced": ["HYP-005", "HYP-006"],
+      "document_type": "DATA",
+      "primary_purpose": "Narrative-format hypotheses about marine plasma positioning and customer behavior",
+      "confidence_contribution": "Speculative positioning hypotheses; D-grade confidence"
+    },
+
+    "data/02_market_intelligence/competitive_intel.json": {
+      "hypotheses_referenced": ["HYP-004"],
+      "document_type": "DATA",
+      "primary_purpose": "Competitive analysis with pricing structures and margin validation",
+      "confidence_contribution": "Validates 60-70% margin range across competitors; upgrades HYP-004 to B"
+    },
+
+    "data/03a_customer_research_icp/customer_segmentation.json": {
+      "hypotheses_referenced": ["HYP-002"],
+      "document_type": "DATA",
+      "primary_purpose": "Segment definitions with subscription propensity and lifecycle value",
+      "confidence_contribution": "Segment-level subscription rate estimates from LMNT proxy data"
+    },
+
+    "data/03a_customer_research_icp/segmentation_matrix.json": {
+      "hypotheses_referenced": ["HYP-003"],
+      "document_type": "DATA",
+      "primary_purpose": "RFM segmentation with retention drivers and churn risk factors",
+      "confidence_contribution": "Qualitative churn insights by segment; proxy data only"
+    },
+
+    "data/03a_customer_research_icp/icp.json": {
+      "hypotheses_referenced": ["HYP-005"],
+      "document_type": "DATA",
+      "primary_purpose": "Ideal customer profile definitions with economic profiles and LTV estimates",
+      "confidence_contribution": "Segment-specific LTV ranges from behavioral modeling"
+    },
+
+    "data/m21/churn_prediction.json": {
+      "hypotheses_referenced": ["HYP-003", "HYP-003.2", "HYP-003.3", "HYP-003.4"],
+      "document_type": "TUP_CONTENT",
+      "primary_purpose": "Industry retention curve, 9 churn prediction signals, composite risk scoring, dunning model. Operationalizes HYP-003 sub-hypotheses with concrete metrics and intervention timelines.",
+      "confidence_contribution": "Provides the operational metrics for HYP-003.2 (retention curve validates targets) and HYP-003.3 (dunning model as highest-ROI infrastructure). C-grade industry benchmarks."
+    },
+
+    "data/m21/retention_playbook.md": {
+      "hypotheses_referenced": ["HYP-003", "HYP-003.1", "HYP-003.2", "HYP-003.3", "HYP-003.4", "HYP-005"],
+      "document_type": "TUP_CONTENT",
+      "primary_purpose": "15-tactic prioritized retention playbook with implementation timeline. Directly maps to HYP-003 sub-hypothesis chain. Scenario modeling shows Tier 1 impact on LTV.",
+      "confidence_contribution": "Operationalizes retention infrastructure (HYP-003.3). Scenario modeling shows 2x LTV improvement from basic infrastructure. Upgradeable when IonWave data available."
+    },
+
+    "data/m21/win_back_offer_ladder.md": {
+      "hypotheses_referenced": ["HYP-003", "HYP-003.1", "HYP-003.3"],
+      "document_type": "TUP_CONTENT",
+      "primary_purpose": "Education-first win-back strategy. Replaces Danilo's discount ladder. Pre-cancellation save flow + 8-step post-cancellation sequence.",
+      "confidence_contribution": "Invalidates Danilo's discount ladder approach (B-grade evidence against). Education-first approach is C-grade (theoretically superior, empirically unproven in supplements)."
+    },
+
+    "data/m21/subscription_psychology.md": {
+      "hypotheses_referenced": ["HYP-002", "HYP-003", "HYP-005"],
+      "document_type": "TUP_CONTENT",
+      "primary_purpose": "Subscription driver rankings, cancellation reasons, psychological retention levers. Why people subscribe and cancel supplements specifically.",
+      "confidence_contribution": "Ranked cancellation reasons (C-grade) enable targeted retention. Subscription driver rankings support HYP-002 funnel design. 6x LTV multiplier validates HYP-005 subscriber vs one-time gap."
+    },
+
+    "data/m21/subscription_platform.json": {
+      "hypotheses_referenced": ["HYP-002"],
+      "document_type": "TUP_CONTENT",
+      "primary_purpose": "Subscription platform comparison (Loop, Recharge, Skio, Stay AI). Invalidates Danilo's Skio recommendation ($100→$599/mo). Loop recommended for subscription-first architecture.",
+      "confidence_contribution": "Skio pricing change is A-grade (verified). Loop recommendation is C-grade (web research, not independently verified)."
+    }
+  },
+
+    "data/m10_pricing_offer/": {
+      "hypotheses_referenced": ["HYP-002", "HYP-004", "HYP-005", "HYP-003.4"],
+      "document_type": "DATA",
+      "primary_purpose": "M10 TUP: Pricing & Offer architecture — price point strategy, SKU architecture, price testing framework, offer structure. The pricing nerve center.",
+      "confidence_contribution": "Synthesizes scattered pricing data into actionable framework. Price testing directly validates HYP-002/HYP-004. Offer architecture drives HYP-005 (LTV). Subscription cadence connects to HYP-003.4.",
+      "hypothesis_relationships": {
+        "HYP-002": "Offer architecture determines subscription conversion rate (subscription-first funnel, discount structure, subscription vs one-time framing)",
+        "HYP-004": "Price point × COGS = margin. Every price test is a margin test. Bundle pricing affects blended margin.",
+        "HYP-005": "LTV = f(price, retention, margin, AOV). Offer architecture drives AOV and purchase frequency.",
+        "HYP-003.4": "Subscription cadence (30-day default) is an offer architecture decision that directly affects consumption-cadence match."
+      }
+    },
+
+    "data/m22/referral_program.json": {
+      "hypotheses_referenced": ["HYP-006", "HYP-006.1", "HYP-002", "HYP-003"],
+      "document_type": "TUP_CONTENT",
+      "primary_purpose": "M22 TUP: Referral program architecture — $10/$10 store credit, phased rollout (manual → Smile.io → optimize), benchmarks, best-in-class examples, referrer retention effect.",
+      "confidence_contribution": "Operationalizes HYP-006.1 (Referral). Referral CAC $13.40 vs $35 paid. Referrer retention effect supports HYP-003 (referrers have 2-4x higher LTV). Year 1 targets calibrated: 3-5% referral rate, 0.15-0.30 viral coefficient."
+    },
+
+    "data/m22/community_strategy.md": {
+      "hypotheses_referenced": ["HYP-006", "HYP-006.5"],
+      "document_type": "TUP_CONTENT",
+      "primary_purpose": "M22 TUP: Community platform evaluation (7 platforms) with phased recommendation. Operationalizes HYP-006.5.",
+      "confidence_contribution": "Provides operational blueprint for community. Phased approach (email-first → test → Circle) prevents premature investment. Community retention effect supports HYP-003 indirectly."
+    },
+
+    "data/m22/ugc_creator_program.json": {
+      "hypotheses_referenced": ["HYP-006"],
+      "document_type": "TUP_CONTENT",
+      "primary_purpose": "M22 TUP: UGC production system — creator economics, sourcing platforms, budget tiers, hit rates, creative fatigue management.",
+      "confidence_contribution": "Supports content pipeline for all HYP-006 sub-hypotheses. UGC content amplifies referral, SEO, influencer, and WOM channels. Budget tiers calibrated: $500 survival, $1K minimum viable testing."
+    },
+
+    "data/m17/email_flow_architecture.md": {
+      "hypotheses_referenced": ["HYP-001", "HYP-005"],
+      "document_type": "TUP_CONTENT",
+      "primary_purpose": "M17 TUP: Email lifecycle architecture — 12 automated flows, build order, lifecycle stages, Klaviyo setup guide, maintenance time budget, source of truth policy.",
+      "confidence_contribution": "Email flows generate revenue at $0 marginal CAC (HYP-001). Lifecycle engine drives LTV through automated retention + upsell (HYP-005). Revenue attribution target 30-40% from email by Month 7-12."
+    },
+
+    "data/m17/email_post_purchase.md": {
+      "hypotheses_referenced": ["HYP-002", "HYP-003", "HYP-003.1"],
+      "document_type": "TUP_CONTENT",
+      "primary_purpose": "M17 TUP: 7-email post-purchase onboarding sequence — order confirmation, first-use tip, science education, subscription upsell, review request, milestone celebration, referral.",
+      "confidence_contribution": "Primary churn prevention mechanism (HYP-003). Subscription conversion touchpoint at Day 21 (HYP-002). Reinforces product efficacy perception through expected outcomes timeline (HYP-003.1). FTC compliance checklist addresses regulatory risk."
+    },
+
+    "data/m17/email_winback.md": {
+      "hypotheses_referenced": ["HYP-003"],
+      "document_type": "TUP_CONTENT",
+      "primary_purpose": "M17 TUP: 4-email win-back sequence (Day 60-105) — emotional appeal, updates, 25% discount, sunset warning.",
+      "confidence_contribution": "Recovers lapsed customers at 5-10% win-back rate (HYP-003). Discount defense policy prevents arbitrage. Sunset warning cleans list for deliverability."
+    },
+
+    "data/m14/creative_testing_protocol.md": {
+      "hypotheses_referenced": ["HYP-001"],
+      "document_type": "TUP_CONTENT",
+      "primary_purpose": "M14 TUP: Ad creative testing protocol — two-stage kill criteria, Meta campaign structure, creative fatigue management, scaling protocol, benchmarks.",
+      "confidence_contribution": "Directly generates CAC validation data. Two-stage kill criteria (leading indicators Day 3, conversion Day 5-7 with 50+ click minimum) calibrated for $45 CPA target. CT-001/CT-002 test message angles that determine CAC."
+    },
+
+    "data/m14/experimentation_framework.json": {
+      "hypotheses_referenced": ["HYP-001", "HYP-002", "HYP-004"],
+      "document_type": "TUP_CONTENT",
+      "primary_purpose": "M14 TUP: Core experimentation philosophy — traffic-based methodology, statistical decision rules, testing priority matrix, experiment card schema.",
+      "confidence_contribution": "Provides statistical framework for validating all hypotheses through experimentation. Traffic-based methodology ensures valid measurement at each growth stage. Priority matrix ranks ad creative hooks as highest-impact (HYP-001), subscription-first layout (HYP-002), and price testing (HYP-004)."
+    },
+
+    "data/m29/pr_strategy.md": {
+      "hypotheses_referenced": ["HYP-006", "HYP-001"],
+      "document_type": "TUP_CONTENT",
+      "primary_purpose": "M29 TUP: PR & media strategy — future press release (working-backwards method), milestone press releases, media outreach, expert quote platforms, podcast guesting, tiered media targets, weekly time budget.",
+      "confidence_contribution": "Earned media generates high-DA backlinks accelerating HYP-006.2 (SEO). Each media mention = $0 marginal CAC (HYP-001). Minimum viable press pitch checklist gates media outreach behind product traction."
+    },
+
+    "data/m29/crisis_playbook.md": {
+      "hypotheses_referenced": ["HYP-003", "HYP-002"],
+      "document_type": "TUP_CONTENT",
+      "primary_purpose": "M29 TUP: Crisis communications — 8 scenarios (FTC, adverse reactions, viral complaints, ad bans, supply chain, chargebacks, fake reviews, competitive claim copying), 6-A response framework, monitoring setup.",
+      "confidence_contribution": "Crisis management protects brand equity which underlies HYP-003 (churn spikes during crises) and HYP-002 (subscription trust). Supplement-specific scenarios (FTC, adverse reactions) are B-grade based on regulatory enforcement records."
+    },
+
+    "data/m20/support_operations.md": {
+      "hypotheses_referenced": ["HYP-003", "HYP-005"],
+      "document_type": "TUP_CONTENT",
+      "primary_purpose": "M20 TUP: Support operations — escalation framework (4-tier with Founder/Team Mode), refund policy, chargeback monitoring, adverse event protocol, issue tracking, support macros, performance scorecard.",
+      "confidence_contribution": "Support quality directly affects voluntary churn (HYP-003). Service recovery paradox creates advocacy (HYP-005 LTV). A-grade FDA adverse event compliance. Chargeback monitoring protects payment processing (existential risk)."
+    },
+
+    "data/m20/customer_feedback_system.md": {
+      "hypotheses_referenced": ["HYP-003", "HYP-002", "HYP-006", "HYP-005"],
+      "document_type": "TUP_CONTENT",
+      "primary_purpose": "M20 TUP: Feedback system — NPS tracking and action playbook, CSAT for support and product, win/loss analysis with decision triggers. Measurement infrastructure for customer sentiment.",
+      "confidence_contribution": "NPS is early indicator of churn (HYP-003). Win reasons validate conversion messaging (HYP-002). Promoter-to-referral pipeline supports organic growth (HYP-006). Detractor recovery increases LTV (HYP-005)."
+    },
+
+    "data/m20/customer_success_playbook.md": {
+      "hypotheses_referenced": ["HYP-003", "HYP-003.1", "HYP-005", "HYP-002"],
+      "document_type": "TUP_CONTENT",
+      "primary_purpose": "M20 TUP: Customer success — journey touchpoints Day 0-90, expected outcomes timeline, behavioral activation criteria, at-risk signals with intervention playbook, 11-star experience framework.",
+      "confidence_contribution": "Activation rate is #1 predictor of subscription retention (HYP-003). Expected outcomes timeline addresses product efficacy perception (HYP-003.1). Journey touchpoints reduce WISMO/education tickets, supporting satisfaction and retention (HYP-005). Subscription renewal heads-up reduces unwanted-sub complaints (HYP-002)."
+    },
+
+    "data/m19/crm_architecture.md": {
+      "hypotheses_referenced": ["HYP-001", "HYP-003", "HYP-005"],
+      "document_type": "TUP_CONTENT",
+      "primary_purpose": "M19 TUP: CRM architecture — model-as-CRM philosophy, 10-stage lifecycle with tab mapping, customer data model (19 fields), phase-gated tool stack (customer-count triggers), data governance, non-linear customer paths.",
+      "confidence_contribution": "Lifecycle stage definitions provide framework for measuring HYP-003 (churn stages, at-risk triggers). Acquisition source attribution supports HYP-001 CAC calculation. Customer data model enables HYP-005 LTV tracking via computed fields."
+    },
+
+    "data/m19/lifecycle_and_segmentation.md": {
+      "hypotheses_referenced": ["HYP-002", "HYP-003", "HYP-005"],
+      "document_type": "TUP_CONTENT",
+      "primary_purpose": "M19 TUP: Lifecycle stages with triggers, email flow mapping per stage, Minimum Viable CRM (3 Day-1 flows), behavioral + RFM dual-layer segmentation, at-risk sub-segments (Product/Budget/Attention).",
+      "confidence_contribution": "Segment migration tracking validates HYP-002 (One-Timer → Repeat → Subscriber conversion rates). At-risk sub-segmentation enables targeted retention per HYP-003. Email flow architecture drives lifecycle progression supporting HYP-005 LTV growth."
+    },
+
+    "data/m19/ltv_and_cohort_analysis.md": {
+      "hypotheses_referenced": ["HYP-001", "HYP-002", "HYP-003", "HYP-005", "HYP-006"],
+      "document_type": "TUP_CONTENT",
+      "primary_purpose": "M19 TUP: LTV calculation methods (simple, churn-based, cohort-based), LTV by acquisition source with grading scale, cohort analysis framework with confidence intervals, churn analysis with multi-signal risk formula, seasonality.",
+      "confidence_contribution": "Cohort-based LTV is primary validation mechanism for HYP-003 (churn visible in retention curves). LTV by source directly validates HYP-001 (CAC efficiency by channel). LTV:CAC ratio targets enforce HYP-005 thresholds. Referral LTV premium supports HYP-006 organic growth value."
+    },
+
+    "data/m19/crm_metrics_and_dashboards.md": {
+      "hypotheses_referenced": ["HYP-001", "HYP-002", "HYP-003", "HYP-005"],
+      "document_type": "TUP_CONTENT",
+      "primary_purpose": "M19 TUP: Funnel health + relationship depth metrics with decision triggers, founder daily CRM check-in, weekly/monthly/quarterly dashboard cadence, phase-gated measurement stack.",
+      "confidence_contribution": "Decision triggers directly enforce hypothesis kill criteria — repeat rate <15% triggers HYP-003 investigation, LTV:CAC <2:1 triggers HYP-001 review, sub rate <8% triggers HYP-002 review. Dashboard cadence ensures timely hypothesis validation."
+    },
+
+    "data/m14/test_log.json": {
+      "hypotheses_referenced": ["HYP-001", "HYP-002", "HYP-004"],
+      "document_type": "TUP_CONTENT",
+      "primary_purpose": "M14 TUP: Experiment test log — completed tests (PT-000), active tests (PT-001), planned test queue (CT-001, CT-002, LP-001, AT-001), knowledge library.",
+      "confidence_contribution": "Institutional memory of all experiments. PT-000 validated price-quality signal (+23% RPV at $49 vs $39, directional). LP-001 directly tests HYP-002 (subscription-first default layout). Planned tests systematically validate HYP-001 (creative angles), HYP-002 (subscription conversion), HYP-004 (price ceiling)."
+    },
+
+    "data/m16/seo_strategy.md": {
+      "hypotheses_referenced": ["HYP-006", "HYP-001"],
+      "document_type": "TUP_CONTENT",
+      "primary_purpose": "M16 TUP: SEO strategy — calibrated timeline for new domain, E-E-A-T infrastructure for YMYL, competitive analysis, budget allocation, ROI projections (base + conservative).",
+      "confidence_contribution": "Operationalizes HYP-006 SEO channel. Organic traffic reduces blended CAC (HYP-001). Conservative projection: $13,275 organic revenue at Month 24 vs $10,800 investment. Marine plasma = uncontested keyword territory."
+    },
+
+    "data/m16/content_strategy.md": {
+      "hypotheses_referenced": ["HYP-006", "HYP-001"],
+      "document_type": "TUP_CONTENT",
+      "primary_purpose": "M16 TUP: Content & distribution strategy — 10-channel stack, phase-gated activation, AI-assisted YMYL content workflow, measurement framework.",
+      "confidence_contribution": "Provides channel strategy underpinning HYP-006 organic growth channels. Owned-first distribution (email → blog → social → paid amplification). AI content workflow with YMYL compliance layer."
+    },
+
+    "data/m16/seo_keyword_research.json": {
+      "hypotheses_referenced": ["HYP-006"],
+      "document_type": "TUP_CONTENT",
+      "primary_purpose": "M16 TUP: 23 target keywords in 3 phases organized by search intent and difficulty. LMNT alternative (2,900 vol, low KD) identified as highest-priority target.",
+      "confidence_contribution": "Keyword volumes are estimates (C-grade) — requires GSC verification post-launch. Marine plasma terms may have lower volume than estimated. Phase-gated approach ensures new domain targets achievable keywords first."
+    },
+
+    "data/m16/seo_content_strategy.md": {
+      "hypotheses_referenced": ["HYP-006"],
+      "document_type": "TUP_CONTENT",
+      "primary_purpose": "M16 TUP: 5 pillar/cluster content models, 12-post launch sequence, blog templates, publishing cadence with Founder Mode tier, content quality standards.",
+      "confidence_contribution": "Operationalizes content pillar strategy for HYP-006. Pillar/cluster model builds topical authority. Marine plasma content serves triple purpose (brand protection, topical authority, high-CVR traffic)."
+    },
+
+    "data/m16/seo_link_building.md": {
+      "hypotheses_referenced": ["HYP-006"],
+      "document_type": "TUP_CONTENT",
+      "primary_purpose": "M16 TUP: 8 link building tactics ranked by priority, native ads playbook (phase-gated optional), quality criteria, monthly targets.",
+      "confidence_contribution": "Link building accelerates domain authority growth, critical for HYP-006 SEO channel. HARO replaced with current alternatives (Qwoted, Featured.com). Native ads gated behind $30K+ revenue prerequisite."
+    },
+
+    "data/m25/bookkeeping_setup.md": {
+      "hypotheses_referenced": ["HYP-004", "HYP-001"],
+      "document_type": "TUP_CONTENT",
+      "primary_purpose": "M25 TUP: Bookkeeping setup — QBO + Synder stack, chart of accounts (Day 1 Essentials + full), inventory accounting (FIFO), subscription revenue recognition (ASC 606), monthly checklist.",
+      "confidence_contribution": "Provides infrastructure for measuring HYP-004 (gross margin tracked via chart of accounts). Payment processing fee tracking enables accurate HYP-001 CAC calculation. Dual-margin REC-001 treatment clarifies which margin for which decision."
+    },
+
+    "data/m25/unit_economics_tracking.md": {
+      "hypotheses_referenced": ["HYP-001", "HYP-002", "HYP-003", "HYP-004", "HYP-005"],
+      "document_type": "TUP_CONTENT",
+      "primary_purpose": "M25 TUP: Unit economics dashboard — channel CAC/LTV table, payback period analysis (3 margin scenarios), monthly reporting framework, scale/hold/kill decision rules.",
+      "confidence_contribution": "Operationalizes measurement of HYP-001 (CAC by channel), HYP-002 (subscription attach in reporting), HYP-003 (churn in scorecard), HYP-004 (margin tracked monthly), HYP-005 (LTV:CAC calculated). Kill criteria directly enforce hypothesis thresholds."
+    },
+
+    "data/m25/business_review_cadence.md": {
+      "hypotheses_referenced": ["HYP-007", "HYP-008", "HYP-001", "HYP-002", "HYP-003", "HYP-004", "HYP-005"],
+      "document_type": "TUP_CONTENT",
+      "primary_purpose": "M25 TUP: Business review rhythm — weekly cash check, MBR (Survival Five + full scorecard), QBR (OKR framework), annual planning. Hypothesis integration table maps every MBR metric to its hypothesis.",
+      "confidence_contribution": "MBR scorecard is the primary validation mechanism for all hypotheses. Survival Five (Month 2-6) focuses on HYP-008 (cash runway), HYP-001 (CAC), HYP-007 (MRR), HYP-003 (churn), HYP-002 (sub rate). Escalation protocol triggers action when kill criteria hit."
+    },
+
+    "data/m23/influencer_creator_strategy.md": {
+      "hypotheses_referenced": ["HYP-006", "HYP-001"],
+      "document_type": "TUP_CONTENT",
+      "primary_purpose": "M23 TUP: Influencer vs creator distinction, tiers, deal structures, Founder Mode phasing with Phase 0/1/2 budget gates.",
+      "confidence_contribution": "Operationalizes HYP-006.3 (influencer seeding channel). Product seeding at $0 marginal CAC feeds HYP-001 blended CAC reduction. Unit Economics Validation Gate (>1.5x ROAS) ensures influencer spend is profitable before scaling."
+    },
+
+    "data/m23/pipeline_operations.md": {
+      "hypotheses_referenced": ["HYP-001", "HYP-006"],
+      "document_type": "TUP_CONTENT",
+      "primary_purpose": "M23 TUP: Influencer + creator pipeline stages, tracker templates, attribution framework (direct + indirect), operational cadence, content retirement policy.",
+      "confidence_contribution": "Attribution framework addresses systematic undercounting of influencer value (HYP-001 CAC measurement). Pipeline metrics include CPO <$18 target and ROAS >2x threshold. Direct+indirect attribution provides more accurate influencer channel assessment for HYP-006."
+    },
+
+    "data/m23/influencer_map.md": {
+      "hypotheses_referenced": ["HYP-006"],
+      "document_type": "TUP_CONTENT",
+      "primary_purpose": "M23 TUP: IonWave-specific influencer target map — 3 tiers (dream/achievable/micro), competitive landscape, pre-outreach screening, outreach templates.",
+      "confidence_contribution": "Provides concrete execution plan for HYP-006.3 (influencer channel). Micro-influencer volume strategy (50 nanos > 1 macro) with product seeding + affiliate tracking. Competitive map identifies locked targets (LMNT, AG1 relationships)."
+    },
+
+    "protocols/case_studies/CSP-001_HYP-006_2026-02-06.md": {
+      "hypotheses_referenced": ["HYP-006", "HYP-006.1", "HYP-006.2", "HYP-006.3", "HYP-006.4", "HYP-006.5", "HYP-009", "HYP-001"],
+      "document_type": "ANALYSIS",
+      "primary_purpose": "CSP-001 applied to HYP-006: decomposed organic lift into 5 sub-hypotheses, surfaced HYP-009 (pre-launch demand), reframed HYP-001 relationship",
+      "confidence_contribution": "HYP-006 decomposed (D→D but diagnostic). HYP-009 created. HYP-001 relationship reframed."
+    },
+
+    "protocols/case_studies/CSP-002_HYP-003_2026-02-06.md": {
+      "hypotheses_referenced": ["HYP-003", "HYP-003.1", "HYP-003.2", "HYP-003.3", "HYP-003.4", "HYP-006.5", "HYP-009"],
+      "document_type": "ANALYSIS",
+      "primary_purpose": "CSP-002 applied to HYP-003: decomposed churn into 4 sub-hypotheses, applied Seaonic proxy evidence to HYP-003.1, established cross-hypothesis sub-link (HYP-003.1→HYP-006.5)",
+      "confidence_contribution": "HYP-003.1 upgraded D→C via Seaonic proxy. Composite score 1.0→1.40. Key insight: churn is a product hypothesis in disguise."
+    },
+
+    "data/m28/channel_strategy.md": {
+      "hypotheses_referenced": ["HYP-006", "HYP-001"],
+      "document_type": "TUP_CONTENT",
+      "primary_purpose": "M28 TUP: Channel acquisition matrix (13 channels), 4-phase sequencing, PPC campaign architecture, platform concentration risk rules, multi-touch attribution model.",
+      "confidence_contribution": "Channel sequencing operationalizes HYP-006 organic growth across 4 phases. Multi-touch attribution (post-purchase survey + UTM + unique codes) improves HYP-001 CAC measurement accuracy. Planned vs unplanned concentration rules prevent single-channel dependency."
+    },
+
+    "data/m28/expansion_paths.md": {
+      "hypotheses_referenced": ["HYP-006", "HYP-002"],
+      "document_type": "TUP_CONTENT",
+      "primary_purpose": "M28 TUP: 8-path expansion matrix, recommended 5-step sequence (Amazon → B2B → Line Extensions → Retail → International), new product readiness triggers (5/7 must be met), kill criteria, white label guardrails.",
+      "confidence_contribution": "Expansion sequencing maps growth timeline (HYP-006). Product readiness triggers gate expansion on subscription conversion data (HYP-002). White label guardrails prevent competitor creation. Complexity reclassified from Low to Medium."
+    },
+
+    "data/m28/constraint_scenarios.md": {
+      "hypotheses_referenced": ["HYP-006", "HYP-002"],
+      "document_type": "TUP_CONTENT",
+      "primary_purpose": "M28 TUP: 4 extreme constraint scenarios ($100M in 12mo, $100K MRR in 3mo, $0 marketing budget, 10hrs/week). Portfolio reality check with sensitivity table. Subscription conversion sensitivity analysis.",
+      "confidence_contribution": "Stress-tests growth assumptions across scenarios (HYP-006). Subscription conversion sensitivity directly validates HYP-002 thresholds (viable to 30%, crisis at 10%). Cross-scenario synthesis reveals organic growth is essential regardless of constraints."
+    },
+
+    "data/m28/b2b_wholesale.md": {
+      "hypotheses_referenced": ["HYP-004", "HYP-003"],
+      "document_type": "TUP_CONTENT",
+      "primary_purpose": "M28 TUP: B2B segment analysis (8 segments), wholesale pricing architecture, MAP policy ($44.10 floor), B2B sales pipeline (7 stages), B2B unit economics ($275/mo net margin, 13.2x LTV:CAC), auto-reorder program.",
+      "confidence_contribution": "B2B unit economics validate margin structure for wholesale channel (HYP-004). Auto-reorder program addresses B2B churn (60-70% without automation → <20% target with auto-ship) connecting to HYP-003 principles. MAP policy protects D2C pricing."
+    },
+
+    "data/m28/amazon_playbook.md": {
+      "hypotheses_referenced": ["HYP-004", "HYP-002", "HYP-001"],
+      "document_type": "TUP_CONTENT",
+      "primary_purpose": "M28 TUP: Amazon opportunity/risk analysis, economics ($12.20 net at 26% margin), cold start strategy (4 phases), listing optimization, review generation protocol, anti-cannibalization strategy.",
+      "confidence_contribution": "Amazon margin analysis extends HYP-004 to marketplace channel. Price parity strategy protects D2C subscription advantage (HYP-002). Cold start strategy seeds Amazon from D2C list, reducing launch CAC (HYP-001). Bridge card in Amazon shipments drives D2C conversion."
+    },
+
+    "data/m28/retail_readiness.md": {
+      "hypotheses_referenced": ["HYP-004", "HYP-008"],
+      "document_type": "TUP_CONTENT",
+      "primary_purpose": "M28 TUP: Retail tier progression (5 tiers), readiness checklist, retail economics (19% net margin), capital requirements by tier ($5K-$500K+), distributor guide, timeline.",
+      "confidence_contribution": "Retail margin waterfall extends HYP-004 to physical retail (lowest margin channel at 19%). Capital requirements for retail expansion directly affect HYP-008 (capital sufficiency) — $200K+ uncommitted capital required for national retail. PO financing option mitigates cash flow risk."
+    },
+
+    "data/m30/data_dictionary.md": {
+      "hypotheses_referenced": ["HYP-001", "HYP-002", "HYP-003", "HYP-004", "HYP-005", "HYP-006", "HYP-007", "HYP-008"],
+      "document_type": "TUP_CONTENT",
+      "primary_purpose": "M30 TUP: Complete metric definitions for all IonWave KPIs — 50+ metrics with formulas, sources, cadences, known limitations. Hypothesis monitoring table maps each HYP to its primary metric, kill threshold, and validation method.",
+      "confidence_contribution": "Defines HOW each hypothesis is measured. All 8 hypotheses have explicit monitoring metrics, targets, and kill thresholds. MER elevated over ROAS (U2). Awareness vs conversion attribution model (U4) improves CAC measurement accuracy."
+    },
+
+    "data/m30/red_flags_and_validation.md": {
+      "hypotheses_referenced": ["HYP-001", "HYP-003", "HYP-004", "HYP-008"],
+      "document_type": "TUP_CONTENT",
+      "primary_purpose": "M30 TUP: 12 kill criteria with existential/monitoring classification, escalation protocol, subscription diagnostic tree, V0 master consistency check, 10+ cross-TUP validation rules.",
+      "confidence_contribution": "Operationalizes hypothesis monitoring — defines exactly when and how to escalate failing metrics. Existential classification (CAC, Cash, Contribution Margin) ensures the truly fatal metrics get immediate attention. V0 check ensures kill thresholds stay consistent with source of truth."
+    },
+
+    "data/m9/tracking_and_attribution.md": {
+      "hypotheses_referenced": ["HYP-001"],
+      "document_type": "TUP_CONTENT",
+      "primary_purpose": "M9 TUP: Tracking architecture — MER as north star, Meta Pixel + CAPI hybrid setup, GA4 setup, UTM taxonomy, attribution model comparison, consent management, ad spend safety.",
+      "confidence_contribution": "Infrastructure that enables accurate HYP-001 measurement. Server-side tracking recovers 30-60% of lost conversion data. MER calculation bypasses platform ROAS inaccuracy. Consent Mode v2 enables GA4 behavioral modeling for missing data."
+    },
+
+    "data/m9/store_setup_and_launch.md": {
+      "hypotheses_referenced": ["HYP-002", "HYP-003"],
+      "document_type": "TUP_CONTENT",
+      "primary_purpose": "M9 TUP: Store setup checklist, subscription-first UX pattern, page speed targets, launch sequence. Subscription setup directly impacts conversion rate.",
+      "confidence_contribution": "Subscription UX pattern (toggle > dropdown, sub price first) provides 15-20% conversion lift estimate (C-grade, industry directional). Dunning management in subscription setup prevents involuntary churn (HYP-003). Page speed optimization prevents conversion loss."
+    },
+
+    "data/m15/landing_page_psychology.md": {
+      "hypotheses_referenced": ["HYP-002"],
+      "document_type": "TUP_CONTENT",
+      "primary_purpose": "M15 TUP: Conversion equation (Desire − Friction − Anxiety), 5-second test, above-fold requirements, 12-section optimal page flow, visual hierarchy (F/Z/Gutenberg), psychological elements library, anxiety mapping for supplements, mobile-first optimization, page speed budget with Core Web Vitals targets.",
+      "confidence_contribution": "Conversion psychology framework directly impacts HYP-002 subscription conversion by reducing anxieties specific to supplement subscriptions. Page speed budget (LCP < 2.5s) prevents 7% conversion loss per second of delay. Anxiety mapping identifies 6 IonWave-specific purchase barriers."
+    },
+
+    "data/m15/copy_and_headlines.md": {
+      "hypotheses_referenced": ["HYP-002"],
+      "document_type": "TUP_CONTENT",
+      "primary_purpose": "M15 TUP: 17 headline formulas with IonWave examples, section templates, full LP copy reference (with compliance notes), PDP copy reference (subscription-first), copy testing protocol.",
+      "confidence_contribution": "Copy quality directly impacts HYP-002 conversion. IonWave LP copy reference includes CRITICAL compliance notes (fictional testimonials, unsubstantiated claims flagged). Copy testing protocol prioritizes headline type testing (P0) over LP length testing (P4)."
+    },
+
+    "data/m15/checkout_optimization.md": {
+      "hypotheses_referenced": ["HYP-002", "HYP-004"],
+      "document_type": "TUP_CONTENT",
+      "primary_purpose": "M15 TUP: Cart abandonment analysis (70.2% avg), checkout optimization checklist, multi-channel recovery sequence, AOV boosters, subscription-first checkout design, subscription rate as tier-1 metric, post-purchase page optimization.",
+      "confidence_contribution": "Shop Pay priority (50% conversion lift) is highest-impact single checkout lever for HYP-002. Subscription-first design with pre-selected toggle, per-serving cost framing. 3.7x LTV difference elevates subscription rate to tier-1 metric. AOV boosters and free shipping threshold affect contribution margin (HYP-004)."
+    },
+
+    "data/m15/funnel_architecture.md": {
+      "hypotheses_referenced": ["HYP-002", "HYP-001"],
+      "document_type": "TUP_CONTENT",
+      "primary_purpose": "M15 TUP: IonWave site map, 8 funnel architectures (A-H including LP+VSL Hybrid), architecture priority, funnel metrics by stage, sensitivity analysis, traffic routing by audience temperature, testing framework, kill criteria, build requirements, Emma Relief reference, VSL architecture.",
+      "confidence_contribution": "Architecture choice is 10x more impactful than copy choice on conversion (HYP-002). Sensitivity analysis shows pessimistic/realistic/optimistic scenarios for funnel economics. Traffic routing matches audience temperature to optimal funnel, maximizing conversion efficiency. Funnel metrics track RPV which connects to CAC efficiency (HYP-001)."
+    },
+
+    "data/m1/labor_chain_and_sequencing.md": {
+      "hypotheses_referenced": ["HYP-001", "HYP-008"],
+      "document_type": "TUP_CONTENT",
+      "primary_purpose": "M1 TUP: Labor chain sequencing — 5 phase-gated hiring waves (solo founder → first operator → specialist → CM → team), 12-week sprint structure, sprint template, scaling triggers.",
+      "confidence_contribution": "Labor costs are the largest operational expense after COGS and ad spend — hiring sequence directly affects burn rate (HYP-008 capital sufficiency) and operational overhead that feeds into CAC (HYP-001). Phase-gating prevents premature hiring that drains capital."
+    },
+
+    "data/m1/relationships_and_compensation.md": {
+      "hypotheses_referenced": ["HYP-001", "HYP-004"],
+      "document_type": "TUP_CONTENT",
+      "primary_purpose": "M1 TUP: Commission structure, equity framework, contractor vs employee classification, compensation benchmarks, relationship map.",
+      "confidence_contribution": "Commission stacking and equity dilution affect unit economics (HYP-001 CAC through labor cost of acquisition) and margin structure (HYP-004 through operational overhead). Contractor misclassification is a critical legal/financial risk."
+    },
+
+    "data/m15/cro_testing_framework.md": {
+      "hypotheses_referenced": ["HYP-001", "HYP-002", "HYP-004"],
+      "document_type": "TUP_CONTENT",
+      "primary_purpose": "M15 TUP: CRO testing philosophy and methodology, A/B testing protocol, FTC/DSHEA compliance framework, IonWave compliance audit, testimonial protocol, Prop 65 requirements, subscription rules (negative option, click-to-cancel), CRO metrics dashboard, server-side tracking, modular LP design, sprint calendar.",
+      "confidence_contribution": "CRO testing directly validates HYP-002 (conversion rate) and HYP-001 (RPV as CAC proxy). FTC/DSHEA compliance framework prevents existential regulatory risk. Prop 65 CoA testing is gating for CA sales — non-compliance creates margin risk (HYP-004). Server-side tracking requirement prevents 15-25% data loss in CAC measurement."
+    },
+
+    "data/m24/3pl_and_fulfillment.md": {
+      "hypotheses_referenced": ["HYP-004"],
+      "document_type": "TUP_CONTENT",
+      "primary_purpose": "M24 TUP: Phase-gated fulfillment (self→3PL→multi-node), 3PL comparison (updated 2026), supplement compliance (FDA 21 CFR Part 111, temperature, FEFO, lot tracking), contract negotiation, carrier strategy, unboxing experience.",
+      "confidence_contribution": "3PL fee structure ($3-5/order) directly impacts contribution margin (HYP-004). Contract negotiation checklist prevents hidden fee erosion. Temperature excursion protocol and insurance requirements protect product integrity (indirect margin protection)."
+    },
+
+    "data/m24/inventory_management.md": {
+      "hypotheses_referenced": ["HYP-002", "HYP-004"],
+      "document_type": "TUP_CONTENT",
+      "primary_purpose": "M24 TUP: Two-stream demand model (subscription + one-time), reorder points, statistical safety stock, cohort decay model, lot tracking (FEFO), seasonal calendar, financial integration (M25 COGS alignment), dead stock liquidation.",
+      "confidence_contribution": "Subscription cohort decay model provides realistic forecasting for HYP-002 (Month 2 churn 20-30% vs flat rate distortion). Inventory carrying costs and dead stock risk affect HYP-004 margin. COGS alignment with M25 ensures accurate margin measurement."
+    },
+
+    "data/m24/international_and_scaling.md": {
+      "hypotheses_referenced": ["HYP-004"],
+      "document_type": "TUP_CONTENT",
+      "primary_purpose": "M24 TUP: US-first international strategy (4 phases), Canada/UK compliance, scaling milestones (5 stages), free shipping economics, returns policy, multi-warehouse triggers.",
+      "confidence_contribution": "Free shipping absorbs $5-8/order compressing contribution margin (HYP-004). Returns processing $3.50-9.00/return. International shipping $15-55/order vs $5-12 domestic. Free shipping at >8% of revenue triggers policy adjustment to protect margin."
+    },
+
+    "data/m24/launch_operations.md": {
+      "hypotheses_referenced": ["HYP-001"],
+      "document_type": "TUP_CONTENT",
+      "primary_purpose": "M24 TUP: Launch day war room (T-48 to T+12hr), go/no-go matrix, soft launch protocol, 72hr scorecard (MER-aligned per M30), first 10 orders playbook, abort/restart protocol, Day 1 ad budget cap ($100-200).",
+      "confidence_contribution": "Day 1 ad budget cap ($100-200 max) prevents burning capital on system failures (HYP-001 CAC protection). 72hr scorecard uses MER (per M30 alignment). Soft launch protocol validates fulfillment before paid traffic scales CAC spend."
+    },
+
+    "data/m30/dashboards_and_reporting.md": {
+      "hypotheses_referenced": ["HYP-001", "HYP-002", "HYP-003", "HYP-007"],
+      "document_type": "TUP_CONTENT",
+      "primary_purpose": "M30 TUP: MVD (7 metrics), daily pulse, weekly report, simplified MBR (4 questions for Months 1-3), quarterly review with Go/No-Go gates, tool progression.",
+      "confidence_contribution": "Makes hypothesis monitoring practical — monthly hypothesis prompt requires founder to write one sentence per critical HYP. Go/No-Go gates at Month 3/6/12 directly validate HYP-001 (CAC), HYP-002 (subscription), HYP-007 (timeline)."
+    },
+
+  "context_documents": {
+    "description": "Supporting documents providing reasoning, dialogue, and contextual background for hypothesis evolution",
+    "documents": [
+      {
+        "document": "IonWave/Strategic_Foundation_Dialogue_Summary.md",
+        "purpose": "Persona dialogue challenging strategic foundation assumptions",
+        "hypotheses_influenced": ["HYP-007", "HYP-008"],
+        "key_insight": "Category creation framing and capital tension identification"
+      },
+      {
+        "document": "IonWave/Porter_Five_Forces_Dialogue_Summary.md",
+        "purpose": "Persona dialogue stress-testing Porter's analysis",
+        "hypotheses_influenced": ["HYP-001", "HYP-008"],
+        "key_insight": "Rising CPMs and survival rate reality check on capital needs"
+      },
+      {
+        "document": "IonWave/ICP_Dialogue_Summary.md",
+        "purpose": "Persona dialogue validating customer segmentation",
+        "hypotheses_influenced": ["HYP-002", "HYP-005"],
+        "key_insight": "Positioning-economics tension and segment LTV validation"
+      },
+      {
+        "document": "data/m21/dialogue_summary.md",
+        "purpose": "Persona dialogue stress-testing M21 subscription & retention content",
+        "hypotheses_influenced": ["HYP-002", "HYP-003", "HYP-003.1", "HYP-003.3", "HYP-005"],
+        "key_insight": "Churn tactic stacking is not linear for voluntary-churn tactics. Product efficacy (HYP-003.1) is gating assumption for all retention estimates. Depletion messaging is D-grade and needs legal review."
+      },
+      {
+        "document": "data/m22/dialogue_summary.md",
+        "purpose": "Persona dialogue stress-testing M22 referral, community, and UGC content",
+        "hypotheses_influenced": ["HYP-006", "HYP-006.1", "HYP-006.5"],
+        "key_insight": "Referral amplifies PMF, doesn't create it. 'More complete than LMNT' claim removed (legal risk). $500/month UGC is survival mode, not testing. Loop+Smile integration unverified (CRITICAL gap). Creator compliance acknowledgment needed."
+      },
+      {
+        "document": "data/m14/dialogue_summary.md",
+        "purpose": "Persona dialogue stress-testing M14 testing & optimization content",
+        "hypotheses_influenced": ["HYP-001", "HYP-002", "HYP-004"],
+        "key_insight": "Two-stage kill criteria prevent premature creative kills (50+ click minimum before CPA decisions). PT-000 +23% RPV is directional not definitive (<6,500/variant). Tool spend must never exceed 5% of ad budget. Passive audience learning from Meta breakdowns replaces dedicated audience tests at low traffic."
+      },
+      {
+        "document": "data/m16/dialogue_summary.md",
+        "purpose": "Persona dialogue stress-testing M16 content & SEO strategy",
+        "hypotheses_influenced": ["HYP-006", "HYP-001"],
+        "key_insight": "Publishing sequence matters — pillar page first, comparisons after trust established. Founder Mode (2 posts/month) is realistic starting cadence. Organic CVR 3% is optimistic — use 1.5% conservative scenario. Marine plasma content serves triple purpose (brand protection + topical authority + high CVR). Google Merchant Center free listings gap closed. Native ads optional for most DTC brands."
+      },
+      {
+        "document": "data/m25/dialogue_summary.md",
+        "purpose": "Persona dialogue stress-testing M25 financial operations content",
+        "hypotheses_influenced": ["HYP-001", "HYP-002", "HYP-003", "HYP-004", "HYP-005", "HYP-007", "HYP-008"],
+        "key_insight": "Gross margin for P&L, contribution margin for channel decisions — never mix. Connector (Synder/A2X) is single point of failure, must test pre-launch. Solo founder MBR needs Survival Five (5 metrics) not full 10-metric scorecard. Day 1 Essentials (18 accounts) prevents chart-of-accounts overwhelm. 13-week cash forecast needs example numbers, not just row labels."
+      },
+      {
+        "document": "data/m29/dialogue_summary.md",
+        "purpose": "Persona dialogue stress-testing M29 PR & communications content",
+        "hypotheses_influenced": ["HYP-006", "HYP-001", "HYP-003"],
+        "key_insight": "PR's primary ROI is backlinks (SEO), not direct traffic. Weekly time budget capped (2-3 hrs/week Phase 1). Podcast deferred to Phase 3+. Tier 1 (achievable) media targets added — pre-revenue brands won't get in Men's Health. Minimum viable press pitch checklist gates outreach behind product traction. Competitive claim copying scenario added to crisis playbook."
+      },
+      {
+        "document": "data/m20/dialogue_summary.md",
+        "purpose": "Persona dialogue stress-testing M20 customer support content",
+        "hypotheses_influenced": ["HYP-003", "HYP-003.1", "HYP-005", "HYP-002", "HYP-006"],
+        "key_insight": "Chargeback monitoring is existential risk missing from original content (Stripe 0.75% threshold). Activation should be behavioral not self-reported. Marine plasma 'working' is undefined — needs expected outcomes timeline. Founder Mode vs Team Mode phase-gates escalation system. Minimum viable support stack prevents premature tool overspend ($60/mo vs $1,300/mo). Win/loss surveys should be open-ended first."
+      },
+      {
+        "document": "data/m17/dialogue_summary.md",
+        "purpose": "Persona dialogue stress-testing M17 email & SMS content",
+        "hypotheses_influenced": ["HYP-001", "HYP-002", "HYP-003", "HYP-005"],
+        "key_insight": "Discount escalation across flows creates arbitrage risk — mitigated by different incentive types per flow and time-gating. FTC compliance checklist needed for supplement health claims in post-purchase emails. Segmentation trigger thresholds prevent premature over-segmentation. Maintenance time budget (1.5-4 hrs/month) makes ongoing email management tractable for solo founder. Markdown files are build blueprints, Klaviyo is live source of truth."
+      },
+      {
+        "document": "data/m23/dialogue_summary.md",
+        "purpose": "Persona dialogue stress-testing M23 influencer & creator content",
+        "hypotheses_influenced": ["HYP-006", "HYP-001"],
+        "key_insight": "Attribution undercounting is systematic — code-only ROAS kills working partnerships. FTC compliance package is GATING requirement before product seeding (material connection even without cash). Phase 0 seeding ≠ influencer cash spend. UGC creator budget IS the ad creative budget, not separate. Content perpetual rights need retirement policy. Pre-outreach competitive screening saves months of wasted effort. Repurposing multiplier overstated (6-10 not 8-12), and every derivative needs compliance check."
+      },
+      {
+        "document": "data/m28/dialogue_summary.md",
+        "purpose": "Persona dialogue stress-testing M28 market expansion content",
+        "hypotheses_influenced": ["HYP-002", "HYP-004", "HYP-006"],
+        "key_insight": "Amazon cannibalization risk requires price parity + D2C sub always best deal. B2B unit economics are excellent (13.2x LTV:CAC) IF retention holds — auto-reorder is key lever. MAP pricing is non-negotiable for wholesale. Moonshot lab needs activation lock (<$50K MRR = READ-ONLY). SEO is Phase 2 not pre-launch. Subscription conversion viable to 30%, crisis at 10%. White label creates competitors without guardrails."
+      },
+      {
+        "document": "data/m30/dialogue_summary.md",
+        "purpose": "Persona dialogue stress-testing M30 analytics & measurement content",
+        "hypotheses_influenced": ["HYP-001", "HYP-003", "HYP-004", "HYP-008"],
+        "key_insight": "Solo founder tracking 50 metrics = tracking zero. MVD of 7 numbers beats enterprise dashboards. MER > ROAS for all business decisions (platform ROAS overstates 20-40%). 3 existential kill criteria (Cash, CAC, Contribution Margin) must be visually distinguished from 9 monitoring metrics. Awareness attribution (survey) and conversion attribution (UTM) are different questions — disagreement = multi-touch, not error. Graceful degradation: daily pulse is non-negotiable, everything else can be recovered."
+      },
+      {
+        "document": "data/m9/dialogue_summary.md",
+        "purpose": "Persona dialogue stress-testing M9 ecommerce infrastructure content",
+        "hypotheses_influenced": ["HYP-001", "HYP-002"],
+        "key_insight": "Theme performance budget (8 apps, 500KB JS) prevents speed-kills-conversion death spiral. Subscription UX pattern (toggle > dropdown) directly impacts HYP-002. Week 1 Setup Sequence prevents launch delay. Ad account hijacking is #1 actual threat — spend caps at 2x daily budget. Consent Mode v2 enables GA4 behavioral modeling. Do Not Install list prevents bloat. Phase-gated governance: essentials only pre-launch, unlock quarterly at Month 3."
+      },
+      {
+        "document": "data/m19/dialogue_summary.md",
+        "purpose": "Persona dialogue stress-testing M19 customer lifecycle & CRM content",
+        "hypotheses_influenced": ["HYP-001", "HYP-002", "HYP-003", "HYP-005", "HYP-006"],
+        "key_insight": "Cohort sample sizes need confidence intervals (50 customers = ±14% CI — can't distinguish healthy from concerning). Tool triggers should use customer count not revenue. At-risk is 3 distinct profiles (Product/Budget/Attention) requiring different interventions. Churn risk score needs explicit formula (Phase 1: simple days-since-purchase, Phase 2: 4-signal weighted model). Minimum Viable CRM: only 3 flows for Day 1 (8-11 hours), not 10 flows (3 weeks). Seasonality affects churn benchmarks (January resolution fade, summer routine disruption)."
+      },
+      {
+        "document": "data/m1/dialogue_summary.md",
+        "purpose": "Persona dialogue stress-testing M1 labor chain & deployment content",
+        "hypotheses_influenced": ["HYP-001", "HYP-004", "HYP-008"],
+        "key_insight": "Contractor misclassification is the #1 legal risk for bootstrapped founders (5 critical upgrades). 7-week sprint corrected to 12-week (industry standard). Labor costs directly affect unit economics — phase-gated hiring prevents premature burn. Double-trigger equity acceleration protects founder dilution. CM independence from Operator is essential for system integrity."
+      },
+      {
+        "document": "data/m15/dialogue_summary.md",
+        "purpose": "Persona dialogue stress-testing M15 landing pages & conversion content",
+        "hypotheses_influenced": ["HYP-001", "HYP-002", "HYP-004"],
+        "key_insight": "Test architecture BEFORE copy (10x vs 2x impact). FTC negative option rule is CRITICAL compliance gap for subscription checkout (Jan 2024 revision). Prop 65 CoA testing is gating for California sales (marine plasma may contain trace arsenic/cadmium/lead/mercury). Click-to-cancel rule (2025) requires one-click cancellation online. Shop Pay is single biggest conversion lever (50% lift). Subscription rate is more valuable CRO metric than AOV. Server-side tracking required — client-side misses 15-25%. Modular LP design combats creative fatigue (2-4 week cycles). Emma Relief: replicate funnel structure, avoid aggressive practices (BBB F rating)."
+      },
+      {
+        "document": "data/m24/dialogue_summary.md",
+        "purpose": "Persona dialogue stress-testing M24 fulfillment & inventory content",
+        "hypotheses_influenced": ["HYP-001", "HYP-002", "HYP-004"],
+        "key_insight": "Contract negotiation is the single highest-ROI fulfillment task — red flags checklist prevents hidden fee erosion (HYP-004). Temperature excursion protocol is supplement-specific compliance requirement. Subscription cohort decay model reveals flat churn rates distort inventory forecasts (HYP-002). Day 1 ad budget cap ($100-200) prevents burning capital on system failures (HYP-001). Statistical safety stock (Z × σ × √LT) replaces flat buffer after 60 days of data. Batch-level cost tracking enables landed cost accuracy. Founder energy management is an underappreciated launch risk."
+      }
+    ]
+  },
+
+  "metadata": {
+    "total_hypotheses": 10,
+    "total_documents": 75,
+    "total_context_documents": 20,
+    "total_references": 157,
+    "last_sync": "2026-02-09T18:00:00Z",
+    "index_maintainer": "automated",
+    "audit_source": "IonWave/Hypothesis_Dependency_Audit.md",
+    "coverage_quality": "Strong - all CRITICAL hypotheses have 13-16+ document references. M15 TUP adds conversion infrastructure and compliance layer. HYP-001 (CAC) at 15 refs. HYP-002 (Subscription Conversion) at 16 refs with M15 checkout and funnel architecture. HYP-003 (Churn) at 13 refs. HYP-004 (Gross Margin) at 13 refs with M15 compliance costs and AOV optimization.",
+    "weakest_coverage": "HYP-009 (Pre-Launch Demand) - only 1 reference (newly surfaced). Sub-hypotheses now partially indexed via M21/M22/M14/M15/M16 content.",
+    "note": "Sub-hypotheses (HYP-003.x, HYP-006.x) are indexed via their parent CSP case study documents AND via M21/M22/M14/M15/M16/M25/M28/M30 TUP content files where applicable. M30 is unique — it's the measurement layer that defines HOW all hypotheses are tracked, not evidence for/against them."
+  }
+}

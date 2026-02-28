@@ -1,0 +1,137 @@
+{
+  "_meta": {
+    "sheet_name": "Strategic Thesis",
+    "parent_file": "01_strategic_foundation",
+    "version": "1.0.0",
+    "last_updated": "2026-02-04",
+    "updated_by": "claude-opus-4.5",
+    "status": "draft",
+    "quality_score": "5/10",
+    "data_type": "hybrid",
+    "note": "Narrow marine plasma positioning. Better aligned with Porter's analysis than ODD-1. Kill criteria are well-defined but not yet validated."
+  },
+  "data": {
+    "header": {
+      "trade_number": 84,
+      "product": "Premium Liquid Marine Plasma Electrolytes",
+      "status": "HYPOTHESIS - NOT YET VALIDATED"
+    },
+    "the_bet": {
+      "primary_hypothesis": "There is room for a #2 player in premium marine plasma electrolytes at 10-15% below Seaonic's price point, targeting the same biohacker/athlete ICP.",
+      "risk_note": "Must identify differentiation beyond price OR accept we're a pure arbitrage play that dies if Seaonic price matches."
+    },
+    "competitive_reality": [
+      {
+        "brand": "Seaonic",
+        "scale_revenue": {
+          "value": "Unknown revenue (no funding disclosed, ~43 Trustpilot reviews)",
+          "confidence": "D",
+          "source": "Trustpilot review count only",
+          "upgrade_path": "SEMrush traffic estimate, ad library research"
+        },
+        "key_intel": "Founder: Lisa (pregnancy-driven origin story)",
+        "action_required": "NEED: Traffic estimate, ad spend, creative library"
+      },
+      {
+        "brand": "LMNT",
+        "scale_revenue": {
+          "value": "$66M revenue 2024, $24M cash, 11-50 employees",
+          "confidence": "B",
+          "source": "Industry triangulation, public data",
+          "upgrade_path": "Verify via SEMrush"
+        },
+        "key_intel": "Founded 2018, raised $6M, 3.5-4% CVR",
+        "action_required": "Powder format, keto audience, PROVEN category"
+      },
+      {
+        "brand": "Quinton",
+        "scale_revenue": {
+          "value": "125+ year heritage, pharmaceutical positioning",
+          "confidence": "C",
+          "source": "Public brand history"
+        },
+        "key_intel": "Glass ampoules, no subscription, $75/30",
+        "action_required": "Legacy brand, not direct competitor"
+      },
+      {
+        "brand": "Biocean/Actimar",
+        "scale_revenue": {
+          "value": "Marine plasma SUPPLIER, not competitor",
+          "confidence": "B",
+          "source": "Direct research"
+        },
+        "key_intel": "Canada-based, GMP certified",
+        "action_required": "POTENTIAL SUPPLIER - CONTACT DIRECTLY"
+      }
+    ],
+    "kill_criteria": [
+      {
+        "criteria": "Supplier COGS >$0.60/sachet landed",
+        "why_it_kills": "Kills margin math entirely",
+        "when_to_validate": "VALIDATE WEEK 1",
+        "how_to_validate": "Contact Biocean, Quinton, 3 Alibaba suppliers"
+      },
+      {
+        "criteria": "Seaonic has exclusive supplier deal",
+        "why_it_kills": "Blocked from market entry",
+        "when_to_validate": "VALIDATE WEEK 1",
+        "how_to_validate": "Ask suppliers directly about exclusivity"
+      },
+      {
+        "criteria": "Meta CPM >$20 after $5k spend",
+        "why_it_kills": "CAC math impossible",
+        "when_to_validate": "VALIDATE WEEK 6",
+        "how_to_validate": "Need 100+ conversions for significance"
+      },
+      {
+        "criteria": "Landing page CVR <2% after 500 visitors",
+        "why_it_kills": "Funnel broken",
+        "when_to_validate": "VALIDATE WEEK 6",
+        "how_to_validate": "Test 3+ LP variants before killing"
+      },
+      {
+        "criteria": "Subscription M1 churn >25%",
+        "why_it_kills": "LTV assumption destroyed",
+        "when_to_validate": "VALIDATE MONTH 2",
+        "how_to_validate": "Industry avg is 6.5% monthly for DTC"
+      }
+    ],
+    "differentiation_options": [
+      {
+        "strategy": "Price arbitrage only",
+        "what_it_means": "10-15% below Seaonic",
+        "upside": "Easy to execute, fast to market",
+        "downside": "No moat, dies on price match",
+        "assessment": "WEAK - need backup"
+      },
+      {
+        "strategy": "Purity/testing story",
+        "what_it_means": "3rd party COA, heavy metal testing",
+        "upside": "Defensible, trust-building",
+        "downside": "Seaonic already claims this",
+        "assessment": "MODERATE"
+      },
+      {
+        "strategy": "Flavored options",
+        "what_it_means": "Add natural flavors (Seaonic is unflavored, salty)",
+        "upside": "Clear gap, taste is common complaint",
+        "downside": "Formulation complexity, sourcing",
+        "assessment": "STRONGEST"
+      },
+      {
+        "strategy": "Format innovation",
+        "what_it_means": "Concentrate bottle vs sachets",
+        "upside": "Lower COGS, eco-friendly angle",
+        "downside": "Consumer adoption risk",
+        "assessment": "HIGH RISK"
+      },
+      {
+        "strategy": "Community/content play",
+        "what_it_means": "Become marine plasma education destination",
+        "upside": "Long-term moat, organic traffic",
+        "downside": "Slow, requires expertise",
+        "assessment": "LONG-TERM ONLY"
+      }
+    ]
+  }
+}

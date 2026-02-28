@@ -1,0 +1,90 @@
+{
+  "_meta": {
+    "sheet_name": "Market Landscape Map",
+    "parent_file": "02_market_intelligence",
+    "version": "1.0.0",
+    "last_updated": "2026-02-04",
+    "updated_by": "claude-opus-4.5",
+    "status": "draft",
+    "quality_score": "4/10",
+    "data_type": "narrative",
+    "note": "This is a Track B (human research) methodology document, not actual data. Defines what needs to be researched and how."
+  },
+  "data": {
+    "purpose": "This document defines the methodology for building a comprehensive market landscape map. It describes what data to collect, how to collect it, and how long each component should take. This is a research plan - not research results. The actual data lives in competitive_intel.json, market_data.json, and ref_competitive_intel.json.",
+    "relationship_to_thesis": "The market landscape map validates or invalidates the strategic thesis. If the landscape shows the market is too crowded, margins too thin, or our positioning untenable, the thesis must be revised or killed. This map feeds directly into Porter's Five Forces analysis.",
+    "components": [
+      {
+        "component": "Component 1: Competitive Intelligence Grid",
+        "estimated_time": "15-20 hours",
+        "description": "Deep profile of 10-12 competitors across the electrolyte and marine plasma space",
+        "fields_to_research": [
+          "Company name and founding year",
+          "Estimated revenue (annual and monthly)",
+          "Price point per unit/serving",
+          "Product type (synthetic, marine, ORS, etc.)",
+          "Target customer / ICP",
+          "Key marketing channels",
+          "Estimated ad spend (monthly)",
+          "Estimated CAC",
+          "Gross margin estimate",
+          "Key differentiator / positioning",
+          "Primary weakness / vulnerability"
+        ],
+        "output_location": "competitive_intel.json",
+        "track": "B (human research)",
+        "tools_needed": ["SEMrush", "Facebook Ad Library", "SimilarWeb", "Crunchbase", "LinkedIn", "Manual site review"]
+      },
+      {
+        "component": "Component 2: Market Sizing",
+        "estimated_time": "2-4 hours",
+        "description": "TAM/SAM/SOM analysis for US electrolyte market with marine plasma sub-segment sizing",
+        "fields_to_research": [
+          "Total US electrolyte market size",
+          "Growth rate (CAGR)",
+          "Segment breakdown (sports, wellness, medical)",
+          "Premium segment size",
+          "DTC vs retail channel split",
+          "Marine plasma addressable market estimate"
+        ],
+        "output_location": "market_data.json",
+        "track": "B (human research)",
+        "tools_needed": ["IBISWorld", "Statista", "Grand View Research", "Industry reports"]
+      },
+      {
+        "component": "Component 3: Traffic & SEO Analysis",
+        "estimated_time": "3-5 hours",
+        "description": "Analyze competitor web traffic, keyword rankings, and organic search opportunity",
+        "fields_to_research": [
+          "Monthly organic traffic per competitor",
+          "Top ranking keywords",
+          "Domain authority scores",
+          "Backlink profiles",
+          "Content gap analysis",
+          "Paid search spend estimates"
+        ],
+        "output_location": "competitive_intel.json (supplementary)",
+        "track": "B (human research)",
+        "tools_needed": ["SEMrush", "Ahrefs", "SimilarWeb"]
+      },
+      {
+        "component": "Component 4: Customer Voice Research",
+        "estimated_time": "4-6 hours",
+        "description": "Analyze what customers say about competitors across review platforms and social media",
+        "fields_to_research": [
+          "Common complaints per competitor",
+          "Common praise per competitor",
+          "Unmet needs expressed in reviews",
+          "Price sensitivity signals",
+          "Switching trigger patterns",
+          "Feature requests and wishlists"
+        ],
+        "output_location": "03b_customer_research_voc (cross-reference)",
+        "track": "B (human research)",
+        "tools_needed": ["Amazon reviews", "Trustpilot", "Reddit", "Facebook groups", "Instagram comments"]
+      }
+    ],
+    "total_estimated_time": "24-35 hours of human research",
+    "priority_order": "Component 1 (Competitive Grid) > Component 2 (Market Sizing) > Component 4 (Customer Voice) > Component 3 (Traffic/SEO)"
+  }
+}

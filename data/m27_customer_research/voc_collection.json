@@ -1,0 +1,105 @@
+{
+  "_meta": {
+    "sheet_name": "Voice of Customer Collection",
+    "parent_file": "03b_customer_research_voc",
+    "version": "1.0.0",
+    "last_updated": "2026-02-04",
+    "updated_by": "claude-opus-4.5",
+    "status": "draft",
+    "quality_score": "5/10",
+    "data_type": "hybrid",
+    "note": "Consolidated from 'Voice of Customer' and partial 'Voice of Customer Database' template sections. Contains collection templates and source guidance. Actual quotes are in voc_database.json."
+  },
+  "data": {
+    "collection_templates": {
+      "why_they_bought": {
+        "description": "Capture the primary reason customers purchased. Ask: 'What made you decide to buy?'",
+        "entries": [],
+        "status": "placeholder - populate post-launch"
+      },
+      "pain_points": {
+        "description": "Documented pain points from customer conversations, reviews, and research. Tag by archetype and severity.",
+        "entries": [],
+        "status": "placeholder - populate from interviews and VOC database"
+      },
+      "objections": {
+        "description": "Common objections raised before purchase. Track frequency and effective counters.",
+        "entries": [],
+        "status": "placeholder - populate from sales conversations and support"
+      },
+      "competitors_tried": {
+        "description": "Products customers have tried before IonWave. What they liked and didn't like about each.",
+        "entries": [],
+        "status": "placeholder - populate from interviews"
+      },
+      "desired_outcomes": {
+        "description": "What customers hope to achieve. Map to Jobs to Be Done framework.",
+        "entries": [],
+        "status": "placeholder - populate from interviews and surveys"
+      }
+    },
+    "testimonial_bank": {
+      "description": "Approved testimonials for use in marketing materials. Every testimonial requires explicit permission.",
+      "template": {
+        "quote": "string - exact customer quote",
+        "customer": "string - first name and last initial or anonymous",
+        "source": "string - where the quote came from (review, interview, social, email)",
+        "use_case": "string - what context this quote works best for (ad hook, testimonial, FAQ, social proof)",
+        "permission": "boolean - explicit permission obtained for marketing use",
+        "used_in": "array - where this quote has been used (landing page, ad, email, etc.)"
+      },
+      "entries": [],
+      "status": "placeholder - populate with permission-granted quotes post-launch"
+    },
+    "where_to_find_voc": [
+      {
+        "source": "Product Reviews",
+        "where": "Shopify product page, Judge.me, Yotpo (IonWave post-launch)",
+        "what_to_look_for": "Specific language about results, taste, experience. Both positive and negative.",
+        "volume_expectation": "Low initially (first 50 orders), growing"
+      },
+      {
+        "source": "Competitor Amazon Reviews",
+        "where": "LMNT, Liquid IV, Drip Drop, Re-Lyte Amazon listings",
+        "what_to_look_for": "Pain points with competitors (taste, effectiveness, price, ingredients). Unmet needs. Reasons for switching.",
+        "volume_expectation": "High - LMNT has thousands of reviews"
+      },
+      {
+        "source": "Reddit",
+        "where": "r/keto, r/fasting, r/Supplements, r/Biohackers, r/crossfit, r/electrolytes",
+        "what_to_look_for": "Unsolicited opinions about electrolyte products. Problem descriptions. Recommendations and warnings.",
+        "volume_expectation": "High - rich source of authentic language"
+      },
+      {
+        "source": "Facebook Groups",
+        "where": "Keto groups, fasting groups, CrossFit groups, biohacker groups, carnivore groups",
+        "what_to_look_for": "Product recommendations, complaints, questions about electrolytes. Community sentiment.",
+        "volume_expectation": "Medium - requires joining groups"
+      },
+      {
+        "source": "Support Emails",
+        "where": "Customer support inbox (post-launch)",
+        "what_to_look_for": "Complaints, product questions, praise. Support emails contain the most honest feedback.",
+        "volume_expectation": "Low initially, growing with customer base"
+      },
+      {
+        "source": "Customer Interviews",
+        "where": "Scheduled 1:1 conversations (see Interview Playbook)",
+        "what_to_look_for": "Deep pain points, jobs to be done, emotional language, unexpected insights.",
+        "volume_expectation": "5-20 pre-launch interviews"
+      },
+      {
+        "source": "Social Media Comments",
+        "where": "Instagram, Twitter/X, TikTok comments on IonWave and competitor content",
+        "what_to_look_for": "Quick reactions, emotional responses, questions, objections.",
+        "volume_expectation": "Medium - monitor daily"
+      },
+      {
+        "source": "Post-Purchase Surveys",
+        "where": "Automated email survey sent Day 14 post-delivery",
+        "what_to_look_for": "NPS score, open-ended feedback on experience, feature requests.",
+        "volume_expectation": "Depends on response rate (expect 15-25% for incentivized survey)"
+      }
+    ]
+  }
+}

@@ -1,0 +1,991 @@
+{
+  "_meta": {
+    "description": "OpKit Registry - Maps TUPs to their associated OpKits (production support bundles)",
+    "created": "2026-02-06",
+    "version": "1.0.0",
+    "authority": "Reconciliation Decision Log (REC-002c, REC-002f)",
+    "notes": [
+      "OpKits scaffold deliverable creation: Reference Models, Templates, Checklists, Graded Examples",
+      "Each TUP may have one or more associated OpKits",
+      "OpKits stored in ops_model_v10_dump/ and will be migrated to opkits/ directory",
+      "Navigation: Given any TUP code, Claude can locate its OpKit(s)"
+    ]
+  },
+  "opkit_types": {
+    "production": {
+      "description": "For repeatedly created deliverables across multiple Trades",
+      "contains": [
+        "Instructions",
+        "Template",
+        "Graded Examples (A/B/C)",
+        "Rubric"
+      ],
+      "example": "Strategic Thesis OpKit, Market Landscape Map OpKit"
+    },
+    "foundation": {
+      "description": "For singular evolving foundational documents",
+      "contains": [
+        "Target document",
+        "Brief",
+        "Design rationale",
+        "Historical record"
+      ],
+      "example": "Documentation Standards OpKit, Protocol Creation OpKit"
+    }
+  },
+  "tup_to_opkit": {
+    "m0": {
+      "tup_name": "Trade Thesis",
+      "opkits": [
+        {
+          "opkit_id": "opkit_m0_thesis_structure",
+          "name": "Thesis Structure Checklist",
+          "type": "production",
+          "source_file": "ops_model_v10_dump/1204_m0_thesis_structure.json",
+          "description": "Decision-forcing checklist: 16 required fields across ICP (3), Positioning (3), Product (3), Distribution (2), Finance (2), Kill Criteria (2)",
+          "components": {
+            "checklist": "16-field thesis structure forcing explicit answers",
+            "downstream_map": "ops_model_v10_dump/1205_m0_thesis_downstream.json - shows which clusters consume which thesis fields"
+          },
+          "status": "adopted",
+          "decision": "REC-002f",
+          "notes": "Bootstrap thesis.json fills most fields but scattered. This OpKit provides single unified checklist."
+        },
+        {
+          "opkit_id": "opkit_m0_computational_pmf",
+          "name": "Computational PMF Observer",
+          "type": "foundation",
+          "source_file": "ops_model_v10_dump/137_computational_pmf.json",
+          "description": "Composite state estimator: 10 signals → weighted score → PMF assessment (No PMF/Early/Achieved/Strong)",
+          "components": {
+            "signals": "10 PMF signals (Sean Ellis >40%, Retention M2 >40%, Organic >30%, NPS >50, CAC trend, Referral >10%, Explanation <30s, Price sensitivity, Inbound, Time to value <7d)",
+            "weights": "Sean Ellis 25%, Retention 20%, Organic 15%, NPS 15%, CAC Trend 10%, Referral 5%",
+            "score_bands": "0-30 No PMF, 30-50 Early, 50-70 Achieved, 70+ Strong",
+            "diagnostic_patterns": "5 fault-tree patterns for diagnosing PMF failures"
+          },
+          "status": "adopted",
+          "decision": "REC-002b",
+          "notes": "This is an Observer, not traditional OpKit, but serves similar scaffolding function for PMF assessment"
+        },
+        {
+          "opkit_id": "opkit_m0_anti_goals",
+          "name": "Anti-Goals Boundary Conditions",
+          "type": "production",
+          "source_file": "ops_model_v10_dump/115_anti_goals.json",
+          "description": "8 constraints defining what IonWave is NOT, with specific temptation triggers",
+          "components": {
+            "constraints": "8 anti-goals (e.g., no new flavor until $50K MRR)",
+            "temptation_triggers": "Parameters defining when rule can be broken"
+          },
+          "status": "adopted",
+          "decision": "REC-002d",
+          "notes": "Boundary conditions that define solution space"
+        },
+        {
+          "opkit_id": "opkit_m0_bifurcation_points",
+          "name": "Bifurcation Points Controller Stack",
+          "type": "foundation",
+          "source_file": "ops_model_v10_dump/131_bifurcation_points.json",
+          "description": "Controller stack: Early Warning (80% of bifurcation) → Bifurcation (investigate/intervene) → Kill (stop business)",
+          "components": {
+            "parameters": "8 bifurcation thresholds (CAC, Churn, Margin, etc.)",
+            "severity_levels": "Early Warning, Bifurcation, Kill - three severity levels per metric",
+            "reactive_protocols": "Defined responses when metrics cross thresholds"
+          },
+          "status": "adopted",
+          "decision": "REC-002a",
+          "notes": "This is a Controller, not traditional OpKit, but provides scaffolding for monitoring"
+        }
+      ]
+    },
+    "m26": {
+      "tup_name": "Competitive Intel",
+      "opkits": [
+        {
+          "opkit_id": "opkit_m26_ci_protocol",
+          "name": "Competitive Intelligence Protocol",
+          "type": "production",
+          "source_file": "ci-protocol/",
+          "description": "Complete CI workflow with 7 frameworks and graded examples",
+          "components": {
+            "frameworks": "Porter's Five Forces, Market Landscape Map, SWOT, Competitor Analysis, etc.",
+            "templates": "Structured templates for each framework",
+            "graded_examples": "Real examples at A/B/C quality levels",
+            "process": "00_INDEX.md - complete workflow"
+          },
+          "status": "bootstrap_canon",
+          "decision": "REC-007 (Danilo canon cluster, but Bootstrap CI protocol is superior)",
+          "notes": "Bootstrap-created protocol is production-ready and contains worked examples"
+        }
+      ]
+    },
+    "m27": {
+      "tup_name": "Customer Research",
+      "opkits": [
+        {
+          "opkit_id": "opkit_m27_icp_analysis",
+          "name": "ICP Analysis Framework",
+          "type": "production",
+          "source_file": "data/m27_customer_research/icp.json",
+          "description": "ICP definition framework with segmentation, archetypes, psychographics",
+          "components": {
+            "segmentation": "Market segmentation matrix",
+            "archetypes": "Customer archetype definitions",
+            "psychographics": "Deep psychographic profiles",
+            "analysis_deliverable": "IonWave/ICP_Analysis.md"
+          },
+          "status": "bootstrap_canon",
+          "decision": "Implicit from REC-007",
+          "notes": "Bootstrap-created framework, validated through persona dialogue"
+        },
+        {
+          "opkit_id": "opkit_m27_voc_protocol",
+          "name": "Voice of Customer Collection Protocol",
+          "type": "production",
+          "source_file": "data/m27_customer_research/",
+          "description": "Mom Test-based interview protocol with playbook, script, questions",
+          "components": {
+            "playbook": "interview_playbook.json - consolidated interview methodology",
+            "script": "interview_script.json - Mom Test-based script",
+            "questions": "interview_questions.json - 28 structured questions",
+            "database": "voc_database.json - quote collection structure"
+          },
+          "status": "bootstrap_canon",
+          "decision": "Implicit from REC-007",
+          "notes": "Mom Test methodology applied, 31 LMNT quotes at saturation"
+        }
+      ]
+    },
+    "m21": {
+      "tup_name": "Subscription & Retention",
+      "opkits": [
+        {
+          "opkit_id": "OK-M21-001",
+          "name": "Subscription & Retention Design Kit",
+          "type": "production",
+          "source_file": "data/m21/opkit_subscription_retention.md",
+          "description": "Complete subscription and retention system design for DTC consumable brands",
+          "components": {
+            "platform_selection": "data/m21/subscription_platform.json — evaluation framework and comparison template",
+            "psychology_framework": "data/m21/subscription_psychology.md — why people subscribe/cancel, psychological levers",
+            "churn_model": "data/m21/churn_prediction.json — behavioral signals, risk scoring, dunning stack",
+            "win_back_strategy": "data/m21/win_back_offer_ladder.md — education-first win-back sequence design",
+            "retention_playbook": "data/m21/retention_playbook.md — 3-tier prioritized tactics with implementation timeline",
+            "instructions": "data/m21/opkit_subscription_retention.md — step-by-step how-to for any Trade",
+            "graded_example": "IonWave Trade #84 content (quality: 8.0/10)"
+          },
+          "status": "workshopped",
+          "decision": "TWP-001 workshop session 2026-02-06",
+          "notes": "First TUP workshopped under TWP-001 protocol. Education-first win-back strategy replaces Danilo's discount ladder anti-pattern."
+        }
+      ]
+    },
+    "m22": {
+      "tup_name": "Referral & Community",
+      "opkits": [
+        {
+          "opkit_id": "OK-M22-001",
+          "name": "Referral, Community & UGC Growth Kit",
+          "type": "production",
+          "source_file": "data/m22/opkit_referral_community_ugc.md",
+          "description": "Complete referral program, community platform selection, UGC production system, and creator management for DTC consumable brands",
+          "components": {
+            "referral_program": "data/m22/referral_program.json — $10/$10 architecture, phased rollout, platform comparison, benchmarks",
+            "community_strategy": "data/m22/community_strategy.md — 7-platform evaluation, phased recommendation (email → Skool → Circle)",
+            "ugc_brand_brief": "data/m22/ugc_brand_brief.md — approved/prohibited claims, FTC compliance, visual guidelines",
+            "ugc_library": "data/m22/ugc_library.json — content tracking database with rights status and performance",
+            "ugc_brief_template": "data/m22/ugc_brief_template.md — production-ready creator brief with hook frameworks",
+            "ugc_creator_program": "data/m22/ugc_creator_program.json — creator economics, sourcing, budget tiers, hit rates",
+            "instructions": "data/m22/opkit_referral_community_ugc.md — step-by-step how-to for any Trade",
+            "graded_example": "IonWave Trade #84 content (quality: 7.0/10)"
+          },
+          "status": "workshopped",
+          "decision": "TWP-001 workshop session 2026-02-06",
+          "notes": "Third TUP workshopped under TWP-001. Key finding: referral amplifies PMF, doesn't create it. LMNT comparative claim removed (Lanham Act risk). Geneva community platform discontinued. Creator compliance acknowledgment added. Loop+Smile integration flagged as CRITICAL unverified gap."
+        }
+      ]
+    },
+    "m14": {
+      "tup_name": "Testing & Optimization",
+      "opkits": [
+        {
+          "opkit_id": "OK-M14-001",
+          "name": "Testing & Optimization Kit",
+          "type": "production",
+          "source_file": "data/m14/opkit_testing_optimization.md",
+          "description": "Complete testing and experimentation system for DTC consumable brands — creative testing, A/B testing, audience testing, test logging, and phased tool infrastructure",
+          "components": {
+            "experimentation_framework": "data/m14/experimentation_framework.json — core philosophy, experiment card, priority matrix, traffic-based methodology, statistical decision rules",
+            "creative_testing": "data/m14/creative_testing_protocol.md — ad creative testing hierarchy, Meta campaign structure, two-stage kill criteria, scaling protocol",
+            "ab_testing": "data/m14/ab_testing_framework.md — on-site A/B testing, tool comparison, Bayesian vs frequentist methodology selection",
+            "audience_testing": "data/m14/audience_testing_strategy.md — audience tiers, phased rollout, retargeting, passive learning from Meta breakdowns",
+            "test_log": "data/m14/test_log.json — experiment log template, knowledge library, velocity tracking",
+            "infrastructure": "data/m14/testing_infrastructure.md — phased tool stack ($0→$200/month), setup checklist, tool spend discipline",
+            "instructions": "data/m14/opkit_testing_optimization.md — step-by-step how-to for any Trade",
+            "graded_example": "IonWave Trade #84 content (quality: 7.5/10)"
+          },
+          "status": "workshopped",
+          "decision": "TWP-001 workshop session 2026-02-06",
+          "notes": "Fourth TUP workshopped under TWP-001. Near green-field build from ~50 unique Danilo rows. Key innovations: two-stage kill criteria (leading indicators → conversion with 50+ click minimum), traffic-based methodology selection, tool spend ≤5% discipline, passive audience learning from Meta breakdowns. Google Optimize replaced with current Shopify-native tool landscape."
+        }
+      ]
+    },
+    "m16": {
+      "tup_name": "Content & SEO",
+      "opkits": [
+        {
+          "opkit_id": "OK-M16-001",
+          "name": "Content & SEO Kit",
+          "type": "production",
+          "source_file": "data/m16/opkit_content_seo.md",
+          "description": "Complete content strategy, SEO strategy, keyword research, pillar/cluster content model, link building, technical SEO, and content repurposing system for DTC consumable brands",
+          "components": {
+            "content_strategy": "data/m16/content_strategy.md — channel strategy, calendar, AI workflow, distribution, measurement",
+            "seo_strategy": "data/m16/seo_strategy.md — timeline, E-E-A-T, competitive analysis, budget, ROI projections",
+            "keyword_research": "data/m16/seo_keyword_research.json — 23 keywords in 3 phases by intent and difficulty",
+            "content_model": "data/m16/seo_content_strategy.md — 5 pillar/cluster models, 12-post launch sequence, blog templates",
+            "link_building": "data/m16/seo_link_building.md — 8 link building tactics, native ads playbook, monthly action plan",
+            "technical_seo": "data/m16/technical_seo_checklist.md — Shopify-specific checklist, schema types, tool stack",
+            "content_repurposing": "data/m16/content_repurposing.md — waterfall model, checklists, library structure, production workflow",
+            "instructions": "data/m16/opkit_content_seo.md — step-by-step how-to for any Trade",
+            "graded_example": "IonWave Trade #84 content (quality: 8.4/10)"
+          },
+          "status": "workshopped",
+          "decision": "TWP-001 workshop session 2026-02-06",
+          "notes": "Fifth TUP workshopped under TWP-001. 9 Danilo tabs (225 rows) consolidated into 7 production files. Key innovations: HARO replaced with current alternatives, YMYL/E-E-A-T infrastructure, Founder Mode publishing cadence, marine plasma as uncontested keyword territory, native ads phase-gated as optional, Google Merchant Center free listings added."
+        }
+      ]
+    },
+    "m25": {
+      "tup_name": "Financial Operations",
+      "opkits": [
+        {
+          "opkit_id": "OK-M25-001",
+          "name": "Financial Operations Playbook",
+          "type": "production",
+          "source_file": "data/m25/opkit_financial_ops.md",
+          "description": "Complete bookkeeping setup, unit economics tracking, and business review cadence system for DTC subscription brands",
+          "components": {
+            "bookkeeping_setup": "data/m25/bookkeeping_setup.md — software stack, chart of accounts (Day 1 Essentials + full), inventory accounting, revenue recognition, monthly checklist",
+            "unit_economics": "data/m25/unit_economics_tracking.md — channel economics dashboard, payback period (dual-margin scenarios), reporting, scale/hold/kill framework",
+            "business_reviews": "data/m25/business_review_cadence.md — weekly cash check, MBR (Survival Five + full scorecard), QBR (OKR framework), annual planning",
+            "instructions": "data/m25/opkit_financial_ops.md — step-by-step how-to for any Trade",
+            "graded_example": "IonWave Trade #84 financial operations (quality: 8.8/10)"
+          },
+          "status": "workshopped",
+          "decision": "TWP-001 workshop session 2026-02-06",
+          "notes": "Sixth TUP workshopped under TWP-001. 6 Danilo tabs (105 rows) consolidated into 3 production files. Green-field build. Key innovations: dual-margin REC-001 treatment (gross vs contribution), Day 1 Essentials 18-account chart, Survival Five MBR scorecard, phase-gated sales tax strategy, 13-week cash forecast with example."
+        }
+      ]
+    },
+    "m29": {
+      "tup_name": "PR & Communications",
+      "opkits": [
+        {
+          "opkit_id": "OK-M29-001",
+          "name": "PR & Communications Launch Kit",
+          "type": "production",
+          "source_file": "data/m29/opkit_pr_communications.md",
+          "description": "Complete PR strategy, video/podcast planning, crisis communications, and media outreach system for bootstrapped DTC brands",
+          "components": {
+            "pr_strategy": "data/m29/pr_strategy.md — future press release, milestone press releases, media outreach, expert platforms, podcast guesting, tiered targets, timeline",
+            "video_strategy": "data/m29/video_strategy.md — YouTube content strategy, Founder Mode phasing, content pillars, Shorts strategy, MVP equipment",
+            "podcast_strategy": "data/m29/podcast_strategy.md — owned podcast evaluation, concept design, production plan, Phase 3+ recommendation",
+            "crisis_playbook": "data/m29/crisis_playbook.md — 8 crisis scenarios, supplement-specific protocols, 6-A framework, monitoring, pre-crisis checklist",
+            "instructions": "data/m29/opkit_pr_communications.md — step-by-step how-to for any Trade",
+            "graded_example": "IonWave Trade #84 content (quality: 7.6/10)"
+          },
+          "status": "workshopped",
+          "decision": "TWP-001 workshop session 2026-02-07",
+          "notes": "Seventh TUP workshopped under TWP-001. 7 Danilo tabs (208 rows) → 4 content files. Weekly PR time budget cap, tiered media targets, Founder Mode video phasing, supplement-specific crisis scenarios, minimum viable press pitch checklist."
+        }
+      ]
+    },
+    "m20": {
+      "tup_name": "Customer Support",
+      "opkits": [
+        {
+          "opkit_id": "OK-M20-001",
+          "name": "Customer Support Operations Kit",
+          "type": "production",
+          "source_file": "data/m20/opkit_customer_support.md",
+          "description": "Complete support operations playbook, feedback system, and customer success framework for DTC consumable brands",
+          "components": {
+            "support_operations": "data/m20/support_operations.md — escalation tiers, macros, refund policy, chargeback monitoring, adverse event protocol",
+            "feedback_system": "data/m20/customer_feedback_system.md — NPS, CSAT, win/loss analysis with action playbooks",
+            "success_playbook": "data/m20/customer_success_playbook.md — journey touchpoints, activation criteria, at-risk signals, 11-star framework",
+            "instructions": "data/m20/opkit_customer_support.md — step-by-step how-to for any Trade",
+            "graded_example": "IonWave Trade #84 content (quality: 8.6/10)"
+          },
+          "status": "workshopped",
+          "decision": "TWP-001 workshop session 2026-02-07",
+          "notes": "Eighth TUP workshopped under TWP-001. 9 Danilo tabs (204 rows) consolidated into 3 content files. Key innovations: Founder Mode vs Team Mode escalation, chargeback monitoring (Stripe 0.75% threshold), behavioral activation criteria, minimum viable support stack ($60/mo), FDA adverse event protocol, open-ended-first win/loss survey methodology."
+        }
+      ]
+    },
+    "m17": {
+      "tup_name": "Email & SMS",
+      "opkits": [
+        {
+          "opkit_id": "OK-M17-001",
+          "name": "Email & Lifecycle Automation Kit",
+          "type": "production",
+          "source_file": "data/m17/opkit_email_lifecycle.md",
+          "description": "Complete email lifecycle automation system for DTC brands: flow architecture, segmentation, 4 email sequence scaffolds with copy, subject line library, SMS strategy, and physical touchpoint playbook",
+          "components": {
+            "flow_architecture": "data/m17/email_flow_architecture.md — lifecycle stages, 12-flow build order, Klaviyo setup, maintenance time budget, source of truth policy",
+            "segmentation": "data/m17/email_segmentation.md — lifecycle + engagement + source segments, trigger thresholds for when to segment",
+            "welcome_series": "data/m17/email_welcome_series.md — 5-email canonical sequence with production copy",
+            "abandoned_cart": "data/m17/email_abandoned_cart.md — 3-email recovery sequence with discount defense policy",
+            "post_purchase": "data/m17/email_post_purchase.md — 7-email onboarding sequence with FTC compliance checklist",
+            "winback": "data/m17/email_winback.md — 4-email re-engagement + sunset sequence",
+            "subject_lines": "data/m17/email_subject_lines.md — 11 formula types, flow-specific variants, A/B testing framework",
+            "sms_strategy": "data/m17/sms_strategy.md — TCPA compliance, channel selection, templates, implementation timeline",
+            "physical_touchpoints": "data/m17/physical_touchpoints.md — box insert kit, direct mail strategy, PostPilot evaluation",
+            "instructions": "data/m17/opkit_email_lifecycle.md — step-by-step how-to for any Trade",
+            "graded_example": "IonWave Trade #84 content (quality: 8.4/10)"
+          },
+          "status": "workshopped",
+          "decision": "TWP-001 workshop session 2026-02-07",
+          "notes": "Ninth TUP workshopped under TWP-001. 27 Danilo source files (~600+ rows) consolidated into 9 content files. Exceptionally rich source material with production-quality email copy. Key innovations: Founder Mode build order (3 flows at launch, expand monthly), discount defense policy (different incentive types per flow, no stacking), FTC compliance checklist for supplement health claims, segmentation trigger thresholds, maintenance time budget (1.5-4 hrs/month), source of truth policy (markdown = blueprint, Klaviyo = live)."
+        }
+      ]
+    },
+    "m19": {
+      "tup_name": "Customer Lifecycle & CRM",
+      "opkits": [
+        {
+          "opkit_id": "OK-M19-001",
+          "name": "Customer Lifecycle & CRM Kit",
+          "type": "production",
+          "source_file": "data/m19/opkit_customer_lifecycle.md",
+          "description": "Complete customer lifecycle management system, CRM architecture, segmentation framework, LTV/cohort analysis, and metrics dashboard for DTC brands",
+          "components": {
+            "crm_architecture": "data/m19/crm_architecture.md — model-as-CRM philosophy, 10-stage lifecycle, customer data model, phase-gated tool stack, data governance",
+            "lifecycle_segmentation": "data/m19/lifecycle_and_segmentation.md — 8 operational stages with triggers, Minimum Viable CRM (3 Day-1 flows), behavioral + RFM dual-layer segmentation, at-risk sub-segments",
+            "ltv_cohort_analysis": "data/m19/ltv_and_cohort_analysis.md — 3 LTV methods, LTV by source, cohort framework with confidence intervals, churn analysis with risk formula, seasonality",
+            "metrics_dashboards": "data/m19/crm_metrics_and_dashboards.md — funnel + relationship metrics, founder daily check-in, decision triggers, phase-gated measurement stack",
+            "instructions": "data/m19/opkit_customer_lifecycle.md — step-by-step how-to for any Trade",
+            "graded_example": "IonWave Trade #84 content (quality: 8.4/10)"
+          },
+          "status": "workshopped",
+          "decision": "TWP-001 workshop session 2026-02-07",
+          "notes": "Tenth TUP workshopped under TWP-001. 13 Danilo tabs (242 rows) consolidated into 4 content files. Key innovations: non-linear lifecycle paths, Minimum Viable CRM (3 flows, 8-11 hours Day 1 setup), at-risk sub-segmentation (Product/Budget/Attention), multi-signal churn risk formula (Phase 1 simple + Phase 2 weighted), confidence intervals for cohort analysis, customer-count tool triggers instead of revenue, founder daily 5-minute CRM check-in, seasonality in metrics."
+        }
+      ]
+    },
+    "m10": {
+      "tup_name": "Pricing & Offer",
+      "opkits": [
+        {
+          "opkit_id": "OK-M10-001",
+          "name": "Pricing & Offer Design Kit",
+          "type": "production",
+          "source_file": "data/m10_pricing_offer/",
+          "description": "Complete pricing architecture, price testing framework, SKU roadmap, and upsell strategy for DTC consumable brands",
+          "components": {
+            "offer_strategy": "data/m10_pricing_offer/offer_strategy.md — pricing architecture, anchoring, subscription-first design, unit economics",
+            "price_testing": "data/m10_pricing_offer/price_testing_framework.md — A/B test protocol, sample sizing, decision rules, test queue",
+            "sku_architecture": "data/m10_pricing_offer/sku_architecture.md — hero SKU, wave-gated expansion, naming conventions, kill criteria",
+            "product_roadmap": "data/m10_pricing_offer/product_roadmap.md — validation-gated product expansion waves",
+            "upsell_copy": "data/m10_pricing_offer/upsell_page_copy.md — cart, checkout, post-purchase, portal upsell frameworks",
+            "customization": "data/m10_pricing_offer/product_customization.md — subscription frequency, flavor rotation, personalization"
+          },
+          "status": "workshopped",
+          "decision": "TWP-001 workshop session 2026-02-06",
+          "notes": "Second TUP workshopped under TWP-001. Subscription-first pricing architecture with wave-gated SKU expansion. Key finding: subscription discount creates margin tension (blended 63% vs 67% target). HYP-004 flagged for revision."
+        }
+      ]
+    },
+    "m23": {
+      "tup_name": "Influencer & Creator",
+      "opkits": [
+        {
+          "opkit_id": "OK-M23-001",
+          "name": "Influencer & Creator Partnership Kit",
+          "type": "production",
+          "source_file": "data/m23/opkit_influencer_creator.md",
+          "description": "Complete influencer marketing and UGC creator program for DTC brands — strategy, vetting, contracts, pipeline operations, content repurposing, compliance",
+          "components": {
+            "strategy": "data/m23/influencer_creator_strategy.md — influencer vs creator distinction, tiers, deal structures, Founder Mode phasing",
+            "ugc_playbook": "data/m23/creator_ugc_playbook.md — UGC sourcing, briefing, repurposing system with compliance checkpoints",
+            "vetting": "data/m23/vetting_scorecard.md — weighted 7-criteria scorecard, red flags, vetting tools",
+            "influencer_map": "data/m23/influencer_map.md — tiered target map (dream/achievable/micro), competitive screening, outreach templates",
+            "contracts": "data/m23/contract_templates.md — influencer + creator contract templates with supplement compliance, pre-launch compliance package",
+            "operations": "data/m23/pipeline_operations.md — influencer + creator pipeline stages, tracker templates, attribution framework, operational cadence",
+            "database": "data/m23/influencer_database_scaffold.md — performance database schema (VOID — needs real data)",
+            "instructions": "data/m23/opkit_influencer_creator.md — 14-step how-to for any Trade",
+            "graded_example": "IonWave Trade #84 content (quality: 8.0/10)"
+          },
+          "status": "workshopped",
+          "decision": "TWP-001 v2.0.0 workshop session 2026-02-08",
+          "notes": "15 Danilo tabs (377 rows) consolidated into 7 production files. Heavy deduplication (500/508, 501/509, 503/511 were near-duplicates). Key innovations: attribution framework (direct + indirect), pre-launch compliance package as gating requirement (4 components), Phase 0/1/2 budget distinction (UGC = ad creative budget, not separate), content retirement policy, pre-outreach competitive screening, revised repurposing multiplier (6-10, not 8-12) with compliance checkpoints."
+        }
+      ]
+    },
+    "m28": {
+      "tup_name": "Market Expansion",
+      "opkits": [
+        {
+          "opkit_id": "OK-M28-001",
+          "name": "Market Expansion Kit",
+          "type": "production",
+          "source_file": "data/m28/opkit_market_expansion.md",
+          "description": "Complete post-PMF expansion playbook for DTC brands — Amazon, B2B/wholesale, retail, new products, channel strategy, constraint scenarios, moonshot evaluation",
+          "components": {
+            "strategic_landscape": "data/m28/strategic_landscape.md — SWOT, vulnerability inventory, science library, evidence hierarchy",
+            "channel_strategy": "data/m28/channel_strategy.md — 13-channel map, phase sequencing, PPC architecture, attribution model, concentration risk",
+            "expansion_paths": "data/m28/expansion_paths.md — options matrix, recommended sequence, new product launch framework, white-label guardrails, kill criteria",
+            "constraint_scenarios": "data/m28/constraint_scenarios.md — 4 extreme scenarios, portfolio reality check, sensitivity analysis, SEO sequencing, subscription conversion sensitivity",
+            "product_development": "data/m28/product_development.md — taste/mixability specs, feature request log, VOC pipeline, product iteration cycle",
+            "moonshot_lab": "data/m28/moonshot_lab.md — 20 ideas, evaluation framework, activation lock, prompts for ideation",
+            "b2b_wholesale": "data/m28/b2b_wholesale.md — segments, wholesale pricing, MAP policy, partnership framework, B2B unit economics, reorder automation",
+            "amazon_playbook": "data/m28/amazon_playbook.md — economics, listing optimization, review generation, cold start strategy, anti-cannibalization, marketplace comparison",
+            "retail_readiness": "data/m28/retail_readiness.md — tier map, readiness checklist, capital requirements, margin waterfall, distributor guide",
+            "instructions": "data/m28/opkit_market_expansion.md — 14-step how-to for any Trade",
+            "graded_example": "IonWave Trade #84 content (quality: 8.3/10)"
+          },
+          "status": "workshopped",
+          "decision": "TWP-001 v2.0.0 workshop session 2026-02-08",
+          "notes": "20 Danilo tabs (464 rows) consolidated into 9 production files. Tabs 606/607 merged (Amazon duplicates). Tabs 608/609/610 absorbed. Key innovations: anti-cannibalization price parity strategy, Amazon cold start 4-phase plan, MAP pricing policy, B2B auto-reorder to combat 60-70% gym churn, moonshot activation lock (no experiments below $50K MRR), white-label guardrails, B2B unit economics model (13.2x LTV:CAC), subscription conversion sensitivity analysis, SEO sequencing (Phase 2 not pre-launch), planned vs unplanned concentration distinction."
+        }
+      ]
+    },
+    "m30": {
+      "tup_name": "Analytics & Dashboards",
+      "opkits": [
+        {
+          "opkit_id": "OK-M30-001",
+          "name": "Analytics & Measurement Kit",
+          "type": "production",
+          "source_file": "data/m30/opkit_analytics_measurement.md",
+          "description": "Complete measurement system for D2C brands from zero — MVD (Minimum Viable Dashboard), phase-gated analytics, red flag monitoring, data governance, attribution model",
+          "components": {
+            "data_dictionary": "data/m30/data_dictionary.md — 50+ metrics with formulas, sources, cadences, known limitations, hypothesis monitoring table",
+            "dashboards_and_reporting": "data/m30/dashboards_and_reporting.md — MVD (7 metrics), daily pulse, weekly report, simplified MBR, quarterly review, tool progression",
+            "red_flags_and_validation": "data/m30/red_flags_and_validation.md — Existential vs monitoring kill criteria, escalation protocol, subscription diagnostic tree, V0 master consistency check, cross-TUP validation",
+            "data_governance": "data/m30/data_governance.md — 5-tier freshness cadences, data quality standards, evidence logging, source hierarchy with known limitations, graceful degradation",
+            "instructions": "data/m30/opkit_analytics_measurement.md — 14-step how-to for any D2C brand",
+            "graded_example": "IonWave Trade #84 content (quality: 8.2/10)"
+          },
+          "status": "workshopped",
+          "decision": "TWP-001 v2.0.0 workshop session 2026-02-08",
+          "notes": "9 Danilo tabs (161 rows) consolidated into 4 production files. Tabs 629/630/631 merged (dashboard duplicates). 6-round persona dialogue with 13 upgrades: MVD (7 metrics for Phase 1), MER over ROAS, existential vs monitoring kill criteria, awareness vs conversion attribution, simplified early-stage MBR, graceful degradation policy, vanity metrics ban, subscription diagnostic tree, V0 master consistency check."
+        }
+      ]
+    },
+    "m15": {
+      "tup_name": "Landing Pages & Conversion",
+      "opkits": [
+        {
+          "opkit_id": "OK-M15-001",
+          "name": "Landing Pages & Conversion Kit",
+          "type": "production",
+          "source_file": "data/m15/opkit_landing_pages_and_conversion.md",
+          "description": "Complete landing page, product page, checkout, and funnel optimization system for D2C e-commerce brands — conversion psychology, copy frameworks, headline formulas, funnel architecture selection, checkout optimization, CRO testing, FTC/DSHEA compliance",
+          "components": {
+            "landing_page_psychology": "data/m15/landing_page_psychology.md — conversion equation, 5-second test, page flow, visual hierarchy, psychological elements, anxiety mapping, mobile-first, page speed budget",
+            "copy_and_headlines": "data/m15/copy_and_headlines.md — 17 headline formulas, section templates, IonWave LP copy reference, PDP copy reference, copy testing protocol",
+            "checkout_optimization": "data/m15/checkout_optimization.md — cart abandonment analysis, checkout checklist, recovery system, AOV boosters, subscription-first design, post-purchase optimization",
+            "funnel_architecture": "data/m15/funnel_architecture.md — 8 funnel architectures (A-H), testing framework, build requirements, traffic routing, Emma Relief reference, VSL architecture",
+            "cro_testing_framework": "data/m15/cro_testing_framework.md — testing methodology, FTC/DSHEA compliance, Prop 65, subscription rules, metrics dashboard, sprint calendar",
+            "instructions": "data/m15/opkit_landing_pages_and_conversion.md — 12-step how-to for any Trade",
+            "graded_example": "IonWave Trade #84 content (quality: 8.2/10)"
+          },
+          "status": "workshopped",
+          "decision": "TWP-001 v2.0.0 workshop session 2026-02-09",
+          "notes": "18 Danilo tabs (~738 rows) consolidated into 5 production files. Heavy deduplication (Psychology ×3, Headlines ×3, Templates ×3, Checkout ×3). Key innovations: 8 funnel architectures (including LP+VSL Hybrid), conversion equation (Desire − Friction − Anxiety), comprehensive FTC/DSHEA/Prop 65 compliance framework, subscription-first checkout with Shop Pay priority, sensitivity analysis for funnel economics, modular LP design for creative fatigue, server-side tracking requirement, Emma Relief as cautionary reference (replicate funnel structure, avoid aggressive practices). 3 critical compliance upgrades: FTC negative option rule, Prop 65 CoA testing, click-to-cancel rule."
+        }
+      ]
+    },
+    "m9": {
+      "tup_name": "Ecommerce Infra",
+      "opkits": [
+        {
+          "opkit_id": "OK-M9-001",
+          "name": "Ecommerce Infrastructure Setup Kit",
+          "type": "production",
+          "source_file": "data/m9/opkit_ecommerce_infrastructure.md",
+          "description": "Complete Shopify store setup, tech stack selection, tracking architecture, and operational governance for D2C brands from zero to launch",
+          "components": {
+            "tech_stack": "data/m9/tech_stack_and_tools.md — Phase-gated tool selection (Core/Growth/Scale), performance budget, credential management, Do Not Install list, monthly ROI review",
+            "store_setup": "data/m9/store_setup_and_launch.md — Week 1 Setup Sequence, 8-section checklist, subscription UX pattern (toggle > dropdown), CWV 2026 targets, Shopify-specific speed killers, launch sequence",
+            "tracking": "data/m9/tracking_and_attribution.md — MER as north star, pixel + CAPI hybrid, UTM taxonomy, attribution comparison, consent management (Consent Mode v2), ad spend safety",
+            "governance": "data/m9/operations_governance.md — Security checklist, ad account hijacking prevention, folder structure, naming conventions, phase-gated governance, operational cadence",
+            "instructions": "data/m9/opkit_ecommerce_infrastructure.md — 14-step how-to for any D2C brand",
+            "graded_example": "IonWave Trade #84 content (quality: 8.5/10)"
+          },
+          "status": "workshopped",
+          "decision": "TWP-001 v2.0.0 workshop session 2026-02-09",
+          "notes": "10 Danilo tabs (274 rows) consolidated into 4 production files. Tabs 285/288 merged (tool stack duplicates), 289/290 merged (page speed duplicates). 6-round persona dialogue with 14 upgrades: theme performance budget (8 apps, 500KB JS), Week 1 Setup Sequence, subscription-first UX (toggle > dropdown, 15-20% lift), MER>ROAS alignment with M30, ad account hijacking prevention, Consent Mode v2, Shopify-specific speed killers, Do Not Install app list, phase-gated governance, monthly Tool ROI Review, theme backup protocol, collaborator account audit."
+        }
+      ]
+    }
+  },
+  "unmapped_tups": {
+    "m1": {
+      "name": "Labor Chain & Deployment",
+      "opkits": [
+        {
+          "id": "OK-M1-001",
+          "name": "Labor Chain & Deployment OpKit",
+          "type": "production",
+          "file": "data/m1/opkit_labor_chain_and_deployment.md",
+          "components": [
+            "13-step instructions",
+            "grading rubric (A-F)",
+            "scaffold (5 files)",
+            "IonWave graded example (8.6/10)",
+            "adaptation guide (solo founder, franchise, service, high-growth)",
+            "8 universal principles"
+          ],
+          "created": "2026-02-09"
+        }
+      ],
+      "note": "MIGRATED — 16 Danilo tabs → 5 output files. Green-field build. 34 dialogue upgrades (5 critical: misclassification, Trustee authority, CM independence, equity instrument, offboarding). 7-week sprint corrected to 12-week."
+    },
+    "m2": {
+      "tup_name": "Entity & Legal",
+      "opkits": [
+        {
+          "opkit_id": "OK-M2-001",
+          "name": "Entity & Legal Foundation Kit",
+          "type": "production",
+          "source_file": "data/m2/opkit_entity_legal.md",
+          "description": "Complete entity formation, governance, equity planning, IP protection, consumer legal documents, insurance, banking, and litigation preparedness for D2C consumer brands pursuing VC fundraising",
+          "components": {
+            "legal_checklist": "data/m2/01_legal_checklist.md — sequenced formation checklist with cost estimates",
+            "entity_structure": "data/m2/02_tax_and_entity_structure.md — DE C-Corp vs alternatives, DAO-compatible architecture, tax planning",
+            "cap_table": "data/m2/03_cap_table.md — pre-seed structure, SAFE modeling, ESOP design, dilution waterfall",
+            "formation_guide": "data/m2/04_entity_formation_guide.md — step-by-step Week 1-4 execution guide",
+            "governance": "data/m2/05_governance_overview.md — phase-gated governance, DAO integration, decision framework",
+            "board_setup": "data/m2/06_board_of_directors.md — board evolution strategy, meeting operations, compensation",
+            "advisory_board": "data/m2/07_advisory_board.md — advisor selection, compensation, FAST agreement framework",
+            "ip_protection": "data/m2/08_trademark_ip_registration.md — trademark filing, IP assignment, trade secrets, holding co IP strategy",
+            "terms_of_service": "data/m2/09_terms_of_service.md — TOS framework with subscription/auto-renewal compliance",
+            "privacy_policy": "data/m2/10_privacy_policy.md — GDPR+CCPA+state law framework, health data DPIA, CMP comparison",
+            "cookie_gdpr": "data/m2/11_cookie_policy_gdpr.md — cookie inventory, consent management, Consent Mode v2, dark patterns avoidance",
+            "insurance": "data/m2/12_insurance_checklist.md — tiered priority matrix, supplement-specialist carriers, budget projection",
+            "banking": "data/m2/13_bank_account_setup.md — Mercury/Relay/Brex comparison, account structure, payment integration",
+            "equity_strategy": "data/m2/14_equity_strategy.md — SAFE vs convertible, stacking dilution, vesting design, DAO token integration",
+            "litigation": "data/m2/15_what_if_sued.md — 8 litigation scenarios, emergency contacts, legal budget planning",
+            "instructions": "data/m2/opkit_entity_legal.md — 12-step how-to for any D2C brand",
+            "graded_example": "IonWave Trade #84 content (quality: 8.2/10)"
+          },
+          "status": "workshopped",
+          "decision": "TWP-001 v2.0.0 workshop session 2026-02-11",
+          "notes": "15 Danilo tabs → 15 content files + IP + OpKit + dialogue + quality assessment. Green-field build (no Bootstrap source). 6-round dialogue (Corporate Attorney, Startup CFO, E-commerce Compliance Counsel) with 8 upgrades (3 CRITICAL: restructuring tax risk, health data DPIA, SAFE stacking). Key innovations: phase-gated entity architecture (C-Corp → Holding Co → DAO), IP-at-parent-level strategy, privacy-as-brand-value positioning, SAFE stacking dilution warning, health data DPIA requirement."
+        }
+      ]
+    },
+    "m3": {
+      "tup_name": "Financial Model",
+      "opkits": [
+        {
+          "opkit_id": "OK-M3-001",
+          "name": "D2C Financial Model Kit",
+          "type": "production",
+          "source_file": "data/m3/opkit_financial_model.md",
+          "description": "Complete financial model system for pre-seed D2C businesses: cash flow projection, sensitivity analysis with kill criteria integration, bifurcation-linked scenario planning, 13-week cash forecast, budget templates, working capital model, break-even analysis, audit readiness, and financial reporting cadence",
+          "components": {
+            "cash_flow_model": "data/m3/cash_flow_model.md — 3-year monthly projections with dual-margin scenarios (REC-001)",
+            "sensitivity_analysis": "data/m3/sensitivity_analysis.md — Tornado chart with 10 variables, two-variable matrices, kill criteria linkage (novel)",
+            "landed_cost_breakdown": "data/m3/landed_cost_breakdown.md — Per-unit COGS waterfall showing where 40% vs 67% margin divergence originates",
+            "capital_requirements": "data/m3/capital_requirements.md — Gate-based capital deployment with contribution margin gates",
+            "budget": "data/m3/budget.md — Month 1-12 detailed budget with margin flexibility ranges",
+            "working_capital_model": "data/m3/working_capital_model.md — Cash conversion cycle, negative-CM scaling analysis, inventory trap",
+            "scenario_planning": "data/m3/scenario_planning.md — Base/Upside/Downside with bifurcation points and decision tree (novel)",
+            "break_even_analysis": "data/m3/break_even_analysis.md — Break-even at 40%/60%/67% margins",
+            "13_week_cash_flow": "data/m3/13_week_cash_flow.md — Weekly tactical forecast template",
+            "financial_reporting_cadence": "data/m3/financial_reporting_cadence.md — Founder Mode to Team Mode reporting rhythm",
+            "audit_readiness": "data/m3/audit_readiness.md — Pre-fundraise diligence checklist",
+            "cash_flow_monitoring": "data/m3/cash_flow_monitoring.md — Daily/weekly/monthly pulse checks with escalation",
+            "budget_template": "data/m3/budget_template.md — Reusable template (OpKit scaffold)",
+            "scenario_modeling": "data/m3/scenario_modeling.md — Bifurcation point methodology (novel)",
+            "budget_spend_log": "data/m3/budget_spend_log.md — Transaction-level spend tracking",
+            "instructions": "data/m3/opkit_financial_model.md — Step-by-step how-to for any D2C brand",
+            "graded_example": "IonWave Trade #84 content (quality: 8.2/10)"
+          },
+          "status": "workshopped",
+          "decision": "TWP-001 v2.0.0 workshop session 2026-02-11",
+          "notes": "15 Danilo tabs → 15 content files + IP + dialogue + self-grade + OpKit. REC-001 margin dispute transparently handled (40% vs 67% → definitional difference: product GM vs fully-loaded GM). 8-round dialogue (Startup CFO, Financial Modeler, D2C Operator) with 7 upgrades: reverse logistics costs, CM gates, supplier prepayment, survival pivot, phase-gated churn thresholds, organic revenue tracking, model hierarchy. Novel contributions: bifurcation-linked scenario planning, kill criteria integrated sensitivity analysis, phase-gated financial reporting."
+        }
+      ]
+    },
+    "m4": {
+      "tup_name": "Fundraising & Investors",
+      "opkits": [
+        {
+          "opkit_id": "OK-M4-001",
+          "name": "D2C Seed Fundraising Framework",
+          "type": "production",
+          "source_file": "data/m4/",
+          "description": "Complete fundraising strategy, pitch deck framework, investor relations, term negotiation, diligence, and exit planning for D2C brands raising $30K-500K seed capital",
+          "components": {
+            "fundraising_strategy": "data/m4/fundraising_strategy.md — 2026 D2C climate, raise/bootstrap decision, raise sizing, investor targeting, pitch strategy, 7-week validation sprint, backup funding plans",
+            "pitch_deck": "data/m4/pitch_deck_framework.md — 15-slide framework, slide-by-slide rationale, IonWave deck analysis (A-grade), customization guide, visual design principles, Trade-as-pitch alternative",
+            "investor_relations": "data/m4/investor_relations.md — 7-stage CRM pipeline, investor types, outreach templates, meeting prep, monthly updates, relationship management, FAQ",
+            "term_negotiation": "data/m4/term_sheet_and_negotiation.md — SAFE structure, terms comparison, negotiation playbook, red flags, legal process, closing mechanics",
+            "diligence_and_exit": "data/m4/diligence_and_exit.md — due diligence Q&A, data room setup, exit scenarios (PE/strategic/operator/distributions), exit prep, timeline",
+            "instructions": "Complete 5-file system with graded IonWave example (8.3/10)",
+            "graded_example": "IonWave Trade #84 (pre-revenue SAFE, $30-50K at $250-500K cap, 8.3/10 quality)"
+          },
+          "status": "workshopped",
+          "decision": "TWP-001 v2.0.0 workshop session 2026-02-11",
+          "notes": "9 Danilo tabs (201-209, all high quality with directly usable content: Investor FAQ, 15-slide pitch deck EXCELLENT, Backup Funding Plan, CRM 7-stage framework, Investor Update Template, Negotiation Playbook, Term Sheet Guide, Exit Preparation, Diligence Answers) consolidated into 5 content files + dialogue + self-grade. Novel concept: Trade-as-pitch (investors interact with Claude vs static deck) is experimental (D-grade) — recommend testing with 3-5 friendly investors. 7-week validation sprint as de-risking pitch. Grading: 8.3/10 (conservative adjustment for pre-traction status, all recommendations theory-based pending real investor feedback). Key finding: 2026 D2C fundraising is selective (down 97% from 2021 peak), SAFEs dominate (92% of pre-priced rounds), $30-50K micro-seed targets angels/F&F not VCs."
+        }
+      ]
+    },
+    "m5": {
+      "tup_name": "Formulation",
+      "opkits": [
+        {
+          "opkit_id": "OK-M5-001",
+          "name": "Mineral-Based Supplement Formulation Framework",
+          "type": "production",
+          "source_file": "data/opkits/OK-M5-001_Mineral_Supplement_Formulation.md",
+          "description": "Complete 6-phase framework for formulating ANY mineral-based supplement with scientific rigor, regulatory compliance, and honest confidence grading — electrolytes, trace minerals, alkalizing blends, marine-derived products",
+          "components": {
+            "instructions": "6 phases from Research & Benchmarking → Specification Development → Scientific Substantiation → Product Development → Validation & Testing → Registration & Launch",
+            "grading_rubric": "5 dimensions (Evidence Coverage, Confidence Honesty, Upgrade Path Quality, Actionability, OpKit Reusability) × 1-10 scale",
+            "scaffold": "Research templates (mineral science matrix, competitor formulation map, bioavailability hierarchy), specification templates (mineral profile with confidence grades, quality markers, CoA requirements), substantiation templates (claims mapping, evidence hierarchy, safety assessment), development templates (taste testing protocol, stability testing, cost breakdown), validation checklist",
+            "graded_example": "IonWave Trade #84 (marine plasma electrolyte, pre-launch, 8.5/10 quality)"
+          },
+          "status": "workshopped",
+          "decision": "TWP-001 v2.0.0 workshop session 2026-02-10",
+          "notes": "15 Danilo tabs → 5 content files (formulation_specification 323 lines, scientific_substantiation 628 lines, product_development 577 lines, usage_protocols_and_stacking 557 lines, dialogue_summary 162 lines). Green-field build with 2026 industry research (5 web searches: marine plasma bioavailability, ocean vs synthetic electrolytes, Quinton clinical research, FDA DSHEA claims, magnesium forms). 6-round dialogue to saturation (Formulation Scientist, Skeptical Nutritionist, Regulatory/Claims Auditor) with 22 upgrades. Key innovations: confidence honesty system (A/B/C/D grades + [VOID — requires CoA] for all supplier-dependent data), ocean-sourced ionic minerals vs synthetic comparison (bioavailability 66-90%+ vs 9-105% variable), 78-trace-mineral substantiation reality check (only 20 elements biochemically required, rest marketing claim), FDA/FTC compliance integration from M7, M6 supply chain integration (CoA requirements, heavy metal limits, restock formula). Quality 8.5/10: exceptional confidence honesty (9.5/10), strong evidence for core electrolytes (Na/K/Mg A-grade), honest about gaps (ocean superiority lacks RCT, trace mineral efficacy unproven). Supplier-dependent: ALL exact trace mineral amounts require Week 1-2 CoA validation. Pre-launch blockers: taste testing (Week 3-4), stability testing (Month 3-6), bioavailability RCT (Q3 2026, $50-150K). **BCL-1 now 4/4 complete (100%)** — M5/M6/M7/M8 all done."
+        }
+      ]
+    },
+    "m6": {
+      "tup_name": "Supply Chain",
+      "opkits": [
+        {
+          "opkit_id": "OK-M6-001",
+          "name": "Supplement Supply Chain Design & Management",
+          "type": "production",
+          "source_file": "data/m6/opkit_supplement_supply_chain.md",
+          "description": "8-step framework for building compliant, scalable supplement supply chains: supplier research, evaluation scorecard, outreach templates, COA requirements, restock formula, backup plan. Applicable to any supplement brand (capsule/powder/liquid, D2C/B2B/wholesale).",
+          "components": {
+            "instructions": "8 steps from requirements definition → supplier selection → contract qualification → COA setup → restock framework → backup protocols",
+            "scorecard": "7-criteria supplier evaluation (Quality 30%, MOQ 20%, Lead Time 15%, Unit Economics 15%, Transparency 10%, Packaging 5%, Exclusivity 5%)",
+            "coa_template": "FDA-compliant Certificate of Analysis with Prop 65 heavy metal limits, microbial testing, batch traceability",
+            "restock_formula": "Reorder Point = (Daily Sales × Lead Time) + Safety Stock; tiered safety stock (21 days Phase 1, 14 days Phase 2+)",
+            "graded_example": "IonWave Trade #84 (marine plasma, pre-launch, 8.4/10 quality)"
+          },
+          "status": "registered",
+          "grading_rubric": "5 dimensions (Supplier Vetting, Quality Control, Inventory Planning, Supplier Backup, Documentation) × A-F scale = overall grade",
+          "notes": "IonWave example is marine plasma-specific (Biocean/Quinton/Actimar suppliers), but OpKit method generalizes. Pre-launch quality (8.4/10) due to pending supplier outreach — will upgrade to 9-10/10 after Week 1-2 execution."
+        }
+      ]
+    },
+    "m7": {
+      "name": "Regulatory & FDA",
+      "opkits": [
+        {
+          "id": "OK-M7-001",
+          "name": "Supplement Regulatory Compliance",
+          "type": "production",
+          "file": "data/m7/opkit_supplement_regulatory_compliance.md",
+          "components": [
+            "6-step pre-launch framework (FDA status, DSHEA label, cGMP verification, FTC marketing audit, compliance systems, attorney review)",
+            "4 compliance checklists (pre-launch marketing audit, compliance budget, 12-month calendar, claims library)",
+            "substantiation hierarchy",
+            "competitor audit framework",
+            "IonWave graded example (8.7/10)"
+          ],
+          "created": "2026-02-10"
+        }
+      ],
+      "note": "MIGRATED — 11 Danilo tabs → 2 comprehensive files (FDA/FTC framework 41 pages + claims guidance/IonWave audit 39 pages). Embedded expert dialogue (Regulatory Attorney + FTC Enforcement Officer). Key: IonWave M11 VSL audit flagged 7 violations ($420K-$2M FTC exposure), P0 corrections (4 hours, $0 cost). 2026 updates: FDA disclaimer once per label, FTC consumer review enforcement +340%."
+    },
+    "m8": {
+      "tup_name": "Brand Identity",
+      "opkits": [
+        {
+          "opkit_id": "OK-M8-001",
+          "name": "Brand Identity Workshop Kit (D2C Supplements)",
+          "type": "production",
+          "source_file": "data/m8/opkit_brand_identity.md",
+          "description": "Complete brand identity system for D2C supplement brands: positioning, voice, packaging, naming, messaging, visual identity",
+          "components": {
+            "instructions": "14-step brand identity workshop protocol (positioning → voice → packaging → naming → messaging → visual identity → research → dialogue → self-grade)",
+            "grading_rubric": "5 dimensions (Positioning Clarity, Voice Consistency, Visual Cohesion, Packaging Compliance, Storytelling Strength) × 1-10 scale",
+            "scaffold": "4 templates (Positioning Canvas, Voice Principles Worksheet, Packaging Compliance Checklist, Industry Perspectives Framework)",
+            "graded_example": "IonWave Trade #84 (7.8/10) — marine plasma supplement brand with 7 content files"
+          },
+          "status": "workshopped",
+          "decision": "TWP-001 v2.0.0 workshop session 2026-02-10",
+          "notes": "16 Danilo tabs → 7 content files + dialogue summary + OpKit. Key: 3-phase brand evolution model (Challenger → Category Ownership → Market Leader), Informed Guide voice archetype, FDA-compliant packaging system, sachet/box messaging split for positioning flexibility, 6 CRITICAL blockers flagged (logo, photography, CoA, Prop 65, trademark, domain). Quality 7.8/10 reflects strong strategic foundation with typical pre-launch execution gaps."
+        }
+      ]
+    },
+    "m9": {
+      "name": "Ecommerce Infra",
+      "opkits": "MIGRATED - see tup_to_opkit.m9"
+    },
+    "m11": {
+      "name": "VSL Production",
+      "opkits": [
+        {
+          "id": "OK-M11-001",
+          "name": "VSL-as-Trade Production Kit",
+          "type": "production",
+          "file": "data/m11/opkit_vsl_production.md",
+          "components": [
+            "12-step instructions",
+            "grading rubric (7 criteria: FTC compliance, script structure, hook strength, testing rigor, production quality, financial modeling, iteration system)",
+            "scaffold (2 templates: VSL script + post-mortem)",
+            "IonWave graded example (9.2/10)",
+            "adaptation guide (product types, demographics, platforms)"
+          ],
+          "created": "2026-02-09"
+        }
+      ],
+      "note": "MIGRATED — 14 Danilo tabs → 8 output files. 15 dialogue upgrades (D2C Creative Director, Performance Media Buyer, FTC Compliance Attorney). Key: VSL-as-Trade framework (testable thesis, kill criteria, portfolio strategy). FTC compliance rigorously documented (fictional testimonials flagged, substantiation gaps explicit). Winner rate adjusted to industry standard (10-20%)."
+    },
+    "m12": {
+      "name": "Ad Creative",
+      "opkits": "TBD - pending migration"
+    },
+    "m13": {
+      "name": "Media Buying",
+      "opkits": [
+        {
+          "id": "OK-M13-001",
+          "name": "Media Buying System Kit",
+          "type": "production",
+          "file": "data/m13/opkit_media_buying.md",
+          "components": [
+            "5-step instructions (Choose Entry Point → Build Core Docs → Channel Economics → Creative Systems → Risk Management)",
+            "grading rubric (5 dimensions: Account Structure, Attribution Stack, Scaling Protocol, Daily Operations, Channel Economics)",
+            "scaffold (Media Buying System Blueprint with 9 sections)",
+            "IonWave graded example (8.5/10)",
+            "adaptation guide (business models: high-AOV/low-AOV/subscription/B2B; spend levels: <$3K/$3-10K/$10-50K/$50K+)"
+          ],
+          "created": "2026-02-10"
+        }
+      ],
+      "note": "MIGRATED — Bootstrap File 12 (5 sheets) + 2026 research → 14 output files. 12 dialogue rounds (Performance Media Buyer, Attribution Engineer, D2C CFO), 9 upgrades. Key: Tiered scaling rates by conversion volume (20%/30%/40-50%), post-iOS 14.5 attribution stack (Pixel+CAPI, EMQ >7.0), channel profitability P&L model (contribution margin > CAC), 4-phase diversification (<50% single platform by Month 12), creative fatigue timelines (2-4 weeks), tracking validation checkpoints (prevents $10K+ waste)."
+    },
+    "m14": {
+      "name": "Testing & Optimization",
+      "opkits": "MIGRATED - see tup_to_opkit.m14"
+    },
+    "m15": {
+      "name": "Landing Pages & Conversion",
+      "opkits": "MIGRATED - see tup_to_opkit.m15"
+    },
+    "m16": {
+      "name": "Content & SEO",
+      "opkits": "MIGRATED - see tup_to_opkit.m16"
+    },
+    "m17": {
+      "name": "Email & SMS",
+      "opkits": "MIGRATED - see tup_to_opkit.m17"
+    },
+    "m18": {
+      "name": "Email Lifecycle Flows",
+      "opkits": [
+        {
+          "id": "OK-M18-001",
+          "name": "Email Lifecycle Flows OpKit",
+          "type": "production",
+          "file": "data/m18/opkit_email_lifecycle_flows.md",
+          "components": [
+            "14-step instructions",
+            "grading rubric (A-F)",
+            "scaffold (4 files)",
+            "IonWave graded example (8.7/10)",
+            "adaptation guide (non-subscription, multi-SKU, high-AOV, international)",
+            "7 universal principles"
+          ],
+          "created": "2026-02-09"
+        }
+      ],
+      "note": "MIGRATED — Corrected name from 'SMS' to 'Email Lifecycle Flows'. SMS strategy remains in M17."
+    },
+    "m19": {
+      "name": "Customer Lifecycle & CRM",
+      "opkits": "MIGRATED - see tup_to_opkit.m19"
+    },
+    "m20": {
+      "name": "Support",
+      "opkits": "MIGRATED - see tup_to_opkit.m20"
+    },
+    "m22": {
+      "name": "Referral & Community",
+      "opkits": "MIGRATED - see tup_to_opkit.m22"
+    },
+    "m23": {
+      "name": "Influencer & Creator",
+      "opkits": "MIGRATED - see tup_to_opkit.m23"
+    },
+    "m24": {
+      "name": "Fulfillment & Inventory",
+      "opkits": [
+        {
+          "id": "OK-M24-001",
+          "name": "Fulfillment & Inventory OpKit",
+          "type": "production",
+          "file": "data/m24/opkit_fulfillment_and_inventory.md",
+          "components": [
+            "12-step instructions",
+            "grading rubric (A-F)",
+            "scaffold (4 files)",
+            "IonWave graded example (8.4/10)",
+            "adaptation guide (non-subscription, multi-SKU, perishable, high-volume)",
+            "7 universal principles"
+          ],
+          "created": "2026-02-09"
+        }
+      ],
+      "note": "MIGRATED — 10 Danilo tabs (204 rows) → 4 output files. Green-field build (no Bootstrap source). 27 dialogue upgrades. Deliverr/Flexport merged. Amazon FBA clarified as channel-only."
+    },
+    "m25": {
+      "name": "Financial Operations",
+      "opkits": "MIGRATED - see tup_to_opkit.m25"
+    },
+    "m28": {
+      "name": "Market Expansion",
+      "opkits": "MIGRATED - see tup_to_opkit.m28"
+    },
+    "m29": {
+      "name": "PR & Communications",
+      "opkits": "MIGRATED - see tup_to_opkit.m29"
+    },
+    "m30": {
+      "name": "Analytics & Dashboards",
+      "opkits": "MIGRATED - see tup_to_opkit.m30"
+    },
+    "m31": {
+      "tup_name": "Hiring",
+      "opkits": [
+        {
+          "opkit_id": "OK-M31-001",
+          "name": "D2C Hiring Framework",
+          "type": "production",
+          "source_file": "data/opkits/OK-M31-001_Hiring_Framework.md",
+          "description": "Complete hiring system for bootstrapped/lean D2C brands: when/who/how to hire, compensation framework, PM competence assessment, sourcing → onboarding → firing workflow",
+          "components": {
+            "hiring_strategy": "data/m31/hiring_strategy.md — when to hire, team evolution, PM competence framework, operator vs employee distinction",
+            "hiring_processes": "data/m31/hiring_processes.md — sourcing channels, 3-stage interview, evaluation, onboarding, firing guide",
+            "job_specifications": "data/m31/job_specifications.md — 11 role specs (operator, PMs, CEO/CFO/VP) phase-gated by MRR",
+            "compensation_framework": "data/m31/compensation_framework.md — equity vs cash, market data, dilution waterfall, negotiation frameworks",
+            "industry_perspectives": "data/m31/industry_perspectives.md — 2026 D2C hiring landscape, remote trends, contractor marketplace",
+            "dialogue_summary": "data/m31/dialogue_summary.md — 6-round expert persona dialogue (HR Professional, Startup Recruiter, D2C Founder), saturation achieved",
+            "quality_assessment": "data/m31/quality_assessment.md — 5-dimension self-grade (8.0/10)",
+            "instructions": "data/opkits/OK-M31-001_Hiring_Framework.md — 14-step how-to for any D2C brand",
+            "graded_example": "IonWave Trade #84 content (quality: 8.0/10)"
+          },
+          "status": "workshopped",
+          "decision": "TWP-001 v2.0.0 workshop session 2026-02-16",
+          "notes": "31 Danilo tabs (640-670, 617 rows) consolidated into 5 content files + dialogue + self-grade + OpKit. Green-field build (no Bootstrap sources, archived File 16). 6 dialogue rounds with 6 upgrades: PM Competence conversational embedding, pipeline-building timeline (4-6 weeks early), dilution waterfall math, firing timing (avoid Fridays + holidays), community engagement sourcing playbook (lurk → contribute → DM), hybrid creative sprint model. Novel innovations: PM Competence Framework (18-question scorecard, score >60 before ad spend), 3-4 PM maximum constraint, operator equity model (10-25% vs employee 0.5-2%), pipeline-building hiring (post roles 4-6 weeks early), remote-first with creative sprints (3-5 days every 6-8 weeks). Key finding: Contractor marketplace strong (Upwork 18M freelancers, $39/hr avg), remote work prioritized by 85% of workers (55% prefer hybrid), AI skills demand doubled YoY."
+        }
+      ]
+    },
+    "m32": {
+      "name": "School Model",
+      "opkits": "TBD - pending migration"
+    },
+    "m33": {
+      "name": "Governance & CM",
+      "opkits": "TBD - pending migration"
+    },
+    "m34": {
+      "name": "Trade Architecture",
+      "opkits": "TBD - pending migration"
+    },
+    "m35": {
+      "tup_name": "Execution Plans & Rhythms",
+      "opkits": [
+        {
+          "opkit_id": "OK-M35-001",
+          "name": "Execution Planning Framework",
+          "type": "production",
+          "source_file": "data/m35/opkit_execution_planning.md",
+          "description": "Universal 12-step framework for building phase-gated execution plans (30/90/365-day) + operating rhythms (daily/weekly/monthly/quarterly) that drive accountability, prevent premature scaling, and enable crisis resilience. Applicable to any D2C Trade, adaptable to B2B/SaaS.",
+          "components": {
+            "30_90_365_plans": "data/m35/30_90_365_day_plans.md — Task-level 30 days, directional 31-90, strategic 91-365 with rolling lock protocol",
+            "operating_rhythms": "data/m35/operating_rhythms_and_loops.md — Daily/weekly/monthly/quarterly loops with Amazon WBR-inspired choreography (feed-forward design)",
+            "phase_checklists": "data/m35/phase_checklists_and_sops.md — Objective LAUNCH → PMF → SCALE gates (First Round PMF framework) + 5 core SOPs",
+            "meeting_templates": "data/m35/meeting_templates_and_communication.md — WBR/MBR/QBR/Standup templates (copy-paste ready) + async/sync norms",
+            "detailed_timelines": "data/m35/detailed_execution_timelines.md — 6-month operating plan, Week 1-12 narrative, Week 1 Day-by-Day (hour-by-hour), Gantt chart",
+            "industry_perspectives": "data/m35/industry_perspectives.md — Research-backed D2C execution planning perspectives (Amazon WBR, First Round PMF, Mutiny/HashiCorp rhythms)",
+            "instructions": "data/m35/opkit_execution_planning.md — 12-step how-to with scaffolds and grading rubric",
+            "graded_example": "IonWave Trade #84 content (quality: 8.2/10)"
+          },
+          "status": "workshopped",
+          "maturity": "production",
+          "reusability": "high",
+          "decision": "TWP-001 v2.0.0 workshop session 2026-02-15",
+          "notes": "25 Danilo tabs (773-797, 801) → 5 core content files + industry perspectives + dialogue + quality assessment + OpKit. Green-field build (no Bootstrap sources). All industry research A-grade (Amazon WBR, First Round PMF, D2C 2026 trends). IonWave adaptation C/D-grade (pre-launch). 6 dialogue rounds with 8 upgrades: CAC phasing (Week 1-2 test, Week 3-4 learning, Month 2+ efficiency), supplier pre-work (Week -2 CoA requests), MBR duration scaling (60 min solo, 90 min team, Weekly Deep Dive Month 10+), dual LTV gate (LTV:CAC >3.0 + Month 3 retention >60%), 3PL timing (quotes Month 3, trigger 150/month OR founder time >10 hrs/week), kill discipline (WBR 'Kills & Pivots' forcing weekly decisions), crisis mode (circuit breaker pauses loops when existential blocker hits), hour-by-hour Week 1 granularity. 2 unresolved gaps (solo founder burnout, market saturation). Novel innovations: choreography framework (loops feed forward), phase-gated strictness (LTV:CAC >3.0, NPS >40%, churn <15% objective gates), crisis mode protocol, hour-by-hour Week 1 Day-by-Day, kill discipline forcing function, pre-launch supplier work, dual LTV gate protection."
+        }
+      ]
+    },
+    "m36": {
+      "tup_name": "Operational Infrastructure",
+      "opkits": [
+        {
+          "opkit_id": "OK-M36-001",
+          "name": "D2C Operational Infrastructure Framework",
+          "type": "production",
+          "source_file": "data/opkits/OK-M36-001_Operational_Infrastructure.md",
+          "description": "Complete operational infrastructure system for bootstrapped D2C brands: company-as-a-system (7 subsystems), capabilities maturity framework (11 domains, 1-4 scale), decision authority matrix (Solo Founder and CM Model variants), risk register template (R001-R006 with L×I scoring and contingency playbooks), performance monitoring system (5 operating parameters + 4-cadence review), knowledge management protocol (runbooks, never-go-cold, CM onboarding)",
+          "components": {
+            "company_as_system": "data/m36/operational_system.md — 7-subsystem model with inputs/outputs/metrics/owners, system interaction map, capabilities maturity 1-4 scoring across 11 domains",
+            "decision_rights": "data/m36/decision_rights.md — Solo Founder and CM Model authority variants, RACI matrix, delegation framework, CM activation threshold (DECISION TBD)",
+            "knowledge_management": "data/m36/knowledge_management.md — runbook index system, never-go-cold protocol (2.5hr minimum viable week), CM knowledge transfer protocol",
+            "risk_and_continuity": "data/m36/risk_and_continuity.md — R001-R006 risk register, 6 contingency playbooks, business continuity baseline, pre-launch readiness checklist",
+            "performance_monitoring": "data/m36/performance_monitoring.md — 5 operating parameters with thresholds (CAC <0, ROAS >2.0x, Safety Stock 14d, SLA <4hr, Test 00), daily/weekly/monthly/quarterly cadence, Phase 1/Phase 2 monitoring architecture"
+          },
+          "created": "2026-02-17",
+          "workshop_notes": "Best-in-class systems thinking framework from Danilo. CM authority model has two variants. Phase 2 monitoring pending API key setup (DEC-2026-02-17-003)."
+        }
+      ],
+      "note": "MIGRATED — 43 Danilo tabs → 6 output files. Company-as-a-system is the spine. Risk register complete with L×I scoring. CM authority model in two variants. Phase 1/Phase 2 monitoring architecture. 5 dialogue rounds, 7 upgrades."
+    },
+    "m37": {
+      "name": "AI & Automation",
+      "opkits": "TBD - pending migration"
+    },
+    "m38": {
+      "name": "Strategic Frameworks",
+      "opkits": "TBD - pending migration"
+    },
+    "m39": {
+      "tup_name": "Conceptual & Philosophical Foundations",
+      "opkits": [
+        {
+          "opkit_id": "OK-M39-001",
+          "name": "Theoretical Operations Framework",
+          "type": "foundation",
+          "source_file": "data/m39/opkit_theoretical_operations.md",
+          "description": "Generalizable framework for grounding Trade operations in deep theoretical foundations (Christopher Alexander pattern language, David Bohm implicate/explicate order, Giulio Tononi IIT, W. Ross Ashby requisite variety). Enables Trades to move beyond ad-hoc tactics toward principle-driven operations.",
+          "components": {
+            "theoretical_foundations": "4 frameworks (Alexander 15 Properties, Bohm Implicate/Explicate, Tononi IIT/mutual information, Ashby requisite variety)",
+            "operational_protocols": "6 protocols (75 Questions, 5-6 Bullets, 3-Gate Review, Virtual Twin, Verification Strategy, Pattern Language Application)",
+            "protocol_template": "5-step protocol generation process (identify problem → apply theoretical lens → design protocol → test → extract as pattern)",
+            "pattern_structure": "Alexander format (Name, Context, Problem, Forces, Solution, Consequences, Related Patterns)",
+            "adaptation_guide": "5 industry adaptations (D2C e-commerce, B2B SaaS, services/consulting, content/media, deep tech/hardware)",
+            "instructions": "data/m39/opkit_theoretical_operations.md — complete framework with reusability guide",
+            "graded_example": "IonWave Trade #84 content (quality: 7.5/10, experimental)"
+          },
+          "status": "workshopped",
+          "maturity": "experimental",
+          "decision": "TWP-001 v2.0.0 workshop session 2026-02-11",
+          "notes": "First purely meta-level OpKit (BCL-0). 14 content tabs + Danilo vision → 6 content files (theoretical_foundations 540 lines, operational_protocols 640 lines, advisor_strategy 420 lines, textbook_ma_strategy 370 lines, love_as_mutual_information 320 lines, workshop_summary 160 lines) + dialogue summary (7 rounds, 12 upgrades, saturation achieved) + OpKit. Novel concepts: requisite variety via TUP decomposition (41 TUPs match 41 market dimensions), love as mutual information (Tononi IIT applied to teams), aliveness scoring (Alexander's 15 properties as Trade quality metric), implicate/explicate ratio (track unfoldment: 31/41 TUPs = 76%). Evidence quality: Theory B-grade (well-sourced: Alexander, Bohm, Tononi, Ashby), operational translations C/D-grade (logical but unvalidated). Requires cross-Trade testing to upgrade from Experimental → Proven (3+ Trades) → Canonical (10+ Trades + published validation). Key blocker: All protocols untested, require deployment + outcome measurement to validate."
+        }
+      ]
+    },
+    "m40": {
+      "name": "Navigation & Command",
+      "opkits": "TBD - pending migration"
+    }
+  },
+  "migration_notes": {
+    "phase_1_complete": "M0, M26, M27 OpKits registered",
+    "next_phase": "As each TUP is migrated, register its associated OpKits from ops_model_v10_dump/",
+    "extraction_strategy": "OpKits will be extracted from ops_model_v10_dump/ and moved to data/opkits/{tup_id}/ during TUP migration"
+  }
+}

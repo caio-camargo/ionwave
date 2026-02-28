@@ -1,0 +1,144 @@
+{
+  "_meta": {
+    "sheet_name": "Porter's Five Forces Analysis",
+    "parent_file": "02_market_intelligence",
+    "version": "1.0.0",
+    "last_updated": "2026-02-04",
+    "updated_by": "claude-opus-4.5",
+    "status": "draft",
+    "quality_score": "7/10",
+    "data_type": "hybrid",
+    "note": "Strongest analytical piece in this file. Directly feeds back to 01_strategic_foundation/thesis with two open tensions."
+  },
+  "data": {
+    "summary_verdict": [
+      {
+        "force": "Threat of New Entrants",
+        "intensity": "MODERATE",
+        "grade": "B",
+        "rationale": "Capital barrier to scale is real ($500K+/mo in ad spend to compete with LMNT), but product barrier is low. Anyone can white-label synthetic electrolytes. Marine plasma has slightly higher barrier due to limited suppliers."
+      },
+      {
+        "force": "Bargaining Power of Buyers",
+        "intensity": "HIGH",
+        "grade": "B+",
+        "rationale": "Zero switching costs for consumers. Highly informed buyer base (biohackers research everything). Brand loyalty exists for LMNT but is personality-driven (Rogan, Huberman), not product-driven. Price sensitivity moderate in premium segment."
+      },
+      {
+        "force": "Bargaining Power of Suppliers",
+        "intensity": "MODERATE-HIGH (marine) / LOW (synthetic)",
+        "grade": "C+",
+        "rationale": "Marine plasma supply is concentrated: Actimar and Biocean are the primary GMP-certified suppliers. Exclusivity risk is HIGH - if Seaonic has locked exclusive supply, we are blocked. Synthetic electrolyte supply is commoditized and LOW bargaining power.",
+        "exclusivity_risk": "HIGH",
+        "key_suppliers": ["Actimar", "Biocean"],
+        "action_required": "Contact suppliers directly to verify availability and exclusivity status - WEEK 1 PRIORITY"
+      },
+      {
+        "force": "Threat of Substitutes",
+        "intensity": "HIGH",
+        "grade": "B",
+        "rationale": "DIY electrolytes at $0.09/serving vs branded at $1.50+. Salt + potassium salt + magnesium supplement = functional substitute. Coconut water, sports drinks, and plain water are all substitutes. Category must justify premium through education and trust."
+      },
+      {
+        "force": "Competitive Rivalry",
+        "intensity": "HIGH",
+        "grade": "B+",
+        "rationale": "LMNT at $206M+ (estimated total since founding), Liquid IV Unilever-backed with massive distribution. Rising CPMs (+27% YoY) make customer acquisition increasingly expensive. However, marine plasma sub-segment has LOW rivalry - only Seaonic and Quinton as direct competitors.",
+        "sub_segment_rivalry": "LOW (marine plasma only)",
+        "cpm_trend": "+27% YoY",
+        "key_players_broad": ["LMNT", "Liquid IV (Unilever)", "Drip Drop", "Nuun", "Pedialyte"],
+        "key_players_marine": ["Seaonic", "Quinton"]
+      },
+      {
+        "force": "Overall Assessment",
+        "intensity": "MODERATE-LOW attractiveness",
+        "grade": "B-",
+        "rationale": "The broad electrolyte market is fiercely competitive and capital-intensive. However, the marine plasma sub-segment is underserved with only 2 players (Seaonic overpriced, Quinton legacy format). The strategic opportunity is to compete in the sub-segment, not the broad market. This supports the narrow positioning thesis in 01_strategic_foundation."
+      }
+    ],
+    "key_strategic_implications": [
+      {
+        "implication": "Compete in the sub-segment, not the category",
+        "detail": "Do not try to compete with LMNT or Liquid IV head-on. Position as the marine plasma alternative. The sub-segment has LOW rivalry and MODERATE barriers."
+      },
+      {
+        "implication": "Supplier relationship is existential",
+        "detail": "With concentrated marine plasma supply, supplier lock-out is a kill scenario. Must secure supply before anything else. This is the single highest-priority action."
+      },
+      {
+        "implication": "Capital tension is real and unresolved",
+        "detail": "$30-50K raise may be insufficient given rising CPMs (+27% YoY), zero switching costs, and category creation costs. Need to validate capital-efficient acquisition channels (content, community, organic) before committing to paid."
+      }
+    ],
+    "intelligence_gaps": [
+      {
+        "gap": "Actual supplier exclusivity status",
+        "priority": "CRITICAL",
+        "current_grade": "D",
+        "what_needed": "Direct conversation with Actimar and Biocean",
+        "track": "B (human)",
+        "time_estimate": "2-3 hours"
+      },
+      {
+        "gap": "LMNT actual ad spend and ROAS",
+        "priority": "HIGH",
+        "current_grade": "C",
+        "what_needed": "SEMrush data + Facebook Ad Library deep analysis",
+        "track": "B (human)",
+        "time_estimate": "3-4 hours"
+      },
+      {
+        "gap": "Marine plasma market size",
+        "priority": "HIGH",
+        "current_grade": "D",
+        "what_needed": "Industry reports or bottom-up estimate from known players",
+        "track": "B (human)",
+        "time_estimate": "2-3 hours"
+      },
+      {
+        "gap": "CPM trend data by vertical",
+        "priority": "MEDIUM",
+        "current_grade": "C",
+        "what_needed": "Health/wellness specific CPM benchmarks from Meta or agency data",
+        "track": "B (human)",
+        "time_estimate": "1-2 hours"
+      },
+      {
+        "gap": "Seaonic financial health and scaling plans",
+        "priority": "MEDIUM",
+        "current_grade": "D",
+        "what_needed": "Founder interviews, funding databases, LinkedIn headcount tracking",
+        "track": "B (human)",
+        "time_estimate": "2-3 hours"
+      },
+      {
+        "gap": "DIY substitute adoption rate",
+        "priority": "LOW",
+        "current_grade": "D",
+        "what_needed": "Reddit/forum analysis of DIY electrolyte community size",
+        "track": "A (AI-assisted)",
+        "time_estimate": "1-2 hours"
+      }
+    ],
+    "procedure_and_traceability": {
+      "framework": "Michael Porter's Five Forces (1979)",
+      "application_method": "Each force assessed independently using available market data, competitor intelligence, and supplier research. Grades assigned on A-D scale where A = strong evidence, B = good evidence with some gaps, C = estimated with significant gaps, D = placeholder/unknown.",
+      "data_sources": [
+        "Facebook Ad Library (competitor ad counts and creative)",
+        "Competitor websites (pricing, product info, claims)",
+        "Industry reports and benchmarks (DTC supplement averages)",
+        "Crunchbase (funding and company data)",
+        "Direct product analysis (labels, ingredient lists)",
+        "Public interviews and podcasts (founder statements)"
+      ],
+      "limitations": [
+        "No SEMrush access yet - traffic and keyword data estimated",
+        "Supplier exclusivity status unknown - critical gap",
+        "Revenue estimates are triangulated, not confirmed",
+        "CPM data is industry average, not IonWave-specific"
+      ],
+      "last_reviewed": "2026-02-04",
+      "next_review": "After supplier contact and SEMrush access obtained"
+    }
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "_meta": {
+    "sheet_name": "Competitor Monitoring",
+    "parent_file": "02_market_intelligence",
+    "version": "1.0.0",
+    "last_updated": "2026-02-04",
+    "updated_by": "claude-opus-4.5",
+    "status": "draft",
+    "quality_score": "3/10",
+    "data_type": "template",
+    "note": "Template only - no monitoring data captured yet. Needs regular human execution."
+  },
+  "data": {
+    "monitoring_sources": [
+      {"source": "Ad Library", "frequency": "Weekly", "what_to_track": "New creatives, ad count, messaging changes", "tool": "Facebook Ad Library"},
+      {"source": "Website", "frequency": "Monthly", "what_to_track": "Pricing changes, new products, copy updates", "tool": "Manual review + Wayback Machine"},
+      {"source": "Social", "frequency": "Weekly", "what_to_track": "Engagement rates, content themes, follower growth", "tool": "Native platforms + Social Blade"},
+      {"source": "Reviews", "frequency": "Monthly", "what_to_track": "New complaints, praise themes, star ratings", "tool": "Amazon, Trustpilot, Reddit"},
+      {"source": "Press", "frequency": "Monthly", "what_to_track": "Funding, partnerships, product launches, interviews", "tool": "Google Alerts, Crunchbase"}
+    ],
+    "price_tracking": {
+      "description": "Track competitor pricing changes over time",
+      "headers": ["Competitor", "Product", "Last Week", "This Week", "Change", "Our Price", "Gap", "Notes"],
+      "entries": [],
+      "note": "Template is empty - populate weekly starting with LMNT and Seaonic"
+    }
+  }
+}

@@ -1,0 +1,460 @@
+{
+  "_meta": {
+    "tup": "M14",
+    "tab": "3 of 6",
+    "title": "Experimentation Framework",
+    "version": "1.0.0",
+    "date": "2026-02-06",
+    "author": "Caio, Claude (collaborative)",
+    "ai_model": "claude-opus-4-6",
+    "status": "AI Draft",
+    "hypothesis_links": ["HYP-001", "HYP-002", "HYP-004"],
+    "danilo_source": "ops_model_v10_dump/377_experimentation_framework.json",
+    "danilo_assessment": "Template only — experiment card + empty log. No methodology, no decision rules, no learning system.",
+    "cross_references": {
+      "m10_price_testing": "data/m10_pricing_offer/price_testing_framework.md — price tests use M10 protocol, NOT this framework",
+      "m12_creative_testing": "ops_model_v10_dump/348_creative_testing_protocol1.json — creative testing specifics live in M14 creative_testing_protocol.md"
+    }
+  },
+
+  "core_philosophy": {
+    "tagline": "Every experiment produces learning, not just winners.",
+    "principles": [
+      {
+        "id": "P1",
+        "name": "Learning over winning",
+        "description": "A test that confirms 'no difference' is not a failure — it eliminates a hypothesis and frees resources. The only failed test is one with no learning documented.",
+        "anti_pattern": "Declaring tests 'inconclusive' and moving on without documenting what was learned."
+      },
+      {
+        "id": "P2",
+        "name": "Big swings before small tweaks",
+        "description": "Test fundamentally different approaches (different angles, different formats, different audiences) before optimizing details (button color, font size). At low traffic, you can't detect small effects — so only test things that COULD produce large effects.",
+        "anti_pattern": "Testing button colors when you haven't validated your headline or offer."
+      },
+      {
+        "id": "P3",
+        "name": "Sequential price, parallel creative",
+        "description": "Price tests must run one at a time (they contaminate each other). Creative tests and presentation tests can run in parallel because they don't interact. See M10 Price Testing Framework for price-specific protocol.",
+        "anti_pattern": "Running two price tests simultaneously, or blocking creative tests behind a price test queue."
+      },
+      {
+        "id": "P4",
+        "name": "Document everything, even failures",
+        "description": "Every test gets a card filed in the test log before launch. Every test gets results + learning documented after completion. This builds institutional knowledge that compounds.",
+        "anti_pattern": "Running tests ad-hoc in the ad platform and never recording results."
+      },
+      {
+        "id": "P5",
+        "name": "Match method to traffic",
+        "description": "At <100 visitors/day, traditional A/B testing cannot detect modest effects. Use qualitative judgment, pre/post testing, or Bayesian methods. Don't pretend you have statistical power you don't have.",
+        "anti_pattern": "Waiting 3 months for 'statistical significance' on a landing page test when you could have shipped the obvious winner in week 1."
+      },
+      {
+        "id": "P6",
+        "name": "Test the hypothesis, not the tactic",
+        "description": "Frame every test as a hypothesis about customer behavior, not a preference between creative executions. 'Users trust UGC more than founder content' is testable. 'This ad looks cool' is not.",
+        "anti_pattern": "Testing random variations without a hypothesis about WHY the variant should win."
+      }
+    ]
+  },
+
+  "experiment_card": {
+    "description": "Every experiment must have a card filed BEFORE launch. No exceptions.",
+    "schema": {
+      "test_id": {
+        "format": "{TYPE}-{NNN}",
+        "types": {
+          "PT": "Price test (M10 protocol — sequential only)",
+          "CT": "Creative/ad test",
+          "LP": "Landing page test",
+          "AT": "Audience test",
+          "EM": "Email/SMS test",
+          "CK": "Checkout/cart test",
+          "GN": "General experiment (anything else)"
+        }
+      },
+      "hypothesis": "If we [change X], then [metric Y] will [increase/decrease] because [reason Z]",
+      "test_type": "One of: price | creative | landing_page | audience | email | checkout | general",
+      "variants": {
+        "control": "Current/default state (A)",
+        "challenger": "Proposed change (B)",
+        "additional_variants": "Optional (C, D — only if traffic supports it)"
+      },
+      "primary_metric": "The ONE metric that decides the winner",
+      "secondary_metrics": "Diagnostic metrics that help explain WHY",
+      "sample_size_target": "Minimum visitors/impressions per variant before decision",
+      "duration": "Planned test duration (min/max)",
+      "traffic_split": "Percentage allocation per variant",
+      "kill_criteria": "When to stop early (optional — for sequential analysis)",
+      "launch_date": "When the test starts",
+      "decision_date": "When we commit to reading results",
+      "owner": "Who monitors this test and makes the call"
+    },
+    "example": {
+      "test_id": "CT-001",
+      "hypothesis": "If we use a 'tired by 2pm' hook instead of '78 minerals' hook, CTR will increase by >30% because fatigue is a more visceral problem than mineral count",
+      "test_type": "creative",
+      "variants": {
+        "control": "'78 minerals your body is missing' hook — UGC format",
+        "challenger": "'Tired by 2pm? Your electrolytes are wrong.' hook — same UGC format"
+      },
+      "primary_metric": "CTR (click-through rate)",
+      "secondary_metrics": ["CPC", "Hook rate (3-sec view %)", "ROAS"],
+      "sample_size_target": "1,000 impressions per variant minimum",
+      "duration": "3-5 days or 2,000 total impressions (whichever first)",
+      "traffic_split": "50/50",
+      "kill_criteria": "Kill variant if CTR <0.5% after 1,000 impressions",
+      "launch_date": "2026-03-01",
+      "decision_date": "2026-03-05",
+      "owner": "Caio"
+    }
+  },
+
+  "decision_framework": {
+    "description": "How to decide what to test, and how to interpret results at different traffic levels.",
+
+    "testing_priority_matrix": {
+      "description": "What to test first. Ordered by expected impact × ease of testing.",
+      "priority_tiers": [
+        {
+          "tier": 1,
+          "name": "Test FIRST — Highest impact, fastest learning",
+          "items": [
+            {
+              "element": "Ad creative hooks (first 3 seconds)",
+              "impact": "HIGHEST",
+              "ease": "Easy",
+              "why_first": "Hook determines if anyone sees your ad. 70-80% of performance is in the first 3 seconds. Testable with $50-100 per variant.",
+              "domain": "creative"
+            },
+            {
+              "element": "Offer/price point",
+              "impact": "HIGHEST",
+              "ease": "Medium",
+              "why_first": "$10 price change = ~17% revenue swing per order. Use M10 protocol (sequential, RPV as primary metric).",
+              "domain": "price",
+              "cross_ref": "data/m10_pricing_offer/price_testing_framework.md"
+            },
+            {
+              "element": "Headline (landing page)",
+              "impact": "HIGH",
+              "ease": "Easy",
+              "why_first": "First text visitors read. Can produce 20-50% conversion lift from one change.",
+              "domain": "landing_page"
+            }
+          ]
+        },
+        {
+          "tier": 2,
+          "name": "Test SECOND — High impact, moderate effort",
+          "items": [
+            {
+              "element": "Ad creative angle/message",
+              "impact": "HIGH",
+              "ease": "Medium",
+              "why": "Same format, different persuasion approach (health benefit vs social proof vs fear of missing out).",
+              "domain": "creative"
+            },
+            {
+              "element": "Creative format",
+              "impact": "HIGH",
+              "ease": "Medium",
+              "why": "UGC vs founder-to-camera vs lifestyle B-roll vs static image. Format determines ad production investment.",
+              "domain": "creative"
+            },
+            {
+              "element": "Hero image/video (landing page)",
+              "impact": "HIGH",
+              "ease": "Medium",
+              "why": "Product shot vs lifestyle vs ingredient close-up. Visual hierarchy drives attention.",
+              "domain": "landing_page"
+            },
+            {
+              "element": "Subscription vs one-time default",
+              "impact": "HIGH",
+              "ease": "Easy",
+              "why": "Which is the pre-selected option? Can dramatically shift subscription rate (HYP-002).",
+              "domain": "checkout",
+              "cross_ref": "M10 PT-006 in test queue"
+            }
+          ]
+        },
+        {
+          "tier": 3,
+          "name": "Test LATER — Medium impact, or requires more traffic",
+          "items": [
+            {
+              "element": "Social proof placement",
+              "impact": "MEDIUM",
+              "ease": "Easy",
+              "domain": "landing_page"
+            },
+            {
+              "element": "Page length (long-form vs short-form)",
+              "impact": "MEDIUM",
+              "ease": "Hard",
+              "domain": "landing_page"
+            },
+            {
+              "element": "CTA text and color",
+              "impact": "MEDIUM",
+              "ease": "Easy",
+              "domain": "landing_page"
+            },
+            {
+              "element": "Email subject lines",
+              "impact": "MEDIUM",
+              "ease": "Easy",
+              "domain": "email"
+            },
+            {
+              "element": "Audience targeting segments",
+              "impact": "MEDIUM",
+              "ease": "Medium",
+              "domain": "audience"
+            }
+          ]
+        },
+        {
+          "tier": "NEVER_EARLY",
+          "name": "Do NOT test in first 6 months",
+          "items": [
+            {
+              "element": "Button colors",
+              "why_not": "Effect size too small to detect at low traffic. Any 'winner' is noise."
+            },
+            {
+              "element": "Font changes",
+              "why_not": "No meaningful conversion impact at any traffic level."
+            },
+            {
+              "element": "Minor copy tweaks",
+              "why_not": "Difference between 'Buy Now' and 'Add to Cart' is <1% — undetectable without 50K+ visitors."
+            },
+            {
+              "element": "Multiple simultaneous page redesigns",
+              "why_not": "If you change 10 things, you learn nothing about what worked."
+            }
+          ]
+        }
+      ]
+    },
+
+    "traffic_based_methodology": {
+      "description": "Match your testing methodology to your actual traffic. Don't pretend to have statistical power you don't have.",
+      "tiers": [
+        {
+          "tier": "Phase 0: Pre-launch / <30 visitors per day",
+          "methodology": "QUALITATIVE JUDGMENT",
+          "approach": "No A/B testing. Ship your best guess and iterate based on qualitative signals (heatmaps, session recordings, customer feedback, sales conversations).",
+          "tools": ["Hotjar free plan (heatmaps, recordings)", "Customer interviews", "Founder intuition"],
+          "when_to_use": "Pre-launch through Month 1. Also for any change where the 'right answer' is obvious (fixing a broken flow, adding missing information).",
+          "key_rule": "If a change is obviously better (e.g., fixing a 404, adding a missing CTA), JUST SHIP IT. Don't 'test' obvious improvements."
+        },
+        {
+          "tier": "Phase 1: 30-100 visitors per day (Month 1-3)",
+          "methodology": "PRE/POST + BAYESIAN",
+          "approach": "For landing page changes: implement the change and compare 2-week windows (before vs after). For ad creative: use platform-native testing (Meta A/B, TikTok split test) which has enough volume from ad delivery. For critical decisions: use Bayesian analysis with informative priors.",
+          "tools": ["Meta Ads A/B test feature (free)", "GA4 cohort comparison", "Bayesian calculator"],
+          "sample_size_guidance": {
+            "ad_creative_test": "1,000+ impressions per variant (achievable in 2-3 days at $50/day)",
+            "landing_page_test": "200+ visitors per variant (7-14 days at 30-100/day)",
+            "note": "At these volumes, you can detect LARGE effects (>30% relative change) but NOT moderate effects (<15%)."
+          },
+          "key_rule": "Only test big swings. If you think a change might improve things by 5%, don't bother testing — just ship it."
+        },
+        {
+          "tier": "Phase 2: 100-500 visitors per day (Month 3-6)",
+          "methodology": "STANDARD A/B + BAYESIAN",
+          "approach": "Traditional A/B testing becomes viable for high-impact elements. Use Bayesian for faster decisions on creative tests. Sequential analysis for price tests (M10 protocol).",
+          "tools": ["Shopify A/B app", "Meta Ads testing", "GA4 experiments"],
+          "sample_size_guidance": {
+            "ad_creative_test": "2,000+ impressions per variant",
+            "landing_page_test": "500+ visitors per variant (5-10 days)",
+            "price_test": "2,000+ visitors per variant (use M10 protocol, 14-30 days)"
+          },
+          "key_rule": "You can now detect ~15-20% relative effects. Run 2-4 tests per month across ad creative + landing page."
+        },
+        {
+          "tier": "Phase 3: 500+ visitors per day (Month 6+)",
+          "methodology": "FULL EXPERIMENTATION PROGRAM",
+          "approach": "Multiple concurrent tests across ad creative, landing page, email, and checkout. Price tests still sequential (M10). Creative tests scaled to 5-10 new variants per week.",
+          "tools": ["Full testing stack", "Dedicated analytics"],
+          "key_rule": "Testing velocity is now your competitive advantage. Aim for 8-12 tests per month."
+        }
+      ]
+    }
+  },
+
+  "statistical_decision_rules": {
+    "frequentist": {
+      "confidence_threshold": "95% (p < 0.05)",
+      "power": "80%",
+      "when_to_use": "Price tests, checkout changes — anywhere a wrong decision has high financial impact.",
+      "minimum_test_duration": "14 days (to capture day-of-week variance)",
+      "peeking_policy": "No peeking before planned sample size. Use sequential analysis if early stopping needed.",
+      "sample_size_table": {
+        "description": "Required visitors PER VARIANT at 95% confidence, 80% power",
+        "note": "These are per-variant numbers. Double for total test traffic.",
+        "table": [
+          {"baseline_cvr": "2%", "mde_relative": "30%", "sample_per_variant": 4300, "total": 8600},
+          {"baseline_cvr": "2%", "mde_relative": "20%", "sample_per_variant": 9800, "total": 19600},
+          {"baseline_cvr": "3%", "mde_relative": "30%", "sample_per_variant": 2800, "total": 5600},
+          {"baseline_cvr": "3%", "mde_relative": "20%", "sample_per_variant": 6500, "total": 13000},
+          {"baseline_cvr": "5%", "mde_relative": "30%", "sample_per_variant": 1600, "total": 3200},
+          {"baseline_cvr": "5%", "mde_relative": "20%", "sample_per_variant": 3800, "total": 7600}
+        ]
+      }
+    },
+    "bayesian": {
+      "prior": "Weakly informative — Beta(1,1) for new tests, Beta(alpha, beta) from previous test data for iterations",
+      "decision_threshold": "95% probability that variant beats control",
+      "when_to_use": "Creative testing, email subject lines, audience tests — anywhere faster decisions are worth the trade-off of slightly less certainty.",
+      "advantages_at_low_traffic": [
+        "Can declare results sooner (no fixed sample size)",
+        "Intuitive probability output ('93% chance variant B is better')",
+        "Handles early stopping without inflating false positive rate",
+        "Can incorporate prior knowledge from previous tests"
+      ],
+      "practical_note": "At 500 impressions per variant, Bayesian can often give you 80%+ confidence on a 30%+ effect. Frequentist would say 'not enough data.' For creative testing where the cost of a wrong decision is low (just run another creative), 80% is good enough.",
+      "error_rate_disclosure": {
+        "note": "DIALOGUE UPGRADE UPG-1: Be explicit about what each confidence threshold COSTS you in false decisions.",
+        "thresholds": {
+          "95%": {"false_positive_rate": "~5%", "use_when": "Pricing, checkout, subscription terms — anywhere a wrong decision costs revenue. MANDATORY for all M10 price tests."},
+          "90%": {"false_positive_rate": "~10%", "use_when": "Landing page changes, offer framing — moderate stakes, moderately reversible."},
+          "80%": {"false_positive_rate": "~20%", "use_when": "Ad creative selection — low stakes, easily reversible. At 5 creatives/month, expect ~1 false winner per quarter. Acceptable because: (a) creative swaps are instant, (b) the 'wrong' creative still ran at near-breakeven, (c) you'll detect the error within days of scaling."},
+          "75%": {"false_positive_rate": "~25%", "use_when": "ONLY for creative screening (kill/continue decisions on Day 3). NOT for final ship/no-ship decisions."}
+        }
+      }
+    },
+    "the_just_ship_it_threshold": {
+      "description": "Not everything needs a test. Use judgment when:",
+      "criteria": [
+        "The change is obviously better (fixing broken UX, adding missing info)",
+        "The potential downside of being wrong is tiny (email copy tweak)",
+        "You'd need 6+ months of traffic to detect the effect size",
+        "You're deciding between two options and neither is risky",
+        "Customer feedback overwhelmingly points in one direction"
+      ],
+      "warning": "Never 'just ship it' on: price changes, subscription terms, checkout flow changes, or anything that affects revenue per visitor. These always get tested."
+    }
+  },
+
+  "testing_velocity_benchmarks": {
+    "description": "How many tests per month by growth stage",
+    "benchmarks": [
+      {
+        "stage": "Pre-launch",
+        "monthly_visitors": "<1,000",
+        "tests_per_month": "0-1 on-site, 2-4 ad creative",
+        "focus": "Ad creative testing only (platform has the traffic). Ship best-guess site."
+      },
+      {
+        "stage": "Early (Month 1-3)",
+        "monthly_visitors": "1,000-3,000",
+        "tests_per_month": "1-2 on-site, 4-8 ad creative",
+        "focus": "Find winning creative angles. Test 1 landing page element per month (big changes only)."
+      },
+      {
+        "stage": "Growing (Month 3-6)",
+        "monthly_visitors": "3,000-15,000",
+        "tests_per_month": "2-4 on-site, 8-12 ad creative",
+        "focus": "Testing program becomes systematic. Run creative and landing page tests in parallel."
+      },
+      {
+        "stage": "Scaling (Month 6+)",
+        "monthly_visitors": "15,000+",
+        "tests_per_month": "4-8 on-site, 12-20 ad creative",
+        "focus": "Full experimentation program. Iterating on email, checkout, upsell in addition to creative + LP."
+      }
+    ]
+  },
+
+  "learning_system": {
+    "description": "How we capture and compound knowledge from every test",
+    "components": [
+      {
+        "name": "Test Log",
+        "file": "data/m14/test_log.json",
+        "purpose": "Chronological record of every experiment with results and learnings"
+      },
+      {
+        "name": "Knowledge Library",
+        "purpose": "Accumulated learnings organized by domain (creative, landing page, email, audience)",
+        "structure": "Each learning has: domain, finding, confidence, source_test_id, date, implications"
+      },
+      {
+        "name": "Quarterly Review",
+        "purpose": "Every 3 months, review test log. Identify: (1) what domains produced most wins, (2) what testing assumptions were wrong, (3) what to test next quarter.",
+        "cadence": "Q1: Month 3, Q2: Month 6, etc."
+      }
+    ],
+    "naming_conventions": {
+      "test_ids": "{TYPE}-{NNN} where TYPE is PT/CT/LP/AT/EM/CK/GN and NNN is sequential",
+      "creative_ids": "C{NNN} — every creative variant gets a unique ID for lifetime tracking",
+      "ad_naming": "{HOOK_THEME}_{ANGLE}_{FORMAT}_{CREATOR}_{VERSION} e.g. 'tired2pm_energy_ugc_sarah_v1'",
+      "note": "Naming convention enables filtering, searching, and pattern recognition across hundreds of tests over time."
+    }
+  },
+
+  "anti_patterns": {
+    "description": "Common experimentation mistakes that destroy learning",
+    "mistakes": [
+      {
+        "name": "The HiPPO",
+        "description": "Highest Paid Person's Opinion overrides test data. 'I don't like blue buttons' trumps data showing blue converts better.",
+        "fix": "Pre-register the decision rule before the test starts. Document: 'If variant B wins by X%, we implement it regardless of aesthetic preference.'"
+      },
+      {
+        "name": "Peeking and stopping",
+        "description": "Checking results daily and stopping the test as soon as one variant is 'ahead.' This inflates false positives to 20-30%.",
+        "fix": "Set sample size and duration BEFORE launch. Use sequential analysis methods if early stopping is needed."
+      },
+      {
+        "name": "Testing too many things at once",
+        "description": "Changing headline + image + CTA + layout simultaneously. Even if the new version wins, you don't know WHY.",
+        "fix": "One variable at a time for learning. Only test multiple changes when you need speed over insight (and accept reduced learning)."
+      },
+      {
+        "name": "The button color trap",
+        "description": "Spending limited testing bandwidth on low-impact elements. Button color differences are <1% — undetectable at IonWave's traffic for months.",
+        "fix": "Priority matrix (Tier 1 first). If the expected effect is <10%, don't test it until you have 500+ daily visitors."
+      },
+      {
+        "name": "Survivorship bias in creative",
+        "description": "Only studying winning creatives. The losers teach you equally — they show what DOESN'T resonate.",
+        "fix": "Document learnings from losers in the test log. Pattern-match across failures to find anti-patterns."
+      },
+      {
+        "name": "No documentation",
+        "description": "Running tests in ad platforms without recording hypotheses, results, or learnings. Institutional knowledge = zero.",
+        "fix": "Experiment card filed BEFORE launch. Results + learning filed WITHIN 48 hours of test completion."
+      }
+    ]
+  },
+
+  "intelligence_gaps": [
+    {
+      "id": "GAP-1",
+      "description": "No real test data yet — all frameworks are theoretical",
+      "current_grade": "D",
+      "upgrade_path": "Run first 5 creative tests → calibrate kill criteria, sample sizes, and velocity benchmarks with real IonWave data",
+      "priority": "CRITICAL — first 30 days"
+    },
+    {
+      "id": "GAP-2",
+      "description": "Bayesian priors not calibrated for marine plasma supplement category",
+      "current_grade": "D",
+      "upgrade_path": "After 10+ tests, build category-specific priors from IonWave's own data. Until then, use weakly informative priors.",
+      "priority": "Medium — Month 3+"
+    },
+    {
+      "id": "GAP-3",
+      "description": "Creative fatigue rates unknown for this category",
+      "current_grade": "D",
+      "upgrade_path": "Track winning creative lifespan. After 5 winners decay, we'll have our own fatigue curve.",
+      "priority": "Medium — Month 3+"
+    }
+  ]
+}

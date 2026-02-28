@@ -1,0 +1,93 @@
+{
+  "tup_id": "m20",
+  "tup_name": "Customer Support",
+  "cluster": "BCL-4",
+  "cluster_name": "Retention & Lifecycle",
+  "status": "migrated",
+  "current_version": "1.0.0",
+  "current_quality": 8.6,
+  "sheet_count": 9,
+  "sheets": [
+    { "index": 468, "name": "Customer Success Playbook", "rows": 37 },
+    { "index": 469, "name": "Complaint Escalation", "rows": 27 },
+    { "index": 470, "name": "Customer Issue Log", "rows": 18 },
+    { "index": 471, "name": "Refund Return Tracker", "rows": 16 },
+    { "index": 472, "name": "Returns & Exchanges", "rows": 10 },
+    { "index": 473, "name": "NPS Tracking", "rows": 24 },
+    { "index": 474, "name": "NPS CSAT Implementation", "rows": 3 },
+    { "index": 475, "name": "Win Loss Analysis", "rows": 17 },
+    { "index": 476, "name": "11-Star Experience", "rows": 52 }
+  ],
+  "files": [
+    "data/m20/support_operations.md",
+    "data/m20/customer_feedback_system.md",
+    "data/m20/customer_success_playbook.md",
+    "data/m20/dialogue_summary.md",
+    "data/m20/opkit_customer_support.md",
+    "data/m20/_meta.json"
+  ],
+  "opkits": ["OK-M20-001"],
+  "feeds_into": ["m19", "m27", "m21"],
+  "requires": [],
+  "key_blockers": [],
+  "next_action": "Populate win/loss data post-launch; validate activation rate targets after first 100 customers; legal review of adverse event protocol",
+  "revisions": [
+    {
+      "version": "1.0.0",
+      "date": "2026-02-07",
+      "actor": "Claude (TWP-001)",
+      "change_type": "initial_workshop",
+      "protocol_used": "TWP-001 v2.0.0",
+      "what_changed": "Initial workshop: 9 Danilo content tabs consolidated into 3 content files (support_operations.md, customer_feedback_system.md, customer_success_playbook.md). OpKit OK-M20-001 created. Key additions: chargeback monitoring, minimum viable support stack, behavioral activation criteria, FDA adverse event protocol, phase-gated escalation (Founder Mode vs Team Mode).",
+      "quality_score": 8.6,
+      "quality_rationale": "Strong actionability (Day-1 ready for founder). A-grade FDA/FTC compliance content. B-grade tool recommendations and benchmarks. D-grade activation targets and expected outcomes (pre-revenue estimates). Chargeback monitoring caught by dialogue. 6 upgrades applied.",
+      "dialogue_ref": {
+        "file": "dialogue_summary.md",
+        "tup_version": "1.0.0",
+        "personas": ["Skeptical Investor", "Operations Expert", "Customer Anthropologist"],
+        "rounds": 8,
+        "saturated": true,
+        "upgrades": 6,
+        "unresolved": 0
+      },
+      "hypotheses_affected": ["HYP-003", "HYP-005", "HYP-002", "HYP-006"]
+    }
+  ],
+  "intelligence_gaps": [
+    {
+      "gap": "Adverse event procedure legal review",
+      "priority": "CRITICAL",
+      "validation_path": "Supplement industry attorney review pre-launch"
+    },
+    {
+      "gap": "Activation rate baseline targets",
+      "priority": "HIGH",
+      "validation_path": "Track from first 100 customers"
+    },
+    {
+      "gap": "Win/loss reason percentages",
+      "priority": "HIGH",
+      "validation_path": "Populate from real survey data after 100 orders"
+    },
+    {
+      "gap": "Expected outcomes timeline for marine plasma",
+      "priority": "HIGH",
+      "validation_path": "Track actual customer-reported timelines starting Month 1"
+    },
+    {
+      "gap": "Gorgias AI Agent accuracy on supplement queries",
+      "priority": "MEDIUM",
+      "validation_path": "Test with 50 sample tickets post-launch"
+    },
+    {
+      "gap": "Sachet-specific shipping damage rate",
+      "priority": "MEDIUM",
+      "validation_path": "Track after first 500 shipments"
+    },
+    {
+      "gap": "Optimal NPS timing for supplements (Day 21 vs 30 vs 45)",
+      "priority": "MEDIUM",
+      "validation_path": "A/B test after 100+ data points"
+    }
+  ]
+}

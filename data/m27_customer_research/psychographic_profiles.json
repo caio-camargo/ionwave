@@ -1,0 +1,186 @@
+{
+  "_meta": {
+    "sheet_name": "Deep Psychographic Profiles",
+    "parent_file": "03a_customer_research_icp",
+    "version": "1.0.0",
+    "last_updated": "2026-02-04",
+    "updated_by": "claude-opus-4.5",
+    "status": "draft",
+    "quality_score": "6.5/10",
+    "data_type": "narrative",
+    "note": "Consolidated from original 'Deep Psychographic Profiles' and 'Deep Psychographic Profiles 2' sheets. Three profiles representing the primary psychological archetypes in the ICP."
+  },
+  "data": {
+    "consolidation_notes": {
+      "source_sheets": ["Deep Psychographic Profiles", "Deep Psychographic Profiles 2"],
+      "merge_rationale": "Original two sheets contained overlapping psychographic data split arbitrarily. Consolidated into 3 distinct profiles that map to the primary ICP and top two secondary ICPs.",
+      "profiles_mapped_to_archetypes": {
+        "optimizer_biohacker": ["Biohacker Ben", "CrossFit Claire"],
+        "keto_carnivore_dieter": ["Keto Kevin"],
+        "exhausted_professional": ["Fasting Fiona", "Weekend Warrior Will (partial)"]
+      }
+    },
+    "profiles": [
+      {
+        "profile_name": "The Optimizer / Biohacker",
+        "archetype_alignment": "Biohacker Ben (primary), CrossFit Claire (partial)",
+        "identity": "Self-identifies as someone who takes their health more seriously than the average person. Sees themselves as an early adopter and researcher. Takes pride in knowing things before the mainstream. Health optimization is a core part of their identity, not just a hobby.",
+        "beliefs": [
+          "The body is a system that can be optimized with the right inputs",
+          "Most health products are marketing garbage backed by no real science",
+          "Nature has already solved most health problems - we just need to find the right sources",
+          "The mainstream health industry is 10-20 years behind the science",
+          "You get what you pay for in supplements - cheap means ineffective or contaminated"
+        ],
+        "fears": [
+          "Taking something harmful without knowing it (heavy metals, contaminants)",
+          "Wasting money on products that don't actually work",
+          "Being fooled by marketing (a deep insult to their identity as a researcher)",
+          "Missing out on a breakthrough because they didn't hear about it",
+          "Health declining despite doing everything right"
+        ],
+        "desires": [
+          "To find the ONE product that actually delivers on its claims",
+          "To feel physically and mentally optimized every day",
+          "To have a simple, science-backed protocol they can trust",
+          "To be the person who discovered something great before it went mainstream",
+          "To feel confident that what they're putting in their body is the best available"
+        ],
+        "worldview": "The world is full of health misinformation and low-quality products. The health industry is driven by profit, not science. Real solutions exist but you have to do your own research to find them. Most people are too lazy or uninformed to optimize their health, but I'm not most people.",
+        "triggers": [
+          "New research paper or podcast episode about mineral bioavailability",
+          "Discovering their current supplement has undisclosed ingredients or fillers",
+          "Blood work or wearable data showing a deficiency or suboptimal marker",
+          "Recommendation from a trusted source (scientist, MD, peer researcher)"
+        ],
+        "objections": [
+          "Where's the published research? Not blog posts - actual studies.",
+          "How is marine plasma different from any other mineral supplement?",
+          "Can I see the full Certificate of Analysis?",
+          "What's the bioavailability compared to ionic minerals or chelated forms?"
+        ],
+        "language": {
+          "words_they_use": ["bioavailability", "protocol", "stack", "optimize", "COA", "third-party tested", "peer-reviewed", "whole-food source", "mineral profile", "n=1 experiment"],
+          "words_that_repel": ["revolutionary", "miracle", "guaranteed", "doctor-recommended (without naming the doctor)", "all-natural (vague)", "proprietary blend"]
+        },
+        "voc_validation": {
+          "strength": "Strong",
+          "key_references": ["LMNT-031", "LMNT-009"],
+          "supporting_evidence": "Multiple VOC quotes align with research-obsessive behavior and demand for transparency. Reddit threads in r/Supplements and r/Biohackers consistently show this profile."
+        },
+        "jtbd": {
+          "functional": "Get a complete, bioavailable mineral profile from a single, clean source so I don't have to take 5 different supplements.",
+          "emotional": "Feel confident and in control of my health inputs, knowing I've found the best option available.",
+          "social": "Be recognized by my health-conscious peers as someone who has their protocol dialed in."
+        }
+      },
+      {
+        "profile_name": "The Keto / Carnivore Dieter",
+        "archetype_alignment": "Keto Kevin (primary)",
+        "identity": "Their diet IS their identity. Being keto or carnivore is not just what they eat - it's a lifestyle, a community, and often a contrarian stance against mainstream nutrition. They've seen life-changing results and are deeply committed. Electrolyte management is a known requirement, not a discovery.",
+        "beliefs": [
+          "Carbs and sugar are the root of most health problems",
+          "The food pyramid and mainstream nutrition advice are wrong",
+          "Keto/carnivore is the way humans are meant to eat",
+          "Electrolyte supplementation is non-negotiable on this diet",
+          "Most electrolyte products are designed for carb-eaters and don't work for keto"
+        ],
+        "fears": [
+          "Keto flu returning (they've experienced it and dread it)",
+          "Being knocked out of ketosis by hidden carbs or sweeteners",
+          "Spouse or family thinking they're spending too much on health products",
+          "That their diet is actually harmful (deep fear they'd never admit)",
+          "Running out of their electrolyte supply"
+        ],
+        "desires": [
+          "A clean electrolyte that is designed for low-carb lifestyles",
+          "To never experience keto flu again",
+          "Validation that their dietary choices are correct",
+          "A product they can recommend to other keto/carnivore people",
+          "To prove that they can be healthier than people on standard diets"
+        ],
+        "worldview": "Mainstream nutrition is a lie perpetuated by the sugar and grain industries. Keto/carnivore is backed by ancestral health evidence. The medical establishment is slowly catching up. We are a tribe of people who know the truth about food.",
+        "triggers": [
+          "Keto flu hits after a cheat day or dietary slip",
+          "Running low on current electrolyte supply and open to switching",
+          "Seeing a keto influencer (Thomas DeLauer, Dr. Ken Berry) recommend something",
+          "Price increase from current electrolyte brand"
+        ],
+        "objections": [
+          "I already use LMNT and it works fine",
+          "Is this keto-friendly? How many carbs?",
+          "Will this kick me out of ketosis?",
+          "My wife already thinks I spend too much on supplements"
+        ],
+        "language": {
+          "words_they_use": ["keto flu", "electrolytes", "sodium", "potassium", "magnesium", "ketosis", "carnivore", "clean keto", "dirty keto", "macros", "net carbs"],
+          "words_that_repel": ["balanced diet", "moderation", "whole grains", "natural sugar", "calorie counting"]
+        },
+        "voc_validation": {
+          "strength": "STRONGEST",
+          "key_references": ["LMNT-007"],
+          "supporting_evidence": "7+ direct quotes from LMNT reviews and keto community forums. This is the most validated psychographic profile. Keto flu pain point appears in nearly every VOC collection source.",
+          "quote_count": "7+"
+        },
+        "jtbd": {
+          "functional": "Eliminate keto flu symptoms and maintain optimal electrolyte levels without consuming sugar, carbs, or artificial ingredients.",
+          "emotional": "Feel confident that my diet isn't causing harm and that I have the right support system in place.",
+          "social": "Have a product I can proudly recommend to my keto community as 'the one that actually works.'"
+        }
+      },
+      {
+        "profile_name": "The Exhausted Professional",
+        "archetype_alignment": "Fasting Fiona (primary), Weekend Warrior Will (partial)",
+        "identity": "A busy professional or parent who is tired all the time and has tried everything to fix it. Not a biohacker or diet extremist - just someone who wants to feel normal again. May have discovered electrolytes through a podcast, a friend, or a desperate Google search at 2pm when they can barely keep their eyes open.",
+        "beliefs": [
+          "Something is wrong with me - I shouldn't be this tired",
+          "Drinking more water should help but it doesn't seem to",
+          "Supplements are mostly snake oil but some must actually work",
+          "If I could just find the right thing, I could feel like myself again",
+          "My fatigue is probably from something I'm missing in my diet"
+        ],
+        "fears": [
+          "That the fatigue is something more serious (they've Googled every symptom)",
+          "Wasting money on yet another supplement that doesn't work",
+          "Being judged for taking supplements (they're not 'that type')",
+          "That this is just what getting older feels like",
+          "Becoming dependent on a product to feel normal"
+        ],
+        "desires": [
+          "To feel like they did in their 20s - energized and clear-headed",
+          "A simple solution that doesn't require a complete lifestyle overhaul",
+          "To get through the afternoon without crashing",
+          "To wake up feeling rested instead of exhausted",
+          "To stop relying on caffeine as a crutch"
+        ],
+        "worldview": "The modern world is depleting us - our food, water, and lifestyle are all working against our health. There should be a simple fix for this but the supplement industry makes it impossible to find what actually works. I'm skeptical but desperate enough to try something new if it seems credible.",
+        "triggers": [
+          "Another terrible afternoon crash that ruins their productivity",
+          "Reading an article or hearing a podcast about mineral depletion",
+          "Blood work comes back 'normal' but they still feel terrible",
+          "A friend or colleague mentions feeling better after starting an electrolyte"
+        ],
+        "objections": [
+          "I've tried supplements before and they never work",
+          "Is this just expensive salt water?",
+          "I'm not a supplement person",
+          "How do I know this will actually make a difference?"
+        ],
+        "language": {
+          "words_they_use": ["brain fog", "afternoon crash", "exhausted", "wiped out", "can barely function", "feel like crap", "used to have energy", "something is off", "2pm wall"],
+          "words_that_repel": ["biohack", "optimize", "protocol", "stack", "gainz", "bro science", "supplement routine"]
+        },
+        "voc_validation": {
+          "strength": "Moderate",
+          "key_references": ["LMNT-029", "LMNT-011"],
+          "supporting_evidence": "Several VOC quotes align with fatigue/brain fog narrative. Energy improvement is a commonly reported benefit in electrolyte reviews. However, this profile is less directly validated than Keto or Biohacker profiles."
+        },
+        "jtbd": {
+          "functional": "Eliminate afternoon energy crashes and brain fog so I can be productive and present throughout the entire day.",
+          "emotional": "Feel like myself again - energized, clear-headed, and in control of my health without becoming a health nut.",
+          "social": "Keep up with my responsibilities (work, family, social life) without people noticing how exhausted I actually am."
+        }
+      }
+    ]
+  }
+}
