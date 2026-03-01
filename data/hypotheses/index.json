@@ -622,6 +622,217 @@
           "relevance": "PRIMARY"
         }
       ]
+    },
+
+    "HYP-010": {
+      "hypothesis_name": "Cascade Recruitment Viability",
+      "reference_count": 4,
+      "referenced_in": [
+        {
+          "document": "IonWave/IonWave_Rollout_Narrative.md",
+          "section": "THE CASCADE",
+          "context": "Full specification of VA → MBA → VP → Operator cascade model. Signal degradation risk. MBA intern as weakest link.",
+          "relevance": "PRIMARY"
+        },
+        {
+          "document": "data/rollout/chain_specification.md",
+          "section": "Section 8 — Risk Analysis",
+          "context": "Franchise-manual analogy analysis, signal degradation through chain, recruitment selection problem.",
+          "relevance": "PRIMARY"
+        },
+        {
+          "document": "IonWave/Rollout_Risk_Analysis.md",
+          "section": "RISK-003, RISK-004, RISK-005",
+          "context": "Signal degradation, pre-entity equity, cascade timeline extension risks.",
+          "relevance": "PRIMARY"
+        },
+        {
+          "document": "data/rollout/compliance/",
+          "section": "Compliance agent specification",
+          "context": "Claude-as-workspace compliance monitoring for cascade nodes.",
+          "relevance": "SUPPORTING"
+        }
+      ]
+    },
+
+    "HYP-011": {
+      "hypothesis_name": "One-Shot Handoff Fidelity",
+      "reference_count": 4,
+      "referenced_in": [
+        {
+          "document": "IonWave/IonWave_Rollout_Narrative.md",
+          "section": "Preamble, THE HANDOFF",
+          "context": "North star of the system. 'Ideally there is no communication after the handoff.' Integration work as distinct phase.",
+          "relevance": "PRIMARY"
+        },
+        {
+          "document": "Studio 3/Doc Dump/three_models_implementation_guide.md",
+          "section": "System Specification, Binary Gate, Calibration",
+          "context": "Three Models methodology — the formal handoff process.",
+          "relevance": "PRIMARY"
+        },
+        {
+          "document": "IonWave/Rollout_Risk_Analysis.md",
+          "section": "RISK-006, RISK-007, RISK-010",
+          "context": "Implicit knowledge gap, calibration quality, system maintenance void.",
+          "relevance": "PRIMARY"
+        },
+        {
+          "document": "IonWave/IonWave_Rollout_Narrative.md",
+          "section": "WHAT IONWAVE TEACHES THE SYSTEM",
+          "context": "Handoff effectiveness is a primary learning outcome for the system.",
+          "relevance": "RELATED"
+        }
+      ]
+    },
+
+    "HYP-012": {
+      "hypothesis_name": "Binary Gate Discrimination",
+      "reference_count": 3,
+      "referenced_in": [
+        {
+          "document": "IonWave/IonWave_Rollout_Narrative.md",
+          "section": "THE HANDOFF, Open Questions Q14",
+          "context": "Calibration as primary QC mechanism. Flagged as needing specification. False positive/negative failure modes.",
+          "relevance": "PRIMARY"
+        },
+        {
+          "document": "Studio 3/Doc Dump/three_models_implementation_guide.md",
+          "section": "Binary Gate specification",
+          "context": "Binary gate conceptual framework — pass or fail, no partial credit.",
+          "relevance": "PRIMARY"
+        },
+        {
+          "document": "IonWave/Rollout_Risk_Analysis.md",
+          "section": "RISK-007",
+          "context": "Calibration session quality risk — false positives waste months, false negatives lose candidates.",
+          "relevance": "PRIMARY"
+        }
+      ]
+    },
+
+    "HYP-013": {
+      "hypothesis_name": "Systems Engineering Pre-Handoff Readiness",
+      "reference_count": 3,
+      "referenced_in": [
+        {
+          "document": "IonWave/IonWave_Rollout_Narrative.md",
+          "section": "THE HANDOFF, Open Questions Q6/Q15",
+          "context": "Infrastructure must be ready before handoff. Readiness checklist needed. Caio SPOF.",
+          "relevance": "PRIMARY"
+        },
+        {
+          "document": "project_specs/CLAUDE_AS_OS_SYSTEM.md",
+          "section": "Claude agent deployment",
+          "context": "Claude as operational infrastructure — agents for monitoring, data validation.",
+          "relevance": "SUPPORTING"
+        },
+        {
+          "document": "IonWave/Rollout_Risk_Analysis.md",
+          "section": "RISK-002",
+          "context": "Caio as SPOF for systems engineering.",
+          "relevance": "PRIMARY"
+        }
+      ]
+    },
+
+    "HYP-014": {
+      "hypothesis_name": "Capital Formation Encoding",
+      "reference_count": 4,
+      "referenced_in": [
+        {
+          "document": "IonWave/IonWave_Rollout_Narrative.md",
+          "section": "THE CALLS, Open Questions Q9",
+          "context": "'One of the hardest encoding problems in the entire system.' Actor skills may be non-encodable.",
+          "relevance": "PRIMARY"
+        },
+        {
+          "document": "data/rollout/vp_brief/",
+          "section": "VP role brief, Capital Formation guide",
+          "context": "Encoded methodology for VP to execute Capital Formation.",
+          "relevance": "PRIMARY"
+        },
+        {
+          "document": "data/rollout/trade_pitch_onepager.md",
+          "section": "Trade pitch",
+          "context": "Encoded pitch material for VP/deals person use.",
+          "relevance": "SUPPORTING"
+        },
+        {
+          "document": "IonWave/Rollout_Risk_Analysis.md",
+          "section": "RISK-001, RISK-009",
+          "context": "Danilo SPOF for Capital Formation, capital timing mismatch.",
+          "relevance": "PRIMARY"
+        }
+      ]
+    },
+
+    "HYP-015": {
+      "hypothesis_name": "Foundation Phase Timeline",
+      "reference_count": 4,
+      "referenced_in": [
+        {
+          "document": "IonWave/IonWave_Rollout_Narrative.md",
+          "section": "THE FOUNDATION, THE TEST",
+          "context": "Weeks 1-2 entity/supplier/storefront, Weeks 3-4 soft launch. Multiple simultaneous dependencies.",
+          "relevance": "PRIMARY"
+        },
+        {
+          "document": "data/m2/",
+          "section": "Entity Formation TUP",
+          "context": "C-Corp formation playbook. Day 1-2 timeline.",
+          "relevance": "SUPPORTING"
+        },
+        {
+          "document": "data/m5/",
+          "section": "Supplier & Sourcing TUP",
+          "context": "Supplier outreach methodology and CoA evaluation.",
+          "relevance": "SUPPORTING"
+        },
+        {
+          "document": "IonWave/Rollout_Risk_Analysis.md",
+          "section": "RISK-008",
+          "context": "Supplier kill scenario — foundation phase may end immediately if CoA fails.",
+          "relevance": "PRIMARY"
+        }
+      ]
+    },
+
+    "HYP-016": {
+      "hypothesis_name": "Supplier CoA Compliance & COGS Target",
+      "reference_count": 5,
+      "referenced_in": [
+        {
+          "document": "IonWave/IonWave_Rollout_Narrative.md",
+          "section": "THE FOUNDATION",
+          "context": "'The most important data point in the entire rollout.' Three margin scenarios depend on supplier quotes.",
+          "relevance": "PRIMARY"
+        },
+        {
+          "document": "data/m5/",
+          "section": "Supplier & Sourcing TUP",
+          "context": "Identified suppliers (Biocean, Actimar, Quinton). All data void — no quotes, no CoA.",
+          "relevance": "PRIMARY"
+        },
+        {
+          "document": "data/m7/",
+          "section": "Regulatory Compliance TUP",
+          "context": "M7 defines CoA thresholds for heavy metals and contaminants.",
+          "relevance": "PRIMARY"
+        },
+        {
+          "document": "IonWave/Financial_Model_Revenue_Validation.md",
+          "section": "Margin scenarios",
+          "context": "Three scenarios (67%/60%/42% GM) depend on COGS. Conservative scenario may make Trade non-viable.",
+          "relevance": "PRIMARY"
+        },
+        {
+          "document": "IonWave/Rollout_Risk_Analysis.md",
+          "section": "RISK-008",
+          "context": "Supplier Kill Scenario — FATAL risk, highest priority for pre-validation.",
+          "relevance": "PRIMARY"
+        }
+      ]
     }
   },
 
@@ -1137,6 +1348,13 @@
       "confidence_contribution": "Makes hypothesis monitoring practical — monthly hypothesis prompt requires founder to write one sentence per critical HYP. Go/No-Go gates at Month 3/6/12 directly validate HYP-001 (CAC), HYP-002 (subscription), HYP-007 (timeline)."
     },
 
+    "IonWave/Rollout_Risk_Analysis.md": {
+      "hypotheses_referenced": ["HYP-010", "HYP-011", "HYP-012", "HYP-013", "HYP-014", "HYP-015", "HYP-016", "HYP-001", "HYP-004", "HYP-008"],
+      "document_type": "ANALYSIS",
+      "primary_purpose": "Rollout risk analysis: 12 risks across 5 categories (SPOF, Cascade Recruitment, Handoff & Integration, Execution, Systemic). Risk priority matrix. Dependency map. 6 recommended immediate actions.",
+      "confidence_contribution": "Surfaces meta-risks that cut across individual hypotheses. RISK-008 (Supplier Kill) identified as only FATAL risk pre-validatable immediately. RISK-003 (Signal Degradation) links cascade failure to downstream hypothesis invalidation. RISK-001 (Danilo SPOF) affects HYP-011, HYP-012, HYP-014."
+    },
+
   "context_documents": {
     "description": "Supporting documents providing reasoning, dialogue, and contextual background for hypothesis evolution",
     "documents": [
@@ -1258,15 +1476,15 @@
   },
 
   "metadata": {
-    "total_hypotheses": 10,
-    "total_documents": 75,
+    "total_hypotheses": 17,
+    "total_documents": 76,
     "total_context_documents": 20,
-    "total_references": 157,
-    "last_sync": "2026-02-09T18:00:00Z",
+    "total_references": 184,
+    "last_sync": "2026-03-01T13:00:00Z",
     "index_maintainer": "automated",
     "audit_source": "IonWave/Hypothesis_Dependency_Audit.md",
-    "coverage_quality": "Strong - all CRITICAL hypotheses have 13-16+ document references. M15 TUP adds conversion infrastructure and compliance layer. HYP-001 (CAC) at 15 refs. HYP-002 (Subscription Conversion) at 16 refs with M15 checkout and funnel architecture. HYP-003 (Churn) at 13 refs. HYP-004 (Gross Margin) at 13 refs with M15 compliance costs and AOV optimization.",
-    "weakest_coverage": "HYP-009 (Pre-Launch Demand) - only 1 reference (newly surfaced). Sub-hypotheses now partially indexed via M21/M22/M14/M15/M16 content.",
-    "note": "Sub-hypotheses (HYP-003.x, HYP-006.x) are indexed via their parent CSP case study documents AND via M21/M22/M14/M15/M16/M25/M28/M30 TUP content files where applicable. M30 is unique — it's the measurement layer that defines HOW all hypotheses are tracked, not evidence for/against them."
+    "coverage_quality": "Strong for unit economics (HYP-001 through HYP-009). Rollout hypotheses (HYP-010 through HYP-016) have 3-5 references each — lower count reflects that these are newly surfaced from the Rollout Narrative and haven't been cross-referenced through TUP workshops yet.",
+    "weakest_coverage": "HYP-009 (Pre-Launch Demand) - only 1 reference (newly surfaced). Rollout hypotheses (HYP-010 through HYP-016) have initial references only — will accumulate as execution data arrives.",
+    "note": "Sub-hypotheses (HYP-003.x, HYP-006.x) are indexed via their parent CSP case study documents AND via M21/M22/M14/M15/M16/M25/M28/M30 TUP content files where applicable. M30 is unique — it's the measurement layer that defines HOW all hypotheses are tracked. Rollout hypotheses added 2026-03-01 from Rollout Narrative v0.6.0 analysis."
   }
 }

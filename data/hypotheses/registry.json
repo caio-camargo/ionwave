@@ -3,29 +3,29 @@
     "version": "2.0.0",
     "last_updated": "2026-02-06",
     "purpose": "Central registry of all testable hypotheses underlying the IonWave business model",
-    "total_hypotheses": 19,
-    "top_level_hypotheses": 9,
+    "total_hypotheses": 26,
+    "top_level_hypotheses": 16,
     "sub_hypotheses": 9,
     "decomposed_parents": ["HYP-003", "HYP-006"],
-    "note": "Sub-hypotheses (HYP-003.1-003.4, HYP-006.1-006.5) created via CSP-001 protocol. HYP-009 surfaced as new hypothesis.",
+    "note": "Sub-hypotheses (HYP-003.1-003.4, HYP-006.1-006.5) created via CSP-001 protocol. HYP-009 surfaced as new hypothesis. HYP-010 through HYP-016 surfaced from Rollout Narrative analysis (v0.6.0) — these are rollout/execution hypotheses distinct from unit economics hypotheses.",
     "by_state": {
-      "ASSUMED": 19,
+      "ASSUMED": 26,
       "TESTING": 0,
       "VALIDATED": 0,
       "INVALIDATED": 0,
       "RETIRED": 0
     },
     "by_severity": {
-      "CRITICAL": 4,
-      "HIGH": 4,
-      "MEDIUM": 8,
+      "CRITICAL": 8,
+      "HIGH": 6,
+      "MEDIUM": 9,
       "LOW": 3
     },
     "by_grade": {
       "A": 0,
       "B": 1,
       "C": 5,
-      "D": 13
+      "D": 20
     }
   },
   "hypotheses": [
@@ -1233,6 +1233,515 @@
         "supported_by": [],
         "accelerates": ["HYP-006"],
         "reduces_cost_of": ["HYP-001"]
+      }
+    },
+    {
+      "id": "HYP-010",
+      "name": "Cascade Recruitment Viability",
+      "category": "rollout_execution",
+      "description": "The VA → MBA intern → VP → Operator recruiting cascade will produce a qualified, committed operator within ~6-9 months total, with each node successfully identifying and selecting the next",
+      "impact_severity": "CRITICAL",
+      "current_state": "ASSUMED",
+      "current_grade": "D",
+      "revisions": [
+        {
+          "revision_id": 1,
+          "date": "2026-03-01",
+          "value": "Qualified operator recruited within 6-9 months via 4-node cascade",
+          "grade": "D",
+          "reasoning": "Surfaced from Rollout Narrative v0.6.0 analysis. The cascade model is fully specified (22 files in data/rollout/) but entirely untested. The core structural risk is signal degradation: each node asks a less-capable person to evaluate a more-capable one. VA (no domain expertise) selects MBA intern; MBA intern selects VP; VP selects Operator. Rubrics and Claude-as-workspace mitigate but the franchise-manual analogy is unproven for a first-edition system. MBA intern identified as weakest structural link. Grade D because: novel model, no precedent in Studio 3, no data on whether rubric-guided selection by junior people produces qualified senior hires.",
+          "evidence_type": "design_analysis",
+          "evidence_quality": "Fully specified design documents (chain_specification.md, VA/MBA/VP packages) but zero execution data",
+          "supporting_documents": [
+            "data/rollout/chain_specification.md",
+            "data/rollout/va_package/",
+            "data/rollout/mba_brief/",
+            "data/rollout/vp_brief/",
+            "IonWave/IonWave_Rollout_Narrative.md#the-cascade"
+          ],
+          "changed_by": "claude-opus-4-6",
+          "change_type": "initial",
+          "confidence_factors": {
+            "positive": [
+              "Cascade fully specified with role briefs, screening criteria, and bilateral contracts",
+              "Claude-as-workspace provides compliance monitoring and context preservation",
+              "Event-based contract model with 15 deliverables creates accountability",
+              "Each node has defined timeline and success criteria"
+            ],
+            "negative": [
+              "Signal degradation: less-capable selecting more-capable at every node",
+              "MBA intern is weakest structural link — equity-compensated, no domain expertise required",
+              "Franchise-manual analogy unproven for novel business system",
+              "4 sequential dependencies = multiplicative failure probability",
+              "No precedent — first time Studio 3 has attempted this model",
+              "Pre-entity equity instruments legally undefined (DEC-CHAIN-007)"
+            ]
+          }
+        }
+      ],
+      "current_value": "Qualified operator in 6-9 months",
+      "validation_plan": {
+        "method": "Execute the cascade. Track each node's timeline, selection quality, and handoff fidelity. L1 (VA) is the first testable stage.",
+        "cost": "VA cash compensation + time overhead for Danilo/Caio to monitor",
+        "timeline": "Month 0-9 (VA hiring in Month 0, Operator expected by Month 6-9)",
+        "success_criteria": "Each node produces the next within specified timeline; final operator passes binary gate at calibration",
+        "kill_criteria": "Any node fails to produce next within 2x specified timeline, OR produced candidate fails calibration → cascade model invalid, revert to direct recruitment",
+        "owner": "Danilo (initiator, approval authority at handoffs per DEC-CHAIN-003)",
+        "validation_triggers": [
+          "VA hired and producing outreach within 2 weeks",
+          "MBA intern candidate identified within VA's 4-6 week timeline",
+          "VP candidate identified within MBA intern's 8-14 week timeline",
+          "Operator candidate identified within VP's 8-12 week timeline",
+          "Operator passes calibration (binary gate)"
+        ]
+      },
+      "feeds_into": ["HYP-011", "HYP-012"],
+      "depends_on": [],
+      "risk_if_wrong": {
+        "severity": "FATAL",
+        "description": "If the cascade fails to produce an operator, the entire rollout stalls. Without an executor, no entity is formed, no supplier is contacted, no revenue is generated. Fallback is direct recruitment by Danilo — which violates the one-shot vision and creates founder dependency. Each month of delay burns opportunity cost and risks the market window.",
+        "financial_impact": "Direct cost is VA compensation wasted. Indirect cost is 6-9 months of delay if cascade fails and must be restarted or replaced with direct recruitment.",
+        "mitigation": "DEC-CHAIN-003 (approval authority at handoffs) provides a quality gate at each transition. Claude compliance agent monitors deliverables in real-time. Bilateral contracts include breach/consequence mechanisms. Danilo can intervene early if a node is underperforming."
+      },
+      "related_hypotheses": {
+        "prerequisite_for": ["HYP-011", "HYP-015"],
+        "shares_risk_with": ["HYP-014"],
+        "tension_with": "Danilo's position that he should not be in the recruitment chain — but DEC-CHAIN-003 may require his approval at handoffs"
+      }
+    },
+    {
+      "id": "HYP-011",
+      "name": "One-Shot Handoff Fidelity",
+      "category": "system_viability",
+      "description": "A completed imagination passet can be handed to a new person (Producer or Operator) via Three Models system specification such that they can execute the Trade without requiring ongoing founder communication",
+      "impact_severity": "CRITICAL",
+      "current_state": "ASSUMED",
+      "current_grade": "D",
+      "revisions": [
+        {
+          "revision_id": 1,
+          "date": "2026-03-01",
+          "value": "One-shot handoff with zero post-handoff founder communication",
+          "grade": "D",
+          "reasoning": "This is the north star of the entire Studio 3 system. The Rollout Narrative states explicitly: 'ideally, there is no communication after the handoff.' No Trade has ever been handed off. The imagination passet is comprehensive (41 TUPs, structured JSON, quality-scored), but comprehensiveness is not the same as handoff-readiness. Implicit knowledge — the reasoning that didn't make it into a TUP, the strategic context that Danilo holds but hasn't articulated — may be significant. The Three Models pattern (line-by-line, binary gate, calibration) is the quality mechanism, but calibration itself is not yet specified. Grade D because: zero handoffs attempted, calibration session undefined, no evidence that a passet of this complexity can be received and executed by a non-founder.",
+          "evidence_type": "design_analysis",
+          "evidence_quality": "Methodological framework exists (Three Models) but never tested with a real handoff",
+          "supporting_documents": [
+            "IonWave/IonWave_Rollout_Narrative.md#the-handoff",
+            "IonWave/IonWave_Rollout_Narrative.md#preamble",
+            "Studio 3/Doc Dump/three_models_implementation_guide.md"
+          ],
+          "changed_by": "claude-opus-4-6",
+          "change_type": "initial",
+          "confidence_factors": {
+            "positive": [
+              "Imagination passet is exceptionally comprehensive — 41 TUPs across 7 clusters",
+              "Structured JSON with confidence grades means the receiver knows what's strong and what's weak",
+              "Three Models methodology provides a formal integration framework",
+              "Claude Code as ongoing interface means the receiver has AI-powered access to all Trade context",
+              "Forcing functions for integration defined (condensed narrative, weakest assumptions, explain-to-outsider)"
+            ],
+            "negative": [
+              "Never been tested — zero handoffs completed",
+              "Calibration session not yet defined (Danilo needs to specify)",
+              "Implicit knowledge in Danilo's head may not be in the passet",
+              "Passet is hundreds of pages — 'too large to print and read aloud' (Narrative)",
+              "Integration work quality is hard to evaluate without clear rubric",
+              "Receiver must understand both the content AND the system architecture",
+              "North star is aspirational — Narrative acknowledges this 'is not realistic immediately'"
+            ]
+          }
+        }
+      ],
+      "current_value": "Zero post-handoff communication (aspirational); realistically some calibration/oversight in IonWave",
+      "validation_plan": {
+        "method": "First handoff attempt with IonWave operator. Track: (1) integration work quality, (2) questions the operator asks that reveal gaps in the passet, (3) post-handoff founder communication frequency, (4) execution fidelity vs. passet prescriptions.",
+        "cost": "Time cost of integration period (2-4 weeks of operator attention)",
+        "timeline": "Post-operator-identification (~Month 7-9 of rollout)",
+        "success_criteria": "Operator completes integration work, passes calibration, and begins execution with ≤2 clarification calls to Danilo in first month",
+        "kill_criteria": "Operator requires daily founder communication to execute → one-shot model invalid for this complexity level",
+        "owner": "Danilo (calibration), Operator (integration work)",
+        "validation_triggers": [
+          "Operator produces integration artifact (condensed narrative in own words)",
+          "Calibration session completed with documented pass/fail outcome",
+          "First 30 days of execution tracked for founder-contact frequency"
+        ]
+      },
+      "feeds_into": [],
+      "depends_on": ["HYP-010", "HYP-012", "HYP-013"],
+      "risk_if_wrong": {
+        "severity": "CRITICAL",
+        "description": "If the one-shot handoff doesn't work, the system reverts to founder-dependent operation. Danilo becomes a permanent bottleneck. Future Trades cannot be deployed independently. The Studio 3 model (produce Trades via AI, hand off to executors) loses its fundamental value proposition. For IonWave specifically, failure means Danilo must stay actively involved in operations — which he does not want.",
+        "financial_impact": "Danilo's time as ongoing consultant = opportunity cost of not producing the next Trade. System scalability destroyed.",
+        "mitigation": "Accept that IonWave handoff will be imperfect (first edition). Track every gap, every implicit-knowledge moment, every point where the operator needed the founder. Build those learnings back into the system for Trade #2. Calibration stay light but non-zero for IonWave."
+      },
+      "related_hypotheses": {
+        "depends_on": ["HYP-010", "HYP-012", "HYP-013"],
+        "validates_system_for": "All future Trades",
+        "tension_with": "HYP-012 — if the binary gate is too loose, a bad operator passes and one-shot appears to fail when it's really a casting failure"
+      }
+    },
+    {
+      "id": "HYP-012",
+      "name": "Binary Gate Discrimination",
+      "category": "system_viability",
+      "description": "The calibration session (Three Models binary gate) reliably discriminates between executor-candidates who can successfully execute the Trade and those who cannot",
+      "impact_severity": "HIGH",
+      "current_state": "ASSUMED",
+      "current_grade": "D",
+      "revisions": [
+        {
+          "revision_id": 1,
+          "date": "2026-03-01",
+          "value": "Binary gate correctly filters with low false-positive and false-negative rates",
+          "grade": "D",
+          "reasoning": "The calibration session is described in the Rollout Narrative as 'the primary quality control mechanism for the entire rollout' but is simultaneously flagged as needing further definition. What the executor must prepare, what Danilo evaluates, what 'pass' and 'fail' look like concretely — all undefined. The VP's integration artifact (condensed narrative in own words) is the first specified forcing function, but the Operator's calibration is less defined. A false positive (bad operator passes) wastes 2-4+ months of execution. A false negative (good operator rejected) loses a viable candidate. Grade D because: gate criteria not specified, no calibration has been performed, Danilo is sole evaluator (SPOF).",
+          "evidence_type": "design_analysis",
+          "evidence_quality": "Conceptual framework exists but operational specification missing",
+          "supporting_documents": [
+            "IonWave/IonWave_Rollout_Narrative.md#the-handoff",
+            "Studio 3/Doc Dump/three_models_implementation_guide.md",
+            "data/rollout/chain_specification.md"
+          ],
+          "changed_by": "claude-opus-4-6",
+          "change_type": "initial",
+          "confidence_factors": {
+            "positive": [
+              "Conceptual basis is sound — requiring someone to defend their understanding under questioning",
+              "Integration work (line-by-line reconciliation) creates a testable artifact",
+              "Forcing functions (rewrite narrative, identify weak assumptions, explain to outsider) provide multiple evaluation dimensions",
+              "Binary outcome (pass/fail) eliminates ambiguity"
+            ],
+            "negative": [
+              "Calibration session not yet specified — no rubric, no duration, no structure",
+              "Danilo is sole evaluator (SPOF) — what if he's unavailable or biased?",
+              "Self-assessment is unreliable (Narrative: 'people are poor judges of their own capabilities')",
+              "A failed calibration costs 2-4 weeks per candidate",
+              "No precedent — the system's first calibration will be a learning experience, not a validated process",
+              "Evaluating 'frame-fit' (role engineering) is more subtle than evaluating comprehension"
+            ]
+          }
+        }
+      ],
+      "current_value": "Reliable pass/fail with ≤10% error rate",
+      "validation_plan": {
+        "method": "Define the calibration rubric with Danilo BEFORE the first candidate arrives. Then run the first calibration and evaluate retrospectively — did the outcome predict execution quality?",
+        "cost": "Danilo's time to define rubric (2-4 hours) + calibration sessions (2-4 hours each)",
+        "timeline": "Rubric definition: before first handoff. First calibration: when VP or Operator is ready",
+        "success_criteria": "First calibrated operator executes successfully (or fails predictably based on areas flagged during calibration)",
+        "kill_criteria": "If calibrated-and-passed operator fails in execution for reasons that should have been caught at calibration → gate is not discriminating",
+        "owner": "Danilo (calibration design and execution)",
+        "validation_triggers": [
+          "Calibration rubric document created and reviewed",
+          "First calibration session conducted with documented outcome",
+          "30-day post-calibration execution assessment"
+        ]
+      },
+      "feeds_into": ["HYP-011"],
+      "depends_on": ["HYP-010"],
+      "risk_if_wrong": {
+        "severity": "HIGH",
+        "description": "False positive: bad operator passes calibration, wastes 2-4 months of execution, burns capital, and damages the Trade's market position. False negative: good operator rejected, candidate pool shrinks, cascade timeline extends. Either way, the system's primary quality mechanism is unreliable — all downstream decisions become suspect.",
+        "financial_impact": "False positive: $30-50K wasted on failed execution. False negative: 2-4 months delay in finding replacement.",
+        "mitigation": "Define rubric before first use. Run VP integration artifact as a lower-stakes rehearsal for the Operator calibration. Accept that first calibration will be imperfect — log everything for system learning."
+      },
+      "related_hypotheses": {
+        "quality_gate_for": ["HYP-011"],
+        "depends_on": ["HYP-010"],
+        "must_be_defined_by": "Danilo — flagged in Rollout Narrative Q14"
+      }
+    },
+    {
+      "id": "HYP-013",
+      "name": "Systems Engineering Pre-Handoff Readiness",
+      "category": "rollout_execution",
+      "description": "The data infrastructure (Shopify/Meta APIs, dashboards, data pipelines, Claude agents for monitoring) can be built and documented before handoff such that the executor can operate without Caio on-call",
+      "impact_severity": "HIGH",
+      "current_state": "ASSUMED",
+      "current_grade": "D",
+      "revisions": [
+        {
+          "revision_id": 1,
+          "date": "2026-03-01",
+          "value": "Infrastructure ready at handoff, no on-call dependency",
+          "grade": "D",
+          "reasoning": "The Rollout Narrative is explicit: 'The systems engineering infrastructure needs to be ready before the handoff, not built on demand after.' Caio is evaluating OpenClaw for orchestration and prototyping data integrations. But: the checklist of what needs to be ready doesn't exist yet (Q15). Unforeseen requirements will surface during execution even with preparation. The goal is that infrastructure exists at handoff, not that Caio remains available — but the infrastructure is in early development. Grade D because: no infrastructure built yet, no readiness checklist, OpenClaw evaluation pending, unknown requirements will surface.",
+          "evidence_type": "design_analysis",
+          "evidence_quality": "Direction established but no infrastructure built or checklist defined",
+          "supporting_documents": [
+            "IonWave/IonWave_Rollout_Narrative.md#the-handoff",
+            "IonWave/IonWave_Rollout_Narrative.md#open-questions",
+            "project_specs/CLAUDE_AS_OS_SYSTEM.md"
+          ],
+          "changed_by": "claude-opus-4-6",
+          "change_type": "initial",
+          "confidence_factors": {
+            "positive": [
+              "Caio actively working on infrastructure (OpenClaw evaluation, data integration prototyping)",
+              "System is designed for documentation — if built, it can be documented",
+              "Claude agents for periodic monitoring reduce human dependency",
+              "Dashboard infrastructure already partially exists (ionwave/dashboard/)"
+            ],
+            "negative": [
+              "No readiness checklist defined (Q15 in Rollout Narrative)",
+              "OpenClaw evaluation not complete — may need alternative approach",
+              "Unforeseen requirements will surface during execution",
+              "Caio is SPOF for systems engineering — if he's unavailable, no one else can build this",
+              "Platform-specific integrations (Shopify, Meta APIs) depend on entity and accounts existing first",
+              "Claude agent deployment requires infrastructure that doesn't exist yet"
+            ]
+          }
+        }
+      ],
+      "current_value": "Minimum viable infrastructure ready at handoff",
+      "validation_plan": {
+        "method": "Define readiness checklist (Q15). Build infrastructure iteratively. Test each component. Document to the standard that a competent technical person (not Caio specifically) could maintain it.",
+        "cost": "Caio's time (significant — estimated 2-4 weeks of focused work)",
+        "timeline": "Now through handoff (parallel to cascade recruitment)",
+        "success_criteria": "Readiness checklist 100% complete, all components tested, documentation reviewed by a non-Caio technical person who confirms they could maintain it",
+        "kill_criteria": "If infrastructure cannot be ready before handoff → either delay handoff or accept Caio as on-call (violates system independence goal)",
+        "owner": "Caio",
+        "validation_triggers": [
+          "Readiness checklist created and approved",
+          "OpenClaw evaluation completed (use or build alternative)",
+          "At least one API integration (Shopify or Meta) built and tested",
+          "Dashboard data pipeline operational end-to-end",
+          "Documentation review by non-Caio person"
+        ]
+      },
+      "feeds_into": ["HYP-011"],
+      "depends_on": [],
+      "risk_if_wrong": {
+        "severity": "HIGH",
+        "description": "If infrastructure isn't ready at handoff, two bad outcomes: (1) executor operates blind (no dashboards, no automated monitoring) and makes uninformed decisions, or (2) Caio becomes on-call SPOF, violating system independence. Either way, execution quality degrades or founder dependency persists.",
+        "financial_impact": "Caio on-call = opportunity cost of not working on next Trade. Executor flying blind = suboptimal decisions worth potentially thousands in wasted ad spend or missed signals.",
+        "mitigation": "Start building now (parallel to cascade). Define minimum viable infrastructure vs. nice-to-have. Accept that some requirements will surface during execution — build the process for handling them, not just the initial infrastructure."
+      },
+      "related_hypotheses": {
+        "prerequisite_for": ["HYP-011"],
+        "SPOF_risk": "Caio — highly documented system mitigates but doesn't eliminate",
+        "parallel_to": ["HYP-010"]
+      }
+    },
+    {
+      "id": "HYP-014",
+      "name": "Capital Formation Encoding",
+      "category": "system_viability",
+      "description": "The fundraising methodology, pitch materials, VP outreach process, and advisor feedback loop can be encoded in the Trade well enough that Capital Formation can be executed without founder involvement",
+      "impact_severity": "CRITICAL",
+      "current_state": "ASSUMED",
+      "current_grade": "D",
+      "revisions": [
+        {
+          "revision_id": 1,
+          "date": "2026-03-01",
+          "value": "Capital Formation executable by VP without founder involvement",
+          "grade": "D",
+          "reasoning": "The Rollout Narrative identifies this as one of the hardest encoding problems in the entire system. Capital Formation is an Actor function — it requires credibility, deal-making ability, and network, none of which can be encoded in a document. The methodology is sketched (20 calls → recruit deals people → 500 calls → advisors/investors) but is missing: how advisor insights feed back into business plans, what pitch materials need to contain, how to evaluate VP candidates. The VP brief exists in data/rollout/vp_brief/ but has never been tested with a real VP. The deeper problem: Danilo's position is that he should not find the VP, and should not find the person who finds the VP — but the cascade assigns VP recruitment to the MBA intern, who has even less domain expertise. Grade D because: methodology only sketched, Actor skills may be fundamentally non-encodable, no VP has been recruited or tested.",
+          "evidence_type": "design_analysis",
+          "evidence_quality": "Methodology sketched, VP brief written, but zero execution data",
+          "supporting_documents": [
+            "IonWave/IonWave_Rollout_Narrative.md#the-calls",
+            "data/rollout/vp_brief/",
+            "data/rollout/chain_specification.md"
+          ],
+          "changed_by": "claude-opus-4-6",
+          "change_type": "initial",
+          "confidence_factors": {
+            "positive": [
+              "VP brief and capital formation guide exist in data/rollout/",
+              "Methodology sketched: 20 → 500 calls → advisors/investors",
+              "Producer role (once filled) can own the advisor feedback loop",
+              "Trade pitch onepager exists (trade_pitch_onepager.md)"
+            ],
+            "negative": [
+              "Actor skills (credibility, deal-making, network) may be fundamentally non-encodable",
+              "VP recruitment assigned to MBA intern — less-capable selecting more-capable",
+              "No VP has been recruited or tested with the materials",
+              "Advisor feedback loop not yet defined — how insights update TUPs is unspecified",
+              "Danilo's personal network and credibility currently drive all deal conversations",
+              "M4 and investor narrative are 'a start' per Narrative — not production-ready"
+            ]
+          }
+        }
+      ],
+      "current_value": "VP executes Capital Formation independently using encoded methodology",
+      "validation_plan": {
+        "method": "Recruit VP through cascade. Provide encoded materials. Track: (1) VP's ability to use pitch materials without founder coaching, (2) advisor response rate, (3) quality of advisor insights feeding back into Trade, (4) capital raised without Danilo involvement.",
+        "cost": "VP equity compensation (5-10%). Opportunity cost if Capital Formation fails.",
+        "timeline": "VP recruitment: Month 4-6 of cascade. Capital Formation execution: Month 6-12.",
+        "success_criteria": "VP makes 100+ calls using encoded methodology, secures 3+ advisor relationships, and raises or identifies seed capital without Danilo's direct involvement in any call",
+        "kill_criteria": "VP cannot use materials without founder coaching, or advisor/investor meetings require Danilo's presence → encoding insufficient, Capital Formation requires founder involvement",
+        "owner": "VP (L3 in cascade), monitored by Danilo",
+        "validation_triggers": [
+          "VP completes integration artifact (Three Models test)",
+          "VP makes first 20 calls using encoded materials",
+          "First advisor relationship established without Danilo introduction",
+          "First capital commitment received"
+        ]
+      },
+      "feeds_into": ["HYP-008"],
+      "depends_on": ["HYP-010"],
+      "risk_if_wrong": {
+        "severity": "FATAL",
+        "description": "If Capital Formation can't be encoded, the system defaults to: Danilo does fundraising (which he emphatically does not want) or the Trade bootstraps with limited capital ($30-50K). Bootstrapping at conservative metrics means 24-30 month timeline or non-viability. The one-shot vision fails if the founder must personally fundraise for every Trade.",
+        "financial_impact": "Without seed capital, execution is constrained to $30-50K total. At conservative CAC ($45), this funds only ~1,000 customers — may be insufficient to reach sustainability.",
+        "mitigation": "Strengthen the VP brief with specific pitch scripts, objection handling, and advisor meeting templates. Consider whether Danilo can do a warm introduction for the VP's first 3-5 meetings without becoming the ongoing interface. Accept that IonWave may require more founder involvement in Capital Formation than the pure one-shot vision allows — learn from this for Trade #2."
+      },
+      "related_hypotheses": {
+        "enables": ["HYP-008"],
+        "depends_on": ["HYP-010"],
+        "tests_system_vision": "If Capital Formation can't be encoded, the one-shot model needs revision for Actor-type functions"
+      }
+    },
+    {
+      "id": "HYP-015",
+      "name": "Foundation Phase Timeline",
+      "category": "rollout_execution",
+      "description": "Entity formation, supplier outreach/CoA verification, storefront build, and creative production can be completed in ~2 weeks, with soft launch (first orders) achievable by Week 3-4 of execution",
+      "impact_severity": "MEDIUM",
+      "current_state": "ASSUMED",
+      "current_grade": "D",
+      "revisions": [
+        {
+          "revision_id": 1,
+          "date": "2026-03-01",
+          "value": "Foundation complete in 2 weeks, first orders by Week 3-4",
+          "grade": "D",
+          "reasoning": "The Rollout Narrative lays out an aggressive but plausible timeline: Weeks 1-2 (entity, supplier, storefront), Weeks 3-4 (soft launch, first orders). Multiple dependencies must resolve simultaneously: C-Corp filing (1-2 days for Delaware), supplier CoA requests (response time unknown), Shopify setup, brand finalization, ad creative production. The narrative acknowledges: 'Some creative work may require a contractor. Where that money comes from is an open question.' No executor has done this before in this system. Grade D because: no execution data, multiple external dependencies (suppliers, state filing), creative costs unbudgeted, single-executor assumes they can parallelize all functions.",
+          "evidence_type": "planning_estimate",
+          "evidence_quality": "Estimated from TUP playbooks (M2, M4, M5, M6, M8) but no execution data",
+          "supporting_documents": [
+            "IonWave/IonWave_Rollout_Narrative.md#the-foundation",
+            "IonWave/IonWave_Rollout_Narrative.md#the-test",
+            "data/m2/",
+            "data/m5/",
+            "data/m8/"
+          ],
+          "changed_by": "claude-opus-4-6",
+          "change_type": "initial",
+          "confidence_factors": {
+            "positive": [
+              "TUPs M2, M4, M5, M6, M8 provide detailed playbooks for each function",
+              "Delaware C-Corp filing is a known, fast process (1-2 days with Stripe Atlas or similar)",
+              "Shopify setup with templates is achievable in days",
+              "AI can now produce much of the creative work (copy, basic visuals)"
+            ],
+            "negative": [
+              "Supplier response time unknown — brand-new entity with no track record",
+              "CoA verification requires lab analysis — timeline depends on supplier",
+              "Creative contractor costs unbudgeted (punted to operator per Narrative)",
+              "Single operator must parallelize entity, supplier, storefront, creative simultaneously",
+              "No execution data — this is a planning estimate, not a benchmark",
+              "Narrative flags: 'Suppliers don't respond to a brand-new entity' (Q12)"
+            ]
+          }
+        }
+      ],
+      "current_value": "Foundation complete by Week 2, first orders by Week 3-4",
+      "validation_plan": {
+        "method": "Track actual execution timeline against plan. Log every delay with root cause.",
+        "cost": "No additional cost — tracking is built into execution",
+        "timeline": "Weeks 1-4 of execution",
+        "success_criteria": "Entity live and supplier CoA in hand by end of Week 2. First 3+ orders by end of Week 4.",
+        "kill_criteria": "Entity or supplier not resolved by Week 4 → timeline is 2x plan, reassess resource allocation and parallelization",
+        "owner": "Operator (executor)",
+        "validation_triggers": [
+          "C-Corp filed (Day 1-2)",
+          "First supplier contacted (Day 3-5)",
+          "CoA received and reviewed against M7 thresholds",
+          "Shopify store functional (Week 2)",
+          "First ad creative approved (Week 2)",
+          "First order placed (Week 3-4)"
+        ]
+      },
+      "feeds_into": ["HYP-007"],
+      "depends_on": ["HYP-010", "HYP-016"],
+      "risk_if_wrong": {
+        "severity": "MEDIUM",
+        "description": "Timeline extension burns capital (especially if operator is on $4K/mo base) and delays revenue signal. At $4K/mo operator cost + $1-2K/mo overhead, each month of delay = $5-6K burned. More importantly, delayed signal means delayed learning — the Day 30 gate moves to Day 60+, extending the period of maximum uncertainty.",
+        "financial_impact": "Each week of delay: ~$1.5K burned (operator base + overhead). 4-week delay = $6K wasted before first signal.",
+        "mitigation": "Pre-identify suppliers before executor starts (Danilo can make initial contact). Pre-register entity (operator can do this before formal 'start'). Use AI-generated creative for initial test (iterate later with contractor if needed)."
+      },
+      "related_hypotheses": {
+        "depends_on": ["HYP-010", "HYP-016"],
+        "feeds_into": ["HYP-007"],
+        "shares_timeline_with": ["HYP-001"]
+      }
+    },
+    {
+      "id": "HYP-016",
+      "name": "Supplier CoA Compliance & COGS Target",
+      "category": "rollout_execution",
+      "description": "Marine plasma suppliers (Biocean, Actimar, Quinton or alternatives) will provide product with Certificate of Analysis meeting M7 Regulatory thresholds for heavy metals and contaminants, at landed COGS ≤$25/box for a 500-1000 unit initial order",
+      "impact_severity": "CRITICAL",
+      "current_state": "ASSUMED",
+      "current_grade": "D",
+      "revisions": [
+        {
+          "revision_id": 1,
+          "date": "2026-03-01",
+          "value": "CoA-compliant product at ≤$25/box landed COGS",
+          "grade": "D",
+          "reasoning": "The Rollout Narrative calls this 'the most important data point in the entire rollout.' The financial model has three scenarios: optimistic (67% GM), realistic (60% GM), conservative (42% GM). Which is real depends entirely on supplier quotes. No supplier has been contacted. All supplier data in the passet is void — no quotes, no CoA, no confirmed pricing. If landed COGS > $25, economics may not close at $47-59 price point. If CoA fails M7 thresholds (heavy metals), it's a hard stop. The conservative scenario (42% GM) may make the Trade non-viable at current pricing. Grade D because: zero supplier contact, no quotes, no CoA data, pricing entirely assumed from market research.",
+          "evidence_type": "design_analysis",
+          "evidence_quality": "Market research identifies suppliers but zero direct data (no quotes, no CoA)",
+          "supporting_documents": [
+            "IonWave/IonWave_Rollout_Narrative.md#the-foundation",
+            "data/m5/",
+            "data/m6/",
+            "data/m7/",
+            "IonWave/Financial_Model_Revenue_Validation.md"
+          ],
+          "changed_by": "claude-opus-4-6",
+          "change_type": "initial",
+          "confidence_factors": {
+            "positive": [
+              "Seaonic exists as proof that marine plasma can be sourced and sold at premium pricing ($69/box)",
+              "Multiple identified suppliers (Biocean, Actimar, Quinton) — not single-source dependent",
+              "M7 Regulatory TUP defines clear thresholds for CoA evaluation",
+              "Small initial order (500-1000 units) reduces supplier risk and enables testing"
+            ],
+            "negative": [
+              "Zero supplier contact — all data is void",
+              "Brand-new entity with no track record — suppliers may not respond or offer worse terms",
+              "Small initial order = worst per-unit pricing (no volume leverage)",
+              "CoA compliance is binary — if heavy metals fail, it's a hard stop",
+              "Conservative margin scenario (42% GM) may make Trade non-viable",
+              "Margin dispute REC-001 unresolved — even the target GM is contested (67% vs 62-64%)",
+              "Import/shipping costs unknown (landed COGS includes logistics)"
+            ]
+          }
+        }
+      ],
+      "current_value": "Landed COGS ≤$25/box, CoA compliant with M7 thresholds",
+      "validation_plan": {
+        "method": "Contact 3+ suppliers. Request CoA and pricing for 500-unit and 1000-unit orders. Evaluate CoA against M7 Regulatory thresholds. Calculate landed COGS including shipping/import.",
+        "cost": "Time cost only (supplier outreach)",
+        "timeline": "Week 1 of execution (or earlier — could be pre-handoff)",
+        "success_criteria": "At least 1 supplier provides CoA-compliant product at landed COGS ≤$25/box",
+        "kill_criteria": "No supplier provides CoA-compliant product → hard stop. OR: All CoA-compliant suppliers quote landed COGS >$30/box → conservative margin scenario, kill-or-pivot conversation",
+        "owner": "Operator (or Danilo pre-handoff if supplier outreach starts early)",
+        "validation_triggers": [
+          "First supplier contacted",
+          "CoA received from at least 1 supplier",
+          "CoA evaluated against M7 thresholds (pass/fail)",
+          "Pricing confirmed for 500-unit and 1000-unit orders",
+          "Landed COGS calculated (product + shipping + import duties)"
+        ]
+      },
+      "feeds_into": ["HYP-004", "HYP-015"],
+      "depends_on": [],
+      "risk_if_wrong": {
+        "severity": "FATAL",
+        "description": "Two fatal failure modes: (1) CoA fails M7 thresholds — cannot sell the product, full stop. (2) Landed COGS >$30/box — conservative margin scenario (42% GM) makes the Trade non-viable at $47-59 pricing. Would require price increase (reduces market), margin acceptance (reduces viability), or kill decision. This is the single hypothesis that can kill the Trade before it launches.",
+        "financial_impact": "If COGS kills the Trade, all prior investment in passet production, cascade recruitment, and infrastructure is lost (sunk cost). If COGS requires price increase, all downstream hypotheses (CAC, conversion, churn) change because market positioning changes.",
+        "mitigation": "Contact suppliers BEFORE committing to execution. If possible, get indicative quotes during the cascade period (before operator is in place). Danilo or MBA intern could do initial supplier outreach as early validation."
+      },
+      "related_hypotheses": {
+        "directly_impacts": ["HYP-004"],
+        "prerequisite_for": ["HYP-015"],
+        "resolves_issue": "ISS-001 (margin dispute REC-001)"
       }
     }
   ]
